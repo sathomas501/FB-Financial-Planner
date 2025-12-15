@@ -15,8 +15,8 @@ We’re building a simple app that helps you understand, plan, and track your pa
 ### Advisor-level depth, without the sales pitch
 Built for people who are comfortable managing their own portfolios, but want better tools than a basic spreadsheet.
 
-### Transparent, checkable math
-Built-in validation checks every projection, and CSV/Excel export lets you verify results with your own formulas.
+### One time license fee, no management fees, or yearly subscriptions
+This is a single time license fee, no percent under management or yearly subscription fees. You life changes, change your plan - you own it.
 
 ### Designed for “I want to see the impact”
 Every change—retirement age, spending, conversions, debts—flows through to cash flow, taxes, and long-term outcomes you can actually see.
