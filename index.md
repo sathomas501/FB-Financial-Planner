@@ -35,9 +35,12 @@ Every change—retirement age, spending, conversions, debts—flows through to c
 ## Screenshots
 
 ![landing_page](/assets/images/landing_page.png)
-_A clear view of where you stand today._
+_"Cube" navagation landing page._
 
-![Planning flow screenshot](/assets/images/planning-flow.png)
+![current plan view](/assets/images/plan_summary.png)
+_A dashboard of your current plan.-
+
+![planning flow screenshot](/assets/images/plan_wizard.png)
 _Step-by-step guidance to build and compare plans._
 
 
