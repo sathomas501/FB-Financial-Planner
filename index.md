@@ -32,18 +32,11 @@ Every change—retirement age, spending, conversions, debts—flows through to c
 3. **Explore and refine**  
    Use interactive charts and comparison dashboards to see what works best, then tune until you’re comfortable with the trade-offs.
 
-## Screenshots
+## See It In Action
 
-![landing_page](/assets/images/landing_page.png)
-_"Cube" navagation landing page._
+![Plan Summary Dashboard](/assets/images/plan_summary.png)
+_Comprehensive dashboard view of your retirement plan with interactive charts and projections._
 
-![current plan view](/assets/images/plan_summary.png)
-_A dashboard of your current plan.-
-
-![planning flow screenshot](/assets/images/plan_wizard.png)
-_Step-by-step guidance to build and compare plans._
-
-![assets and account entry](/assets/images/assets_accounts.png)
-_Enter or import all of your accounts and add your assets, with customize tax treatment if needed._
+[View All Screenshots](/screenshots) to explore the full feature set including portfolio analysis, cash flow visualization, goal planning, and more.
 
 [Join the waitlist](mailto:fatboy501@gmail.com?subject=Join%20the%20waitlist%20for%20Fatboy%20Software)
