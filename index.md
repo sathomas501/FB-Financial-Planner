@@ -18,8 +18,10 @@ Built for people who are comfortable managing their own portfolios, but want bet
 ### One time license fee, no management fees, or yearly subscriptions
 This is a single time license fee, no percent under management or yearly subscription fees. Your life changes, change your plan - you own it!
 
-### Designed for “I want to see the impact”
+### Designed for "I want to see the impact"
 Every change—retirement age, spending, conversions, debts—flows through to cash flow, taxes, and long-term outcomes you can actually see.
+
+**[See how we compare](/comparison)** to other retirement planning software.
 
 ## How It Works
 
