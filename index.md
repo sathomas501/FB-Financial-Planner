@@ -53,25 +53,39 @@ Want to see what happens if you retire at 62 instead of 65? Convert $50k to Roth
 ### The Privacy Thing
 Everything runs on your computer. No cloud. No "syncing to our servers for your convenience." Your financial data is yours, not ours.
 
-## Free vs Pro
+## Pricing
 
-### Free Version
+### 🎯 Founding Member Offer - $149 One-Time
+
+**First 200 users only.** Lock in this price forever.
+
+Full Pro features. No subscriptions. Pay once, own it permanently. Regular price will be higher.
+
+- ✅ Unlimited scenarios
+- ✅ Advanced Roth conversion optimizer
+- ✅ Interactive goal solver
+- ✅ Sankey cash flow diagrams
+- ✅ Advanced tax optimization
+- ✅ All future updates included
+
+[Join the Founding Member Waitlist](mailto:fatboy501@gmail.com?subject=Founding%20Member%20-%20Fatboy%20Financial%20Planner) | [See Full Pricing Details](/pricing)
+
+---
+
+### Free Version - Forever
+
+Not ready to commit? Start with our fully functional free version.
+
 - Core retirement planning features
 - Cash flow projections and tax estimates
 - Portfolio tracking and allocation
-- **Editable tax parameters** - federal and state (model future tax law changes)
-- **3 retirement scenarios** (enough for most people)
+- **Editable tax parameters** - federal and state
+- **3 retirement scenarios**
 - Your data, your computer, forever
 
-### Pro Version ($XXX one-time)
-- Everything in Free, plus:
-- **Unlimited scenarios** - test as many strategies as you want
-- **Advanced Roth conversion optimizer**
-- **Interactive goal solver** - work backwards from your targets
-- **Sankey cash flow diagrams** - see where every dollar goes
-- **Advanced tax optimization tools**
+[Download Free Version](mailto:fatboy501@gmail.com?subject=Download%20Fatboy%20Financial%20Planner%20Free)
 
-Not sure which you need? **Start free.** Seriously. If you outgrow it, upgrade later.
+**Not sure which you need?** Start free. If you outgrow it, upgrade to Pro later and lock in Founding Member pricing while spots remain.
 
 ## See It In Action
 
@@ -80,4 +94,4 @@ _Comprehensive dashboard view of your retirement plan with interactive charts an
 
 [View All Screenshots](/screenshots) to explore the full feature set including portfolio analysis, cash flow visualization, goal planning, and more.
 
-[Download Free Version](mailto:fatboy501@gmail.com?subject=Download%20Fatboy%20Financial%20Planner%20Free) | [Join the waitlist](mailto:fatboy501@gmail.com?subject=Join%20the%20waitlist%20for%20Fatboy%20Software)
+[Join Founding Member Waitlist ($149)](mailto:fatboy501@gmail.com?subject=Founding%20Member%20-%20Fatboy%20Financial%20Planner) | [Download Free Version](mailto:fatboy501@gmail.com?subject=Download%20Fatboy%20Financial%20Planner%20Free) | [See Pricing Details](/pricing)
