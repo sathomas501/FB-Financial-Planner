@@ -17,9 +17,7 @@ We built Fatboy Financial Planner for people who want serious planning tools wit
 | **Fatboy Financial Planner Pro** | **One-time upgrade** | **$XXX** |
 | Boldin (NewRetirement) | Annual subscription | $120-$240/year |
 | MaxiFi Planner | Annual subscription | $99-$199/year |
-| WealthTrace | Annual subscription | $99-$149/year |
 | Pralana Gold | One-time purchase | $295 |
-| i-orp | Annual subscription | $150/year |
 
 ### Why This Pricing Model Matters
 
@@ -30,24 +28,24 @@ We built Fatboy Financial Planner for people who want serious planning tools wit
 
 ## Feature Comparison
 
-| Feature | Fatboy Free | Fatboy Pro | Boldin | MaxiFi | WealthTrace | Pralana | i-orp |
-|---------|-------------|------------|---------|---------|-------------|---------|-------|
-| **Pricing Model** | ✅ Free | ✅ One-time | ❌ Annual | ❌ Annual | ❌ Annual | ✅ One-time | ❌ Annual |
-| **Plan Scenarios** | ⚠️ 3 max | ✅ Unlimited | ✅ Yes | ✅ Yes | ✅ Limited | ✅ Yes | ✅ Yes |
-| **Core Planning** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
-| **Cash Flow Projections** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
-| **Roth Conversion Optimizer** | ❌ No | ✅ Advanced | ⚠️ Basic | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Advanced |
-| **Goal Solver** | ❌ No | ✅ Interactive | ⚠️ Limited | ✅ Yes | ⚠️ Limited | ❌ No | ✅ Yes |
-| **Sankey Cash Flow Diagrams** | ❌ No | ✅ Yes | ⚠️ Basic | ✅ Yes | ✅ Yes | ⚠️ Basic | ✅ Yes |
-| **Tax Optimization** | ✅ Basic | ✅ Advanced | ✅ Yes | ✅ Advanced | ✅ Yes | ✅ Yes | ✅ Advanced |
-| **Withdrawal Strategy** | ✅ Yes | ✅ Customizable | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Advanced |
-| **Portfolio Allocation** | ✅ Yes | ✅ Multi-account | ✅ Yes | ⚠️ Limited | ✅ Yes | ✅ Yes | ⚠️ Basic |
-| **Debt Management** | ✅ Yes | ✅ Yes | ✅ Yes | ⚠️ Basic | ✅ Yes | ⚠️ Basic | ⚠️ Basic |
-| **Monte Carlo Analysis** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
-| **Social Security Planning** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Advanced | ✅ Yes | ✅ Yes | ✅ Advanced |
-| **Data Import** | ✅ CSV/Manual | ✅ CSV/Manual | ✅ Link accounts | ⚠️ Manual | ✅ Link accounts | ⚠️ Manual | ⚠️ Manual |
-| **Account Types Supported** | ✅ All major | ✅ All major | ✅ All major | ✅ All major | ✅ All major | ✅ All major | ✅ All major |
-| **Tax Assumptions** | ✅ Editable | ✅ Editable | 🔄 Auto-updated | 🔄 Auto-updated | 🔄 Auto-updated | ⚠️ Fixed | 🔄 Auto-updated |
+| Feature | Fatboy Free | Fatboy Pro | Boldin | MaxiFi | Pralana |
+|---------|-------------|------------|---------|---------|---------|
+| **Pricing Model** | ✅ Free | ✅ One-time | ❌ Annual | ❌ Annual | ✅ One-time |
+| **Plan Scenarios** | ⚠️ 3 max | ✅ Unlimited | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Core Planning** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Cash Flow Projections** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Roth Conversion Optimizer** | ❌ No | ✅ Advanced | ⚠️ Basic | ✅ Yes | ✅ Yes |
+| **Goal Solver** | ❌ No | ✅ Interactive | ⚠️ Limited | ✅ Yes | ❌ No |
+| **Sankey Cash Flow Diagrams** | ❌ No | ✅ Yes | ⚠️ Basic | ✅ Yes | ⚠️ Basic |
+| **Tax Optimization** | ✅ Basic | ✅ Advanced | ✅ Yes | ✅ Advanced | ✅ Yes |
+| **Withdrawal Strategy** | ✅ Yes | ✅ Customizable | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Portfolio Allocation** | ✅ Yes | ✅ Multi-account | ✅ Yes | ⚠️ Limited | ✅ Yes |
+| **Debt Management** | ✅ Yes | ✅ Yes | ✅ Yes | ⚠️ Basic | ⚠️ Basic |
+| **Monte Carlo Analysis** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Social Security Planning** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Advanced | ✅ Yes |
+| **Data Import** | ✅ CSV/Manual | ✅ CSV/Manual | ✅ Link accounts | ⚠️ Manual | ⚠️ Manual |
+| **Account Types Supported** | ✅ All major | ✅ All major | ✅ All major | ✅ All major | ✅ All major |
+| **Tax Assumptions** | ✅ Editable | ✅ Editable | 🔄 Auto-updated | 🔄 Auto-updated | ⚠️ Fixed |
 
 **Legend:**
 ✅ Full support | ⚠️ Limited/Basic | ❌ Not available | 🔄 Subscription-based updates
