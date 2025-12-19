@@ -1,8 +1,6 @@
 ---
 layout: default
 title: Fatboy Financial Planner - Serious Planning. Less Serious Approach.
-description: Free retirement planning software with optional Pro upgrade. Start free with core planning, upgrade once for advanced features. No subscriptions, ever.
-keywords: retirement planning software, one-time purchase, no subscription, Roth conversion, tax optimization, retirement calculator
 ---
 
 # Fatboy Software
@@ -21,8 +19,6 @@ Start with the free version - it's actually useful, not a bait-and-switch trial.
 
 ### "What if I..." actually works here
 Want to see what happens if you retire at 62 instead of 65? Convert $50k to Roth? Pay off your mortgage early? **Model what happens when TCJA expires in 2026?** Edit tax parameters yourself - federal and state. Every change flows through to cash flow, taxes, and actual outcomes you can understand.
-
-**[See how we compare](/comparison)** to the other guys (spoiler: we're cheaper and you actually own it).
 
 ## How It Works
 
