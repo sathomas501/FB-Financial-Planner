@@ -1,128 +1,133 @@
 ---
 layout: default
 title: Retirement Planning Software Comparison - One-Time vs Subscription
-description: Compare FB Retirement Planner to Boldin, MaxiFi, WealthTrace, and others. See why a one-time license with editable tax assumptions beats annual subscriptions.
+description: Compare Fatboy Financial Planner to Boldin, MaxiFi, WealthTrace, and others. See why a one-time license with editable tax assumptions beats annual subscriptions.
 keywords: retirement software comparison, Boldin vs MaxiFi, retirement planner reviews, one-time purchase vs subscription, best retirement planning software
 ---
 
-# How FB Retirement Planner Compares
+# How Fatboy Financial Planner Compares
 
-We built FB Retirement Planner for people who want advisor-level planning tools without the ongoing costs. Here's how we stack up against other retirement planning software.
+We built Fatboy Financial Planner for people who want serious planning tools without paying every year for the privilege. Here's how we stack up.
 
 ## Pricing Comparison
 
 | Software | Pricing Model | Cost |
 |----------|--------------|------|
-| **FB Retirement Planner** | **One-time license** | **$XXX** |
+| **Fatboy Financial Planner Free** | **Forever free** | **$0** |
+| **Fatboy Financial Planner Pro** | **One-time upgrade** | **$XXX** |
 | Boldin (NewRetirement) | Annual subscription | $120-$240/year |
 | MaxiFi Planner | Annual subscription | $99-$199/year |
 | WealthTrace | Annual subscription | $99-$149/year |
 | Pralana Gold | One-time purchase | $295 |
 | i-orp | Annual subscription | $150/year |
 
-### Why One-Time Licensing Matters
+### Why This Pricing Model Matters
 
-- **No recurring fees** - Pay once, use forever
-- **No price increases** - Your cost never goes up
-- **Your plan, your data** - No pressure to keep subscribing
-- **Life changes?** Update your plan anytime without worrying about subscription status
+- **Actually free to start** - Not a 30-day trial. Use the free version forever if it meets your needs.
+- **One-time upgrade** - Need more? $XXX once. No recurring fees.
+- **No pressure** - Free version isn't crippled. It's legitimately useful.
+- **Your plan, your data** - Whether you're free or pro, your data stays yours.
 
 ## Feature Comparison
 
-| Feature | FB Retirement Planner | Boldin | MaxiFi | WealthTrace | Pralana | i-orp |
-|---------|----------------------|---------|---------|-------------|---------|-------|
-| **Pricing Model** | ✅ One-time | ❌ Annual | ❌ Annual | ❌ Annual | ✅ One-time | ❌ Annual |
-| **Plan Scenarios** | ✅ Unlimited | ✅ Yes | ✅ Yes | ✅ Limited | ✅ Yes | ✅ Yes |
-| **Roth Conversion Planning** | ✅ Advanced | ⚠️ Basic | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Advanced |
-| **Tax Optimization** | ✅ Detailed | ✅ Yes | ✅ Advanced | ✅ Yes | ✅ Yes | ✅ Advanced |
-| **Cash Flow Visualization** | ✅ Sankey diagrams | ⚠️ Basic charts | ✅ Yes | ✅ Yes | ⚠️ Basic | ✅ Yes |
-| **Goal Solver** | ✅ Interactive | ⚠️ Limited | ✅ Yes | ⚠️ Limited | ❌ No | ✅ Yes |
-| **Withdrawal Strategy** | ✅ Customizable order | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Advanced |
-| **Portfolio Allocation** | ✅ Multi-account | ✅ Yes | ⚠️ Limited | ✅ Yes | ✅ Yes | ⚠️ Basic |
-| **Debt Management** | ✅ Full tracking | ✅ Yes | ⚠️ Basic | ✅ Yes | ⚠️ Basic | ⚠️ Basic |
-| **Monte Carlo Analysis** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
-| **Social Security Optimization** | ✅ Yes | ✅ Yes | ✅ Advanced | ✅ Yes | ✅ Yes | ✅ Advanced |
-| **Data Import** | ✅ CSV/Manual | ✅ Link accounts | ⚠️ Manual | ✅ Link accounts | ⚠️ Manual | ⚠️ Manual |
-| **What-If Scenarios** | ✅ Unlimited | ✅ Yes | ✅ Yes | ✅ Limited | ✅ Yes | ✅ Yes |
-| **Account Types Supported** | ✅ All major types | ✅ Comprehensive | ✅ Comprehensive | ✅ Comprehensive | ✅ Comprehensive | ✅ Comprehensive |
-| **Tax Assumptions** | ✅ Fully editable | 🔄 Auto-updated | 🔄 Auto-updated | 🔄 Auto-updated | ⚠️ Fixed defaults | 🔄 Auto-updated |
+| Feature | Fatboy Free | Fatboy Pro | Boldin | MaxiFi | WealthTrace | Pralana | i-orp |
+|---------|-------------|------------|---------|---------|-------------|---------|-------|
+| **Pricing Model** | ✅ Free | ✅ One-time | ❌ Annual | ❌ Annual | ❌ Annual | ✅ One-time | ❌ Annual |
+| **Plan Scenarios** | ⚠️ 3 max | ✅ Unlimited | ✅ Yes | ✅ Yes | ✅ Limited | ✅ Yes | ✅ Yes |
+| **Core Planning** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Cash Flow Projections** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Roth Conversion Optimizer** | ❌ No | ✅ Advanced | ⚠️ Basic | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Advanced |
+| **Goal Solver** | ❌ No | ✅ Interactive | ⚠️ Limited | ✅ Yes | ⚠️ Limited | ❌ No | ✅ Yes |
+| **Sankey Cash Flow Diagrams** | ❌ No | ✅ Yes | ⚠️ Basic | ✅ Yes | ✅ Yes | ⚠️ Basic | ✅ Yes |
+| **Tax Optimization** | ✅ Basic | ✅ Advanced | ✅ Yes | ✅ Advanced | ✅ Yes | ✅ Yes | ✅ Advanced |
+| **Withdrawal Strategy** | ✅ Yes | ✅ Customizable | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Advanced |
+| **Portfolio Allocation** | ✅ Yes | ✅ Multi-account | ✅ Yes | ⚠️ Limited | ✅ Yes | ✅ Yes | ⚠️ Basic |
+| **Debt Management** | ✅ Yes | ✅ Yes | ✅ Yes | ⚠️ Basic | ✅ Yes | ⚠️ Basic | ⚠️ Basic |
+| **Monte Carlo Analysis** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Social Security Planning** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Advanced | ✅ Yes | ✅ Yes | ✅ Advanced |
+| **Data Import** | ✅ CSV/Manual | ✅ CSV/Manual | ✅ Link accounts | ⚠️ Manual | ✅ Link accounts | ⚠️ Manual | ⚠️ Manual |
+| **Account Types Supported** | ✅ All major | ✅ All major | ✅ All major | ✅ All major | ✅ All major | ✅ All major | ✅ All major |
+| **Tax Assumptions** | ✅ Editable | ✅ Editable | 🔄 Auto-updated | 🔄 Auto-updated | 🔄 Auto-updated | ⚠️ Fixed | 🔄 Auto-updated |
 
 **Legend:**
 ✅ Full support | ⚠️ Limited/Basic | ❌ Not available | 🔄 Subscription-based updates
 
 ## Tax Assumptions: Planning Direction vs Tax-Filing Precision
 
-### Our Approach: Full Control Over Your Assumptions
+### Our Approach: You Control the Tax Assumptions
 
-FB Retirement Planner gives you **complete control** over tax assumptions - brackets, deductions, thresholds, and rates. You can customize all key tax parameters including:
+Fatboy Financial Planner lets you **edit every tax parameter** - both federal and state. Not just accept whatever we give you. You can customize:
 
-- Federal tax brackets and rates
-- Standard deductions (by filing status)
-- Social Security taxation thresholds
-- Capital gains brackets
-- IRMAA (Medicare surcharge) thresholds
-- RMD age and factors
-- State tax rates
+- **Federal tax brackets and rates** (including future law changes)
+- **Standard deductions** (by filing status)
+- **Social Security taxation thresholds**
+- **Capital gains brackets**
+- **IRMAA (Medicare surcharge) thresholds**
+- **RMD age and factors**
+- **State tax rates and brackets**
+
+Want to see what your plan looks like when TCJA expires in 2026? Change the brackets. Want to model a state income tax increase? Edit it. Want to see what happens if Congress changes capital gains rates? You're in control.
 
 ### Why This Matters for Planning
 
-**This is a planning tool, not tax preparation software.** The goal isn't to file your taxes - it's to help you make smart directional decisions:
+**This is planning software, not TurboTax.** We're not trying to file your taxes - we're helping you make smart decisions:
 
 - Should I retire at 62 or wait until 65?
 - When should I do Roth conversions?
-- What withdrawal order minimizes lifetime taxes?
+- What withdrawal order costs me less in taxes?
 - How will a $50k income change affect my Medicare premiums?
 
-**For these planning decisions, rough tax accuracy is completely sufficient.** Whether your effective tax rate is 18.3% or 18.7% doesn't change whether retiring at 62 vs 65 is the better choice.
+**For these questions, close enough is good enough.** Whether your effective tax rate is 18.3% or 18.7% doesn't change whether retiring at 62 vs 65 makes sense.
 
 ### Subscriptions vs Control: The Real Trade-off
 
-| Subscription Services | FB Retirement Planner |
+| Subscription Services | Fatboy Financial Planner |
 |----------------------|----------------------|
-| Auto-updated tax rates (tied to ongoing payments) | You control when and how to update |
-| New rates appear automatically | You decide which assumptions to use |
-| Can't run "what-if" with proposed tax changes | Model future tax law scenarios easily |
-| Locked into provider's assumptions | Full transparency and customization |
+| Auto-updated tax rates (tied to ongoing payments) | You edit tax parameters yourself - federal and state |
+| New rates appear automatically | You decide when and what to update |
+| Can't model future tax law changes | Model TCJA expiration, proposed tax changes, state tax scenarios |
+| Locked into their assumptions | Full control - edit any tax parameter |
+| One tax scenario at a time | Run multiple scenarios with different tax laws |
 
 ### When Do Tax Rates Actually Change?
 
-Less often than you think:
-- **COLA adjustments**: Annual bracket inflation adjustments (~3-5% typically)
-- **Major tax law changes**: Every 5-10 years (TCJA 2017, expiring 2026)
-- **Planning impact**: Usually minimal for directional decisions
+Less often than subscription services want you to think:
+- **COLA adjustments**: Annual inflation bumps to brackets (~3-5%)
+- **Major tax law changes**: Every 5-10 years (like TCJA in 2017, expiring 2026)
+- **Impact on your decisions**: Usually minimal
 
-### Our Commitment
+### What We'll Do
 
-- **Free updates** for major tax law changes (like TCJA expiration in 2026)
-- **Easy self-service updates** for annual COLA adjustments (takes 2 minutes)
-- **Documentation** on how to update assumptions from IRS publications
-- **Default assumptions** clearly labeled with year and source
+- **Free updates** for major tax law changes (like when TCJA expires in 2026)
+- **Simple self-service updates** for annual COLA adjustments (seriously, 2 minutes)
+- **Clear documentation** on updating assumptions from IRS publications
+- **Transparent defaults** - we'll tell you what year and source we're using
 
 ### The Bottom Line
 
 **Subscription services offer automatic updates. We offer control.**
 
-For retirement planning, having the ability to model scenarios with different tax assumptions is often more valuable than having perfectly current rates. Plus, you're not paying annually for updates you may not even need.
+For retirement planning, being able to model different tax scenarios is more valuable than having auto-updated rates. Want to see your plan under current law vs. post-TCJA? Different state tax scenarios? Proposed tax changes? You can model all of it. And you're not paying annually for updates you control yourself.
 
-**Important:** FB Retirement Planner is a planning tool, not a source of tax, legal, or financial advice. Always consult qualified professionals before making major financial decisions.
+**Important:** Fatboy Financial Planner is a planning tool, not a source of tax, legal, or financial advice. Always consult qualified professionals before making major financial decisions.
 
-## Who Is FB Retirement Planner For?
+## Who Is This For?
 
-### Perfect for you if:
-- You prefer **one-time purchases** over subscriptions
-- You're comfortable managing your own investments
-- You want **advisor-level tools** without advisor fees
-- You like to **experiment with scenarios** and see the impact
-- You value **privacy** and local data control
+### This is for you if:
+- You'd rather **pay once** than pay every year
+- You're comfortable managing your own money
+- You want **real planning tools** without paying advisor fees
+- You like playing with scenarios to see what happens
+- You prefer your financial data on **your computer, not ours**
 
-### Maybe not the best fit if:
-- You prefer automatic account syncing (we use manual/CSV import)
-- You want comprehensive estate planning (not our focus)
-- You need hand-holding or financial advice (we're a planning tool, not an advisor)
+### Probably not for you if:
+- You want automatic account syncing (we're manual/CSV import only)
+- You need comprehensive estate planning (that's not us)
+- You want financial advice (we're software, not advisors)
 
-## Try It Risk-Free
+## Try It
 
-We're confident FB Retirement Planner will save you money while giving you the tools you need. Join the waitlist and be among the first to experience advisor-level planning without the ongoing costs.
+We think you'll like Fatboy Financial Planner. It'll save you money and give you the tools you actually need. Join the waitlist and be among the first to try it.
 
 [Join the Waitlist](mailto:fatboy501@gmail.com?subject=Join%20the%20waitlist%20for%20Fatboy%20Software)
 

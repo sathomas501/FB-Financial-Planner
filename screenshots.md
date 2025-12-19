@@ -1,13 +1,13 @@
 ---
 layout: default
-title: FB Retirement Planner Screenshots - Features & Interface
-description: Explore FB Retirement Planner features through screenshots. See the planning wizard, cash flow visualization, Roth conversion tools, goal solver, and portfolio analysis.
+title: Fatboy Financial Planner Screenshots - Features & Interface
+description: Explore Fatboy Financial Planner features through screenshots. See the planning wizard, cash flow visualization, Roth conversion tools, goal solver, and portfolio analysis.
 keywords: retirement planner screenshots, retirement planning software demo, Roth conversion tool, cash flow visualization, retirement calculator interface
 ---
 
-# FB Retirement Planner Screenshots
+# Fatboy Financial Planner Screenshots
 
-Explore the features and capabilities of FB Retirement Planner through these screenshots.
+Explore the features and capabilities of Fatboy Financial Planner through these screenshots.
 
 ## Getting Started
 
