@@ -68,7 +68,7 @@ Full Pro features. No subscriptions. Pay once, own it permanently. Regular price
 - ✅ Advanced tax optimization
 - ✅ All future updates included
 
-[Join the Founding Member Waitlist](mailto:fatboy501@gmail.com?subject=Founding%20Member%20-%20Fatboy%20Financial%20Planner) | [See Full Pricing Details](/pricing)
+[Buy Now – Founding Member ($149)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00) | [See Full Pricing Details](/pricing)
 
 ---
 
@@ -94,4 +94,4 @@ _Comprehensive dashboard view of your retirement plan with interactive charts an
 
 [View All Screenshots](/screenshots) to explore the full feature set including portfolio analysis, cash flow visualization, goal planning, and more.
 
-[Join Founding Member Waitlist ($149)](mailto:fatboy501@gmail.com?subject=Founding%20Member%20-%20Fatboy%20Financial%20Planner) | [Download Free Version](mailto:fatboy501@gmail.com?subject=Download%20Fatboy%20Financial%20Planner%20Free) | [See Pricing Details](/pricing)
+[Buy Now – Founding Member ($149)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00) | [Download Free Version](mailto:fatboy501@gmail.com?subject=Download%20Fatboy%20Financial%20Planner%20Free) | [See Pricing Details](/pricing)
