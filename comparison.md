@@ -14,7 +14,7 @@ We built Fatboy Financial Planner for people who want serious planning tools wit
 | Software | Pricing Model | Cost |
 |----------|--------------|------|
 | **Fatboy Financial Planner Free** | **Forever free** | **$0** |
-| **Fatboy Financial Planner Pro** | **One-time upgrade** | **$XXX** |
+| **Fatboy Financial Planner Pro** | **One-time upgrade** | **$TBA** |
 | Boldin (NewRetirement) | Annual subscription | $120-$240/year |
 | MaxiFi Planner | Annual subscription | $99-$199/year |
 | Pralana Gold | One-time purchase | $295 |
@@ -22,7 +22,7 @@ We built Fatboy Financial Planner for people who want serious planning tools wit
 ### Why This Pricing Model Matters
 
 - **Actually free to start** - Not a 30-day trial. Use the free version forever if it meets your needs.
-- **One-time upgrade** - Need more? $XXX once. No recurring fees.
+- **One-time upgrade** - Need more? $TBA once for the Pro version. No recurring fees.
 - **No pressure** - Free version isn't crippled. It's legitimately useful.
 - **Your plan, your data** - Whether you're free or pro, your data stays yours.
 
@@ -125,9 +125,7 @@ For retirement planning, being able to model different tax scenarios is more val
 
 ## Try It
 
-We think you'll like Fatboy Financial Planner. It'll save you money and give you the tools you actually need. Join the waitlist and be among the first to try it.
-
-[Join the Waitlist](mailto:fatboy501@gmail.com?subject=Join%20the%20waitlist%20for%20Fatboy%20Software)
+We think you'll like Fatboy Financial Planner. It'll save you money and give you the tools you actually need. 
 
 ---
 

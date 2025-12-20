@@ -131,12 +131,14 @@ Most people can do their entire retirement plan with 3 scenarios. If you find yo
 
 **Stay with Free if:**
 - You're planning a straightforward retirement
+- A 15 year planning horizon is sufficient
 - 3 scenarios is enough (baseline, optimistic, conservative)
 - You don't need advanced Roth conversion optimization
 - You're comfortable with basic tax planning tools
 
 **Upgrade to Pro if:**
 - You want to model many different strategies
+- You want up to a 100 year planning horizon
 - You're doing sophisticated Roth conversion planning
 - You want advanced tax optimization features
 - You love data visualization (Sankey diagrams)
@@ -156,7 +158,7 @@ No risk. No credit card. Download and start planning today.
 
 Lock in $149 pricing forever. Be part of shaping the product.
 
-[Join the Founding Member Waitlist](mailto:fatboy501@gmail.com?subject=Founding%20Member%20-%20Fatboy%20Financial%20Planner)
+
 
 ---
 
