@@ -33,6 +33,18 @@ _Interactive goal planning tool to help you work backwards from your retirement 
 ![Sankey Cash Flow](/assets/images/sankey_cashflow.png)
 _Sankey diagram showing the flow of money through your retirement years - income sources, taxes, and spending._
 
+### Monte Carlo Dashboard
+![Monte Carlo Dashboard](/assets/images/MC_dashboard.png)
+_Probabilistic simulation dashboard that shows the likelihood of plan success and the range of possible outcomes._
+
+### Assets Over Time
+![Assets Over Time](/assets/images/assets_over_time.png)
+_Long-term view of how your portfolio balances grow, peak, and draw down across your retirement timeline._
+
+### Projection Center
+![Projection Center](/assets/images/projection_center.png)
+_Central hub for adjusting key assumptions and instantly seeing how projections change across the plan._
+
 ## Account & Debt Management
 
 ### Assets and Accounts

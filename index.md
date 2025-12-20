@@ -7,6 +7,8 @@ keywords: retirement planning software, one-time purchase, no subscription, Roth
 
 ## Fatboy Software
 
+![Fatboy Software Logo](/assets/images/Fatboy%20Software%20Logo.png)
+
 **No stock photos of beaches. No grassy fields. Just serious retirement planning software.**
 
 We're building planning tools for people who want to figure out their retirement without hiring a financial advisor or getting sold an annuity.
@@ -92,6 +94,15 @@ Not ready to commit? Start with our fully functional free version.
 ![Plan Summary Dashboard](/assets/images/plan_summary.png)
 _Comprehensive dashboard view of your retirement plan with interactive charts and projections._
 
+![Monte Carlo Dashboard](/assets/images/MC_dashboard.png)
+_Monte Carlo simulation dashboard showing probability of success and the range of potential outcomes._
+
+![Assets Over Time](/assets/images/assets_over_time.png)
+_Long-term view of how your assets grow and deplete over time under different planning scenarios._
+
+![Projection Center](/assets/images/projection_center.png)
+_Central hub for adjusting key assumptions and instantly seeing the impact on your retirement projections._
+
 [View All Screenshots](/screenshots) to explore the full feature set including portfolio analysis, cash flow visualization, goal planning, and more.
 
-[Buy Now – Founding Member ($149)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00) | [Download Free Version](mailto:fatboy501@gmail.com?subject=Download%20Fatboy%20Financial%20Planner%20Free) | [See Pricing Details](/pricing)
+[Buy Now - Founding Member ($149)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00) | [Download Free Version](mailto:fatboy501@gmail.com?subject=Download%20Fatboy%20Financial%20Planner%20Free) | [See Pricing Details](/pricing)
