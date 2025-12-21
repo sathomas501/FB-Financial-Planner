@@ -85,7 +85,7 @@ Not ready to commit? Start with our fully functional free version.
 - **3 retirement scenarios**
 - Your data, your computer, forever
 
-[Download Free Version](mailto:fatboy501@gmail.com?subject=Download%20Fatboy%20Financial%20Planner%20Free)
+[Download Free Version](https://github.com/sathomas501/FB-Financial-Planner/releases/download/v3.3/Fatboy.Financial.Planner.-.Basic.v3.3_Setup_NSIS.exe)
 
 **Not sure which you need?** Start free. If you outgrow it, upgrade to Pro later and lock in Founding Member pricing while spots remain.
 
