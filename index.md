@@ -5,7 +5,6 @@ description: Free retirement planning software with optional Pro upgrade. Start 
 keywords: retirement planning software, one-time purchase, no subscription, Roth conversion, tax optimization, retirement calculator
 ---
 
-## Fatboy Software
 
 ![Fatboy Software Logo](/assets/images/Fatboy%20Software%20Logo.png)
 

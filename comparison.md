@@ -5,6 +5,8 @@ description: Compare Fatboy Financial Planner to Boldin, MaxiFi, WealthTrace, an
 keywords: retirement software comparison, Boldin vs MaxiFi, retirement planner reviews, one-time purchase vs subscription, best retirement planning software
 ---
 
+<img src="/assets/images/Fatboy%20Software%20Logo.png" alt="Fatboy Software Logo" width="160" />
+
 # How Fatboy Financial Planner Compares
 
 We built Fatboy Financial Planner for people who want serious planning tools without paying every year for the privilege. Here's how we stack up.

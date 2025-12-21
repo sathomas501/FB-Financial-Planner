@@ -5,6 +5,8 @@ description: Explore Fatboy Financial Planner features through screenshots. See 
 keywords: retirement planner screenshots, retirement planning software demo, Roth conversion tool, cash flow visualization, retirement calculator interface
 ---
 
+<img src="/assets/images/Fatboy%20Software%20Logo.png" alt="Fatboy Software Logo" width="160" />
+
 # Fatboy Financial Planner Screenshots
 
 Explore the features and capabilities of Fatboy Financial Planner through these screenshots.

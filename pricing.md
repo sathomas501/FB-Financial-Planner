@@ -5,6 +5,8 @@ description: Free retirement planning software with optional Pro upgrade. Foundi
 keywords: retirement planning software pricing, one-time purchase, no subscription, founding member offer
 ---
 
+<img src="/assets/images/Fatboy%20Software%20Logo.png" alt="Fatboy Software Logo" width="160" />
+
 # Pricing
 
 ## Free Version - Forever
