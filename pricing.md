@@ -15,11 +15,10 @@ Start planning your retirement today. No credit card. No trial period. No catch.
 
 ### What You Get
 - **Core retirement planning** - All the basics you need
-- **Cash flow projections** - See your money over time
-- **Tax estimates** - Federal and state tax calculations
-- **Portfolio tracking** - Multi-account support with allocation tracking
+- **Cash flow projections and tax estimates** - See your money over time and estimate federal and state taxes
+- **Portfolio tracking and allocation** - Multi-account support with allocation tracking
 - **Editable tax parameters** - Model future tax law changes (TCJA expiration, state tax scenarios)
-- **3 retirement scenarios** - Compare different strategies
+- **3 retirement scenarios** - Compare different strategies and lifestyle choices
 - **Social Security planning** - Optimize your claiming strategy
 - **Your data, your computer** - Desktop app, no cloud required
 
@@ -38,7 +37,7 @@ Be a Founding Member. Lock in this price forever.
 #### Everything in Free, Plus:
 
 **Advanced Planning Tools:**
-- **Unlimited scenarios** - Test as many retirement strategies as you want
+- **Unlimited scenarios** - Test as many retirement and lifestyle strategies as you want
 - **Advanced Roth conversion optimizer** - Find the optimal conversion schedule
 - **Monte Carlo Analysis** - Variable # of iterations using selectable risk profiles
 - **Interactive goal solver** - Work backwards from your retirement goals
@@ -160,7 +159,7 @@ No risk. No credit card. Download and start planning today.
 
 Lock in $149 pricing forever. Be part of shaping the product.
 
-
+[Buy Now - Founding Member ($149)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00)
 
 ---
 

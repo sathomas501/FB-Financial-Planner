@@ -56,41 +56,6 @@ Lifestyle scenario comparisons let you set up different versions of your plan (l
 ### The Privacy Thing
 Everything runs on your computer. No cloud. No "syncing to our servers for your convenience." No data harvesting. Your financial data is yours, not ours. 
 
-## Pricing
-
-## Founding Member Offer - $149 One-Time
-
-**First 200 users only.** Lock in this price forever.
-
-Full Pro features. No subscriptions. Pay once, own it permanently. Regular price will be higher.
-
--  Unlimited scenarios
--  Advanced Roth conversion optimizer
--  Interactive goal solver
--  Sankey cash flow diagrams
-- **Editable tax parameters** - federal and state
--  Advanced tax optimization
--  All future updates included
-
-[Buy Now – Founding Member ($149)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00) | [See Full Pricing Details](/pricing)
-
----
-
-### Free Version - Forever
-
-Not ready to commit? Start with our fully functional free version.
-
-- Core retirement planning features
-- Cash flow projections and tax estimates
-- Portfolio tracking and allocation
-
-- **3 retirement scenarios**
-- Your data, your computer, forever
-
-[Download Free Version](https://github.com/sathomas501/FB-Financial-Planner/releases/download/v3.3/Fatboy.Financial.Planner.-.Basic.v3.3_Setup_NSIS.exe)
-
-**Not sure which you need?** Start free. If you outgrow it, upgrade to Pro later and lock in Founding Member pricing while spots remain.
-
 ## See It In Action
 
 ![Plan Summary Dashboard](/assets/images/plan_summary.png)
