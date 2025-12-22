@@ -15,9 +15,9 @@ Start planning your retirement today. No credit card. No trial period. No catch.
 
 ### What You Get
 - **Core retirement planning** - All the basics you need
-- **Cash flow projections and tax estimates** - See your money over time and estimate federal and state taxes
+- **15 year planning period** 
 - **Portfolio tracking and allocation** - Multi-account support with allocation tracking
-- **Editable tax parameters** - Model future tax law changes (TCJA expiration, state tax scenarios)
+- **Cash flow projections and tax estimates** - See your money over time and estimate federal and state taxes
 - **3 retirement scenarios** - Compare different strategies and lifestyle choices
 - **Social Security planning** - Optimize your claiming strategy
 - **Your data, your computer** - Desktop app, no cloud required
@@ -37,19 +37,21 @@ Be a Founding Member. Lock in this price forever.
 #### Everything in Free, Plus:
 
 **Advanced Planning Tools:**
+- **Adjustable planning period** User selectable planning period - up to 100 years
 - **Unlimited scenarios** - Test as many retirement and lifestyle strategies as you want
 - **Advanced Roth conversion optimizer** - Find the optimal conversion schedule
 - **Monte Carlo Analysis** - Variable # of iterations using selectable risk profiles
 - **Interactive goal solver** - Work backwards from your retirement goals
 - **Sankey cash flow diagrams** - Visual representation of where every dollar goes
+- **Editable tax parameters** - Model future tax law changes (TCJA expiration, state tax scenarios)
 - **Advanced tax optimization** - Sophisticated strategies for minimizing lifetime taxes
 
 **Founding Member Benefits:**
-- ✅ **$149 locked in forever** - Pay once, own it permanently
-- ✅ **Free major updates** - Get all future features and improvements
-- ✅ **Priority support** - Direct feedback channel during beta
-- ✅ **Founding Member badge** - Recognition as an early supporter
-- ✅ **Influence the roadmap** - Help shape future features
+- **$149 locked in forever** - Pay once, own it permanently
+- **Free major updates** - Get all future features and improvements
+- **Priority support** - Direct feedback channel during beta
+- **Founding Member badge** - Recognition as an early supporter
+- **Influence the roadmap** - Help shape future features
 
 **Regular price will be higher.** Join now to lock in Founding Member pricing.
 
