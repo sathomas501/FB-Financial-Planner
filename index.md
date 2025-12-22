@@ -21,7 +21,9 @@ You know those "advisor-level" features other software brags about? We actually 
 Start with the free version - it's actually useful, not a bait-and-switch trial. Need advanced features or unlimited scenarios? One-time $TBA Pro version upgrade. No subscriptions. No annual "updates" that are just bug fixes with a new price tag.
 
 ### "What if I..." actually works here
-Want to see what happens if you retire at 62 instead of 65? Live large rather than lean. Convert $50k to Roth? Pay off your mortgage early? **Model what happens when TCJA expires in 2026?** Edit tax parameters yourself - federal and state. Every change flows through to cash flow, taxes, and actual outcomes you can understand.
+Want to see what happens if you retire at 62 instead of 65? Compare a lean, work-longer lifestyle to a "live large" spend-more-now lifestyle. Convert $50k to Roth? Pay off your mortgage early? **Model what happens when TCJA expires in 2026?** Edit tax parameters yourself - federal and state. Every change flows through to cash flow, taxes, and actual outcomes you can understand.
+
+Lifestyle scenario comparisons let you set up different versions of your plan (lean, baseline, live large, semi-retired, etc.) and see the tradeoffs in spending, taxes, and long-term outcomes side by side.
 
 **[See how we compare](/comparison)** to the other guys (spoiler: we're cheaper and you actually own it).
 
@@ -31,7 +33,7 @@ Want to see what happens if you retire at 62 instead of 65? Live large rather th
    Your age, accounts, debts, spending, and the assumptions you're making (inflation, returns, salary growth, COLA).
 
 2. **Build and compare scenarios**
-   Different retirement ages. Roth conversion strategies. Withdrawal orders. Big life events. Aspirational lifestyle changes. **Different tax law scenarios.** See what actually happens.
+   Different retirement ages. Roth conversion strategies. Withdrawal orders. Big life events. Lifestyle-driven scenarios (lean vs baseline vs live large). **Different tax law scenarios.** See what actually happens as you dial your lifestyle up or down and compare it across plans.
 
 3. **Explore until it clicks**
    Interactive charts and comparison dashboards. Edit tax parameters to model future law changes or state tax scenarios. No babbling brooks or sunset imagery - just data you can actually use to make decisions.
@@ -66,6 +68,7 @@ Full Pro features. No subscriptions. Pay once, own it permanently. Regular price
 -  Advanced Roth conversion optimizer
 -  Interactive goal solver
 -  Sankey cash flow diagrams
+- **Editable tax parameters** - federal and state
 -  Advanced tax optimization
 -  All future updates included
 
@@ -80,7 +83,7 @@ Not ready to commit? Start with our fully functional free version.
 - Core retirement planning features
 - Cash flow projections and tax estimates
 - Portfolio tracking and allocation
-- **Editable tax parameters** - federal and state
+
 - **3 retirement scenarios**
 - Your data, your computer, forever
 
