@@ -30,3 +30,8 @@ plugins:
 
 # Theme
 theme: jekyll-theme-slate
+
+# Google Analytics
+# Replace with your GA4 Measurement ID (format: G-XXXXXXXXXX)
+# Get this from: https://analytics.google.com/
+google_analytics: G-XXXXXXXXXX
