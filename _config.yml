@@ -9,16 +9,68 @@ lang: en_US
 
 # Keywords for search engines
 keywords:
+  # Core product keywords
   - retirement planning software
   - retirement calculator
   - financial planning tool
+  - retirement planner desktop software
+  - Windows retirement software
+  - Linux retirement planner
+
+  # Pricing & business model
   - one-time purchase software
   - no subscription retirement planner
+  - lifetime license financial software
+  - free retirement planning software
+  - retirement software no annual fee
+
+  # Key features
   - Roth conversion planning
+  - Roth conversion optimizer
   - tax optimization retirement
   - retirement cash flow analysis
-  - Monte Carlo retirement
+  - Monte Carlo retirement simulation
+  - scenario planning retirement
+  - retirement goal planning software
+  - Social Security optimization
+  - withdrawal strategy planning
+  - RMD calculator
+  - IRMAA calculator
+
+  # Target audience & use cases
   - financial independence calculator
+  - FIRE planning software
+  - DIY retirement planning
+  - self-directed retirement planning
+  - retirement planning without advisor
+
+  # Privacy & data security
+  - private retirement planner
+  - offline retirement software
+  - local data financial planning
+  - desktop retirement calculator
+
+  # Tax-related features
+  - editable tax parameters
+  - TCJA retirement planning
+  - state tax retirement planning
+  - tax bracket planning
+  - tax-efficient withdrawal strategy
+
+  # Competitor & comparison terms
+  - Boldin alternative
+  - MaxiFi alternative
+  - NewRetirement alternative
+  - Pralana alternative
+  - WealthTrace alternative
+  - retirement software comparison
+  - best retirement planning software
+
+  # Advanced features
+  - Sankey diagram retirement
+  - retirement cash flow visualization
+  - portfolio allocation planning
+  - debt payoff retirement planning
 
 # Social/SEO
 twitter:

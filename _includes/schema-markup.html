@@ -1,0 +1,62 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Fatboy Financial Planner",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Windows 10, Windows 11, Linux",
+  "softwareVersion": "3.3",
+  "description": "Free retirement planning software with optional Pro upgrade. No subscriptions. Desktop application with advanced features like Roth conversion optimization, Monte Carlo analysis, and tax planning.",
+  "url": "{{ site.url }}",
+  "screenshot": "{{ site.url }}/assets/images/optimized/plan_summary-800w.png",
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "name": "Free Version",
+      "description": "Core retirement planning with 3 scenarios, 15-year planning period, portfolio tracking, cash flow projections, and Social Security planning",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "price": "149",
+      "priceCurrency": "USD",
+      "name": "Pro Version - Founding Member",
+      "description": "Lifetime license with unlimited scenarios, advanced Roth optimizer, Monte Carlo analysis, goal solver, Sankey diagrams, and editable tax parameters",
+      "availability": "https://schema.org/LimitedAvailability",
+      "eligibleQuantity": {
+        "@type": "QuantitativeValue",
+        "value": "200",
+        "unitText": "founding members"
+      }
+    }
+  ],
+  "featureList": [
+    "Roth conversion optimizer",
+    "Monte Carlo simulation analysis",
+    "Tax optimization and planning",
+    "Multiple scenario planning and comparison",
+    "Cash flow projections and visualization",
+    "Social Security optimization",
+    "Editable tax parameters for future law modeling",
+    "Sankey cash flow diagrams",
+    "Interactive goal solver",
+    "Portfolio allocation tracking",
+    "RMD and IRMAA calculations",
+    "Withdrawal strategy planning",
+    "Desktop application - data stays local",
+    "No cloud storage or data harvesting"
+  ],
+  "creator": {
+    "@type": "Organization",
+    "name": "Fatboy Software",
+    "url": "{{ site.url }}"
+  },
+  "downloadUrl": "https://github.com/sathomas501/FB-Financial-Planner/releases/download/v3.3/Fatboy.Financial.Planner.-.Basic.v3.3_Setup_NSIS.exe",
+  "installUrl": "https://github.com/sathomas501/FB-Financial-Planner/releases/download/v3.3/Fatboy.Financial.Planner.-.Basic.v3.3_Setup_NSIS.exe",
+  "softwareRequirements": "Windows 10/11 or Linux; 2GB RAM minimum (4GB recommended); 100MB disk space",
+  "memoryRequirements": "2GB minimum, 4GB recommended",
+  "storageRequirements": "100MB"
+}
+</script>
