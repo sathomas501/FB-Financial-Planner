@@ -122,4 +122,4 @@ Everything runs on your computer. No cloud. No "syncing to our servers for your 
 
 [View All Screenshots](/screenshots) to explore the full feature set including portfolio analysis, cash flow visualization, goal planning, and more.
 
-[Buy Now - Founding Member ($149)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00) | [Download Free Version](https://github.com/sathomas501/FB-Financial-Planner/releases/download/v3.3/Fatboy.Financial.Planner.-.Basic.v3.3_Setup_NSIS.exe) | [See Pricing Details](/pricing)
+[Buy Now - Founding Member ($149)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00) | [Download Free Version](https://github.com/sathomas501/FB-Financial-Planner/releases/download/v3.0/Fatboy.Financial.Planner.-.Basic.v3.0_Setup_NSIS.exe) | [See Pricing Details](/pricing)
