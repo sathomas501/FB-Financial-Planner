@@ -27,6 +27,7 @@ Fatboy Financial Planner was built by people who were frustrated with expensive 
       <source srcset="/assets/images/optimized/Fatboy.webp" type="image/webp">
       <img src="/assets/images/optimized/Fatboy.png"
            alt="Fatboy Financial Planner Team"
+           title="Fatboy"
            loading="lazy"
            style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     </picture>
@@ -36,6 +37,7 @@ Fatboy Financial Planner was built by people who were frustrated with expensive 
       <source srcset="/assets/images/optimized/Bigboy.webp" type="image/webp">
       <img src="/assets/images/optimized/Bigboy.png"
            alt="Fatboy Software Development"
+           title="Bigboy"
            loading="lazy"
            style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     </picture>
