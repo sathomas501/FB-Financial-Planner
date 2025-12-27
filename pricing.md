@@ -47,6 +47,8 @@ Be a Founding Member. Lock in this price forever.
 - **Unlimited scenarios** - Test as many retirement and lifestyle strategies as you want
 - **Advanced Roth conversion optimizer** - Find the optimal conversion schedule
 - **Monte Carlo Analysis** - Variable # of iterations using selectable risk profiles
+- **Breakpoint & Stress Test Analysis** - Find exact thresholds where your plan fails. Discover minimum required returns, maximum sustainable spending, and which assumptions matter most. Interactive charts with color-coded risk zones
+- **Sensitivity Analysis** - Tornado charts showing which parameters have the biggest impact on success. Focus your planning on what actually matters
 - **Interactive goal solver** - Work backwards from your retirement goals
 - **Sankey cash flow diagrams** - Visual representation of where every dollar goes
 - **Editable tax parameters** - Model future tax law changes (TCJA expiration, state tax scenarios)
@@ -175,4 +177,4 @@ Lock in $149 pricing forever. Be part of shaping the product.
 
 ---
 
-[Back to Home](/) | [See Screenshots](/screenshots) | [Compare to Other Software](/comparison)
+[Back to Home](/) | [See Screenshots](/screenshots) | [Compare to Other Software](/comparison) | [About & Contact](/about)

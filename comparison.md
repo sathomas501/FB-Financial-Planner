@@ -149,4 +149,4 @@ We think you'll like Fatboy Financial Planner. It'll save you money and give you
 
 ---
 
-[Back to Home](/) | [View Screenshots](/screenshots)
+[Back to Home](/) | [View Screenshots](/screenshots) | [View Pricing](/pricing) | [About & Contact](/about)

@@ -207,4 +207,53 @@ Explore the features and capabilities of Fatboy Financial Planner through these 
 
 ---
 
-[Back to Home](/) 
+## Advanced Analysis Tools (Pro)
+
+### Stress Test Analysis
+<picture>
+  <source srcset="/assets/images/optimized/stress_test-400w.webp 400w, /assets/images/optimized/stress_test-800w.webp 800w, /assets/images/optimized/stress_test-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/stress_test-400w.png 400w, /assets/images/optimized/stress_test-800w.png 800w, /assets/images/optimized/stress_test-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
+  <img src="/assets/images/optimized/stress_test-800w.png"
+       alt="Stress Test Analysis showing breakpoint detection"
+       loading="lazy"
+       style="max-width: 100%; height: auto;">
+</picture>
+<em>Find the exact breakpoint where your plan fails. Test how low returns can go while still maintaining a successful retirement. Color-coded zones show safe (green), moderate (yellow), and risky (red) ranges.</em>
+
+### Sensitivity Analysis
+<picture>
+  <source srcset="/assets/images/optimized/sensitivity_analysis-400w.webp 400w, /assets/images/optimized/sensitivity_analysis-800w.webp 800w, /assets/images/optimized/sensitivity_analysis-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/sensitivity_analysis-400w.png 400w, /assets/images/optimized/sensitivity_analysis-800w.png 800w, /assets/images/optimized/sensitivity_analysis-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
+  <img src="/assets/images/optimized/sensitivity_analysis-800w.png"
+       alt="Sensitivity Analysis tornado chart"
+       loading="lazy"
+       style="max-width: 100%; height: auto;">
+</picture>
+<em>Tornado chart showing which parameters matter most to your plan's success. Prioritize your planning efforts on the factors that have the biggest impact.</em>
+
+### Comprehensive Stress Test
+<picture>
+  <source srcset="/assets/images/optimized/comprehensive_stress_test-400w.webp 400w, /assets/images/optimized/comprehensive_stress_test-800w.webp 800w, /assets/images/optimized/comprehensive_stress_test-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/comprehensive_stress_test-400w.png 400w, /assets/images/optimized/comprehensive_stress_test-800w.png 800w, /assets/images/optimized/comprehensive_stress_test-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
+  <img src="/assets/images/optimized/comprehensive_stress_test-800w.png"
+       alt="Comprehensive stress test comparing all parameters"
+       loading="lazy"
+       style="max-width: 100%; height: auto;">
+</picture>
+<em>Compare how all key parameters affect your retirement plan side-by-side. Identify which assumptions need the most conservative planning and where you have flexibility.</em>
+
+---
+
+[Back to Home](/) | [View Pricing](/pricing) | [Compare Software](/comparison) | [About & Contact](/about) 

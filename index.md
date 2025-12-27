@@ -31,6 +31,9 @@ Want to see what happens if you retire at 62 instead of 65? Compare a lean, work
 
 Lifestyle scenario comparisons let you set up different versions of your plan (lean, baseline, live large, semi-retired, etc.) and see the tradeoffs in spending, taxes, and long-term outcomes side by side.
 
+### Find your plan's breaking points (Pro)
+Stop guessing about safety margins. **Breakpoint analysis** finds the exact threshold where your plan fails. How low can returns go? How much can you safely spend? Which assumptions actually matter? Interactive stress tests with color-coded risk zones show you exactly where you stand. Sensitivity analysis tells you what to worry about and what to ignore.
+
 **[See how we compare](/comparison)** to the other guys (spoiler: we're cheaper and you actually own it).
 
 ## How It Works
@@ -122,4 +125,4 @@ Everything runs on your computer. No cloud. No "syncing to our servers for your 
 
 [View All Screenshots](/screenshots) to explore the full feature set including portfolio analysis, cash flow visualization, goal planning, and more.
 
-[Buy Now - Founding Member ($149)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00) | <a href="https://github.com/sathomas501/FB-Financial-Planner/releases/download/v3.3/Fatboy.Financial.Planner.-.Basic.v3.3_Setup_NSIS.exe" onclick="gtag('event', 'download_free_version', {'event_category': 'engagement', 'event_label': 'Free Version v3.3', 'value': 0});">Download Free Version</a> | [See Pricing Details](/pricing)
+[Buy Now - Founding Member ($149)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00) | <a href="https://github.com/sathomas501/FB-Financial-Planner/releases/download/v3.3/Fatboy.Financial.Planner.-.Basic.v3.3_Setup_NSIS.exe" onclick="gtag('event', 'download_free_version', {'event_category': 'engagement', 'event_label': 'Free Version v3.3', 'value': 0});">Download Free Version</a> | [See Pricing Details](/pricing) | [About & Contact](/about)
