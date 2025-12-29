@@ -136,7 +136,7 @@ submitBtn.addEventListener('mouseleave', function() {
 **Email:** [fatboy501@gmail.com](mailto:fatboy501@gmail.com)
 
 **Download Links:**
-- [Free Version](mailto:fatboy501@gmail.com?subject=Download%20Fatboy%20Financial%20Planner%20Free)
+- <a href="#" class="auto-download-installer" data-version="">Free Version</a>
 - [Pro Version - Founding Member](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00)
 
 ### Response Time

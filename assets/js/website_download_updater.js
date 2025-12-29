@@ -30,13 +30,31 @@
     }
 
     /**
-     * Update all elements with a specific class name
+     * Update all elements with a specific class name (for text content)
      */
     function updateElementsByClass(className, text) {
         const elements = document.getElementsByClassName(className);
         Array.from(elements).forEach(element => {
             element.textContent = text;
         });
+    }
+
+    /**
+     * Update all link elements with a specific class name (for href and data-version)
+     */
+    function updateLinksByClass(className, url, version) {
+        const elements = document.getElementsByClassName(className);
+        let count = 0;
+        Array.from(elements).forEach(element => {
+            if (element.tagName === 'A') {
+                element.href = url;
+                element.setAttribute('data-version', version);
+                count++;
+            }
+        });
+        if (count > 0) {
+            console.log(`Updated ${count} links with class "${className}": ${url}`);
+        }
     }
 
     /**
@@ -76,10 +94,13 @@
             const installerAsset = findAsset(assets, installerPattern);
             const portableAsset = findAsset(assets, portablePattern);
 
-            // Update installer download links
+            // Update installer download links (by ID)
             if (installerAsset) {
                 updateLink('download-free-version', installerAsset.browser_download_url, version);
                 updateLink('download-installer', installerAsset.browser_download_url, version);
+
+                // Also update all links with class "auto-download-installer"
+                updateLinksByClass('auto-download-installer', installerAsset.browser_download_url, version);
             } else {
                 console.warn('No installer asset found');
             }
@@ -87,6 +108,9 @@
             // Update portable download link
             if (portableAsset) {
                 updateLink('download-portable', portableAsset.browser_download_url, version);
+
+                // Also update all links with class "auto-download-portable"
+                updateLinksByClass('auto-download-portable', portableAsset.browser_download_url, version);
             } else {
                 console.warn('No portable asset found');
             }

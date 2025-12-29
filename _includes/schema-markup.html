@@ -1,4 +1,4 @@
-<script type="application/ld+json">
+<script type="application/ld+json" id="schema-markup-data">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -53,10 +53,53 @@
     "name": "Fatboy Software",
     "url": "{{ site.url }}"
   },
-  "downloadUrl": "https://github.com/sathomas501/FB-Financial-Planner/releases/download/v3.3/Fatboy.Financial.Planner.-.Basic.v3.3_Setup_NSIS.exe",
-  "installUrl": "https://github.com/sathomas501/FB-Financial-Planner/releases/download/v3.3/Fatboy.Financial.Planner.-.Basic.v3.3_Setup_NSIS.exe",
+  "downloadUrl": "https://github.com/sathomas501/FB-Financial-Planner/releases/latest",
+  "installUrl": "https://github.com/sathomas501/FB-Financial-Planner/releases/latest",
   "softwareRequirements": "Windows 10/11 or Linux; 2GB RAM minimum (4GB recommended); 100MB disk space",
   "memoryRequirements": "2GB minimum, 4GB recommended",
   "storageRequirements": "100MB"
 }
+</script>
+
+<script>
+// Update schema markup with latest release info dynamically
+(function() {
+  'use strict';
+
+  const GITHUB_REPO = 'sathomas501/FB-Financial-Planner';
+  const GITHUB_API_URL = `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`;
+
+  async function updateSchemaMarkup() {
+    try {
+      const response = await fetch(GITHUB_API_URL);
+      if (!response.ok) return;
+
+      const data = await response.json();
+      const version = data.tag_name;
+      const assets = data.assets;
+
+      // Find the installer asset
+      const installerPattern = /Setup.*NSIS\.exe$/i;
+      const installerAsset = assets.find(asset => installerPattern.test(asset.name));
+
+      if (!installerAsset) return;
+
+      // Update the schema markup
+      const schemaElement = document.getElementById('schema-markup-data');
+      if (schemaElement) {
+        const schemaData = JSON.parse(schemaElement.textContent);
+        schemaData.softwareVersion = version.replace('v', '');
+        schemaData.downloadUrl = installerAsset.browser_download_url;
+        schemaData.installUrl = installerAsset.browser_download_url;
+        schemaElement.textContent = JSON.stringify(schemaData, null, 2);
+        console.log('Schema markup updated with version:', version);
+      }
+    } catch (error) {
+      console.log('Schema markup using fallback values');
+    }
+  }
+
+  // Run after download updater has a chance to fetch
+  setTimeout(updateSchemaMarkup, 1000);
+})();
 </script>
