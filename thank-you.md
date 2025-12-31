@@ -100,7 +100,7 @@ Within the next **5-10 minutes**, you'll receive:
 - **License key** for activation
 - **Getting started guide**
 
-**Don't see it?** Check your spam folder or [contact us](mailto:fatboy501@gmail.com).
+**Don't see it?** Check your spam folder or [contact us](mailto:fbfinancialplanner@gmail.com).
 
 ### 2. Download & Install 💾
 
@@ -139,7 +139,7 @@ As one of our first 200 users, you get:
 ## Need Help?
 
 ### Support
-- **Email:** [fatboy501@gmail.com](mailto:fatboy501@gmail.com)
+- **Email:** [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)
 - **Response time:** Usually within 24 hours
 - **GitHub Issues:** [Report bugs](https://github.com/sathomas501/FB-Financial-Planner/issues)
 
@@ -164,7 +164,7 @@ A: No! This is a one-time payment. No subscriptions, ever.
 Stay connected and help shape the future:
 
 - **Email updates:** [Subscribe to our newsletter](#) *(coming soon)*
-- **Feature requests:** [Tell us what you need](mailto:fatboy501@gmail.com)
+- **Feature requests:** [Tell us what you need](mailto:fbfinancialplanner@gmail.com)
 - **Beta testing:** Get early access to new features
 
 ---
@@ -197,8 +197,8 @@ Stay connected and help shape the future:
 
 Your download link is waiting in your email. Let's get started!
 
-[Back to Home](/) | [See Screenshots](/screenshots) | [Contact Support](mailto:fatboy501@gmail.com)
+[Back to Home](/) | [See Screenshots](/screenshots) | [Contact Support](mailto:fbfinancialplanner@gmail.com)
 
 ---
 
-<small>**Having issues?** Contact us at [fatboy501@gmail.com](mailto:fatboy501@gmail.com) - we're here to help!</small>
+<small>**Having issues?** Contact us at [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com) - we're here to help!</small>
