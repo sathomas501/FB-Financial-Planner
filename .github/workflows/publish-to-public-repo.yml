@@ -1,0 +1,58 @@
+name: Publish Release to Public Repo
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get release info
+        id: release_info
+        run: |
+          echo "tag_name=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
+          echo "release_name=${{ github.event.release.name }}" >> $GITHUB_OUTPUT
+          echo "release_body<<EOF" >> $GITHUB_OUTPUT
+          echo "${{ github.event.release.body }}" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Download release assets
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Create directory for assets
+          mkdir -p release_assets
+
+          # Download all assets from this release
+          gh release download "${{ steps.release_info.outputs.tag_name }}" \
+            --dir release_assets
+
+          echo "Downloaded assets:"
+          ls -lh release_assets/
+
+      - name: Publish to public repository
+        env:
+          GH_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+        run: |
+          # Create release in public repo
+          gh release create "${{ steps.release_info.outputs.tag_name }}" \
+            --repo sathomas501/FB-Financial-Planner \
+            --title "${{ steps.release_info.outputs.release_name }}" \
+            --notes "${{ steps.release_info.outputs.release_body }}" \
+            release_assets/*
+
+          echo "✅ Successfully published release to public repository"
+
+      - name: Verify publication
+        env:
+          GH_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+        run: |
+          echo "Verifying release in public repo..."
+          gh release view "${{ steps.release_info.outputs.tag_name }}" \
+            --repo sathomas501/FB-Financial-Planner \
+            --json tagName,name,assets
