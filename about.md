@@ -19,7 +19,7 @@ keywords: about fatboy software, retirement planning team, contact us, customer 
 
 ## Who We Are
 
-Fatboy Financial Planner was built by people who were frustrated with expensive subscription-based retirement planning software. We believe powerful financial planning tools should be accessible without recurring fees.
+Fatboy Financial Planner is named after a favorite cat, and built by developers that were frustrated with expensive subscription-based retirement planning software. We believe powerful financial planning tools should be accessible without recurring fees. Data is data the underlying calculations will only differ slightly between sites. Fatboy Financial Planner gives you access to all of the inputs available not just the ones the will our maximize lifecycle revenue.
 
 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin: 30px 0;">
   <div style="flex: 1; min-width: 250px;">
@@ -48,12 +48,12 @@ Fatboy Financial Planner was built by people who were frustrated with expensive 
 
 We're dedicated to creating retirement planning software that:
 
-- **You Own** - One-time purchase, no subscriptions
+- **You Own** - One-time purchase, no subscriptions - one and done!
 - **Respects Your Privacy** - Your data stays on your computer
 - **Actually Works** - Built by people who use it themselves
 - **Stays Affordable** - Especially for Founding Members
 
-We're currently in beta with our first 200 Founding Members, and we're actively incorporating feedback to make the software better every day.
+We're currently rolling the app out. Our first 200 users will be our Founding Members, and we're actively incorporating feedback to make the software better every day.
 
 ---
 
