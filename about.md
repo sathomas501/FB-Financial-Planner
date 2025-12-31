@@ -112,7 +112,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   }
 
   // Create mailto link
-  const email = 'fatboy501@gmail.com';
+  const email = 'fbfinancialplanner@gmail.com';
   const mailtoSubject = encodeURIComponent('[Contact Form] ' + subject);
   const mailtoBody = encodeURIComponent(message);
   const mailtoLink = `mailto:${email}?subject=${mailtoSubject}&body=${mailtoBody}`;
@@ -133,7 +133,7 @@ submitBtn.addEventListener('mouseleave', function() {
 
 ### Other Ways to Reach Us
 
-**Email:** [fatboy501@gmail.com](mailto:fatboy501@gmail.com)
+**Email:** [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)
 
 **Download Links:**
 - <a href="#" class="auto-download-installer" data-version="">Free Version</a>
