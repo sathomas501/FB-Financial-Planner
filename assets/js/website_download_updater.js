@@ -87,8 +87,8 @@
             console.log(`Available assets:`, assets.map(a => a.name));
 
             // Define patterns for different file types
-            const installerPattern = /Setup.*NSIS\.exe$/i;
-            const portablePattern = /Portable.*\.zip$/i;
+            const installerPattern = /FatboyFinancialPlanner.*Windows.*\.zip$/i;
+            const portablePattern = /FatboyFinancialPlanner.*Windows.*\.zip$/i;
 
             // Find the assets
             const installerAsset = findAsset(assets, installerPattern);
