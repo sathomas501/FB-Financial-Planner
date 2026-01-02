@@ -52,8 +52,8 @@ Stop guessing about safety margins. **Breakpoint analysis** finds the exact thre
 **Desktop application. Your data stays on your machine. Where it belongs. Do you really need to life plan on your phone?**
 
 ### Supported Platforms
-- **Windows 10/11** - Fully tested, currently in beta
-- **Linux** - Experimental (it works, we're just making sure it really works)
+- **Windows 10/11** - Fully tested, ready to amaze you.
+- **Linux** - Available, in beta
 - **macOS** - Coming soon
 
 ### Minimum Requirements
