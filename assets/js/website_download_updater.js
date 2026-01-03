@@ -87,8 +87,8 @@
             console.log(`Available assets:`, assets.map(a => a.name));
 
             // Define patterns for different file types
-            const installerPattern = /FatboyFinancialPlanner.*(Setup|INSTALLER)\.exe$/i;
-            const portablePattern = /FatboyFinancialPlanner.*Portable\.zip$/i;
+            const installerPattern = /FatboyFinancialPlanner.*-(Setup|INSTALLER)\.exe$/i;
+            const portablePattern = /FatboyFinancialPlanner.*-Portable\.zip$/i;
             const linuxAppImagePattern = /FinancialPlanner.*\.AppImage$/i;
 
             // Find the assets
