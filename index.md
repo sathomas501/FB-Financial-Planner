@@ -68,18 +68,18 @@ Everything runs on your computer. No cloud. No "syncing to our servers for your 
 ## See It In Action
 
 <picture>
-  <source srcset="/assets/images/optimized/plan_summary-400w.webp 400w, /assets/images/optimized/plan_summary-800w.webp 800w, /assets/images/optimized/plan_summary-1200w.webp 1200w"
+  <source srcset="/assets/images/optimized/gas_guage_chart-400w.webp 400w, /assets/images/optimized/gas_guage_chart-800w.webp 800w, /assets/images/optimized/gas_guage_chart-1200w.webp 1200w"
           sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
           type="image/webp">
-  <source srcset="/assets/images/optimized/plan_summary-400w.png 400w, /assets/images/optimized/plan_summary-800w.png 800w, /assets/images/optimized/plan_summary-1200w.png 1200w"
+  <source srcset="/assets/images/optimized/gas_guage_chart-400w.png 400w, /assets/images/optimized/gas_guage_chart-800w.png 800w, /assets/images/optimized/gas_guage_chart-1200w.png 1200w"
           sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
           type="image/png">
-  <img src="/assets/images/optimized/plan_summary-800w.png"
-       alt="Plan Summary Dashboard"
+  <img src="/assets/images/optimized/gas_guage_chart-800w.png"
+       alt="Retirement plan success gauge showing probability of success"
        loading="lazy"
        style="max-width: 100%; height: auto;">
 </picture>
-<em>Comprehensive dashboard view of your retirement plan with interactive charts and projections.</em>
+<em>Retirement plan success gauge summarizing your projected probability of success, with color-coded zones that highlight risk, caution, and the target “sweet spot” range.</em>
 
 <picture>
   <source srcset="/assets/images/optimized/MC_dashboard-400w.webp 400w, /assets/images/optimized/MC_dashboard-800w.webp 800w, /assets/images/optimized/MC_dashboard-1200w.webp 1200w"

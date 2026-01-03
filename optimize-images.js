@@ -39,7 +39,8 @@ const SCREENSHOTS = [
   'assets_accounts.png',
   'debt_entry.png',
   'allocations.png',
-  'allocation_analyzer.png'
+  'allocation_analyzer.png',
+  'gas_guage_chart.png'
 ];
 
 const LOGO = 'Fatboy Software Logo.png';
