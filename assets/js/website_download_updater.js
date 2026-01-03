@@ -87,12 +87,14 @@
             console.log(`Available assets:`, assets.map(a => a.name));
 
             // Define patterns for different file types
-            const installerPattern = /FatboyFinancialPlanner.*Windows.*\.zip$/i;
-            const portablePattern = /FatboyFinancialPlanner.*Windows.*\.zip$/i;
+            const installerPattern = /FatboyFinancialPlanner.*Setup\.exe$/i;
+            const portablePattern = /FatboyFinancialPlanner.*Portable\.zip$/i;
+            const linuxAppImagePattern = /FinancialPlanner.*\.AppImage$/i;
 
             // Find the assets
             const installerAsset = findAsset(assets, installerPattern);
             const portableAsset = findAsset(assets, portablePattern);
+            const linuxAppImageAsset = findAsset(assets, linuxAppImagePattern);
 
             // Update installer download links (by ID)
             if (installerAsset) {
@@ -113,6 +115,16 @@
                 updateLinksByClass('auto-download-portable', portableAsset.browser_download_url, version);
             } else {
                 console.warn('No portable asset found');
+            }
+
+            // Update Linux AppImage download link
+            if (linuxAppImageAsset) {
+                updateLink('download-linux', linuxAppImageAsset.browser_download_url, version);
+
+                // Also update all links with class "auto-download-linux"
+                updateLinksByClass('auto-download-linux', linuxAppImageAsset.browser_download_url, version);
+            } else {
+                console.warn('No Linux AppImage asset found');
             }
 
             // Update release notes link

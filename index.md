@@ -125,4 +125,4 @@ Everything runs on your computer. No cloud. No "syncing to our servers for your 
 
 [View All Screenshots](/screenshots) to explore the full feature set including portfolio analysis, cash flow visualization, goal planning, and more.
 
-[Buy Now - Founding Member ($149)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00) | <a href="#" id="download-free-version" data-version="">Download Free Version</a> | [See Pricing Details](/pricing) | [About & Contact](/about)
+[Buy Now - Founding Member ($149)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00) | <a href="#" id="download-free-version" data-version="">Download Free Version (Windows)</a> | <a href="#" id="download-linux" data-version="">Download Free Version (Linux)</a> | [See Pricing Details](/pricing) | [About & Contact](/about)
