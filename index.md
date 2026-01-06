@@ -47,6 +47,31 @@ Stop guessing about safety margins. **Breakpoint analysis** finds the exact thre
 3. **Explore until it clicks**
    Interactive charts and comparison dashboards. Edit tax parameters to model future law changes or state tax scenarios. No babbling brooks or sunset imagery - just data you can actually use to make decisions.
 
+## Professional Plan Summary Report
+
+Turn complex retirement projections into a polished, client-ready PDF in one click. The Plan Summary Report pulls together your entire analysis into a clear, story-driven document that’s easy to share and easy to understand.
+
+<picture>
+  <source srcset="/assets/images/optimized/summary_report-400w.webp 400w, /assets/images/optimized/summary_report-800w.webp 800w, /assets/images/optimized/summary_report-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/summary_report-400w.png 400w, /assets/images/optimized/summary_report-800w.png 800w, /assets/images/optimized/summary_report-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
+  <img src="/assets/images/optimized/summary_report-800w.png"
+       alt="Preview of the Professional Plan Summary Report PDF"
+       loading="lazy"
+       style="max-width: 100%; height: auto; margin: 1.5rem 0;">
+</picture>
+
+- Executive summary with headline metrics and a visual success gauge
+- Detailed household snapshot, assumptions, income sources, and expenses
+- Assets & accounts overview plus allocation breakdown
+- Cash flow and tax projections, including Monte Carlo risk analysis
+- Sequence-of-returns explanation and plain-English risk commentary
+- Built-in disclosures and planning caveats for compliance-friendly delivery
+- Perfect for review meetings, second opinions, or leaving clients with a tangible roadmap they can revisit any time.
+
 ## System Requirements
 
 **Desktop application. Your data stays on your machine. Where it belongs. Do you really need to life plan on your phone?**
