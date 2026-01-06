@@ -28,6 +28,7 @@ const QUALITY = {
 
 // Files to process
 const SCREENSHOTS = [
+  'summary_report.png',
   'plan_summary.png',
   'MC_dashboard.png',
   'assets_over_time.png',
