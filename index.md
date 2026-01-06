@@ -47,7 +47,7 @@ Stop guessing about safety margins. **Breakpoint analysis** finds the exact thre
 3. **Explore until it clicks**
    Interactive charts and comparison dashboards. Edit tax parameters to model future law changes or state tax scenarios. No babbling brooks or sunset imagery - just data you can actually use to make decisions.
 
-## Professional Plan Summary Report
+## Professional Plan Summary Report - Pro
 
 Turn complex retirement projections into a polished, client-ready PDF in one click. The Plan Summary Report pulls together your entire analysis into a clear, story-driven document that’s easy to share and easy to understand.
 
