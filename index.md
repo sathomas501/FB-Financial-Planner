@@ -197,7 +197,15 @@ Desktop application. Everything runs locally. No cloud sync. No "storing your da
 
 <a href="#" id="download-linux" data-version="" style="display: inline-block; padding: 12px 24px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; margin-left: 10px;">Download Free Version (Linux)</a>
 
-[Buy Pro Version Now - $149](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00)
+<div style="margin: 1.5rem 0;">
+  <a id="buy-pro-version" href="https://buy.stripe.com/4gM8wI92w9i98r95sSawo00"
+     style="display:inline-flex; align-items:center; justify-content:center; padding: 14px 32px; background:#ff7a1c; color:#fff; text-decoration:none; font-weight:700; border-radius: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.25); transition: transform 0.2s ease, box-shadow 0.2s ease;">
+    Buy Pro Version Now - $149
+  </a>
+  <p style="margin: 0.75rem 0 0; font-size: 0.95rem; color: #3a3a3a; line-height: 1.4;">
+    One-time purchase unlocking unlimited scenarios, breakpoint analysis, professional PDF reports, and advanced Monte Carlo controls.
+  </p>
+</div>
 
 [Blog](/blog) | [See Pricing Details](/pricing) | [About & Contact](/about)
 
