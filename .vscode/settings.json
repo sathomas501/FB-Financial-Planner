@@ -1,3 +1,7 @@
 {
-    "markdown.validate.enabled": true
+    "markdown.validate.enabled": true,
+    "markdown.validate.fileLinks.enabled": "ignore",
+    "markdown.validate.referenceLinks.enabled": "ignore",
+    "markdown.validate.fragmentLinks.enabled": "warning",
+    "markdown.validate.unusedLinkDefinitions.enabled": "ignore"
 }

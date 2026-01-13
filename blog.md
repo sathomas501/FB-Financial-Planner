@@ -132,9 +132,11 @@ These blog posts reference modeling and analysis that requires proper retirement
 
 ## Subscribe for Updates
 
-New posts published weekly on retirement planning strategies, tax optimization, and risk management.
+New posts published periodically on retirement planning strategies, tax optimization, and risk management.
 
-*Coming soon: RSS feed and email newsletter*
+**RSS Feed:** [Subscribe via RSS]({{ site.baseurl }}/feed.xml) - Get new posts delivered to your RSS reader
+
+*Email newsletter coming soon*
 
 ---
 
