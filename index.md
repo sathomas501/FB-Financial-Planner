@@ -1,10 +1,9 @@
 ---
 layout: default
-title: Fatboy Financial Planner
-description: Free retirement planning software with optional Pro upgrade. Start free with core planning, upgrade once for advanced features. No subscriptions, ever.
-keywords: retirement planning software, one-time purchase, no subscription, Roth conversion, tax optimization, retirement calculator
+title: Fatboy Financial Planner - Professional Retirement Planning Software You Own
+description: Sophisticated retirement planning for people who don't need a financial advisor. Model Roth conversions, TCJA tax scenarios, IRMAA impacts, and complex withdrawal strategies. One-time purchase, no subscriptions.
+keywords: retirement planning software, Roth conversion calculator, TCJA 2026, IRMAA planning, tax optimization, Monte Carlo simulation, no subscription
 ---
-
 
 <picture>
   <source srcset="/assets/images/optimized/Fatboy_Software_Logo.webp" type="image/webp">
@@ -14,42 +13,69 @@ keywords: retirement planning software, one-time purchase, no subscription, Roth
        style="max-width: 150px; height: auto;">
 </picture>
 
-**No stock photos of beaches. No grassy fields. Just serious retirement planning software.**
+# Professional-Grade Retirement Planning Software
+## For People Who Don't Need a Financial Advisor
 
-We're building planning tools for people who want to figure out their retirement without hiring a financial advisor or getting sold an annuity.
+You've built a seven-figure portfolio. You understand tax brackets, sequence of returns risk, and why IRMAA matters. You don't need someone to explain dollar-cost averaging or sell you a target-date fund.
 
-## Why Fatboy Financial Planner
+**What you need:** The same modeling tools advisors use - without the 1% AUM fee or the simplified "consumer software" that treats you like you're financially illiterate.
 
-### Real planning tools, not a glorified calculator
-You know those "advisor-level" features other software brags about? We actually built them. This isn't a retirement calculator with delusions of grandeur.
+**What you get:** Desktop software that models the complex scenarios that actually matter to your retirement. Roth conversion ladders. TCJA expiration impacts. IRMAA threshold management. Withdrawal sequencing across account types. 
 
-### Free to start. One-time upgrade if you need more.
-Start with the free version - it's actually useful, not a bait-and-switch trial. Need advanced features or unlimited scenarios? One-time $TBA Pro version upgrade. No subscriptions. No annual "updates" that are just bug fixes with a new price tag.
+Your data never leaves your computer. You own the software. One price. No subscriptions.
 
-### "What if I..." actually works here
-Want to see what happens if you retire at 62 instead of 65? Compare a lean, work-longer lifestyle to a "live large" spend-more-now lifestyle. Convert $50k to Roth? Pay off your mortgage early? **Model what happens when TCJA expires in 2026?** Edit tax parameters yourself - federal and state. Every change flows through to cash flow, taxes, and actual outcomes you can understand.
+---
 
-Lifestyle scenario comparisons let you set up different versions of your plan (lean, baseline, live large, semi-retired, etc.) and see the tradeoffs in spending, taxes, and long-term outcomes side by side.
+## Why Sophisticated Planners Choose Fatboy
 
-### Find your plan's breaking points (Pro)
-Stop guessing about safety margins. **Breakpoint analysis** finds the exact threshold where your plan fails. How low can returns go? How much can you safely spend? Which assumptions actually matter? Interactive stress tests with color-coded risk zones show you exactly where you stand. Sensitivity analysis tells you what to worry about and what to ignore.
+### Tax Modeling That Doesn't Insult Your Intelligence
 
-**[See how we compare](/comparison)** to the other guys (spoiler: we're cheaper and you actually own it).
+Model TCJA expiration scenarios for 2026. Edit federal and state tax parameters yourself. See exactly how a $50k Roth conversion impacts your taxes this year, your IRMAA brackets at 65, and your RMDs at 75. Compare strategies side-by-side with full tax implications flowing through every projection.
 
-## How It Works
+**This isn't a calculator with hardcoded 2024 tax brackets.** It's a modeling engine you control.
 
-1. **Tell us where you're at**
-   Your age, accounts, debts, spending, and the assumptions you're making (inflation, returns, salary growth, COLA).
+### "What If" Analysis That Actually Works
 
-2. **Build and compare scenarios**
-   Different retirement ages. Roth conversion strategies. Withdrawal orders. Big life events. Lifestyle-driven scenarios (lean vs baseline vs live large). **Different tax law scenarios.** See what actually happens as you dial your lifestyle up or down and compare it across plans.
+- Retire at 62 vs 65 vs 67 - full cash flow impact
+- Roth conversion strategies year-by-year
+- Pay off mortgage early vs invest the difference  
+- Semi-retirement with part-time income
+- Healthcare costs before Medicare
+- Different spending levels (lean / baseline / comfortable)
 
-3. **Explore until it clicks**
-   Interactive charts and comparison dashboards. Edit tax parameters to model future law changes or state tax scenarios. No babbling brooks or sunset imagery - just data you can actually use to make decisions.
+Every scenario change propagates through taxes, account balances, Social Security timing, and long-term outcomes. **You can see the tradeoffs, not just a "probability of success" number.**
 
-## Professional Plan Summary Report - Pro
+### Find Your Plan's Breaking Points (Pro Feature)
 
-Turn complex retirement projections into a polished, client-ready PDF in one click. The Plan Summary Report pulls together your entire analysis into a clear, story-driven document that’s easy to share and easy to understand.
+Stop wondering "am I being too conservative?" or "is this sustainable?"
+
+**Breakpoint Analysis** tells you exactly where your plan fails:
+- How low can returns go before you run out of money?
+- What's the maximum safe withdrawal rate for YOUR portfolio?
+- Which assumptions actually matter vs which are just noise?
+
+Interactive stress testing with color-coded risk zones. Sensitivity analysis that separates real risks from worries.
+
+### Monte Carlo Simulations Built for Planners
+
+Not the dumbed-down version. Full control over:
+- Asset allocation by account type
+- Volatility assumptions
+- Return sequences
+- Number of iterations
+- Risk-free rate assumptions
+
+See percentile outcomes (10th, 25th, median, 75th, 90th) - not just a single "success rate."
+
+---
+
+## Professional Plan Summary Reports (Pro)
+
+Generate polished, client-ready PDFs of your analysis. Perfect for:
+- Couples who want to review plans together
+- Sharing with a CPA or tax advisor for validation
+- Documenting your strategy for future reference
+- Financial advisors who need professional deliverables
 
 <picture>
   <source srcset="/assets/images/optimized/summary_report-400w.webp 400w, /assets/images/optimized/summary_report-800w.webp 800w, /assets/images/optimized/summary_report-1200w.webp 1200w"
@@ -59,95 +85,123 @@ Turn complex retirement projections into a polished, client-ready PDF in one cli
           sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
           type="image/png">
   <img src="/assets/images/optimized/summary_report-800w.png"
-       alt="Preview of the Professional Plan Summary Report PDF"
+       alt="Professional Plan Summary Report"
        loading="lazy"
        style="max-width: 100%; height: auto; margin: 1.5rem 0;">
 </picture>
 
-- Executive summary with headline metrics and a visual success gauge
-- Detailed household snapshot, assumptions, income sources, and expenses
-- Assets & accounts overview plus allocation breakdown
-- Cash flow and tax projections, including Monte Carlo risk analysis
-- Sequence-of-returns explanation and plain-English risk commentary
-- Built-in disclosures and planning caveats for compliance-friendly delivery
-- Perfect for review meetings, second opinions, or leaving clients with a tangible roadmap they can revisit any time.
+Executive summary, detailed projections, Monte Carlo analysis, sequence-of-returns risk, and compliance-friendly disclosures. All formatted for professional presentation.
 
-## System Requirements
+---
 
-**Desktop application. Your data stays on your machine. Where it belongs. Do you really need to life plan on your phone?**
+## How It Works
 
-### Supported Platforms
-- **Windows 10/11** - Fully tested, ready to amaze you.
-- **Linux** - Available, in beta
-- **macOS** - Coming soon
+**1. Input your situation**  
+Accounts, income sources, expenses, debts. Your assumptions on returns, inflation, salary growth.
 
-### Minimum Requirements
-- **RAM:** 2 GB minimum, 4 GB recommended
-- **Disk Space:** 100 MB
-- **Display:** 1366x768 minimum (but seriously, get a bigger monitor for this stuff)
-- **Internet:** Optional - only for downloading tax data updates
+**2. Build and compare scenarios**  
+Different retirement dates. Roth strategies. Withdrawal orders. Tax law changes. Lifestyle variations. See side-by-side comparisons with full details.
 
-### The Privacy Thing
-Everything runs on your computer. No cloud. No "syncing to our servers for your convenience." No data harvesting. Your financial data is yours, not ours. 
+**3. Stress test and refine**  
+Monte Carlo simulations. Breakpoint analysis (Pro). Find where your plan is vulnerable and where you have margin for error.
 
-## See It In Action
+**4. Document your strategy** (Pro)  
+Export professional reports. Share with advisors. Review annually. Adjust as life changes.
+
+---
+
+## See the Software In Action
 
 <picture>
-  <source srcset="/assets/images/optimized/gas_guage_chart-400w.webp 400w, /assets/images/optimized/gas_guage_chart-800w.webp 800w, /assets/images/optimized/gas_guage_chart-1200w.webp 1200w"
-          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-          type="image/webp">
-  <source srcset="/assets/images/optimized/gas_guage_chart-400w.png 400w, /assets/images/optimized/gas_guage_chart-800w.png 800w, /assets/images/optimized/gas_guage_chart-1200w.png 1200w"
-          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-          type="image/png">
+  <source srcset="/assets/images/optimized/gas_guage_chart-800w.webp" type="image/webp">
   <img src="/assets/images/optimized/gas_guage_chart-800w.png"
-       alt="Retirement plan success gauge showing probability of success"
+       alt="Retirement success probability gauge"
        loading="lazy"
        style="max-width: 100%; height: auto;">
 </picture>
-<em>Retirement plan success gauge summarizing your projected probability of success, with color-coded zones that highlight risk, caution, and the target “sweet spot” range.</em>
+*Color-coded success probability with risk zones - at a glance assessment of plan viability*
 
 <picture>
-  <source srcset="/assets/images/optimized/MC_dashboard-400w.webp 400w, /assets/images/optimized/MC_dashboard-800w.webp 800w, /assets/images/optimized/MC_dashboard-1200w.webp 1200w"
-          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-          type="image/webp">
-  <source srcset="/assets/images/optimized/MC_dashboard-400w.png 400w, /assets/images/optimized/MC_dashboard-800w.png 800w, /assets/images/optimized/MC_dashboard-1200w.png 1200w"
-          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-          type="image/png">
+  <source srcset="/assets/images/optimized/MC_dashboard-800w.webp" type="image/webp">
   <img src="/assets/images/optimized/MC_dashboard-800w.png"
-       alt="Monte Carlo Dashboard"
+       alt="Monte Carlo simulation dashboard"
        loading="lazy"
        style="max-width: 100%; height: auto;">
 </picture>
-<em>Monte Carlo simulation dashboard showing probability of success and the range of potential outcomes.</em>
+*Monte Carlo simulation showing distribution of outcomes across thousands of scenarios*
 
 <picture>
-  <source srcset="/assets/images/optimized/assets_over_time-400w.webp 400w, /assets/images/optimized/assets_over_time-800w.webp 800w, /assets/images/optimized/assets_over_time-1200w.webp 1200w"
-          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-          type="image/webp">
-  <source srcset="/assets/images/optimized/assets_over_time-400w.png 400w, /assets/images/optimized/assets_over_time-800w.png 800w, /assets/images/optimized/assets_over_time-1200w.png 1200w"
-          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-          type="image/png">
+  <source srcset="/assets/images/optimized/assets_over_time-800w.webp" type="image/webp">
   <img src="/assets/images/optimized/assets_over_time-800w.png"
-       alt="Assets Over Time"
+       alt="Asset projection over retirement timeline"
        loading="lazy"
        style="max-width: 100%; height: auto;">
 </picture>
-<em>Long-term view of how your assets grow and deplete over time under different planning scenarios.</em>
+*Long-term asset trajectories comparing different strategies and spending levels*
 
-<picture>
-  <source srcset="/assets/images/optimized/projection_center-400w.webp 400w, /assets/images/optimized/projection_center-800w.webp 800w, /assets/images/optimized/projection_center-1200w.webp 1200w"
-          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-          type="image/webp">
-  <source srcset="/assets/images/optimized/projection_center-400w.png 400w, /assets/images/optimized/projection_center-800w.png 800w, /assets/images/optimized/projection_center-1200w.png 1200w"
-          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-          type="image/png">
-  <img src="/assets/images/optimized/projection_center-800w.png"
-       alt="Projection Center"
-       loading="lazy"
-       style="max-width: 100%; height: auto;">
-</picture>
-<em>Central hub for adjusting key assumptions and instantly seeing the impact on your retirement projections.</em>
+[View All Screenshots](/screenshots) - Portfolio analysis, cash flow projections, tax modeling, goal planning, and more.
 
-[View All Screenshots](/screenshots) to explore the full feature set including portfolio analysis, cash flow visualization, goal planning, and more.
+---
 
-[Buy Now - Founding Member ($149)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00) | <a href="#" id="download-free-version" data-version="">Download Free Version (Windows)</a> | <a href="#" id="download-linux" data-version="">Download Free Version (Linux)</a> | [See Pricing Details](/pricing) | [About & Contact](/about)
+## Pricing That Makes Sense
+
+**Free Version:** Full planning capability. 3 scenarios. Core features unlocked. This isn't a trial - it's genuinely useful software.
+
+**Pro Version - $149 (One-Time):**
+- Unlimited scenarios
+- Breakpoint analysis & stress testing
+- Professional PDF reports
+- Advanced Monte Carlo controls
+- Sensitivity analysis
+- All future updates included
+
+**No subscriptions. No annual "update" fees. You own it.**
+
+Compare that to advisor fees (1% of $1M = $10,000/year) or subscription software ($20-50/month forever). This pays for itself immediately.
+
+[**See Detailed Comparison**](/comparison) with other retirement planning software.
+
+---
+
+## Your Data, Your Computer
+
+Desktop application. Everything runs locally. No cloud sync. No "storing your data for your convenience." No harvesting your financial information to train AI models or sell to marketers.
+
+**System Requirements:**
+- Windows 10/11 (fully supported)
+- Linux (beta available)
+- macOS (coming soon)
+- 4GB RAM recommended
+- 1366x768 display minimum (realistically: get a bigger monitor for this kind of work)
+- Internet optional (only for tax data updates)
+
+---
+
+## Who This Is For
+
+✓ **Engineers, executives, and professionals** with 7-figure portfolios who understand their finances  
+✓ **DIY investors** who want advisor-level tools without advisor fees  
+✓ **Fee-only financial planners** who need professional software without SaaS pricing  
+✓ **Anyone planning Roth conversions** and tired of spreadsheets  
+✓ **Pre-retirees modeling TCJA 2026 impacts** on their tax strategy  
+
+❌ People who need someone to tell them what to invest in  
+❌ Anyone looking for portfolio management or investment advice  
+❌ People who want their phone to make financial decisions for them  
+
+---
+
+## Get Started
+
+<a href="#" id="download-free-version" data-version="" style="display: inline-block; padding: 12px 24px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Download Free Version (Windows)</a>
+
+<a href="#" id="download-linux" data-version="" style="display: inline-block; padding: 12px 24px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; margin-left: 10px;">Download Free Version (Linux)</a>
+
+[Buy Pro Version Now - $149](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00)
+
+[Blog](/blog) | [See Pricing Details](/pricing) | [About & Contact](/about)
+
+---
+
+**Questions? Email: [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)**
+**Note:** Windows version fully signed. Linux version available. Code signing certificate for download trust indicators in process.

@@ -25,6 +25,13 @@
           <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
           <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
 
+          <nav style="margin-top: 20px; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.2);">
+            <a href="{{ site.baseurl }}/" style="color: #fff; text-decoration: none; margin-right: 20px; font-weight: 500;">Home</a>
+            <a href="{{ site.baseurl }}/blog" style="color: #fff; text-decoration: none; margin-right: 20px; font-weight: 500;">Blog</a>
+            <a href="{{ site.baseurl }}/pricing" style="color: #fff; text-decoration: none; margin-right: 20px; font-weight: 500;">Pricing</a>
+            <a href="{{ site.baseurl }}/about" style="color: #fff; text-decoration: none; margin-right: 20px; font-weight: 500;">About</a>
+          </nav>
+
           {% if site.show_downloads %}
             <section id="downloads">
               <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
@@ -53,5 +60,8 @@
 
     <!-- Automatic Download Link Updater -->
     <script src="{{ '/assets/js/website_download_updater.js' | relative_url }}"></script>
+
+    <!-- GA4 Custom Event Tracking -->
+    <script src="{{ '/assets/js/ga4-events.js' | relative_url }}"></script>
   </body>
 </html>

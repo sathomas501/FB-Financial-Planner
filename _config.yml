@@ -3,6 +3,12 @@ description: "Serious Planning. Less Serious Approach. Free retirement planning 
 url: "https://fatboysoftware.com"
 baseurl: ""
 
+# Blog Configuration
+permalink: /blog/:year/:month/:day/:title/
+paginate: 10
+paginate_path: "/blog/page:num/"
+excerpt_separator: <!--more-->
+
 # SEO Settings
 author: "Fatboy Software"
 lang: en_US
@@ -16,14 +22,14 @@ keywords:
   - retirement planner desktop software
   - Windows retirement software
   - Linux retirement planner
-
+  
   # Pricing & business model
   - one-time purchase software
   - no subscription retirement planner
   - lifetime license financial software
   - free retirement planning software
   - retirement software no annual fee
-
+  
   # Key features
   - Roth conversion planning
   - Roth conversion optimizer
@@ -36,27 +42,37 @@ keywords:
   - withdrawal strategy planning
   - RMD calculator
   - IRMAA calculator
-
+  
+  # Blog/content keywords
+  - sequence of returns risk
+  - retirement red zone
+  - TCJA expiration 2026
+  - retirement planning blog
+  - financial planning advice
+  - retirement tax planning
+  - Roth conversion strategy
+  - early retirement planning
+  
   # Target audience & use cases
   - financial independence calculator
   - FIRE planning software
   - DIY retirement planning
   - self-directed retirement planning
   - retirement planning without advisor
-
+  
   # Privacy & data security
   - private retirement planner
   - offline retirement software
   - local data financial planning
   - desktop retirement calculator
-
+  
   # Tax-related features
   - editable tax parameters
   - TCJA retirement planning
   - state tax retirement planning
   - tax bracket planning
   - tax-efficient withdrawal strategy
-
+  
   # Competitor & comparison terms
   - Boldin alternative
   - MaxiFi alternative
@@ -65,7 +81,7 @@ keywords:
   - WealthTrace alternative
   - retirement software comparison
   - best retirement planning software
-
+  
   # Advanced features
   - Sankey diagram retirement
   - retirement cash flow visualization
@@ -79,11 +95,12 @@ twitter:
 # Plugins
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
 
 # Theme
 theme: jekyll-theme-slate
 
 # Google Analytics
-# Replace with your GA4 Measurement ID (format: G-XXXXXXXXXX)
-# Get this from: https://analytics.google.com/
 google_analytics: G-5RWQHBCC99
