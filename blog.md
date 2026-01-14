@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Retirement Planning Blog - Expert Analysis & Strategies
-description: In-depth retirement planning analysis for sophisticated investors. Tax optimization, Roth conversions, sequence of returns risk, TCJA implications, and advanced retirement strategies. No fluff, just actionable insights.
-keywords: retirement planning blog, tax optimization strategies, Roth conversion planning, retirement tax strategies, TCJA planning, retirement risk management
+description: In-depth retirement planning analysis for sophisticated investors. Tax optimization, Roth conversions, sequence of returns risk, OBBBA implications, senior deduction strategies, and advanced retirement planning. No fluff, just actionable insights.
+keywords: retirement planning blog, tax optimization strategies, Roth conversion planning, retirement tax strategies, OBBBA planning, senior deduction, retirement risk management
 ---
 
 # Retirement Planning Blog
@@ -63,8 +63,8 @@ Useful for researchers. Useless for actual retirement planning.
 
 ## What We Cover
 
-**Tax Optimization**  
-Roth conversion strategies, TCJA expiration planning, withdrawal sequencing, IRMAA management, bracket optimization, state tax considerations.
+**Tax Optimization**
+Roth conversion strategies, OBBBA senior deduction planning (2026-2028), withdrawal sequencing, IRMAA management, bracket optimization, state tax considerations.
 
 **Risk Management**  
 Sequence of returns risk, retirement red zone strategies, Monte Carlo analysis, stress testing, safe withdrawal rates, market crash scenarios.
@@ -90,11 +90,11 @@ What to look for in retirement planning software, how to model complex scenarios
 
 ## Featured Topics
 
-**Roth Conversions**  
-Multi-year strategies for converting traditional IRA money to Roth during low-income years. How to calculate conversion capacity, avoid IRMAA cliffs, and save six figures in lifetime taxes.
+**OBBBA: One Big Beautiful Bill Act (2025)**
+The new tax law that made TCJA brackets permanent, added a $6,000 senior deduction (2026-2028), and created a critical window for Roth conversions. Essential reading for all retirees.
 
-**TCJA Expiration 2026**  
-The Tax Cuts and Jobs Act expires December 31, 2025. Tax rates increase, deductions shrink, and most retirement plans aren't accounting for it. Time-sensitive strategies for 2025.
+**Roth Conversions 2026-2028**
+Multi-year strategies for converting traditional IRA money to Roth during low-income years. How to maximize the temporary senior deduction, avoid IRMAA cliffs, and save six figures in lifetime taxes.
 
 **Sequence of Returns Risk**  
 Why retiring into a bear market can destroy 30 years of careful saving. How to model this risk and build protection strategies. Why "average returns" are a lie.
@@ -120,7 +120,7 @@ These blog posts reference modeling and analysis that requires proper retirement
 
 [**Fatboy Financial Planner**]({{ site.url }}{{ site.baseurl }}/) is built for these exact use cases:
 - Model Roth conversions year-by-year with tax impact
-- Account for TCJA expiration in 2026
+- Account for OBBBA senior deduction (2026-2028) and optimize conversion timing
 - Stress test your plan against sequence of returns risk
 - Run Monte Carlo simulations with full control
 - Compare scenarios side-by-side
@@ -156,4 +156,4 @@ Questions about retirement planning topics we've covered? Want to suggest a topi
 
 ---
 
-[← Back to Home]({{ site.url }}{{ site.baseurl }}/) | [Download Software]({{ site.url }}{{ site.baseurl }}/#download-free-version) | [Pricing]({{ site.url }}{{ site.baseurl }}/pricing) | [About]({{ site.url }}{{ site.baseurl }}/about)
+[← Back to Home]({{ site.url }}{{ site.baseurl }}/) | [Why Fatboy?]({{ site.url }}{{ site.baseurl }}/why-fatboy) | [Pricing]({{ site.url }}{{ site.baseurl }}/pricing) | [About]({{ site.url }}{{ site.baseurl }}/about)

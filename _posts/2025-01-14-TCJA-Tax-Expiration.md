@@ -16,6 +16,12 @@ description: "The Tax Cuts and Jobs Act expires December 31, 2025. Tax rates inc
 excerpt: "Your retirement plan assumes 2024 tax rates forever. TCJA expires in 659 days. Your actual tax bill could be 20-30% higher than you're modeling. Are you planning for fantasy tax rates or reality?"
 ---
 
+> **UPDATE (January 2026):** The TCJA expiration scenario described in this article did not occur. On July 4, 2025, the One Big Beautiful Bill Act (OBBBA) made TCJA tax brackets permanent, added a new $6,000 senior deduction (2026-2028), and created new strategic planning opportunities. **[Read the updated OBBBA retirement planning guide here]({{ site.baseurl }}{% post_url 2025-01-19-OBBBA-One-Big-Beautiful-Bill %})** for current tax law and strategies.
+>
+> The analysis below remains useful for understanding what COULD have happened with TCJA expiration, and illustrates the importance of planning for tax law changes. However, for actionable current retirement planning strategies, see the OBBBA article.
+
+---
+
 Let me guess what your retirement calculator is showing you:
 
 You'll withdraw $80,000 from your traditional IRA in 2030. Married filing jointly. Standard deduction of $29,200. Taxable income of $50,800. Federal tax of about $5,700.

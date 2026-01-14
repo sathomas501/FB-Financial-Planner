@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Fatboy Financial Planner - Professional Retirement Planning Software You Own
-description: Sophisticated retirement planning for people who don't need a financial advisor. Model Roth conversions, TCJA tax scenarios, IRMAA impacts, and complex withdrawal strategies. One-time purchase, no subscriptions.
-keywords: retirement planning software, Roth conversion calculator, TCJA 2026, IRMAA planning, tax optimization, Monte Carlo simulation, no subscription
+description: Sophisticated retirement planning for people who don't need a financial advisor. Model Roth conversions, OBBBA senior deduction strategies, IRMAA impacts, and complex withdrawal strategies. Editable tax parameters - update yourself when laws change.
+keywords: retirement planning software, Roth conversion calculator, OBBBA 2026, senior deduction, IRMAA planning, tax optimization, Monte Carlo simulation, editable tax parameters
 ---
 
 <picture>
@@ -26,13 +26,19 @@ Your data never leaves your computer. You own the software. One price. No subscr
 
 ---
 
+<div style="background: #f8f9fa; border-left: 4px solid #0066cc; padding: 1.5rem; margin: 2rem 0;">
+<h3 style="margin-top: 0; color: #0066cc;">Tax Laws Changed in 2025. Your Calculator Shouldn't Be Stuck in 2024.</h3>
+<p style="margin-bottom: 1rem;">The TCJA→OBBBA transition just proved why <strong>editable tax parameters</strong> matter. When OBBBA passed in July 2025, most retirement software became obsolete overnight. Fatboy users updated their tax parameters in 10 minutes and kept planning.</p>
+<p style="margin-bottom: 0;"><strong>Tax laws will change again.</strong> Probably in 2027-2028. When they do, you'll be ready. <a href="{{ site.baseurl }}/why-fatboy" style="color: #0066cc; font-weight: 600;">Read why this matters →</a></p>
+</div>
+
 ## Why Sophisticated Planners Choose Fatboy
 
 ### Tax Modeling That Doesn't Insult Your Intelligence
 
-Model TCJA expiration scenarios for 2026. Edit federal and state tax parameters yourself. See exactly how a $50k Roth conversion impacts your taxes this year, your IRMAA brackets at 65, and your RMDs at 75. Compare strategies side-by-side with full tax implications flowing through every projection.
+Model OBBBA senior deduction strategies (2026-2028). Edit federal and state tax parameters yourself. See exactly how a $50k Roth conversion impacts your taxes this year, your IRMAA brackets at 65, and your RMDs at 75. Compare strategies side-by-side with full tax implications flowing through every projection.
 
-**This isn't a calculator with hardcoded 2024 tax brackets.** It's a modeling engine you control.
+**This isn't a calculator with hardcoded 2024 tax brackets.** It's a modeling engine you control. When tax laws change, you update the parameters yourself - no waiting 6-18 months for vendor updates.
 
 ### "What If" Analysis That Actually Works
 
@@ -197,19 +203,11 @@ Desktop application. Everything runs locally. No cloud sync. No "storing your da
 
 <a href="#" id="download-linux" data-version="" style="display: inline-block; padding: 12px 24px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; margin-left: 10px;">Download Free Version (Linux)</a>
 
-<div style="margin: 1.5rem 0;">
-  <a id="buy-pro-version" href="https://buy.stripe.com/4gM8wI92w9i98r95sSawo00"
-     style="display:inline-flex; align-items:center; justify-content:center; padding: 14px 32px; background:#ff7a1c; color:#fff; text-decoration:none; font-weight:700; border-radius: 6px; box-shadow: 0 10px 25px rgba(0,0,0,0.25); transition: transform 0.2s ease, box-shadow 0.2s ease;">
-    Buy Pro Version Now - $149
-  </a>
-  <p style="margin: 0.75rem 0 0; font-size: 0.95rem; color: #3a3a3a; line-height: 1.4;">
-    One-time purchase unlocking unlimited scenarios, breakpoint analysis, professional PDF reports, and advanced Monte Carlo controls.
-  </p>
-</div>
+[Buy Pro Version Now - $149](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00)
 
-[Blog](/blog) | [See Pricing Details](/pricing) | [About & Contact](/about)
+[Why Fatboy?](/why-fatboy) | [Blog](/blog) | [Pricing](/pricing) | [About](/about)
 
 ---
 
 **Questions? Email: [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)**
-**Note:** Windows version fully signed. Linux version available. Code signing certificate for download trust indicators in process.
+**Note:**  Linux version available. Code signing certificate for download trust indicators in process.
