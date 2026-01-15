@@ -11,7 +11,6 @@
 {% seo %}
     {% include schema-markup.html %}
     {% include google-analytics.html %}
-    {% include analytics-events.html %}
   </head>
 
   <body>
@@ -64,5 +63,6 @@
 
     <!-- GA4 Custom Event Tracking -->
     <script src="{{ '/assets/js/ga4-events.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/ga4-download-tracking.js' | relative_url }}"></script>
   </body>
 </html>

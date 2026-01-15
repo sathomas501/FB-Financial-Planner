@@ -2,10 +2,14 @@
 {% if site.google_analytics %}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
 <script>
+  window.GA_MEASUREMENT_ID = '{{ site.google_analytics }}';
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', '{{ site.google_analytics }}');
+  var pagePathWithQuery = window.location.pathname + window.location.search;
+  gtag('config', window.GA_MEASUREMENT_ID, {
+    'page_path': pagePathWithQuery,
+    'cookie_flags': 'SameSite=None;Secure'
+  });
 </script>
 {% endif %}

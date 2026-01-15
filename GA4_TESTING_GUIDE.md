@@ -34,7 +34,7 @@ Your GA4 setup now includes **automatic debugging** that logs all events to the 
    You should see:
    ```
    📥 Download Event Fired: {
-     event: "download_free_version",
+     event: "download_app",
      category: "engagement",
      label: "Free Version v3.3",
      url: "https://github.com/..."
@@ -88,7 +88,7 @@ Wait 1-2 minutes for GitHub Pages to rebuild.
 3. Click **Reports** → **Realtime**
 4. You should see:
    - **1 user right now** (you)
-   - Under **Event count by Event name**, look for `download_free_version`
+   - Under **Event count by Event name**, look for `download_app`
 
 ### Step 4: Click the Download Button
 
@@ -153,9 +153,10 @@ bundle exec jekyll serve
 **Fix:**
 1. Check `_config.yml` has: `google_analytics: G-5RWQHBCC99`
 2. Verify `_includes/google-analytics.html` exists
-3. Check `_layouts/default.html` includes both:
+3. Check `_layouts/default.html` loads:
    - `{% include google-analytics.html %}`
-   - `{% include analytics-events.html %}`
+   - `assets/js/ga4-events.js`
+   - `assets/js/ga4-download-tracking.js`
 4. Disable ad blockers (they block gtag.js)
 
 ### Problem: Events in console but not in GA4 Realtime
@@ -211,7 +212,7 @@ Use this checklist to verify everything works:
 
 ### Download Free Version Event
 
-**Event Name:** `download_free_version`
+**Event Name:** `download_app`
 
 **Parameters:**
 - `event_category`: `engagement`
@@ -280,7 +281,7 @@ Download button only appears on homepage (`/` or `/index.html`).
 2. Create new report
 3. Add dimension: `Event name`
 4. Add metric: `Event count`
-5. Filter: `download_free_version`
+5. Filter: `download_app`
 
 ---
 
@@ -315,7 +316,7 @@ Once you've confirmed events are working:
 
 1. **Mark events as Conversions in GA4:**
    - Go to **Admin** → **Events**
-   - Find `download_free_version` and mark as conversion
+   - Find `download_app` and mark as conversion
    - Find `purchase` and mark as conversion
 
 2. **Set up custom reports** to track:
@@ -336,7 +337,7 @@ Once you've confirmed events are working:
 | **Local test** | `http://localhost:4000` + Console | Startup messages + event logs |
 | **Manual test** | Console → `testGA4()` | Test event in GA4 Realtime |
 | **Live test** | `https://fatboysoftware.com` | Click download, check Realtime |
-| **GA4 Realtime** | GA4 → Reports → Realtime | See `download_free_version` event |
+| **GA4 Realtime** | GA4 → Reports → Realtime | See `download_app` event |
 | **GA4 Events** | GA4 → Reports → Engagement → Events | Historical event data |
 
 ---
