@@ -1,0 +1,116 @@
+---
+layout: default
+title: Retirement Planning Blog - Expert Analysis & Strategies
+description: In-depth retirement planning analysis for sophisticated investors: tax optimization, Roth conversions, sequence-of-returns risk, OBBBA implications, and hard-hitting strategies informed by modern tax law.
+permalink: /blog/
+---
+
+<div markdown="1">
+# Retirement Planning Blog
+
+**Deep dives into the complex questions that actually matter.** No stock photos of beaches. No "10 tips for a happy retirement" listicles. Just rigorous financial planning analysis for professionals planning multi-decade futures.
+
+Topics we cover: tax optimization, withdrawal sequencing, sequence-of-returns risk, Roth conversions, IRMAA management, Monte Carlo simulations, OBBBA planning, and the entire set of retirement questions generic calculators dodge.
+</div>
+
+<section id="latest-posts">
+  <h2>Latest Posts</h2>
+  {% for post in paginator.posts %}
+  <article style="margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #ddd;">
+    <h3 style="margin-bottom: 0.5rem;">
+      <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none; color: #0066cc;">{{ post.title }}</a>
+    </h3>
+
+    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">
+      {{ post.date | date: "%B %d, %Y" }}
+      {% if post.tags and post.tags.size > 0 %}
+        &nbsp;|&nbsp;
+        {% for tag in post.tags limit:3 %}
+          <span style="background: #f0f0f0; padding: 2px 8px; border-radius: 3px; font-size: 0.85rem;">{{ tag }}</span>
+        {% endfor %}
+      {% endif %}
+    </p>
+
+    <p style="line-height: 1.6;">{{ post.excerpt }}</p>
+
+    <p>
+      <a href="{{ site.baseurl }}{{ post.url }}" style="color: #0066cc; text-decoration: none; font-weight: 500;">
+        Read full article »
+      </a>
+    </p>
+  </article>
+  {% endfor %}
+</section>
+
+{% if paginator.total_pages > 1 %}
+<nav class="pagination" style="display:flex; align-items:center; gap:1rem; margin-bottom:3rem;">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous" style="padding: 0.5rem 1rem; background: #f0f0f0; border-radius: 4px;">Previous</a>
+  {% endif %}
+
+  <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next" style="padding: 0.5rem 1rem; background: #f0f0f0; border-radius: 4px;">Next</a>
+  {% endif %}
+</nav>
+{% endif %}
+
+<section markdown="1">
+## Why This Blog Exists
+
+Most retirement planning content lands in one of two buckets:
+
+**Oversimplified advice.** "Save 15% of your income!" "Rule of thumb: 4% withdrawal rate!" - advice that assumes everyone has the same situation.
+
+**Needlessly academic research.** PhD-level math with Greek letters, but no practical takeaway.
+
+This blog lives between those extremes: technical depth without jargon, real scenarios with clear takeaways, and the math behind every recommendation.
+</section>
+
+<section markdown="1">
+## What We Cover
+
+### Tax Optimization
+Roth conversions, OBBBA senior deduction planning (2026-2028), withdrawal sequencing, IRMAA mitigation, bracket optimization, and state tax nuance.
+
+### Risk Management
+Sequence-of-returns risk, the retirement red zone (ages 60-70), Monte Carlo stress testing, scenario breakdowns, and contingency planning for bear markets.
+
+### Advanced Planning
+RMD management, estate/legacy planning inputs, early retirement modeling, and healthcare/income planning across decades.
+
+### Tools & Software
+How to model the right questions, what features best-in-class planners need, and why most calculators miss the boat on complex tax situations.
+</section>
+
+<section markdown="1">
+## Subscribe for Updates
+
+New posts are published when there's something truly meaningful to share: a new law change, a modeling insight, or an advanced retirement experiment worth documenting.
+
+**RSS Feed:** [Subscribe via RSS]({{ site.baseurl }}/feed.xml) - instant updates for every new article.
+
+Email updates coming soon.
+</section>
+
+<section markdown="1">
+## Contact
+
+Questions about retirement planning topics we've covered? Want to suggest a future article? Email us at [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com) and we’ll follow up directly.
+</section>
+
+<section markdown="1">
+## Get the Software
+
+These posts reference modeling that requires proper retirement planning software. Most calculators can't handle the scenarios we explore.
+
+**Fatboy Financial Planner** is built for this level of depth:
+
+- Model Roth conversions year-by-year with full tax impact.
+- Account for OBBBA senior deductions (2026-2028) and optimize every timing decision.
+- Stress test against sequence-of-returns risk with Monte Carlo simulations.
+- Compare scenarios side-by-side with editable tax parameters.
+
+Start free. Upgrade for Pro if you need advanced analysis. No subscriptions. Your data stays local.
+</section>

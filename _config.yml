@@ -2,6 +2,7 @@ title: "Fatboy Financial Planner"
 description: "Serious Planning. Less Serious Approach. Free retirement planning software with optional Pro upgrade. No subscriptions. Start free with core planning tools, upgrade once for advanced features like Roth optimization and unlimited scenarios."
 url: "https://fatboysoftware.com"
 baseurl: ""
+repository: sathomas501/FB-Financial-Planner
 
 # Blog Configuration
 permalink: /blog/:year/:month/:day/:title/
