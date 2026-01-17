@@ -36,7 +36,7 @@ const handler = async (req, res) => {
 
   console.log('Received Stripe event:', event.type, 'ID:', event.id);
 
-  // Handle the checkout.session.completed event
+  // Handle both checkout.session.completed AND charge.succeeded events
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object;
 
@@ -75,6 +75,9 @@ const handler = async (req, res) => {
 
       console.log('License email sent to:', customerEmail);
 
+      // Wait 1 second to avoid Resend rate limit (2 requests/second)
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
       // Send admin notification (optional)
       await sendAdminNotification({
         customerEmail: customerEmail,
@@ -99,6 +102,78 @@ const handler = async (req, res) => {
 
       // Even if there's an error, return 200 to Stripe so it doesn't retry
       // But log the error for manual follow-up
+      return res.status(200).json({
+        received: true,
+        error: error.message,
+        note: 'Error logged, manual follow-up required'
+      });
+    }
+  }
+
+  // Handle charge.succeeded event (for Payment Links that trigger this instead)
+  if (event.type === 'charge.succeeded') {
+    const charge = event.data.object;
+
+    try {
+      // Get customer email from billing details or receipt email
+      const customerEmail = charge.billing_details?.email || charge.receipt_email;
+      const customerName = charge.billing_details?.name || '';
+      const chargeId = charge.id;
+      const amountTotal = charge.amount;
+
+      if (!customerEmail) {
+        console.log('No customer email found in charge, skipping license generation');
+        return res.status(200).json({ received: true, note: 'No email found' });
+      }
+
+      console.log('Processing purchase from charge for:', customerEmail);
+
+      // Generate license key
+      const licenseInfo = generateLicenseKey(customerEmail, chargeId);
+      console.log('Generated license key:', licenseInfo.licenseKey);
+
+      // Store license
+      await storeLicense(licenseInfo);
+
+      // Get download URL
+      const downloadUrl = 'https://fatboyfinancialplanner.com/thank-you#download';
+
+      // Send license email to customer
+      await sendLicenseEmail({
+        to: customerEmail,
+        customerName: customerName,
+        licenseKey: licenseInfo.licenseKey,
+        downloadUrl: downloadUrl,
+        orderId: chargeId
+      });
+
+      console.log('License email sent to:', customerEmail);
+
+      // Wait 1 second to avoid Resend rate limit (2 requests/second)
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // Send admin notification
+      await sendAdminNotification({
+        customerEmail: customerEmail,
+        customerName: customerName,
+        licenseKey: licenseInfo.licenseKey,
+        orderId: chargeId,
+        amount: amountTotal
+      });
+
+      console.log('Admin notification sent');
+
+      // Return success response
+      return res.status(200).json({
+        success: true,
+        message: 'License generated and sent',
+        licenseKey: licenseInfo.licenseKey,
+        email: customerEmail
+      });
+
+    } catch (error) {
+      console.error('Error processing charge:', error);
+
       return res.status(200).json({
         received: true,
         error: error.message,
