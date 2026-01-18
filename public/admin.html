@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Admin Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 18px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        button.secondary {
+            background: #6c757d;
+        }
+
+        button.secondary:hover {
+            background: #545b62;
+        }
+
+        button.danger {
+            background: #dc3545;
+        }
+
+        button.danger:hover {
+            background: #c82333;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .result.success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            display: block;
+        }
+
+        .result.error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            display: block;
+        }
+
+        .license-key {
+            font-family: monospace;
+            font-size: 16px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #555;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-revoked {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .search-bar input {
+            flex: 1;
+        }
+
+        .loading {
+            display: none;
+            color: #666;
+            font-style: italic;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        #apiKeySection {
+            margin-bottom: 30px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .small-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔑 License Admin Dashboard</h1>
+
+        <!-- API Key Section -->
+        <div class="card" id="apiKeySection">
+            <h2>Admin Authentication</h2>
+            <div class="form-group">
+                <label for="adminApiKey">Admin API Key:</label>
+                <input type="password" id="adminApiKey" placeholder="Enter your admin API key">
+                <div class="small-text">This key is stored in your browser session only</div>
+            </div>
+            <button onclick="saveApiKey()">Save Key</button>
+        </div>
+
+        <div id="mainContent" class="hidden">
+            <!-- Create License Section -->
+            <div class="card">
+                <h2>Create Manual License</h2>
+                <form id="createLicenseForm" onsubmit="createLicense(event)">
+                    <div class="form-group">
+                        <label for="email">Email: *</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerName">Customer Name:</label>
+                        <input type="text" id="customerName">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reason">Reason:</label>
+                        <select id="reason">
+                            <option value="">Select reason (optional)</option>
+                            <option value="comp">Comp (Complimentary)</option>
+                            <option value="reviewer">Reviewer</option>
+                            <option value="influencer">Influencer</option>
+                            <option value="employee">Employee</option>
+                            <option value="test">Test</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Notes:</label>
+                        <textarea id="notes" placeholder="Optional notes about this license"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="sendEmail" checked>
+                            <label for="sendEmail">Send email to recipient</label>
+                        </div>
+                    </div>
+
+                    <button type="submit">Create License</button>
+                </form>
+
+                <div id="createResult" class="result"></div>
+            </div>
+
+            <!-- Search/List Licenses Section -->
+            <div class="card">
+                <h2>Search Licenses</h2>
+
+                <div class="search-bar">
+                    <input type="email" id="searchEmail" placeholder="Search by email">
+                    <select id="searchStatus">
+                        <option value="">All Statuses</option>
+                        <option value="active">Active</option>
+                        <option value="revoked">Revoked</option>
+                    </select>
+                    <button onclick="searchLicenses()">Search</button>
+                    <button class="secondary" onclick="clearSearch()">Clear</button>
+                </div>
+
+                <div id="searchLoading" class="loading">Loading...</div>
+                <div id="searchResult" class="result"></div>
+
+                <div id="licensesTable"></div>
+            </div>
+
+            <!-- Revoke License Section -->
+            <div class="card">
+                <h2>Revoke License</h2>
+                <form id="revokeLicenseForm" onsubmit="revokeLicense(event)">
+                    <div class="form-group">
+                        <label for="revokeLicenseKey">License Key: *</label>
+                        <input type="text" id="revokeLicenseKey" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="revokeReason">Reason:</label>
+                        <textarea id="revokeReason" placeholder="e.g., Chargeback, Policy violation, etc."></textarea>
+                    </div>
+
+                    <button type="submit" class="danger">Revoke License</button>
+                </form>
+
+                <div id="revokeResult" class="result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'https://fatboy-financial-planner.vercel.app/api';
+        let apiKey = sessionStorage.getItem('adminApiKey') || '';
+
+        // Check if API key is already saved
+        if (apiKey) {
+            document.getElementById('adminApiKey').value = apiKey;
+            document.getElementById('mainContent').classList.remove('hidden');
+            document.getElementById('apiKeySection').style.display = 'none';
+        }
+
+        function saveApiKey() {
+            apiKey = document.getElementById('adminApiKey').value.trim();
+            if (!apiKey) {
+                alert('Please enter an API key');
+                return;
+            }
+            sessionStorage.setItem('adminApiKey', apiKey);
+            document.getElementById('mainContent').classList.remove('hidden');
+            document.getElementById('apiKeySection').style.display = 'none';
+            showResult('createResult', 'API key saved for this session', 'success');
+        }
+
+        function getHeaders() {
+            return {
+                'Content-Type': 'application/json',
+                'x-admin-key': apiKey
+            };
+        }
+
+        function showResult(elementId, message, type) {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.className = `result ${type}`;
+            setTimeout(() => {
+                element.style.display = 'none';
+            }, 10000);
+        }
+
+        async function createLicense(event) {
+            event.preventDefault();
+
+            const data = {
+                email: document.getElementById('email').value,
+                customerName: document.getElementById('customerName').value || null,
+                reason: document.getElementById('reason').value || null,
+                notes: document.getElementById('notes').value || null,
+                sendEmail: document.getElementById('sendEmail').checked
+            };
+
+            try {
+                const response = await fetch(`${API_BASE}/admin/create-license`, {
+                    method: 'POST',
+                    headers: getHeaders(),
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    const message = `✅ License created successfully!\n\nLicense Key: ${result.license.key}\nEmail: ${result.license.email}\nStatus: ${result.license.status}\nEmail Sent: ${result.license.emailSent ? 'Yes' : 'No'}`;
+                    showResult('createResult', message, 'success');
+                    document.getElementById('createLicenseForm').reset();
+                    document.getElementById('sendEmail').checked = true;
+                } else {
+                    showResult('createResult', `❌ Error: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                showResult('createResult', `❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        async function searchLicenses() {
+            const email = document.getElementById('searchEmail').value;
+            const status = document.getElementById('searchStatus').value;
+
+            let url = `${API_BASE}/admin/list-licenses?limit=50`;
+            if (email) url += `&email=${encodeURIComponent(email)}`;
+            if (status) url += `&status=${status}`;
+
+            document.getElementById('searchLoading').classList.add('active');
+            document.getElementById('licensesTable').innerHTML = '';
+
+            try {
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: getHeaders()
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    displayLicenses(result.licenses);
+                    showResult('searchResult', `Found ${result.count} license(s)`, 'success');
+                } else {
+                    showResult('searchResult', `❌ Error: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                showResult('searchResult', `❌ Error: ${error.message}`, 'error');
+            } finally {
+                document.getElementById('searchLoading').classList.remove('active');
+            }
+        }
+
+        function displayLicenses(licenses) {
+            const tableDiv = document.getElementById('licensesTable');
+
+            if (licenses.length === 0) {
+                tableDiv.innerHTML = '<p style="color: #666; margin-top: 15px;">No licenses found</p>';
+                return;
+            }
+
+            let html = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>License Key</th>
+                            <th>Email</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Generated</th>
+                            <th>Activated</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            licenses.forEach(license => {
+                const generatedDate = new Date(license.generated_at).toLocaleDateString();
+                const activatedDate = license.activated_at ? new Date(license.activated_at).toLocaleDateString() : 'Not activated';
+                const statusClass = license.status === 'active' ? 'status-active' : 'status-revoked';
+
+                html += `
+                    <tr>
+                        <td><span class="license-key">${license.license_key}</span></td>
+                        <td>${license.email}</td>
+                        <td>${license.customer_name || '-'}</td>
+                        <td><span class="status-badge ${statusClass}">${license.status}</span></td>
+                        <td>${generatedDate}</td>
+                        <td>${activatedDate}</td>
+                        <td>
+                            ${license.status === 'active' ?
+                                `<button class="danger" onclick="quickRevoke('${license.license_key}')">Revoke</button>` :
+                                '<span style="color: #999;">Revoked</span>'}
+                        </td>
+                    </tr>
+                `;
+            });
+
+            html += '</tbody></table>';
+            tableDiv.innerHTML = html;
+        }
+
+        function quickRevoke(licenseKey) {
+            document.getElementById('revokeLicenseKey').value = licenseKey;
+            document.getElementById('revokeLicenseKey').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        async function revokeLicense(event) {
+            event.preventDefault();
+
+            const licenseKey = document.getElementById('revokeLicenseKey').value;
+            const reason = document.getElementById('revokeReason').value;
+
+            if (!confirm(`Are you sure you want to revoke license ${licenseKey}?`)) {
+                return;
+            }
+
+            const data = {
+                licenseKey: licenseKey,
+                reason: reason || 'No reason provided',
+                adminEmail: 'admin'
+            };
+
+            try {
+                const response = await fetch(`${API_BASE}/admin/revoke-license`, {
+                    method: 'POST',
+                    headers: getHeaders(),
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    showResult('revokeResult', `✅ License ${licenseKey} has been revoked`, 'success');
+                    document.getElementById('revokeLicenseForm').reset();
+                    // Refresh the licenses list if there are any displayed
+                    const tableDiv = document.getElementById('licensesTable');
+                    if (tableDiv.innerHTML) {
+                        searchLicenses();
+                    }
+                } else {
+                    showResult('revokeResult', `❌ Error: ${result.error}`, 'error');
+                }
+            } catch (error) {
+                showResult('revokeResult', `❌ Error: ${error.message}`, 'error');
+            }
+        }
+
+        function clearSearch() {
+            document.getElementById('searchEmail').value = '';
+            document.getElementById('searchStatus').value = '';
+            document.getElementById('licensesTable').innerHTML = '';
+            document.getElementById('searchResult').style.display = 'none';
+        }
+
+        // Auto-load licenses on page load if API key is set
+        if (apiKey) {
+            searchLicenses();
+        }
+    </script>
+</body>
+</html>
