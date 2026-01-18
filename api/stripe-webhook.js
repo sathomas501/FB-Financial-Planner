@@ -1,5 +1,6 @@
 const Stripe = require('stripe');
 const { buffer } = require('micro');
+const { sql } = require('@vercel/postgres');
 const { generateLicenseKey } = require('./utils/license-generator');
 const { sendLicenseEmail, sendAdminNotification } = require('./utils/email-sender');
 
@@ -57,9 +58,12 @@ const handler = async (req, res) => {
       const licenseInfo = generateLicenseKey(customerEmail, sessionId);
       console.log('Generated license key:', licenseInfo.licenseKey);
 
-      // Store license in a simple JSON file (for basic storage)
-      // For production, you'd want to use a database like Vercel Postgres, Supabase, or Airtable
-      await storeLicense(licenseInfo);
+      // Store license in database
+      await storeLicense(licenseInfo, {
+        name: customerName,
+        customerId: session.customer,
+        amount: amountTotal
+      });
 
       // Get the download URL - point to thank you page with auto-download
       const downloadUrl = 'https://fatboysoftware.com/thank-you';
@@ -147,8 +151,12 @@ const handler = async (req, res) => {
       const licenseInfo = generateLicenseKey(customerEmail, chargeId);
       console.log('Generated license key:', licenseInfo.licenseKey);
 
-      // Store license
-      await storeLicense(licenseInfo);
+      // Store license in database
+      await storeLicense(licenseInfo, {
+        name: customerName,
+        customerId: charge.customer,
+        amount: amountTotal
+      });
 
       // Get download URL - point to thank you page with auto-download
       const downloadUrl = 'https://fatboysoftware.com/thank-you';
@@ -203,52 +211,58 @@ const handler = async (req, res) => {
 };
 
 /**
- * Store license information
- *
- * IMPORTANT: This is a basic implementation using filesystem storage.
- * For production, replace this with a proper database:
- * - Vercel Postgres
- * - Supabase
- * - Airtable
- * - MongoDB Atlas
- * - Firebase
+ * Store license information in Vercel Postgres database
  *
  * @param {Object} licenseInfo - License information to store
+ * @param {Object} customerInfo - Additional customer information from Stripe
  */
-async function storeLicense(licenseInfo) {
-  // For now, just log to console
-  // In production, you'd store this in a database
-  console.log('License to store:', JSON.stringify(licenseInfo, null, 2));
+async function storeLicense(licenseInfo, customerInfo = {}) {
+  try {
+    console.log('Storing license in database:', licenseInfo.licenseKey);
 
-  // Example for future database integration:
-  /*
-  // Using Vercel Postgres:
-  const { sql } = require('@vercel/postgres');
-  await sql`
-    INSERT INTO licenses (license_key, email, stripe_session_id, generated_at, product, version, hash)
-    VALUES (${licenseInfo.licenseKey}, ${licenseInfo.email}, ${licenseInfo.stripeSessionId},
-            ${licenseInfo.generatedAt}, ${licenseInfo.product}, ${licenseInfo.version}, ${licenseInfo.hash})
-  `;
+    const result = await sql`
+      INSERT INTO licenses (
+        license_key,
+        hash,
+        email,
+        customer_name,
+        stripe_session_id,
+        stripe_customer_id,
+        amount_paid,
+        generated_at,
+        product,
+        version,
+        status
+      ) VALUES (
+        ${licenseInfo.licenseKey},
+        ${licenseInfo.hash},
+        ${licenseInfo.email},
+        ${customerInfo.name || null},
+        ${licenseInfo.stripeSessionId},
+        ${customerInfo.customerId || null},
+        ${customerInfo.amount || null},
+        ${licenseInfo.generatedAt},
+        ${licenseInfo.product},
+        ${licenseInfo.version},
+        'active'
+      )
+      RETURNING id, license_key, status
+    `;
 
-  // Using Airtable:
-  const Airtable = require('airtable');
-  const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(process.env.AIRTABLE_BASE_ID);
-  await base('Licenses').create([
-    {
-      fields: {
-        'License Key': licenseInfo.licenseKey,
-        'Email': licenseInfo.email,
-        'Stripe Session ID': licenseInfo.stripeSessionId,
-        'Generated At': licenseInfo.generatedAt,
-        'Product': licenseInfo.product,
-        'Version': licenseInfo.version,
-        'Hash': licenseInfo.hash
-      }
+    console.log('License stored successfully:', result.rows[0]);
+    return { success: true, id: result.rows[0].id };
+
+  } catch (error) {
+    // Handle duplicate key errors (Stripe webhook retries)
+    if (error.code === '23505') {
+      console.log('Duplicate license key detected (likely webhook retry)');
+      return { success: true, duplicate: true };
     }
-  ]);
-  */
 
-  return true;
+    console.error('Error storing license:', error);
+    // Don't throw - prevents Stripe retries and duplicate emails
+    return { success: false, error: error.message };
+  }
 }
 
 // Vercel config - disable body parsing to get raw body for Stripe signature verification
