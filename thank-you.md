@@ -121,13 +121,6 @@ Once you receive your email:
 - Linux (experimental)
 - macOS (coming soon)
 
-### 3. Get Started 🚀
-
-New to retirement planning software?
-- Watch our [getting started video](#) *(coming soon)*
-- Read the [user guide](#) *(coming soon)*
-- Check out [example scenarios](#) *(coming soon)*
-
 ---
 
 ## Your Founding Member Benefits
@@ -138,7 +131,6 @@ As one of our first 200 users, you get:
 ✅ **Free major updates** - All future features included
 ✅ **Priority support** - Direct line to the development team
 ✅ **Shape the roadmap** - Your feedback matters
-✅ **Founding Member badge** - Recognition as an early supporter
 
 ---
 
