@@ -95,6 +95,9 @@ async function sendLicenseEmail({ to, customerName, licenseKey, downloadUrl, ord
     </head>
     <body>
       <div class="header">
+        <img src="https://fatboysoftware.com/assets/images/optimized/Fatboy_Software_Logo.png"
+             alt="Fatboy Software Logo"
+             style="max-width: 150px; height: auto; margin-bottom: 20px;">
         <h1>🎉 Thank You for Your Purchase!</h1>
         <p>Welcome to Fatboy Financial Planner Pro - Founding Member</p>
       </div>
@@ -111,17 +114,21 @@ async function sendLicenseEmail({ to, customerName, licenseKey, downloadUrl, ord
         </div>
 
         <div class="instructions">
-          <h3 style="margin-top: 0;">📋 Next Steps:</h3>
-          <ol style="margin-bottom: 0; padding-left: 20px;">
-            <li><strong>Download</strong> the software using the button below</li>
-            <li><strong>Install</strong> Fatboy Financial Planner on your computer</li>
-            <li><strong>Enter your license key</strong> when you first launch the app</li>
-            <li><strong>Start planning</strong> your financial future!</li>
+          <h3 style="margin-top: 0;">🔓 How to Activate Your Pro License:</h3>
+          <ol style="margin-bottom: 0; padding-left: 20px; line-height: 1.8;">
+            <li>Launch <strong>Fatboy Financial Planner</strong> on your computer</li>
+            <li>Click <strong>Help</strong> in the top menu</li>
+            <li>Select <strong>Enter Pro License</strong></li>
+            <li>Copy and paste your license key from above</li>
+            <li>Enjoy all Pro features!</li>
           </ol>
         </div>
 
-        <div style="text-align: center;">
-          <a href="${downloadUrl}" class="download-button">Download Fatboy Financial Planner</a>
+        <div style="background: #f0f8ff; border-left: 4px solid #0066cc; padding: 15px; margin: 20px 0;">
+          <p style="margin: 0; font-size: 14px;">
+            <strong>Don't have the app installed yet?</strong><br>
+            <a href="https://fatboysoftware.com/thank-you" style="color: #0066cc;">Download Fatboy Financial Planner</a> (Windows & Linux)
+          </p>
         </div>
 
         <div class="order-details">
@@ -137,8 +144,8 @@ async function sendLicenseEmail({ to, customerName, licenseKey, downloadUrl, ord
         <h3>💡 Need Help?</h3>
         <p>If you have any questions or need assistance:</p>
         <ul>
-          <li>Visit our FAQ: <a href="https://fatboyfinancialplanner.com/thank-you#faq">fatboyfinancialplanner.com/thank-you#faq</a></li>
-          <li>Check installation guide: <a href="https://fatboyfinancialplanner.com/thank-you#getting-started">Getting Started Guide</a></li>
+          <li>Visit our website: <a href="https://fatboysoftware.com">fatboysoftware.com</a></li>
+          <li>Installation guide: <a href="https://fatboysoftware.com/thank-you">Download & Setup Instructions</a></li>
           <li>Contact support: Reply to this email</li>
         </ul>
 

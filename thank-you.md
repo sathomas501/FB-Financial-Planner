@@ -96,7 +96,6 @@ Thank you for becoming a Founding Member. You've just secured the best price we'
 
 Within the next **5-10 minutes**, you'll receive:
 - **Order confirmation** from Stripe
-- **Download link** for Fatboy Financial Planner Pro
 - **License key** for activation
 - **Getting started guide**
 
@@ -104,9 +103,16 @@ Within the next **5-10 minutes**, you'll receive:
 
 ### 2. Download & Install 💾
 
+If you need a new download:
+
+<a href="#" id="download-free-version" data-version="" style="display: inline-block; padding: 12px 24px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Download Free Version (Windows)</a>
+
+<a href="#" id="download-linux" data-version="" style="display: inline-block; padding: 12px 24px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; margin-left: 10px;">Download Free Version (Linux)</a>
+
 Once you receive your email:
-1. Click the download link
-2. Run the installer
+1. Go to the app
+2. Click "Help" on the top menu
+3. Select "Activate Pro License"
 3. Enter your license key when prompted
 4. Start planning your retirement!
 
@@ -146,7 +152,7 @@ As one of our first 200 users, you get:
 ### Common Questions
 
 **Q: How do I activate my license?**
-A: Enter the license key from your email when you first launch the app.
+A: Enter the license key from your email in the "Help" menu of the app.
 
 **Q: Can I install on multiple computers?**
 A: Yes! Your license allows installation on all your personal devices.

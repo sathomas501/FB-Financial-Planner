@@ -61,8 +61,8 @@ const handler = async (req, res) => {
       // For production, you'd want to use a database like Vercel Postgres, Supabase, or Airtable
       await storeLicense(licenseInfo);
 
-      // Get the latest download URL from GitHub
-      const downloadUrl = 'https://fatboyfinancialplanner.com/thank-you#download';
+      // Get the download URL - point to thank you page with auto-download
+      const downloadUrl = 'https://fatboysoftware.com/thank-you';
 
       // Send license email to customer
       await sendLicenseEmail({
@@ -115,14 +115,29 @@ const handler = async (req, res) => {
     const charge = event.data.object;
 
     try {
-      // Get customer email from billing details or receipt email
-      const customerEmail = charge.billing_details?.email || charge.receipt_email;
-      const customerName = charge.billing_details?.name || '';
+      let customerEmail = charge.billing_details?.email || charge.receipt_email;
+      let customerName = charge.billing_details?.name || '';
       const chargeId = charge.id;
       const amountTotal = charge.amount;
 
+      // If no email in charge, try to get it from the customer object
+      if (!customerEmail && charge.customer) {
+        try {
+          console.log('Fetching customer details from Stripe:', charge.customer);
+          const customer = await stripe.customers.retrieve(charge.customer);
+          customerEmail = customer.email;
+          customerName = customer.name || '';
+        } catch (customerError) {
+          console.log('Could not retrieve customer:', customerError.message);
+          // For test events, use a fallback email if available
+          if (charge.receipt_email) {
+            customerEmail = charge.receipt_email;
+          }
+        }
+      }
+
       if (!customerEmail) {
-        console.log('No customer email found in charge, skipping license generation');
+        console.log('No customer email found in charge or customer object, skipping license generation');
         return res.status(200).json({ received: true, note: 'No email found' });
       }
 
@@ -135,8 +150,8 @@ const handler = async (req, res) => {
       // Store license
       await storeLicense(licenseInfo);
 
-      // Get download URL
-      const downloadUrl = 'https://fatboyfinancialplanner.com/thank-you#download';
+      // Get download URL - point to thank you page with auto-download
+      const downloadUrl = 'https://fatboysoftware.com/thank-you';
 
       // Send license email to customer
       await sendLicenseEmail({
