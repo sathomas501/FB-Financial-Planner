@@ -72,7 +72,10 @@
 
     event.preventDefault();
 
+    var navigated = false;
     var navigate = function () {
+      if (navigated) return;
+      navigated = true;
       window.location.href = url;
     };
 
