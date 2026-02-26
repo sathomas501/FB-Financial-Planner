@@ -203,6 +203,8 @@ Desktop application. Everything runs locally. No cloud sync. No "storing your da
 
 <a href="#" id="download-linux" data-version="" style="display: inline-block; padding: 12px 24px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; margin-left: 10px;">Download Free Version (Linux)</a>
 
+<a href="https://web-production-b3fa0.up.railway.app" style="display: inline-block; padding: 12px 24px; background: #475569; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; margin-left: 10px;">Try Web Preview (Free, limited)</a>
+
 <a href="https://fatboy-license-server-oc13.vercel.app/api/create-checkout-session"
    style="display: inline-block; padding: 12px 24px; background: #28a745; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">
    Buy Pro Version Now - $149
