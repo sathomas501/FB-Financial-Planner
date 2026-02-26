@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Fatboy Software</title>
+  <title>Fatboy Financial Planner</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     /* Mobile-first base styles */
@@ -35,8 +35,36 @@
       margin: 1rem 0;
     }
 
-    button {
+    .form-group {
       margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    input[type="email"] {
+      padding: 0.875rem 1.25rem;
+      min-height: 44px;
+      border-radius: 999px;
+      border: 1px solid #334155;
+      background: #0f172a;
+      color: #e5e7eb;
+      font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    input[type="email"]:focus {
+      border-color: #22c55e;
+    }
+
+    input[type="email"]::placeholder {
+      color: #64748b;
+    }
+
+    button[type="submit"] {
       padding: 0.875rem 1.5rem;
       min-height: 44px;
       width: 100%;
@@ -51,24 +79,55 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    button:hover {
+    button[type="submit"]:hover:not(:disabled) {
       background: #16a34a;
     }
 
-    button:active {
+    button[type="submit"]:active:not(:disabled) {
       transform: scale(0.98);
       background: #15803d;
     }
 
-    button:focus-visible {
+    button[type="submit"]:focus-visible {
       outline: 2px solid #22c55e;
       outline-offset: 2px;
     }
 
-    /* Tablet and up */
+    button[type="submit"]:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .status {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      text-align: center;
+      min-height: 1.25rem;
+    }
+
+    .status.success { color: #22c55e; }
+    .status.error   { color: #f87171; }
+
+    .desktop-link {
+      color: #22c55e;
+      text-decoration: none;
+    }
+
+    .desktop-link:hover { text-decoration: underline; }
+
+    /* Tablet and up: side-by-side input + button */
     @media (min-width: 480px) {
-      button {
+      .form-group {
+        flex-direction: row;
+      }
+
+      input[type="email"] {
+        flex: 1;
+      }
+
+      button[type="submit"] {
         width: auto;
+        white-space: nowrap;
       }
     }
 
@@ -94,10 +153,93 @@
 </head>
 <body>
   <div class="card">
-    <h1>Fatboy Software</h1>
-    <p>Financial and Retirement planning, without the spreadsheets.</p>
-    <p>We’re building a simple app that helps you understand, plan, and track your path to retirement — without needing to be a financial expert.</p>
-    <button>Join the waitlist</button>
+    <h1>Fatboy Financial Planner</h1>
+    <p>Financial and retirement planning, without the spreadsheets.</p>
+
+    <!-- Shown to mobile/tablet visitors -->
+    <div id="mobile-content">
+      <p>The app is available now for Windows and Linux. A web version is on the way — drop your email and we'll let you know when it's ready.</p>
+      <form id="waitlist-form" novalidate>
+        <div class="form-group">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="your@email.com"
+            required
+            autocomplete="email"
+            inputmode="email"
+          />
+          <button type="submit">Notify me</button>
+        </div>
+        <div id="form-status" class="status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+
+    <!-- Shown to desktop visitors before redirect -->
+    <div id="desktop-content" hidden>
+      <p>
+        Looks like you're on a desktop.<br>
+        <a href="https://fatboysoftware.com" class="desktop-link">Visit fatboysoftware.com →</a> to download the app for Windows or Linux.
+      </p>
+      <p style="color:#64748b;font-size:0.875rem;">Redirecting in a moment&hellip;</p>
+    </div>
   </div>
+
+  <script>
+    // Redirect desktop visitors to the main site
+    if (window.matchMedia('(pointer: fine) and (min-width: 1024px)').matches) {
+      document.getElementById('mobile-content').hidden = true;
+      document.getElementById('desktop-content').hidden = false;
+      setTimeout(function () {
+        window.location.href = 'https://fatboysoftware.com';
+      }, 3000);
+    }
+
+    // Email capture
+    var form = document.getElementById('waitlist-form');
+    var statusEl = document.getElementById('form-status');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var emailInput = document.getElementById('email');
+      var email = emailInput.value.trim();
+      var btn = form.querySelector('button[type="submit"]');
+
+      if (!email || !email.includes('@')) {
+        statusEl.textContent = 'Please enter a valid email address.';
+        statusEl.className = 'status error';
+        emailInput.focus();
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending\u2026';
+      statusEl.textContent = '';
+      statusEl.className = 'status';
+
+      fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      })
+        .then(function (res) {
+          if (res.ok) {
+            form.querySelector('.form-group').hidden = true;
+            statusEl.textContent = '\u2713 You\u2019re on the list! We\u2019ll email you when the web version is ready.';
+            statusEl.className = 'status success';
+          } else {
+            throw new Error('Server error');
+          }
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.textContent = 'Notify me';
+          statusEl.textContent = 'Something went wrong. Please try again.';
+          statusEl.className = 'status error';
+        });
+    });
+  </script>
 </body>
 </html>
