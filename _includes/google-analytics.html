@@ -1,15 +1,13 @@
 <!-- Google tag (gtag.js) -->
-{% if site.google_analytics %}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E07V8HLTRS"></script>
 <script>
-  window.GA_MEASUREMENT_ID = '{{ site.google_analytics }}';
+  window.GA_MEASUREMENT_ID = 'G-E07V8HLTRS';
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   var pagePathWithQuery = window.location.pathname + window.location.search;
-  gtag('config', window.GA_MEASUREMENT_ID, {
+  gtag('config', 'G-E07V8HLTRS', {
     'page_path': pagePathWithQuery,
     'cookie_flags': 'SameSite=None;Secure'
   });
 </script>
-{% endif %}
