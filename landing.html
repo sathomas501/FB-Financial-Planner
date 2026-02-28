@@ -266,7 +266,7 @@
       statusEl.textContent = '';
       statusEl.className = 'status';
 
-      fetch('/api/waitlist', {
+      fetch('https://fb-financial-planner.vercel.app/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email })
