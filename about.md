@@ -63,6 +63,20 @@ Have a question? Need support? Want to share feedback? We'd love to hear from yo
 
 <form id="contactForm" style="max-width: 600px; margin: 20px 0;">
   <div style="margin-bottom: 20px;">
+    <label for="contactName" style="display: block; margin-bottom: 8px; font-weight: bold;">Name (optional)</label>
+    <input type="text" id="contactName" name="name" placeholder="Your name"
+           style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #444; background-color: #2a2a2a; color: #fff; border-radius: 4px; box-sizing: border-box;">
+  </div>
+
+  <div style="margin-bottom: 20px;">
+    <label for="contactEmail" style="display: block; margin-bottom: 8px; font-weight: bold;">
+      Email <span style="color: #d33;">*</span>
+    </label>
+    <input type="email" id="contactEmail" name="email" required placeholder="you@example.com"
+           style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #444; background-color: #2a2a2a; color: #fff; border-radius: 4px; box-sizing: border-box;">
+  </div>
+
+  <div style="margin-bottom: 20px;">
     <label for="subject" style="display: block; margin-bottom: 8px; font-weight: bold;">
       What is your inquiry about? <span style="color: #d33;">*</span>
     </label>
@@ -88,46 +102,56 @@ Have a question? Need support? Want to share feedback? We'd love to hear from yo
               style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #444; background-color: #2a2a2a; color: #fff; border-radius: 4px; font-family: inherit; resize: vertical;"></textarea>
   </div>
 
-  <div style="margin-bottom: 20px; font-size: 14px; color: #aaa;">
-    <strong>Note:</strong> Clicking "Send Message" will open your default email client. Please make sure to include your contact information in your message so we can respond.
-  </div>
+  <div id="formStatus" style="margin-bottom: 16px; font-size: 14px;"></div>
 
-  <button type="submit"
+  <button type="submit" id="submitBtn"
           style="background-color: #0066cc; color: white; padding: 12px 30px; font-size: 16px; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;">
     Send Message
   </button>
 </form>
 
 <script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
 
+  const name = document.getElementById('contactName').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
   const subject = document.getElementById('subject').value;
-  const message = document.getElementById('message').value;
+  const message = document.getElementById('message').value.trim();
+  const statusEl = document.getElementById('formStatus');
+  const btn = document.getElementById('submitBtn');
 
-  // Validate
-  if (!subject || !message) {
-    alert('Please fill in all required fields.');
+  if (!email || !subject || !message) {
+    statusEl.textContent = 'Please fill in all required fields.';
+    statusEl.style.color = '#d33';
     return;
   }
 
-  // Create mailto link
-  const email = 'fbfinancialplanner@gmail.com';
-  const mailtoSubject = encodeURIComponent('[Contact Form] ' + subject);
-  const mailtoBody = encodeURIComponent(message);
-  const mailtoLink = `mailto:${email}?subject=${mailtoSubject}&body=${mailtoBody}`;
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  statusEl.textContent = '';
 
-  // Open email client
-  window.location.href = mailtoLink;
-});
+  try {
+    const res = await fetch('https://fatboy-license-server-oc13.vercel.app/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message: '[' + subject + '] ' + message, source: 'about_page' })
+    });
 
-// Add hover effect to button
-const submitBtn = document.querySelector('button[type="submit"]');
-submitBtn.addEventListener('mouseenter', function() {
-  this.style.backgroundColor = '#0052a3';
-});
-submitBtn.addEventListener('mouseleave', function() {
-  this.style.backgroundColor = '#0066cc';
+    if (res.ok) {
+      statusEl.textContent = '✓ Message sent! We\'ll get back to you within 1-2 business days.';
+      statusEl.style.color = '#16a34a';
+      e.target.reset();
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (err) {
+    statusEl.textContent = 'Something went wrong. Please email us directly at fbfinancialplanner@gmail.com';
+    statusEl.style.color = '#d33';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
 });
 </script>
 
