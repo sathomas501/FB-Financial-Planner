@@ -17,9 +17,9 @@ module.exports = async function handler(req, res) {
   const sanitizedEmail = email.trim().toLowerCase().slice(0, 254);
 
   try {
-    // Save to contacts DB — fire and forget, don't fail the request if this errors
-    if (process.env.DATABASE_URL) {
-      const sql = neon(process.env.DATABASE_URL);
+    // Save to unified contacts DB — fire and forget, don't fail the request if this errors
+    if (process.env.CONTACTS_DATABASE_URL) {
+      const sql = neon(process.env.CONTACTS_DATABASE_URL);
       sql`INSERT INTO contacts (email, source) VALUES (${sanitizedEmail}, 'waitlist')`.catch(
         (err) => console.error('Waitlist DB insert failed:', err)
       );
