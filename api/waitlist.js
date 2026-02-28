@@ -1,4 +1,5 @@
 const { Resend } = require('resend');
+const { neon } = require('@neondatabase/serverless');
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -16,6 +17,14 @@ module.exports = async function handler(req, res) {
   const sanitizedEmail = email.trim().toLowerCase().slice(0, 254);
 
   try {
+    // Save to contacts DB — fire and forget, don't fail the request if this errors
+    if (process.env.DATABASE_URL) {
+      const sql = neon(process.env.DATABASE_URL);
+      sql`INSERT INTO contacts (email, source) VALUES (${sanitizedEmail}, 'waitlist')`.catch(
+        (err) => console.error('Waitlist DB insert failed:', err)
+      );
+    }
+
     const fromAddress = process.env.FROM_EMAIL || 'Fatboy Financial Planner <hello@fatboysoftware.com>';
     const adminEmail = process.env.ADMIN_EMAIL;
 
