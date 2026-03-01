@@ -2,7 +2,7 @@
 layout: default
 title: Pricing - Fatboy Financial Planner
 description: Free retirement planning software with optional Pro upgrade. Founding Member pricing - $149 one-time for the first 200 users. No subscriptions, ever.
-keywords: retirement planning software pricing, one-time purchase, no subscription, founding member offer
+keywords: retirement planning software pricing, one-time purchase, no subscription, founding member offer, retirement software no subscription, estate planning software one-time purchase, Monte Carlo retirement analysis software
 ---
 
 <picture>
@@ -46,13 +46,14 @@ Be a Founding Member. Lock in this price forever.
 - **Adjustable planning period** User selectable planning period - up to 100 years
 - **Unlimited scenarios** - Test as many retirement and lifestyle strategies as you want
 - **Advanced Roth conversion optimizer** - Find the optimal conversion schedule
-- **Monte Carlo Analysis** - Variable # of iterations using selectable risk profiles
+- **Monte Carlo Analysis** - Variable # of iterations using selectable risk profiles. Run against any scenario and compare results. Enhanced results dashboard shows full percentile distribution, success rates by time period, and tail-risk exposure
 - **Breakpoint & Stress Test Analysis** - Find exact thresholds where your plan fails. Discover minimum required returns, maximum sustainable spending, and which assumptions matter most. Interactive charts with color-coded risk zones
 - **Sensitivity Analysis** - Tornado charts showing which parameters have the biggest impact on success. Focus your planning on what actually matters
 - **Interactive goal solver** - Work backwards from your retirement goals
 - **Sankey cash flow diagrams** - Visual representation of where every dollar goes
 - **Editable tax parameters** - Model future tax law changes (TCJA expiration, state tax scenarios)
 - **Advanced tax optimization** - Sophisticated strategies for minimizing lifetime taxes
+- **Estate & Legacy Forecasting** - Project estate value year-by-year, set legacy goals, analyze beneficiary/inherited IRA outcomes, and track federal estate tax exposure including TCJA exemption sunset scenarios
 
 **Founding Member Benefits:**
 - **$149 locked in forever** - Pay once, own it permanently
@@ -158,6 +159,7 @@ Most people can do their entire retirement plan with 3 scenarios. If you find yo
 - You want advanced tax optimization features
 - You love data visualization (Sankey diagrams)
 - You want to work backwards from specific retirement goals
+- You want to analyze what you'll leave behind - estate value projections, legacy goal tracking, beneficiary impacts, and estate tax exposure
 
 ---
 

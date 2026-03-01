@@ -31,6 +31,7 @@ const SCREENSHOTS = [
   'summary_report.png',
   'plan_summary.png',
   'MC_dashboard.png',
+  'Monte_Carlo_Modeling.png',
   'assets_over_time.png',
   'projection_center.png',
   'landing_page.png',
@@ -41,7 +42,12 @@ const SCREENSHOTS = [
   'debt_entry.png',
   'allocations.png',
   'allocation_analyzer.png',
-  'gas_guage_chart.png'
+  'gas_guage_chart.png',
+  'Estate_Legacy_Analysis.png',
+  'Beneficiary_Quick_Guide.png',
+  'stress_test.png',
+  'sensitivity_analysis.png',
+  'comprehensive_stress_test.png',
 ];
 
 const LOGO = 'Fatboy Software Logo.png';

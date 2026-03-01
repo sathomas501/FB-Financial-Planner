@@ -2,7 +2,7 @@
 layout: default
 title: Fatboy Financial Planner - Professional Retirement Planning Software You Own
 description: Sophisticated retirement planning for people who don't need a financial advisor. Model Roth conversions, OBBBA senior deduction strategies, IRMAA impacts, and complex withdrawal strategies. Editable tax parameters - update yourself when laws change.
-keywords: retirement planning software, Roth conversion calculator, OBBBA 2026, senior deduction, IRMAA planning, tax optimization, Monte Carlo simulation, editable tax parameters
+keywords: retirement planning software, Roth conversion calculator, OBBBA 2026, senior deduction, IRMAA planning, tax optimization, Monte Carlo retirement analysis, editable tax parameters, estate planning retirement software, inherited IRA analysis, retirement legacy planning, estate tax exemption 2026
 ---
 
 <picture>
@@ -71,7 +71,18 @@ Not the dumbed-down version. Full control over:
 - Number of iterations
 - Risk-free rate assumptions
 
-See percentile outcomes (10th, 25th, median, 75th, 90th) - not just a single "success rate."
+Run Monte Carlo against any of your scenarios and compare results side-by-side. Enhanced results dashboard breaks down the full distribution of outcomes - percentile bands, success rates by time period, and tail-risk exposure - so you can see not just whether your plan survives, but by how much.
+
+### Estate & Legacy Planning
+
+See the full picture - not just whether you'll run out of money, but what you'll leave behind.
+
+- **Estate value projections** - See how your estate grows or draws down year-by-year through retirement and into legacy
+- **Legacy goal tracking** - Set a target bequest and see whether your plan meets it
+- **Beneficiary & inheritance analysis** - See what heirs will receive, including inherited IRA RMD implications under current rules
+- **Estate tax exposure** - Track your estate against federal exemption thresholds, including TCJA exemption sunset scenarios
+
+Estate planning isn't just for the ultra-wealthy. If you have a seven-figure portfolio, a paid-off house, and IRAs with RMD obligations, your heirs have an inheritance tax problem whether you've planned for it or not.
 
 ---
 
@@ -157,8 +168,9 @@ Export professional reports. Share with advisors. Review annually. Adjust as lif
 - Unlimited scenarios
 - Breakpoint analysis & stress testing
 - Professional PDF reports
-- Advanced Monte Carlo controls
+- Advanced Monte Carlo controls with enhanced results dashboard
 - Sensitivity analysis
+- Estate & legacy forecasting (estate value projections, legacy goals, estate tax analysis)
 - All future updates included
 
 **No subscriptions. No annual "update" fees. You own it.**

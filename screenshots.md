@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Fatboy Financial Planner Screenshots - Features & Interface
-description: Explore Fatboy Financial Planner features through screenshots. See the planning wizard, cash flow visualization, Roth conversion tools, goal solver, and portfolio analysis.
-keywords: retirement planner screenshots, retirement planning software demo, Roth conversion tool, cash flow visualization, retirement calculator interface
+description: Explore Fatboy Financial Planner features through screenshots. See the planning wizard, Monte Carlo scenario analysis, estate forecasting, cash flow visualization, Roth conversion tools, goal solver, and portfolio analysis.
+keywords: retirement planner screenshots, retirement planning software demo, Roth conversion tool, cash flow visualization, retirement calculator interface, Monte Carlo retirement analysis, estate planning retirement software, inherited IRA RMD calculator, retirement scenario comparison
 ---
 
 <picture>
@@ -109,7 +109,22 @@ Explore the features and capabilities of Fatboy Financial Planner through these 
        loading="lazy"
        style="max-width: 100%; height: auto;">
 </picture>
-<em>Probabilistic simulation dashboard that shows the likelihood of plan success and the range of possible outcomes.</em>
+<em>Probabilistic simulation dashboard with enhanced results breakdown - full percentile distribution, success rates by time period, and tail-risk exposure. Run against any of your scenarios and compare results side-by-side.</em>
+
+### Monte Carlo Scenario Analysis
+<picture>
+  <source srcset="/assets/images/optimized/Monte_Carlo_Modeling-400w.webp 400w, /assets/images/optimized/Monte_Carlo_Modeling-800w.webp 800w, /assets/images/optimized/Monte_Carlo_Modeling-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/Monte_Carlo_Modeling-400w.png 400w, /assets/images/optimized/Monte_Carlo_Modeling-800w.png 800w, /assets/images/optimized/Monte_Carlo_Modeling-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
+  <img src="/assets/images/optimized/Monte_Carlo_Modeling-800w.png"
+       alt="Monte Carlo scenario modeling configuration"
+       loading="lazy"
+       style="max-width: 100%; height: auto;">
+</picture>
+<em>Configure and run Monte Carlo analysis across different plan scenarios. Select risk profiles, iteration counts, and compare probabilistic outcomes between strategies.</em>
 
 ### Assets Over Time
 <picture>
@@ -256,4 +271,44 @@ Explore the features and capabilities of Fatboy Financial Planner through these 
 
 ---
 
-[Back to Home](/) | [View Pricing](/pricing) | [Compare Software](/comparison) | [About & Contact](/about) 
+## Estate & Legacy Planning (Pro)
+
+### Estate & Legacy Analysis
+<picture>
+  <source srcset="/assets/images/optimized/Estate_Legacy_Analysis-400w.webp 400w, /assets/images/optimized/Estate_Legacy_Analysis-800w.webp 800w, /assets/images/optimized/Estate_Legacy_Analysis-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/Estate_Legacy_Analysis-400w.png 400w, /assets/images/optimized/Estate_Legacy_Analysis-800w.png 800w, /assets/images/optimized/Estate_Legacy_Analysis-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
+  <img src="/assets/images/optimized/Estate_Legacy_Analysis-800w.png"
+       alt="Estate and legacy analysis showing estate value projections"
+       loading="lazy"
+       style="max-width: 100%; height: auto;">
+</picture>
+<em>Year-by-year projection of your estate value through retirement and into legacy - see how spending, withdrawals, taxes, and growth interact to determine what you'll leave behind. Set legacy goals and track your plan against them.</em>
+
+### Beneficiary Quick Guide
+<picture>
+  <source srcset="/assets/images/optimized/Beneficiary_Quick_Guide-400w.webp 400w, /assets/images/optimized/Beneficiary_Quick_Guide-800w.webp 800w, /assets/images/optimized/Beneficiary_Quick_Guide-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/Beneficiary_Quick_Guide-400w.png 400w, /assets/images/optimized/Beneficiary_Quick_Guide-800w.png 800w, /assets/images/optimized/Beneficiary_Quick_Guide-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
+  <img src="/assets/images/optimized/Beneficiary_Quick_Guide-800w.png"
+       alt="Beneficiary planning quick guide"
+       loading="lazy"
+       style="max-width: 100%; height: auto;">
+</picture>
+<em>At-a-glance beneficiary planning reference - inherited IRA RMD rules, stretch strategies, and key planning considerations for your heirs under current law.</em>
+
+### Estate Tax & Exemption Modeling
+
+*(Screenshot coming soon)*
+
+*Track your estate against federal exemption thresholds and model TCJA exemption sunset scenarios. Know your estate tax exposure before it's a problem for your heirs.*
+
+---
+
+[Back to Home](/) | [View Pricing](/pricing) | [Compare Software](/comparison) | [About & Contact](/about)
