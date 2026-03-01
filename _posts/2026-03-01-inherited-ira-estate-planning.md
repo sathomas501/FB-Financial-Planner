@@ -211,7 +211,12 @@ Seeing this clearly doesn't require an estate attorney (though working with one 
 
 ---
 
-*Run the estate analysis in [Fatboy Financial Planner]({{ site.url }}{{ site.baseurl }}/). See your estate value year by year, set legacy goals, and understand the after-tax inheritance picture — not just the account balance.*
+<div style="background:#f8f9fa;border:1px solid #e0e0e0;border-radius:8px;padding:1.5rem 2rem;margin:2rem 0;text-align:center">
+  <p style="margin-bottom:0.5rem;font-weight:700;font-size:1.1rem;color:#1a1a2e">Ready to see what you're actually leaving behind?</p>
+  <p style="margin-bottom:1.25rem;color:#555;font-size:0.95rem">Estate & legacy forecasting is a Pro feature. Free version includes full core retirement planning.</p>
+  <a href="/pricing" style="display:inline-block;padding:10px 22px;background:#0066cc;color:white;text-decoration:none;border-radius:6px;font-weight:600;margin:4px">Download Free Version</a>
+  <a href="https://buy.stripe.com/4gM8wI92w9i98r95sSawo00" style="display:inline-block;padding:10px 22px;background:#28a745;color:white;text-decoration:none;border-radius:6px;font-weight:600;margin:4px">Buy Pro — $149 One-Time</a>
+</div>
 
 *Questions? Email: [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)*
 
