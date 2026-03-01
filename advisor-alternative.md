@@ -295,7 +295,12 @@ A: Email support for technical issues. We can't give you financial advice (not a
 
 **Questions? Email: [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)**
 
-[Why Fatboy?](/why-fatboy) | [See All Features](/screenshots) | [Pricing](/pricing) | [Blog](/blog)
+<nav class="page-nav">
+  <a href="/why-fatboy">Why Fatboy?</a>
+  <a href="/screenshots">See All Features</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/blog">Blog</a>
+</nav>
 
 ---
 

@@ -368,4 +368,9 @@ And the TCJA→OBBBA transition just proved that hope is not a strategy.
 
 **Questions? Email: [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)**
 
-[← Back to Home]({{ site.url }}{{ site.baseurl }}/) | [Blog]({{ site.url }}{{ site.baseurl }}/blog) | [Pricing]({{ site.url }}{{ site.baseurl }}/pricing) | [About]({{ site.url }}{{ site.baseurl }}/about)
+<nav class="page-nav">
+  <a href="{{ site.url }}{{ site.baseurl }}/">← Back to Home</a>
+  <a href="{{ site.url }}{{ site.baseurl }}/blog">Blog</a>
+  <a href="{{ site.url }}{{ site.baseurl }}/pricing">Pricing</a>
+  <a href="{{ site.url }}{{ site.baseurl }}/about">About</a>
+</nav>

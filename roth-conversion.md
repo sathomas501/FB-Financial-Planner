@@ -188,4 +188,9 @@ A: No. This is planning software, not advice. It models scenarios and shows tax 
 
 **Questions? Email: [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)**
 
-[Why Fatboy?](/why-fatboy) | [See All Features](/screenshots) | [Pricing Details](/pricing) | [Blog](/blog)
+<nav class="page-nav">
+  <a href="/why-fatboy">Why Fatboy?</a>
+  <a href="/screenshots">See All Features</a>
+  <a href="/pricing">Pricing Details</a>
+  <a href="/blog">Blog</a>
+</nav>

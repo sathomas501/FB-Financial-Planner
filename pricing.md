@@ -185,4 +185,9 @@ Lock in $149 pricing forever. Be part of shaping the product.
 
 ---
 
-[Back to Home](/) | [See Screenshots](/screenshots) | [Compare to Other Software](/comparison) | [About & Contact](/about)
+<nav class="page-nav">
+  <a href="/">Back to Home</a>
+  <a href="/screenshots">See Screenshots</a>
+  <a href="/comparison">Compare to Other Software</a>
+  <a href="/about">About & Contact</a>
+</nav>

@@ -214,6 +214,37 @@ code {
   }
 }
 
+/* Page bottom navigation */
+.page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.375rem;
+  margin: 2rem 0 1rem;
+  padding: 1rem 0 0;
+  border-top: 1px solid #e1e4e8;
+  align-items: center;
+}
+
+.page-nav a {
+  display: inline-block;
+  min-height: auto;
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.page-nav a:hover {
+  background: #f0f6ff;
+  border-color: #cce0ff;
+  color: #0052a3;
+  text-decoration: none;
+}
+
 /* Download button styles */
 .download-buttons {
   display: flex;
