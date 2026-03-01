@@ -25,7 +25,9 @@ When you die with $2M in a traditional IRA, your heirs don't inherit $2M. They i
 
 If your child is 45, working, and already in the 24% bracket, that inherited IRA is worth significantly less than $2M by the time the IRS is done with it.
 
-**Most retirement plans stop at your death.** They don't project your estate value. They don't show what heirs actually receive. They don't surface the tax problem until it's too late to do anything about it.
+<div class="callout-warning">
+<strong>Most retirement plans stop at your death.</strong> They don't project your estate value. They don't show what heirs actually receive. They don't surface the tax problem until it's too late to do anything about it.
+</div>
 
 That's what estate forecasting is for.
 
@@ -49,9 +51,10 @@ Your child inherits a $1M traditional IRA at age 45. They have until age 55 to d
 
 If they spread it $100k/year for 10 years, and they're already earning $120k, each year's distribution pushes their taxable income to $220k — squarely in the 32% bracket.
 
-**Federal tax alone on $1M inherited IRA: ~$320,000.**
-
+<div class="callout">
+<strong>Federal tax alone on a $1M inherited traditional IRA: ~$320,000.</strong><br>
 That's not your tax problem. It's theirs. But you created it.
+</div>
 
 ---
 
@@ -66,9 +69,9 @@ This matters because traditional IRA money:
 
 When your heirs inherit a traditional IRA, every dollar they distribute is ordinary income. Not capital gains (which would be preferential). Ordinary income. At their marginal rate.
 
-**Roth IRAs have no IRD problem.** They were funded with after-tax money. Heirs inherit them tax-free, still subject to the 10-year rule but without the tax hit on each distribution.
-
-This is one of the most compelling reasons for Roth conversions — not just for your own retirement, but for your estate.
+<div class="callout-key">
+<strong>Roth IRAs have no IRD problem.</strong> They were funded with after-tax money. Heirs inherit them tax-free — still subject to the 10-year rule, but without the income tax hit on each distribution. This is one of the most compelling reasons for Roth conversions — not just for your own retirement, but for your estate.
+</div>
 
 ---
 
@@ -110,7 +113,9 @@ Engineer retires at 62. Traditional IRA: $1.4M. House: $600k. Taxable brokerage:
 
 But the $1.4M traditional IRA is fully taxable to heirs, distributed across 10 years into their peak earning window. Real after-tax value to heirs: closer to $950k-$1.1M depending on their situation.
 
-**That's a $300-450k gap between what your plan shows and what heirs actually receive.** Most retirement software never surfaces this.
+<div class="callout-warning">
+That's a <strong>$300-450k gap</strong> between what your plan shows and what heirs actually receive. Most retirement software never surfaces this.
+</div>
 
 ---
 
@@ -200,7 +205,9 @@ If most of your retirement assets are in traditional IRAs, your heirs are inheri
 
 Seeing this clearly doesn't require an estate attorney (though working with one for complex situations is smart). It requires a retirement plan that shows your estate, not just your retirement account balances.
 
-**Start by knowing what you're actually leaving behind.** The rest follows from there.
+<div class="callout-key">
+<strong>Start by knowing what you're actually leaving behind.</strong> The rest follows from there.
+</div>
 
 ---
 
