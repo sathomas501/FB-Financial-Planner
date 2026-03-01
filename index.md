@@ -211,9 +211,10 @@ Desktop application. Everything runs locally. No cloud sync. No "storing your da
 
 ## Get Started
 
-<a href="#" id="download-free-version" data-version="" style="display: inline-block; padding: 12px 24px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Download Free Version (Windows)</a>
-
-<a href="#" id="download-linux" data-version="" style="display: inline-block; padding: 12px 24px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; margin-left: 10px;">Download Free Version (Linux)</a>
+<div class="download-buttons">
+  <a href="#" id="download-free-version" class="btn-download" data-version="">⊞ Download for Windows</a>
+  <a href="#" id="download-linux" class="btn-download" data-version="">🐧 Download for Linux</a>
+</div>
 
 <a href="https://web-production-b3fa0.up.railway.app" style="display: inline-block; padding: 12px 24px; background: #475569; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; margin-left: 10px;">Try Web Preview (Free, limited)</a>
 

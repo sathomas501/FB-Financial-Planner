@@ -244,9 +244,10 @@ Your data never leaves your computer. No cloud sync. No vendor harvesting your f
 
 ## Get Started
 
-<a href="#" id="download-free-version" data-version="" style="display: inline-block; padding: 12px 24px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; margin-right: 10px;">Download Free Version (Windows)</a>
-
-<a href="#" id="download-linux" data-version="" style="display: inline-block; padding: 12px 24px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Download Free Version (Linux)</a>
+<div class="download-buttons">
+  <a href="#" id="download-free-version" class="btn-download" data-version="">⊞ Download for Windows</a>
+  <a href="#" id="download-linux" class="btn-download" data-version="">🐧 Download for Linux</a>
+</div>
 
 [Buy Pro Version - $149 (One-Time)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00)
 

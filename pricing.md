@@ -30,7 +30,10 @@ Start planning your retirement today. No credit card. No trial period. No catch.
 
 **Perfect for:** Most people doing basic retirement planning
 
-<a href="#" class="auto-download-installer" data-version="">Download Free Version (Windows)</a> | <a href="#" class="auto-download-linux" data-version="">Download Free Version (Linux)</a>
+<div class="download-buttons">
+  <a href="#" class="btn-download auto-download-installer" data-version="">⊞ Download for Windows</a>
+  <a href="#" class="btn-download auto-download-linux" data-version="">🐧 Download for Linux</a>
+</div>
 
 ---
 
@@ -169,7 +172,10 @@ Most people can do their entire retirement plan with 3 scenarios. If you find yo
 
 No risk. No credit card. Download and start planning today.
 
-<a href="#" class="auto-download-installer" data-version="">Download Free Version (Windows)</a> | <a href="#" class="auto-download-linux" data-version="">Download Free Version (Linux)</a>
+<div class="download-buttons">
+  <a href="#" class="btn-download auto-download-installer" data-version="">⊞ Download for Windows</a>
+  <a href="#" class="btn-download auto-download-linux" data-version="">🐧 Download for Linux</a>
+</div>
 
 ### Option 2: Join as a Founding Member
 
