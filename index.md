@@ -215,4 +215,4 @@ Desktop application. Everything runs locally. No cloud sync. No "storing your da
 ---
 
 **Questions? Email: [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)**
-**Note:**  Linux version available. Code signing certificate for download trust indicators in process.
+**Note:**  Linux version available.  Code signing certificate received and in place

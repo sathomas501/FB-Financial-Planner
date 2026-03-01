@@ -9,6 +9,8 @@
     // Configuration
     const GITHUB_REPO = 'sathomas501/FB-Financial-Planner';
     const GITHUB_API_URL = `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`;
+    const CACHE_KEY = 'fb_release_cache';
+    const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
 
     /**
      * Find an asset in the release that matches the given pattern
@@ -72,14 +74,27 @@
      */
     async function updateDownloadLinks() {
         try {
-            console.log('Fetching latest release from GitHub...');
+            // Serve from localStorage cache if fresh (avoids GitHub rate limits)
+            let data;
+            try {
+                const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+                if (cached && (Date.now() - cached.ts) < CACHE_TTL_MS) {
+                    console.log('Using cached release data');
+                    data = cached.data;
+                }
+            } catch (_) {}
 
-            const response = await fetch(GITHUB_API_URL);
-            if (!response.ok) {
-                throw new Error(`GitHub API returned ${response.status}`);
+            if (!data) {
+                console.log('Fetching latest release from GitHub...');
+                const response = await fetch(GITHUB_API_URL);
+                if (!response.ok) {
+                    throw new Error(`GitHub API returned ${response.status}`);
+                }
+                data = await response.json();
+                try {
+                    localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
+                } catch (_) {}
             }
-
-            const data = await response.json();
             const version = data.tag_name;
             const assets = data.assets;
 
