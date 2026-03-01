@@ -73,6 +73,8 @@ Not the dumbed-down version. Full control over:
 
 Run Monte Carlo against any of your scenarios and compare results side-by-side. Enhanced results dashboard breaks down the full distribution of outcomes - percentile bands, success rates by time period, and tail-risk exposure - so you can see not just whether your plan survives, but by how much.
 
+Seven distinct market environments — from the optimistic GBM baseline to conservative regime switching to a full century of historical data. A plan that holds up across all seven is a plan you can actually retire on. [Deep dive: how the seven Monte Carlo scenarios work and what each one is telling you →](/blog/2026/03/02/monte-carlo-stress-testing)
+
 ### Estate & Legacy Planning
 
 See the full picture - not just whether you'll run out of money, but what you'll leave behind.
@@ -82,7 +84,7 @@ See the full picture - not just whether you'll run out of money, but what you'll
 - **Beneficiary & inheritance analysis** - See what heirs will receive, including inherited IRA RMD implications under current rules
 - **Estate tax exposure** - Track your estate against federal exemption thresholds, including TCJA exemption sunset scenarios
 
-Estate planning isn't just for the ultra-wealthy. If you have a seven-figure portfolio, a paid-off house, and IRAs with RMD obligations, your heirs have an inheritance tax problem whether you've planned for it or not.
+Estate planning isn't just for the ultra-wealthy. If you have a seven-figure portfolio, a paid-off house, and IRAs with RMD obligations, your heirs have an inheritance tax problem whether you've planned for it or not. The SECURE Act's 10-year rule means a $1M traditional IRA can cost heirs $300k+ in taxes — distributed during their peak earning years. [Why your heirs' tax problem starts with your retirement plan →](/blog/2026/03/01/inherited-ira-estate-planning)
 
 ---
 
