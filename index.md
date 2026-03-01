@@ -73,7 +73,7 @@ Not the dumbed-down version. Full control over:
 
 Run Monte Carlo against any of your scenarios and compare results side-by-side. Enhanced results dashboard breaks down the full distribution of outcomes - percentile bands, success rates by time period, and tail-risk exposure - so you can see not just whether your plan survives, but by how much.
 
-Seven distinct market environments — from the optimistic GBM baseline to conservative regime switching to a full century of historical data. A plan that holds up across all seven is a plan you can actually retire on. [Deep dive: how the seven Monte Carlo scenarios work and what each one is telling you →](/blog/2026/03/02/monte-carlo-stress-testing)
+Seven distinct market environments — from the optimistic GBM baseline to conservative regime switching to a full century of historical data. A plan that holds up across all seven is a plan you can actually retire on. [Deep dive: how the seven Monte Carlo scenarios work and what each one is telling you →](/blog/2026/03/01/monte-carlo-stress-testing)
 
 ### Estate & Legacy Planning
 
