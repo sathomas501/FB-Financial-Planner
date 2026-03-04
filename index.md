@@ -222,6 +222,7 @@ Desktop application. Everything runs locally. No cloud sync. No "storing your da
 
 <nav class="page-nav">
   <a href="/why-fatboy">Why Fatboy?</a>
+  <a href="/research-methodology">Research & Methodology</a>
   <a href="/blog">Blog</a>
   <a href="/pricing">Pricing</a>
   <a href="/about">About</a>
