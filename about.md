@@ -169,4 +169,4 @@ We typically respond to inquiries within 1-2 business days. Founding Members rec
 
 ---
 
-[Back to Home](/) | [View Pricing](/pricing) | [See Screenshots](/screenshots)
+[Back to Home](/) | [Research & Methodology](/research-methodology) | [View Pricing](/pricing) | [See Screenshots](/screenshots)

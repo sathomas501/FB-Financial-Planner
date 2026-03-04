@@ -370,7 +370,9 @@ And the TCJA→OBBBA transition just proved that hope is not a strategy.
 
 <nav class="page-nav">
   <a href="{{ site.url }}{{ site.baseurl }}/">← Back to Home</a>
+  <a href="{{ site.url }}{{ site.baseurl }}/research-methodology">Research</a>
   <a href="{{ site.url }}{{ site.baseurl }}/blog">Blog</a>
   <a href="{{ site.url }}{{ site.baseurl }}/pricing">Pricing</a>
   <a href="{{ site.url }}{{ site.baseurl }}/about">About</a>
 </nav>
+

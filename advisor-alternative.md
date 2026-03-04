@@ -297,6 +297,7 @@ A: Email support for technical issues. We can't give you financial advice (not a
 
 <nav class="page-nav">
   <a href="/why-fatboy">Why Fatboy?</a>
+  <a href="/research-methodology">Research & Methodology</a>
   <a href="/screenshots">See All Features</a>
   <a href="/pricing">Pricing</a>
   <a href="/blog">Blog</a>

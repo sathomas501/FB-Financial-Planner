@@ -187,6 +187,7 @@ Lock in $149 pricing forever. Be part of shaping the product.
 
 <nav class="page-nav">
   <a href="/">Back to Home</a>
+  <a href="/research-methodology">Research & Methodology</a>
   <a href="/screenshots">See Screenshots</a>
   <a href="/comparison">Compare to Other Software</a>
   <a href="/about">About & Contact</a>

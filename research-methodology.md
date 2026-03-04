@@ -7,17 +7,17 @@ keywords: retirement planning methodology, retirement modeling assumptions, Mont
 
 # Research & Methodology
 
-This page is where we publish the logic behind our planning framework, not just the conclusions.
+This is where we show how the planning engine works, what we tested, and what assumptions drive results.
 
 ---
 
 ## Executive Summary
 
-Our research approach is built around one practical question:
+Our research is built around one practical question:
 
 **Which planning decisions materially improve a retiree's odds of meeting spending goals while controlling tax drag and sequence risk?**
 
-### What we evaluated
+### What We Tested
 
 - Withdrawal sequencing across taxable, tax-deferred, and tax-free accounts
 - Roth conversion timing and bracket management
@@ -26,31 +26,31 @@ Our research approach is built around one practical question:
 - Sequence-of-returns sensitivity across multiple market environments
 - Estate and beneficiary impact under current inherited IRA rules
 
-### Top findings (example structure - replace with your final findings)
+### Key Findings
 
-1. Tax-aware withdrawal sequencing can materially reduce cumulative lifetime taxes versus fixed-order withdrawals.
-2. Roth conversions are most effective when coordinated with bracket capacity and future RMD pressure.
-3. Plans that pass only one return model can still fail in alternate regimes; cross-model testing matters.
-4. Tax parameter flexibility is required when policy changes; static calculators become stale quickly.
+1. Tax-aware withdrawal sequencing can reduce lifetime tax drag versus fixed-order withdrawals.
+2. Roth conversions work best when tied to bracket capacity and future RMD pressure.
+3. A plan that survives one return model can still fail in other regimes, so cross-model testing matters.
+4. Tax parameter flexibility is essential when law changes; static calculators go stale quickly.
 
 ---
 
-## White Paper
+## Read the Papers
 
-Use the links below to publish your full research package.
+Download the full research package:
 
 <div class="download-buttons">
-  <a href="/assets/whitepapers/fatboy-software-financial-planner-white-paper.pdf" class="btn-download">Fatboy Software Financial Planner White Paper (PDF)</a>
-  <a href="/assets/whitepapers/fatboy-software-financial-planner-executive-summary.pdf" class="btn-download" style="background: #475569;">Fatboy Software Financial Planner Executive Summary (PDF)</a>
+  <a href="/assets/whitepapers/fatboy-software-financial-planner-white-paper.pdf" class="btn-download">Download White Paper (PDF)</a>
+  <a href="/assets/whitepapers/fatboy-software-financial-planner-executive-summary.pdf" class="btn-download" style="background: #475569;">Download Executive Summary (PDF)</a>
 </div>
 
-If you want this content indexable instead of PDF-only, add the full text as additional sections on this page.
+Start with the executive summary for the fast version. Use the full white paper for assumptions, model logic, and disclosures.
 
 ---
 
-## Methodology
+## How We Model
 
-### 1) Data Inputs
+### 1) Inputs
 
 - User-provided portfolio balances and account types
 - Income streams (earned income, pensions, Social Security timing)
@@ -58,7 +58,7 @@ If you want this content indexable instead of PDF-only, add the full text as add
 - Tax configuration (federal and state settings, deductions, bracket assumptions)
 - Policy toggles for scenario analysis (e.g., exemption levels, deduction changes)
 
-### 2) Modeling Framework
+### 2) Model Framework
 
 - Deterministic cash flow projection for baseline plan trajectory
 - Monte Carlo simulation for return-path uncertainty and survivability analysis
@@ -73,14 +73,14 @@ If you want this content indexable instead of PDF-only, add the full text as add
 - Targeted tax strategy scenarios (conversion schedules, deduction windows)
 - Stress scenarios for adverse return paths and inflation persistence
 
-### 4) Validation Approach
+### 4) Validation
 
 - Internal consistency checks (cash flow identity and balance transitions)
 - Parameter sensitivity checks (single-variable perturbations)
 - Edge-case tests around bracket boundaries and threshold cliffs
-- Cross-scenario reasonableness review versus expected directional outcomes
+- Cross-scenario reasonableness review against expected directional outcomes
 
-### 5) Key Assumptions
+### 5) Assumptions
 
 - Return distributions are uncertain and model-dependent
 - Inflation can persist outside historical averages
@@ -89,26 +89,26 @@ If you want this content indexable instead of PDF-only, add the full text as add
 
 ---
 
-## Limitations & Disclosures
+## Limits & Disclosures
 
 - This is planning software, not individualized investment or tax advice.
 - Output quality depends on input quality and assumption discipline.
 - Monte Carlo probabilities are scenario-dependent estimates, not guarantees.
 - Future policy changes can alter outcomes materially.
 
-For personalized implementation decisions, validate results with a qualified CPA, EA, or fee-only fiduciary advisor.
+For implementation decisions, validate results with a qualified CPA, EA, or fee-only fiduciary advisor.
 
 ---
 
-## Citation Format
+## Cite This Work
 
-If you want others to reference this work, add a citation block:
+Suggested citation:
 
-`Fatboy Software. "Fatboy Software Financial Planner White Paper." Version X.Y, Month Day, Year. https://fatboysoftware.com/research-methodology`
+`Fatboy Software. "Fatboy Software Financial Planner White Paper." Version 1.0, March 2026. https://fatboysoftware.com/research-methodology`
 
 ---
 
-## Contact for Questions
+## Questions
 
 Questions about assumptions, methodology details, or reproducing a scenario:
 
@@ -116,6 +116,7 @@ Questions about assumptions, methodology details, or reproducing a scenario:
 
 <nav class="page-nav">
   <a href="/">Home</a>
+  <a href="/why-fatboy">Why Fatboy?</a>
   <a href="/pricing">Pricing</a>
   <a href="/blog">Blog</a>
   <a href="/about">About</a>
