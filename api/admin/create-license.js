@@ -1,6 +1,6 @@
 const { sql } = require('@vercel/postgres');
-const { generateLicenseKey } = require('../utils/license-generator');
-const { sendLicenseEmail } = require('../utils/email-sender');
+const { generateLicenseKey } = require('../../lib/license-generator');
+const { sendLicenseEmail } = require('../../lib/email-sender');
 
 /**
  * Admin endpoint to manually create license keys

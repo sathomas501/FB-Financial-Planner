@@ -103,5 +103,12 @@ plugins:
 # Theme
 theme: jekyll-theme-slate
 
+# Exclude backend source from static site output
+exclude:
+  - api
+  - lib
+  - node_modules
+  - vendor
+
 # Google Analytics
 google_analytics: G-68L4Z2S1P5

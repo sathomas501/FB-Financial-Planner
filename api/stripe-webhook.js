@@ -1,8 +1,8 @@
 const Stripe = require('stripe');
 const { buffer } = require('micro');
 const { sql } = require('@vercel/postgres');
-const { generateLicenseKey } = require('./utils/license-generator');
-const { sendLicenseEmail, sendAdminNotification } = require('./utils/email-sender');
+const { generateLicenseKey } = require('../lib/license-generator');
+const { sendLicenseEmail, sendAdminNotification } = require('../lib/email-sender');
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
