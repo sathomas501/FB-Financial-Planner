@@ -102,8 +102,6 @@ For implementation decisions, validate results with a qualified CPA, EA, or fee-
 
 ## Cite This Work
 
-Suggested citation:
-
 `Fatboy Software. "Fatboy Software Financial Planner White Paper." Version 1.0, March 2026. https://fatboysoftware.com/research-methodology`
 
 ---
