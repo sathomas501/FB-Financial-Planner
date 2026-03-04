@@ -106,6 +106,55 @@
     setTimeout(navigate, 800);
   }
 
+  function trackDocumentDownload(element) {
+    var url = element.href || '';
+    if (!url) {
+      return;
+    }
+
+    var docType = safeStr(element.getAttribute('data-doc-type')) || 'document';
+    var docTitle = safeStr(element.getAttribute('data-doc-title')) || safeStr(element.textContent) || 'Document';
+    var linkText = safeStr(element.textContent) || 'Download document';
+    var fileName = '';
+
+    try {
+      var clean = url.split('#')[0].split('?')[0];
+      var parts = clean.split('/');
+      fileName = parts[parts.length - 1] || '';
+    } catch (e) {
+      fileName = '';
+    }
+
+    sendEvent('download_document', {
+      document_type: docType,
+      document_title: docTitle,
+      document_url: url,
+      document_filename: fileName,
+      document_file_extension: fileExtensionFromUrl(url),
+      download_link_text: linkText,
+      source_page: window.location.pathname,
+      value: 0
+    });
+
+    if (docType === 'white_paper') {
+      sendEvent('download_white_paper', {
+        document_title: docTitle,
+        document_url: url,
+        source_page: window.location.pathname,
+        value: 0
+      });
+    }
+
+    if (docType === 'executive_summary') {
+      sendEvent('download_executive_summary', {
+        document_title: docTitle,
+        document_url: url,
+        source_page: window.location.pathname,
+        value: 0
+      });
+    }
+  }
+
   document.addEventListener('click', function (event) {
     if (typeof event.target.closest !== 'function') {
       return;
@@ -113,6 +162,12 @@
 
     var clickedButton = event.target.closest('#download-free-version, #download-linux');
     if (!clickedButton) {
+      var clickedDocument = event.target.closest('.track-doc-download');
+      if (!clickedDocument) {
+        return;
+      }
+
+      trackDocumentDownload(clickedDocument);
       return;
     }
 

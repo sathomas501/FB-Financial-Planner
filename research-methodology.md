@@ -40,8 +40,23 @@ Our research is built around one practical question:
 Download the full research package:
 
 <div class="download-buttons">
-  <a href="/assets/whitepapers/fatboy-software-financial-planner-white-paper.pdf" class="btn-download">Download White Paper (PDF)</a>
-  <a href="/assets/whitepapers/fatboy-software-financial-planner-executive-summary.pdf" class="btn-download" style="background: #475569;">Download Executive Summary (PDF)</a>
+  <a href="/assets/whitepapers/fatboy-software-financial-planner-white-paper.pdf"
+     class="btn-download track-doc-download"
+     data-doc-type="white_paper"
+     data-doc-title="Fatboy Software Financial Planner White Paper"
+     target="_blank"
+     rel="noopener">
+    Download White Paper (PDF)
+  </a>
+  <a href="/assets/whitepapers/fatboy-software-financial-planner-executive-summary.pdf"
+     class="btn-download track-doc-download"
+     data-doc-type="executive_summary"
+     data-doc-title="Fatboy Software Financial Planner Executive Summary"
+     style="background: #475569;"
+     target="_blank"
+     rel="noopener">
+    Download Executive Summary (PDF)
+  </a>
 </div>
 
 Start with the executive summary for the fast version. Use the full white paper for assumptions, model logic, and disclosures.
