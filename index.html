@@ -1,116 +1,1517 @@
----
-layout: default
-title: Retirement Planning Blog - Expert Analysis & Strategies
-description: "In-depth retirement planning analysis for sophisticated investors: tax optimization, Roth conversions, sequence-of-returns risk, OBBBA implications, and hard-hitting strategies informed by modern tax law."
-permalink: /blog/
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Retirement Calculator — Fatboy Financial Planner</title>
 
-<div markdown="1">
-# Retirement Planning Blog
+<!-- SEO -->
+<meta name="description" content="Free retirement projection tool. Enter your savings, Social Security, pension, and spending — get a year-by-year forecast with Monte Carlo simulation. No sign-up required.">
+<meta name="keywords" content="retirement calculator, retirement planner, Monte Carlo retirement, Social Security calculator, free retirement tool, when can I retire">
+<link rel="canonical" href="https://app.fatboysoftware.com/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230f1117'/><text x='50' y='74' font-family='system-ui,sans-serif' font-size='64' font-weight='700' fill='%234ade80' text-anchor='middle'>$</text></svg>">
+<meta name="google-site-verification" content="8yTvBOVhudmITb1chVWi8SPKl6dWN0GOJXv7Gq2uSpc" />
 
-**Deep dives into the complex questions that actually matter.** No stock photos of beaches. No "10 tips for a happy retirement" listicles. Just rigorous financial planning analysis for professionals planning multi-decade futures.
+<!-- Open Graph (Facebook, LinkedIn sharing) -->
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://app.fatboysoftware.com/">
+<meta property="og:title"       content="Free Retirement Calculator — Fatboy Financial Planner">
+<meta property="og:description" content="Year-by-year retirement projection with Monte Carlo simulation. Social Security, pension, taxes, and healthcare costs — no sign-up required.">
+<meta property="og:site_name"   content="Fatboy Financial Planner">
 
-Topics we cover: tax optimization, withdrawal sequencing, sequence-of-returns risk, Roth conversions, IRMAA management, Monte Carlo simulations, OBBBA planning, and the entire set of retirement questions generic calculators dodge.
+<!-- Twitter / X card -->
+<meta name="twitter:card"        content="summary">
+<meta name="twitter:title"       content="Free Retirement Calculator — Fatboy Financial Planner">
+<meta name="twitter:description" content="Year-by-year retirement projection with Monte Carlo simulation. No sign-up required.">
+
+<!-- Structured data: SoftwareApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Fatboy Financial Planner — Free Retirement Calculator",
+  "url": "https://app.fatboysoftware.com/",
+  "description": "Free retirement projection tool with Monte Carlo simulation. Models Social Security, pension, taxes, and pre-Medicare healthcare costs.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P646SLC5ZF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P646SLC5ZF');
+</script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, sans-serif; background: #0f1117; color: #e2e8f0; min-height: 100vh; }
+  .container { max-width: 640px; margin: 0 auto; padding: 24px 16px; }
+  h1 { font-size: 1.5rem; font-weight: 700; color: #4ade80; margin-bottom: 4px; }
+  .subtitle { font-size: 0.9rem; color: #94a3b8; margin-bottom: 32px; }
+  .card { background: #1e1f29; border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  .card h2 { font-size: 0.85rem; font-weight: 600; color: #4ade80; text-transform: uppercase;
+              letter-spacing: 0.08em; margin-bottom: 16px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .row.full { grid-template-columns: 1fr; }
+  label { display: block; font-size: 0.78rem; color: #94a3b8; margin-bottom: 4px; }
+  input, select { width: 100%; background: #0f1117; border: 1px solid #2d3748; border-radius: 8px;
+                  padding: 10px 12px; color: #e2e8f0; font-size: 0.9rem; }
+  input:focus, select:focus { outline: none; border-color: #4ade80; }
+  button { width: 100%; padding: 14px; background: #4ade80; color: #0f1117; font-weight: 700;
+           font-size: 1rem; border: none; border-radius: 10px; cursor: pointer; margin-top: 8px; }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+  /* MC toggle row */
+  .mc-toggle { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .mc-toggle input[type=checkbox] { width: auto; accent-color: #4ade80; width: 18px; height: 18px; }
+  .mc-toggle label { margin: 0; font-size: 0.88rem; color: #e2e8f0; cursor: pointer; }
+  .mc-options { display: none; margin-top: 8px; }
+  .mc-options.visible { display: block; }
+  /* Results */
+  #results { display: none; }
+  .summary-box { background: #162032; border-left: 4px solid #4ade80; padding: 16px;
+                 border-radius: 8px; margin-bottom: 16px; font-size: 0.95rem; }
+  .summary-box.fail { border-color: #f87171; }
+  /* Success rate badge */
+  .success-rate { display: flex; align-items: center; gap: 12px; padding: 16px 20px;
+                  border-radius: 10px; margin-bottom: 16px; font-weight: 700; font-size: 1rem; }
+  .success-rate.high   { background: #0d2b1a; border: 1px solid #22c55e; color: #4ade80; }
+  .success-rate.medium { background: #2b2208; border: 1px solid #f59e0b; color: #fbbf24; }
+  .success-rate.low    { background: #2b0d0d; border: 1px solid #ef4444; color: #f87171; }
+  .rate-number { font-size: 2rem; line-height: 1; }
+  .rate-label  { font-size: 0.8rem; font-weight: 400; color: inherit; opacity: 0.85; margin-top: 2px; }
+  /* Chart */
+  .chart-wrap { position: relative; width: 100%; margin: 0 0 8px; }
+  canvas { width: 100%; display: block; border-radius: 8px; }
+  .chart-legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.72rem; color: #64748b;
+                  margin-bottom: 16px; }
+  .chart-legend span { display: flex; align-items: center; gap: 5px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  /* Table */
+  table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  th { text-align: right; color: #64748b; padding: 6px 8px; border-bottom: 1px solid #2d3748; }
+  th:first-child { text-align: left; }
+  td { text-align: right; padding: 6px 8px; border-bottom: 1px solid #1a1b26; }
+  td:first-child { text-align: left; color: #94a3b8; }
+  tr.depleted td { color: #f87171; }
+  tr.rmd-year td { background: rgba(251,191,36,0.04); }
+  tr.rmd-year td.rmd-amt { color: #fbbf24; font-weight: 600; }
+  /* Tooltips inside <th>: drop DOWN (not up) and anchor to RIGHT edge —
+     overflow-x:auto clips upward; right-column headers push centered tooltip off-screen */
+  th .tip::after { top: calc(100% + 6px); bottom: auto; left: auto; right: 0; transform: none; }
+  /* Tab switcher */
+  .tabs { display: flex; gap: 4px; margin-bottom: 12px; }
+  .tab { flex: 1; padding: 8px; background: #0f1117; border: 1px solid #2d3748; border-radius: 6px;
+         font-size: 0.8rem; color: #94a3b8; cursor: pointer; text-align: center; }
+  .tab.active { background: #1e1f29; border-color: #4ade80; color: #4ade80; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  .error { color: #f87171; font-size: 0.85rem; margin-top: 8px; }
+  .desktop-cta { background: #162032; border: 1px solid #2d3748; border-radius: 12px;
+                 padding: 20px 24px; margin-top: 24px; text-align: center; }
+  .desktop-cta p { color: #94a3b8; font-size: 0.85rem; margin-bottom: 12px; }
+  .desktop-cta a { display: inline-block; background: transparent; border: 1px solid #4ade80;
+                   color: #4ade80; padding: 10px 20px; border-radius: 8px; text-decoration: none;
+                   font-size: 0.85rem; font-weight: 600; }
+  /* Roth conversion teaser */
+  .roth-teaser { background: #16102b; border: 1px solid #6d28d9; border-radius: 12px;
+                 padding: 20px 24px; margin-top: 16px; display: none; }
+  .roth-teaser-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .roth-teaser-title { font-weight: 700; color: #e2e8f0; font-size: 0.95rem; flex: 1; }
+  .pro-badge { background: #6d28d9; color: #fff; font-size: 0.68rem; font-weight: 700;
+               padding: 2px 8px; border-radius: 999px; letter-spacing: 0.06em; }
+  .roth-teaser p { color: #94a3b8; font-size: 0.85rem; line-height: 1.6; margin-bottom: 14px; }
+  .roth-features { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 16px; }
+  .roth-features span { color: #a78bfa; font-size: 0.78rem; }
+  .roth-teaser a { display: inline-block; background: #6d28d9; color: #fff; padding: 10px 22px;
+                   border-radius: 8px; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+  .roth-teaser a:hover { background: #7c3aed; }
+  /* OFX import */
+  .upload-label { display: block; text-align: center; padding: 12px 16px;
+                  background: #0f1117; border: 1px dashed #2d3748; border-radius: 8px;
+                  color: #4ade80; font-size: 0.85rem; cursor: pointer; }
+  .upload-label:hover { border-color: #4ade80; }
+  .ofx-account { background: #0f1117; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; }
+  .ofx-acct-header { display: flex; justify-content: space-between; align-items: flex-start;
+                     gap: 8px; margin-bottom: 6px; }
+  .ofx-acct-name { font-size: 0.82rem; color: #e2e8f0; }
+  .ofx-acct-type { font-size: 0.7rem; color: #64748b; margin-top: 2px; }
+  .ofx-acct-bal  { font-size: 0.9rem; font-weight: 600; color: #4ade80; white-space: nowrap; }
+  .apply-btn { background: #162032; border: 1px solid #4ade80; color: #4ade80; margin-top: 4px; }
+  /* Result actions (share / print) */
+  .result-actions { display: flex; gap: 10px; margin-bottom: 12px; }
+  .result-actions button { width: auto; padding: 6px 14px; font-size: 0.78rem; font-weight: 500;
+                           background: transparent; border: 1px solid #2d3748; color: #94a3b8;
+                           border-radius: 6px; margin-top: 0; }
+  .result-actions button:hover { border-color: #4ade80; color: #4ade80; opacity: 1; }
+  .result-actions button:disabled { opacity: 1; cursor: pointer; } /* override disabled style */
+  .btn-copied { border-color: #4ade80 !important; color: #4ade80 !important; }
+  .alloc-total-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+  .alloc-pill { font-size:0.72rem; color:#94a3b8; background:#0f1117; border:1px solid #2d3748;
+                border-radius:999px; padding:4px 10px; }
+  /* Print */
+  @media print {
+    form, .desktop-cta, .roth-teaser, #rmd-teaser, #tab-bar, #success-rate-wrap, .result-actions,
+    h1, .subtitle { display: none !important; }
+    body, .container { background: #fff !important; color: #111 !important; }
+    .card { background: #fff !important; border: 1px solid #ccc !important; page-break-inside: avoid; }
+    .card h2 { color: #333 !important; }
+    th { color: #555 !important; border-bottom-color: #ccc !important; }
+    td { color: #111 !important; border-bottom-color: #eee !important; }
+    td:first-child { color: #555 !important; }
+    #results { display: block !important; }
+    .tab-panel { display: block !important; }
+    .summary-box { background: #f5f5f5 !important; color: #111 !important; }
+    .summary-box.fail { border-color: #c00 !important; }
+    tr.depleted td { color: #c00 !important; }
+  }
+  /* Tooltips */
+  .tip { display: inline-flex; align-items: center; justify-content: center;
+         width: 15px; height: 15px; background: #2d3748; color: #94a3b8;
+         border-radius: 50%; font-size: 0.65rem; cursor: help; margin-left: 4px;
+         position: relative; vertical-align: middle; flex-shrink: 0; }
+  .tip::after { content: attr(data-tip); display: none; position: absolute;
+                bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+                background: #1e1f29; border: 1px solid #4ade80; color: #e2e8f0;
+                padding: 8px 10px; border-radius: 8px; font-size: 0.72rem;
+                line-height: 1.5; white-space: normal; width: 230px; z-index: 200;
+                font-weight: 400; }
+  .tip:hover::after, .tip.open::after { display: block; }
+  /* Contact form */
+  .contact-section { margin-top: 40px; padding: 28px 32px; background: #0f1117; border: 1px solid #2d3748; border-radius: 12px; }
+  .contact-section h2 { margin: 0 0 6px; font-size: 1.1rem; color: #e2e8f0; }
+  .contact-section p { margin: 0 0 20px; font-size: 0.85rem; color: #64748b; }
+  .contact-section .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .contact-section label { display: block; font-size: 0.78rem; color: #94a3b8; margin-bottom: 4px; }
+  .contact-section input, .contact-section textarea {
+    width: 100%; box-sizing: border-box; background: #1a1f2e; border: 1px solid #2d3748;
+    border-radius: 6px; padding: 8px 10px; color: #e2e8f0; font-size: 0.85rem; font-family: inherit;
+  }
+  .contact-section input:focus, .contact-section textarea:focus { outline: none; border-color: #4ade80; }
+  .contact-section textarea { resize: vertical; min-height: 80px; margin-top: 12px; }
+  .contact-section button {
+    margin-top: 14px; padding: 9px 22px; background: #4ade80; color: #0a0e17;
+    border: none; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer;
+  }
+  .contact-section button:disabled { opacity: 0.5; cursor: not-allowed; }
+  #contact-status { margin-top: 10px; font-size: 0.82rem; min-height: 1.2em; }
+  @media (max-width: 520px) { .contact-section .row { grid-template-columns: 1fr; } }
+  /* Email capture modal */
+  .email-modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.78);
+    z-index:1000; align-items:center; justify-content:center; padding:16px; }
+  .email-modal-overlay.open { display:flex; }
+  .email-modal-card { background:#1e1f29; border:1px solid #334155; border-radius:16px;
+    padding:28px 28px 22px; max-width:420px; width:100%; position:relative; }
+  .email-modal-card h3 { font-size:1.05rem; font-weight:700; color:#e2e8f0; margin-bottom:8px; }
+  .email-modal-card .em-sub { font-size:0.84rem; color:#94a3b8; line-height:1.6; margin-bottom:18px; }
+  .email-modal-row { display:flex; gap:8px; }
+  .email-modal-row input { flex:1; }
+  .email-modal-row button { width:auto; padding:10px 16px; font-size:0.84rem;
+    margin-top:0; white-space:nowrap; border-radius:8px; }
+  .email-modal-close { position:absolute; top:12px; right:14px; background:none; border:none;
+    color:#64748b; font-size:1.05rem; cursor:pointer; width:auto; padding:4px; margin-top:0;
+    line-height:1; }
+  .email-modal-close:hover { color:#e2e8f0; }
+  .em-status { font-size:0.82rem; min-height:1.1em; margin-top:8px; }
+  .em-note { font-size:0.72rem; color:#475569; margin-top:12px; margin-bottom:0; }
+  /* Mobile sticky bottom bar — hidden on desktop */
+  .mobile-email-bar { display:none; position:fixed; bottom:0; left:0; right:0;
+    background:#161929; border-top:1px solid #2d3748; padding:12px 16px 18px;
+    z-index:800; }
+  .mobile-email-bar.visible { display:block; }
+  .mobile-email-bar .bar-title { font-size:0.8rem; font-weight:600; color:#e2e8f0;
+    margin-bottom:4px; }
+  .mobile-email-bar .bar-sub { font-size:0.73rem; color:#64748b; margin-bottom:9px; }
+  .mobile-email-bar .bar-row { display:flex; gap:8px; }
+  .mobile-email-bar .bar-row input { flex:1; font-size:0.85rem; padding:9px 10px; }
+  .mobile-email-bar .bar-row button { width:auto; padding:9px 13px; font-size:0.81rem;
+    margin-top:0; white-space:nowrap; border-radius:8px; }
+  .bar-close-btn { position:absolute; top:10px; right:12px; background:none; border:none;
+    color:#475569; font-size:0.95rem; cursor:pointer; width:auto; padding:4px; margin-top:0; }
+  @media (min-width:640px) { .mobile-email-bar { display:none !important; } }
+  /* Desktop CTA email row */
+  .cta-email-row { display:flex; gap:8px; margin-top:12px; margin-bottom:6px; }
+  .cta-email-row input { flex:1; background:#0f1117; }
+  .cta-email-row button { width:auto; padding:10px 14px; font-size:0.82rem;
+    margin-top:0; white-space:nowrap; border-radius:8px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Fatboy Financial Planner</h1>
+  <p class="subtitle">Free retirement projection — no account required</p>
+
+  <form id="form">
+    <div class="card">
+      <h2>About You</h2>
+      <div class="row">
+        <div>
+          <label>Your Age</label>
+          <input type="number" name="age" value="55" min="18" max="100" required>
+        </div>
+        <div>
+          <label>Retirement Age</label>
+          <input type="number" name="retirement_age" value="65" min="50" max="80" required>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>Spouse Age <span style="color:#64748b">(optional)</span></label>
+          <input type="number" name="spouse_age" placeholder="Leave blank if single" min="18" max="100">
+        </div>
+        <div>
+          <label>Life Expectancy <span class="tip" data-tip="The projection runs until this age. Use a conservative number — there's a 50% chance you'll outlive average life expectancy. In good health? Consider 90–95.">?</span></label>
+          <input type="number" name="life_expectancy" value="90" min="70" max="105" required>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>Filing Status</label>
+          <select name="filing_status">
+            <option value="married">Married</option>
+            <option value="single">Single</option>
+          </select>
+        </div>
+        <div>
+          <label>State</label>
+          <select name="state_code">
+            <option value="">No state tax</option>
+            <option value="AL">Alabama</option><option value="AK">Alaska (no tax)</option>
+            <option value="AZ">Arizona</option><option value="AR">Arkansas</option>
+            <option value="CA">California</option><option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option><option value="DE">Delaware</option>
+            <option value="FL">Florida (no tax)</option><option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option><option value="ID">Idaho</option>
+            <option value="IL">Illinois</option><option value="IN">Indiana</option>
+            <option value="IA">Iowa</option><option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option><option value="LA">Louisiana</option>
+            <option value="ME">Maine</option><option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option><option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option><option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option><option value="MT">Montana</option>
+            <option value="NE">Nebraska</option><option value="NV">Nevada (no tax)</option>
+            <option value="NH">New Hampshire</option><option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option><option value="NY">New York</option>
+            <option value="NC">North Carolina</option><option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option><option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option><option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option><option value="SC">South Carolina</option>
+            <option value="SD">South Dakota (no tax)</option><option value="TN">Tennessee (no tax)</option>
+            <option value="TX">Texas (no tax)</option><option value="UT">Utah</option>
+            <option value="VT">Vermont</option><option value="VA">Virginia</option>
+            <option value="WA">Washington (no tax)</option><option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option><option value="WY">Wyoming (no tax)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- OFX / QFX import — Pro only -->
+    <div class="card" style="border:1px solid #2d1f4a;background:#13102a;opacity:0.92">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <h2 style="margin:0">Import from Bank / Brokerage</h2>
+        <span class="pro-badge">PRO</span>
+      </div>
+      <p style="font-size:0.78rem;color:#64748b;margin-bottom:14px">
+        Upload an OFX or QFX file exported from your bank or brokerage to auto-fill
+        all account balances in one click. Supports Fidelity, Vanguard, Schwab, and most banks.
+      </p>
+      <div style="background:#0f1117;border:1px dashed #3b2d6b;border-radius:8px;padding:14px 16px;
+                  text-align:center;color:#6d28d9;font-size:0.85rem;cursor:default;margin-bottom:12px">
+        🔒 OFX / QFX import — available in Fatboy Pro
+      </div>
+      <a href="https://fatboysoftware.com" target="_blank"
+         onclick="ga('ofx_upsell_click')"
+         style="display:block;text-align:center;background:#6d28d9;color:#fff;padding:10px;
+                border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:600">
+        Get Fatboy Pro →
+      </a>
+    </div>
+
+    <div class="card">
+      <h2>Your Savings</h2>
+      <p id="already-retired-note" style="display:none;font-size:0.75rem;color:#64748b;margin-bottom:12px;padding:8px 12px;background:#0f1117;border-radius:6px;border-left:2px solid #4ade80">
+        Already retired — pre-retirement contributions not included in projection.
+      </p>
+      <div class="row full" id="savings-contributions-row">
+        <div>
+          <label>Annual 401(k) + IRA Contributions <span class="tip" data-tip="How much you're adding to retirement accounts each year. 2024 limits: $23,000 401(k), $7,000 IRA (+$1,000 catch-up if 50+). Enter your total across all accounts.">?</span></label>
+          <input type="number" name="annual_savings" value="0" min="0" step="any"
+                 placeholder="e.g. 23000">
+          <span style="display:block;font-size:0.72rem;color:#475569;margin-top:4px">
+            Model assumes salary covers pre-retirement living expenses — only portfolio growth + these contributions are projected until retirement.
+            <a href="https://fatboysoftware.com" target="_blank" style="color:#818cf8;text-decoration:none">Fatboy Pro →</a> models full pre-retirement cash flow.
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>Traditional IRA / 401(k) balance</label>
+          <input type="number" name="trad_balance" value="400000" min="0" step="any">
+        </div>
+        <div>
+          <label>Roth IRA / Roth 401(k)</label>
+          <input type="number" name="roth_balance" value="100000" min="0" step="any">
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>Taxable Brokerage</label>
+          <input type="number" name="taxable_balance" value="50000" min="0" step="any">
+        </div>
+        <div>
+          <label>Cash / Savings</label>
+          <input type="number" name="cash_balance" value="30000" min="0" step="any">
+        </div>
+      </div>
+      <div style="margin-top:10px;padding-top:12px;border-top:1px solid #2d3748">
+        <label style="margin-bottom:8px;color:#e2e8f0">
+          Portfolio Allocation by Account (%)
+          <span class="tip" data-tip="Each account block should total 100%. This lets the projection map where risk sits (IRA, Roth, taxable), not just total balances.">?</span>
+        </label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+          <div style="font-size:0.75rem;color:#94a3b8">Traditional IRA / 401(k)</div>
+          <div style="font-size:0.75rem;color:#94a3b8">Roth IRA / Roth 401(k)</div>
+        </div>
+        <div class="row">
+          <div><input type="number" name="trad_stocks_allocation" value="60" min="0" max="100" step="0.5" placeholder="Trad stocks %"></div>
+          <div><input type="number" name="roth_stocks_allocation" value="70" min="0" max="100" step="0.5" placeholder="Roth stocks %"></div>
+        </div>
+        <div class="row">
+          <div><input type="number" name="trad_bonds_allocation" value="30" min="0" max="100" step="0.5" placeholder="Trad bonds %"></div>
+          <div><input type="number" name="roth_bonds_allocation" value="20" min="0" max="100" step="0.5" placeholder="Roth bonds %"></div>
+        </div>
+        <div class="row">
+          <div><input type="number" name="trad_real_estate_allocation" value="5" min="0" max="100" step="0.5" placeholder="Trad real estate %"></div>
+          <div><input type="number" name="roth_real_estate_allocation" value="5" min="0" max="100" step="0.5" placeholder="Roth real estate %"></div>
+        </div>
+        <div class="row">
+          <div><input type="number" name="trad_cash_allocation" value="0" min="0" max="100" step="0.5" placeholder="Trad cash %"></div>
+          <div><input type="number" name="roth_cash_allocation" value="0" min="0" max="100" step="0.5" placeholder="Roth cash %"></div>
+        </div>
+        <div class="row">
+          <div><input type="number" name="trad_commodities_allocation" value="5" min="0" max="100" step="0.5" placeholder="Trad commodities %"></div>
+          <div><input type="number" name="roth_commodities_allocation" value="3" min="0" max="100" step="0.5" placeholder="Roth commodities %"></div>
+        </div>
+        <div class="row">
+          <div><input type="number" name="trad_crypto_allocation" value="0" min="0" max="100" step="0.5" placeholder="Trad crypto %"></div>
+          <div><input type="number" name="roth_crypto_allocation" value="2" min="0" max="100" step="0.5" placeholder="Roth crypto %"></div>
+        </div>
+        <div style="font-size:0.75rem;color:#94a3b8;margin:2px 0 8px">Taxable Brokerage</div>
+        <div class="row">
+          <div><input type="number" name="taxable_stocks_allocation" value="60" min="0" max="100" step="0.5" placeholder="Taxable stocks %"></div>
+          <div><input type="number" name="taxable_bonds_allocation" value="25" min="0" max="100" step="0.5" placeholder="Taxable bonds %"></div>
+        </div>
+        <div class="row">
+          <div><input type="number" name="taxable_real_estate_allocation" value="5" min="0" max="100" step="0.5" placeholder="Taxable real estate %"></div>
+          <div><input type="number" name="taxable_cash_allocation" value="5" min="0" max="100" step="0.5" placeholder="Taxable cash %"></div>
+        </div>
+        <div class="row">
+          <div><input type="number" name="taxable_commodities_allocation" value="3" min="0" max="100" step="0.5" placeholder="Taxable commodities %"></div>
+          <div><input type="number" name="taxable_crypto_allocation" value="2" min="0" max="100" step="0.5" placeholder="Taxable crypto %"></div>
+        </div>
+        <div class="alloc-total-row">
+          <div id="trad-allocation-total" class="alloc-pill">Traditional: 100.0%</div>
+          <div id="roth-allocation-total" class="alloc-pill">Roth: 100.0%</div>
+          <div id="taxable-allocation-total" class="alloc-pill">Taxable: 100.0%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Income &amp; Spending</h2>
+      <div class="row">
+        <div>
+          <label>Annual Spending in Retirement (today's dollars)</label>
+          <input type="number" name="annual_spending" value="72000" min="0" step="any" required>
+        </div>
+        <div>
+          <label>Pre-Medicare Healthcare Cost (annual, age &lt; 65) <span class="tip" data-tip="Annual cost of private insurance or out-of-pocket care before Medicare at 65. Added on top of annual spending. Typical range: $6,000–$20,000/yr. Drops to $0 automatically at age 65.">?</span></label>
+          <input type="number" name="healthcare_annual" value="0" min="0" step="any">
+          <span style="display:block;font-size:0.72rem;color:#475569;margin-top:4px">Added on top of spending above. Drops to $0 at age 65.</span>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>Your Social Security (annual, at age <span id="ss-age-label">67</span>)</label>
+          <input type="number" name="ss_annual" value="24000" min="0" step="any">
+        </div>
+        <div>
+          <label>SS Claiming Age <span class="tip" data-tip="FRA (Full Retirement Age) is 67 for anyone born 1960 or later — the age SSA pays your full, unreduced benefit. Claiming at 62 permanently cuts it ~30%; waiting to 70 adds ~24%. Enter the annual amount you'd receive at your chosen age.">?</span></label>
+          <select name="ss_claiming_age" id="ss-claiming-age">
+            <option value="62">62 (early)</option>
+            <option value="63">63</option><option value="64">64</option>
+            <option value="65">65</option><option value="66">66</option>
+            <option value="67" selected>67 (FRA)</option>
+            <option value="68">68</option><option value="69">69</option>
+            <option value="70">70 (max)</option>
+          </select>
+        </div>
+      </div>
+      <p id="ss-breakeven" style="display:none;font-size:0.72rem;color:#64748b;margin-top:-6px;margin-bottom:8px;line-height:1.5"></p>
+      <!-- SS Lifetime Optimizer -->
+      <div id="ss-optimizer" style="display:none;background:#0d1f12;border:1px solid #1e3a28;border-radius:8px;padding:12px;margin-bottom:12px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+          <span style="font-size:0.72rem;color:#4ade80;font-weight:600;">Lifetime SS Optimizer</span>
+          <span style="font-size:0.68rem;color:#475569;">to age <span id="ss-opt-lifeexp">90</span></span>
+        </div>
+        <div id="ss-opt-bars" style="display:flex;gap:5px;align-items:flex-end;height:52px;margin-bottom:8px;"></div>
+        <div id="ss-opt-summary" style="font-size:0.72rem;color:#94a3b8;line-height:1.6"></div>
+      </div>
+      <div class="row" id="spouse-ss-row">
+        <div>
+          <label>Spouse Social Security (annual)</label>
+          <input type="number" name="spouse_ss_annual" value="18000" min="0" step="any">
+        </div>
+        <div>
+          <label>Spouse SS Claiming Age</label>
+          <select name="spouse_ss_claiming_age">
+            <option value="62">62</option><option value="63">63</option><option value="64">64</option>
+            <option value="65">65</option><option value="66">66</option>
+            <option value="67" selected>67</option>
+            <option value="68">68</option><option value="69">69</option><option value="70">70</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Pension / other guaranteed income -->
+      <div class="row">
+        <div>
+          <label>Your Pension / Annuity (annual, 0 if none)</label>
+          <input type="number" name="pension_annual" value="0" min="0" step="any">
+        </div>
+        <div>
+          <label>Pension Starts at Age</label>
+          <input type="number" name="pension_start_age" placeholder="default: retirement age" min="40" max="100" step="1">
+        </div>
+      </div>
+      <div class="row" id="spouse-pension-row">
+        <div>
+          <label>Spouse Pension / Annuity (annual)</label>
+          <input type="number" name="spouse_pension_annual" value="0" min="0" step="any">
+        </div>
+        <div>
+          <label>Spouse Pension Starts at Age</label>
+          <input type="number" name="spouse_pension_start_age" placeholder="default: spouse retirement age" min="40" max="100" step="1">
+        </div>
+      </div>
+
+      <!-- Part-time / other income -->
+      <div class="row">
+        <div>
+          <label>Part-time / Other Income (annual) <span class="tip" data-tip="Consulting, rental, part-time work, or any other income that offsets expenses. Enter the annual amount and the ages it applies. The projection subtracts this from withdrawals needed each year.">?</span></label>
+          <input type="number" name="other_income_annual" value="0" min="0" step="any" id="other-income-annual">
+        </div>
+        <div id="other-income-ages" style="display:none">
+          <label>From age / to age</label>
+          <div style="display:flex;gap:8px;align-items:center">
+            <input type="number" name="other_income_start_age" placeholder="start age" min="18" max="100" step="1" style="width:90px">
+            <span style="color:#475569;font-size:0.85rem">–</span>
+            <input type="number" name="other_income_end_age" placeholder="end age" min="18" max="100" step="1" style="width:90px">
+          </div>
+          <span style="display:block;font-size:0.72rem;color:#475569;margin-top:4px">Defaults: current age → retirement age</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Assumptions</h2>
+      <div class="row">
+        <div>
+          <label>Expected Annual Return <span class="tip" data-tip="Nominal (before inflation) average annual return. A balanced 60/40 portfolio: historically ~7%. Stocks-heavy: 8–9%. Subtract inflation rate to get your real growth assumption.">?</span></label>
+          <input type="number" name="expected_return" value="0.07" min="0" max="0.20" step="0.005">
+        </div>
+        <div>
+          <label>Inflation Rate</label>
+          <input type="number" name="inflation" value="0.03" min="0" max="0.15" step="0.005">
+        </div>
+      </div>
+
+      <!-- Monte Carlo toggle -->
+      <div class="mc-toggle">
+        <input type="checkbox" id="mc-check" name="monte_carlo" value="true">
+        <label for="mc-check">Run Monte Carlo simulation (tests 500 market scenarios) <span class="tip" data-tip="Uses the same average return but randomizes the year-by-year sequence hundreds of times. Captures sequence-of-returns risk — retiring into a crash is far worse than the same crash mid-career.">?</span></label>
+      </div>
+      <div class="mc-options" id="mc-options">
+        <div class="row">
+          <div>
+            <label>Portfolio Volatility (risk level) <span class="tip" data-tip="Standard deviation of annual returns (σ). Moderate (15%) suits a balanced 60/40 portfolio. Higher σ = wider fan chart. Conservative bonds-heavy: 8–10%.">?</span></label>
+            <select name="mc_volatility" id="mc-volatility">
+              <option value="0.10">Conservative (σ = 10%)</option>
+              <option value="0.15" selected>Moderate (σ = 15%)</option>
+              <option value="0.20">Aggressive (σ = 20%)</option>
+              <option value="0.25">Very Aggressive (σ = 25%)</option>
+            </select>
+          </div>
+          <div>
+            <label>Simulations</label>
+            <select name="num_simulations">
+              <option value="200">200 (fast)</option>
+              <option value="500" selected>500 (default)</option>
+              <option value="1000">1 000 (thorough)</option>
+            </select>
+          </div>
+        </div>
+        <p style="font-size:0.72rem;color:#475569;margin-top:8px;line-height:1.5">
+          Using <strong style="color:#64748b">GBM (Geometric Brownian Motion)</strong> —
+          1 of 7 return models in Fatboy Pro. The full app adds Market Regime (bull/bear cycles),
+          Enhanced Regime, Crash Scenario, Historical (recent &amp; full), up to 10 000 paths,
+          and per-path tax modeling.
+          <a href="https://fatboysoftware.com/blog/2026/03/01/monte-carlo-stress-testing" target="_blank" style="color:#818cf8;text-decoration:none;white-space:nowrap">How the 7 scenarios work →</a>
+        </p>
+      </div>
+    </div>
+
+    <button type="submit" id="submit-btn">Run Projection</button>
+    <p class="error" id="error-msg"></p>
+  </form>
+
+  <div id="results">
+    <!-- Deterministic summary -->
+    <div class="summary-box" id="summary-box"></div>
+
+    <!-- Share / print actions -->
+    <div class="result-actions">
+      <button type="button" id="share-btn" onclick="shareUrl()">Copy shareable link</button>
+      <button type="button" onclick="downloadCsv()">Download CSV</button>
+      <button type="button" onclick="printPdf()">Print / Save PDF</button>
+    </div>
+
+    <!-- MC success rate banner (hidden until MC runs) -->
+    <div id="success-rate-wrap" style="display:none">
+      <div class="success-rate" id="success-rate-box">
+        <div>
+          <div class="rate-number" id="rate-number"></div>
+          <div style="font-size:0.7rem;opacity:0.7">success rate</div>
+        </div>
+        <div class="rate-label" id="rate-label"></div>
+      </div>
+    </div>
+
+    <!-- Tab switcher: deterministic vs MC percentiles -->
+    <div id="tab-bar" style="display:none" class="tabs">
+      <div class="tab active" data-tab="det">Deterministic</div>
+      <div class="tab" data-tab="mc">Monte Carlo Paths</div>
+    </div>
+
+    <!-- Deterministic table -->
+    <div id="panel-det" class="tab-panel active">
+      <div class="card">
+        <h2>Year-by-Year</h2>
+        <div style="overflow-x:auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th><th>Age</th><th>Portfolio</th>
+                <th>SS Income</th><th>Expenses</th><th>Fed Tax</th>
+                <th>RMD <span class="tip" data-tip="Required Minimum Distribution — the IRS-mandated annual withdrawal from Traditional IRA/401(k) starting at age 73. Included in taxable income." style="vertical-align:middle">?</span></th>
+              </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- MC fan chart + percentile table -->
+    <div id="panel-mc" class="tab-panel">
+      <div class="card">
+        <h2>Portfolio Range</h2>
+        <div class="chart-wrap">
+          <canvas id="mc-chart" height="260"></canvas>
+        </div>
+        <div class="chart-legend">
+          <span><span class="legend-dot" style="background:#4ade80"></span>90th pct (best case)</span>
+          <span><span class="legend-dot" style="background:#60a5fa"></span>Median (p50)</span>
+          <span><span class="legend-dot" style="background:#f87171"></span>10th pct (worst case)</span>
+        </div>
+        <div style="overflow-x:auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th><th>Age</th>
+                <th>P10</th><th>P25</th><th>P50</th><th>P75</th><th>P90</th>
+              </tr>
+            </thead>
+            <tbody id="mc-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- RMD note — shown when plan has RMD years -->
+    <div id="rmd-teaser" style="display:none;background:#1a1500;border:1px solid #78350f;border-radius:10px;padding:14px 18px;margin-top:16px;font-size:0.82rem;color:#fcd34d;line-height:1.6">
+      <strong style="color:#fbbf24">&#9888; RMDs detected (amber rows)</strong> — Starting at age 73, the IRS requires annual withdrawals from your Traditional IRA/401(k) whether you need the money or not. These are added to your taxable income alongside Social Security, potentially bumping your tax bracket and increasing Medicare premiums (IRMAA).
+      <span style="color:#94a3b8;display:block;margin-top:6px">
+        <strong style="color:#a78bfa">Fatboy Pro</strong> models year-by-year Roth conversions during your low-income window to reduce RMDs before age 73 — minimizing lifetime taxes. <a href="https://fatboysoftware.com" target="_blank" style="color:#a78bfa;text-decoration:underline">Learn more →</a>
+      </span>
+    </div>
+
+    <!-- Roth Conversion Teaser — shown after projection if trad balance > 0 -->
+    <div id="roth-teaser" class="roth-teaser">
+      <div class="roth-teaser-header">
+        <span style="font-size:1.1rem">🔒</span>
+        <span class="roth-teaser-title">Roth Conversion Optimizer</span>
+        <span class="pro-badge">PRO</span>
+      </div>
+      <p id="roth-teaser-text"></p>
+      <div class="roth-features">
+        <span>✓ Tax-bracket filling strategy</span>
+        <span>✓ Year-by-year conversion amounts</span>
+        <span>✓ IRMAA cliff avoidance</span>
+        <span>✓ Minimize lifetime RMDs</span>
+        <span>✓ Roth vs. keep-in-trad comparison</span>
+        <span>✓ Full per-year tax modeling</span>
+      </div>
+      <a href="https://fatboysoftware.com" target="_blank"
+         onclick="ga('roth_teaser_click', {trad_balance: parseFloat(document.querySelector('[name=trad_balance]').value)||0})">
+        Unlock in Fatboy Pro →
+      </a>
+    </div>
+
+    <div class="desktop-cta">
+      <p>This tool uses a simplified GBM model. Fatboy Pro includes 7 Monte Carlo return models
+      (Market Regime, Crash Scenario, Historical), up to 10,000 paths, Roth conversion
+      optimization, and full per-year tax analysis.</p>
+      <p style="font-size:0.8rem;color:#64748b;margin-bottom:0;">We'll email you the download link:</p>
+      <div class="cta-email-row">
+        <input id="cta-email" type="email" placeholder="your@email.com" autocomplete="email"
+               onkeydown="if(event.key==='Enter') submitEmailCapture('cta')">
+        <button id="cta-btn" onclick="submitEmailCapture('cta')">Email Me the Link</button>
+      </div>
+      <div id="cta-status" class="em-status" style="margin-bottom:6px;"></div>
+      <a href="https://fatboysoftware.com" target="_blank" onclick="ga('desktop_cta_click')"
+         style="font-size:0.8rem;">Or download directly →</a>
+      <a href="https://fatboysoftware.com/blog/2026/03/01/monte-carlo-stress-testing" target="_blank"
+         style="display:inline-block;margin-top:8px;font-size:0.8rem;color:#94a3b8;text-decoration:none"
+         onclick="ga('mc_blog_click')">What each of the 7 scenarios tells you about your plan →</a>
+    </div>
+  </div>
 </div>
 
-<section id="latest-posts">
-  <h2>Latest Posts</h2>
-  {% for post in paginator.posts %}
-  <article style="margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #ddd;">
-    <h3 style="margin-bottom: 0.5rem;">
-      <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none; color: #0066cc;">{{ post.title }}</a>
-    </h3>
+<!-- Contact form -->
+<div class="container">
+  <div class="contact-section">
+    <h2>Questions or feedback?</h2>
+    <p>We read every message. No spam, no sales pitch.</p>
+    <form id="contact-form" onsubmit="submitContact(event)">
+      <div class="row">
+        <div>
+          <label for="c-name">Name (optional)</label>
+          <input id="c-name" type="text" placeholder="Your name" autocomplete="name">
+        </div>
+        <div>
+          <label for="c-email">Email <span style="color:#f87171">*</span></label>
+          <input id="c-email" type="email" placeholder="you@example.com" required autocomplete="email">
+        </div>
+      </div>
+      <label for="c-message" style="display:block;font-size:0.78rem;color:#94a3b8;margin-top:12px;margin-bottom:4px">Message</label>
+      <textarea id="c-message" placeholder="Feature request, bug report, or just saying hi…"></textarea>
+      <div>
+        <button type="submit" id="contact-btn">Send Message</button>
+        <div id="contact-status"></div>
+      </div>
+    </form>
+  </div>
+</div>
 
-    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">
-      {{ post.date | date: "%B %d, %Y" }}
-      {% if post.tags and post.tags.size > 0 %}
-        &nbsp;|&nbsp;
-        {% for tag in post.tags limit:3 %}
-          <span style="background: #f0f0f0; padding: 2px 8px; border-radius: 3px; font-size: 0.85rem;">{{ tag }}</span>
-        {% endfor %}
-      {% endif %}
-    </p>
+<!-- ── Email capture modal ──────────────────────────────────────── -->
+<div id="email-modal" class="email-modal-overlay" onclick="if(event.target===this)closeEmailModal()">
+  <div class="email-modal-card">
+    <button class="email-modal-close" onclick="closeEmailModal()" aria-label="Close">✕</button>
+    <div style="font-size:1.5rem;margin-bottom:10px;">📬</div>
+    <h3>Want this plan emailed to you?</h3>
+    <p class="em-sub">We'll send you a download link for Fatboy Pro — 7 Monte Carlo models,
+    10,000-path simulations, Roth conversion optimizer, and full per-year tax analysis.
+    Run on your desktop for a more detailed plan.</p>
+    <div class="email-modal-row">
+      <input id="modal-email" type="email" placeholder="your@email.com" autocomplete="email"
+             onkeydown="if(event.key==='Enter') submitEmailCapture('modal')">
+      <button id="modal-btn" onclick="submitEmailCapture('modal')">Send →</button>
+    </div>
+    <div id="modal-status" class="em-status"></div>
+    <p class="em-note">No spam. One email. Unsubscribe anytime.</p>
+  </div>
+</div>
 
-    <p style="line-height: 1.6;">{{ post.excerpt }}</p>
+<!-- ── Mobile sticky bottom bar ────────────────────────────────── -->
+<div id="mobile-bar" class="mobile-email-bar" style="position:relative;">
+  <button class="bar-close-btn" onclick="closeMobileBar()" aria-label="Close">✕</button>
+  <p class="bar-title">Get the full version on your desktop</p>
+  <p class="bar-sub">We'll email you the download link for Fatboy Pro.</p>
+  <div class="bar-row">
+    <input id="bar-email" type="email" placeholder="your@email.com" autocomplete="email"
+           onkeydown="if(event.key==='Enter') submitEmailCapture('bar')">
+    <button id="bar-btn" onclick="submitEmailCapture('bar')">Email Me →</button>
+  </div>
+  <div id="bar-status" class="em-status" style="font-size:0.75rem;"></div>
+</div>
 
-    <p>
-      <a href="{{ site.baseurl }}{{ post.url }}" style="color: #0066cc; text-decoration: none; font-weight: 500;">
-        Read full article »
-      </a>
-    </p>
-  </article>
-  {% endfor %}
-</section>
+<script>
+// Use explicit API host when frontend is served as static Pages content.
+const API_BASE = 'https://web-production-b3fa0.up.railway.app';
+const apiUrl = (path) => `${API_BASE}${path}`;
 
-{% if paginator.total_pages > 1 %}
-<nav class="pagination" style="display:flex; align-items:center; gap:1rem; margin-bottom:3rem;">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous" style="padding: 0.5rem 1rem; background: #f0f0f0; border-radius: 4px;">Previous</a>
-  {% endif %}
+// Wake up backend container immediately on page load (prevents cold-start delay)
+fetch(apiUrl('/health')).catch(() => {});
 
-  <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+// GA4 helper — safe no-op if gtag hasn't loaded yet
+function ga(event, params) {
+  if (typeof gtag === 'function') gtag('event', event, params || {});
+}
 
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next" style="padding: 0.5rem 1rem; background: #f0f0f0; border-radius: 4px;">Next</a>
-  {% endif %}
-</nav>
-{% endif %}
+// Print with GA event
+function printPdf() {
+  ga('print_pdf');
+  window.print();
+}
 
-<section markdown="1">
-## Why This Blog Exists
+// CSV export
+function downloadCsv() {
+  if (!lastData) return;
+  let csv = 'Year,Age,Portfolio,SS Income,Expenses,Fed Tax,RMD\n';
+  for (const r of lastData.years) {
+    csv += `${r.year},${r.age},${Math.round(r.portfolio)},${Math.round(r.ss_income)},${Math.round(r.expenses)},${Math.round(r.fed_tax)},${Math.round(r.rmd || 0)}\n`;
+  }
+  if (lastData.mc_years && lastData.mc_years.length) {
+    csv += '\nMonte Carlo Percentiles\nYear,Age,P10,P25,P50,P75,P90\n';
+    for (const r of lastData.mc_years) {
+      csv += `${r.year},${r.age},${Math.round(r.p10)},${Math.round(r.p25)},${Math.round(r.p50)},${Math.round(r.p75)},${Math.round(r.p90)}\n`;
+    }
+  }
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url; a.download = 'retirement-plan.csv'; a.click();
+  URL.revokeObjectURL(url);
+  ga('csv_download');
+}
 
-Most retirement planning content lands in one of two buckets:
+// SS break-even calculator
+const SS_FACTOR = {62:0.70, 63:0.75, 64:0.80, 65:0.867, 66:0.933, 67:1.00, 68:1.08, 69:1.16, 70:1.24};
+function updateSsBreakeven() {
+  const ssAmt = parseFloat(document.querySelector('[name=ss_annual]').value) || 0;
+  const ssAge = parseInt(document.querySelector('[name=ss_claiming_age]').value) || 67;
+  const el    = document.getElementById('ss-breakeven');
+  if (!ssAmt || ssAge <= 62) { el.style.display = 'none'; return; }
+  const fra       = ssAmt / (SS_FACTOR[ssAge] || 1.0);
+  const b62       = fra * SS_FACTOR[62];
+  const extra     = ssAmt - b62;
+  if (extra <= 0)  { el.style.display = 'none'; return; }
+  const foregone  = b62 * (ssAge - 62);
+  const beAge     = Math.round(ssAge + foregone / extra);
+  el.textContent  = `Break-even vs. claiming at 62: age ${beAge}. After that, waiting pays off.`;
+  el.style.display = '';
+}
 
-**Oversimplified advice.** "Save 15% of your income!" "Rule of thumb: 4% withdrawal rate!" - advice that assumes everyone has the same situation.
+// SS Lifetime Optimizer — shows best claiming age given user's life expectancy
+function updateSsOptimizer() {
+  const ssAmt   = parseFloat(document.querySelector('[name=ss_annual]').value) || 0;
+  const ssAge   = parseInt(document.querySelector('[name=ss_claiming_age]').value) || 67;
+  const lifeExp = parseInt(document.querySelector('[name=life_expectancy]').value) || 90;
+  const el = document.getElementById('ss-optimizer');
+  if (!ssAmt || lifeExp <= 65) { el.style.display = 'none'; return; }
 
-**Needlessly academic research.** PhD-level math with Greek letters, but no practical takeaway.
+  const fra = ssAmt / (SS_FACTOR[ssAge] || 1.0);
 
-This blog lives between those extremes: technical depth without jargon, real scenarios with clear takeaways, and the math behind every recommendation.
-</section>
+  // Always show key ages + current claiming age
+  const baseAges = [62, 65, 67, 70];
+  const showAges = [...new Set([...baseAges, ssAge])].sort((a, b) => a - b);
 
-<section markdown="1">
-## What We Cover
+  const results = showAges.map(a => ({
+    age: a,
+    annual: fra * (SS_FACTOR[a] || 1.0),
+    lifetime: fra * (SS_FACTOR[a] || 1.0) * Math.max(0, lifeExp - a),
+  }));
 
-### Tax Optimization
-Roth conversions, OBBBA senior deduction planning (2026-2028), withdrawal sequencing, IRMAA mitigation, bracket optimization, and state tax nuance.
+  const maxLifetime = Math.max(...results.map(r => r.lifetime), 1);
+  const best    = results.reduce((b, r) => r.lifetime > b.lifetime ? r : b);
+  const current = results.find(r => r.age === ssAge) || results[0];
 
-### Risk Management
-Sequence-of-returns risk, the retirement red zone (ages 60-70), Monte Carlo stress testing, scenario breakdowns, and contingency planning for bear markets.
+  document.getElementById('ss-opt-lifeexp').textContent = lifeExp;
 
-### Advanced Planning
-RMD management, estate/legacy planning inputs, early retirement modeling, and healthcare/income planning across decades.
+  // Render mini bar chart
+  const barsEl = document.getElementById('ss-opt-bars');
+  barsEl.innerHTML = '';
+  const BAR_MAX_H = 32;
+  results.forEach(r => {
+    const isBest    = r.age === best.age;
+    const isCurrent = r.age === ssAge;
+    const barH  = Math.max(4, Math.round((r.lifetime / maxLifetime) * BAR_MAX_H));
+    const col     = isBest ? '#4ade80' : isCurrent ? '#60a5fa' : '#2d3748';
+    const textCol = isBest ? '#4ade80' : isCurrent ? '#60a5fa' : '#64748b';
+    const div = document.createElement('div');
+    div.style.cssText = 'flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;';
+    div.innerHTML = `
+      <div style="font-size:0.6rem;color:${textCol};font-weight:700;min-height:10px">${isBest ? '★' : ''}</div>
+      <div style="width:100%;height:${barH}px;background:${col};border-radius:2px 2px 0 0;margin-top:auto"></div>
+      <div style="font-size:0.62rem;color:${textCol};font-weight:${isBest || isCurrent ? '600' : '400'}">
+        ${r.age}${isCurrent && !isBest ? ' ←' : ''}
+      </div>
+    `;
+    barsEl.appendChild(div);
+  });
 
-### Tools & Software
-How to model the right questions, what features best-in-class planners need, and why most calculators miss the boat on complex tax situations.
-</section>
+  // Summary text
+  const gain = best.lifetime - current.lifetime;
+  let msg = `Age <strong style="color:#4ade80">${best.age}</strong> maximizes lifetime SS: <strong style="color:#4ade80">$${Math.round(best.lifetime / 1000)}k</strong>.`;
+  if (gain > 1000 && best.age !== ssAge) {
+    msg += ` <span style="color:#fbbf24">$${Math.round(gain / 1000)}k more</span> than claiming at ${ssAge}.`;
+  } else if (best.age === ssAge) {
+    msg += ` Your current choice is already optimal for your life expectancy.`;
+  }
+  msg += `<br><span style="font-size:0.68rem;color:#475569">Note: this maximizes <em>total SS received</em>. <a href="https://fatboysoftware.com" target="_blank" style="color:#7c3aed;text-decoration:none">Fatboy Pro</a> also models portfolio impact — sometimes claiming early and investing beats waiting.</span>`;
+  document.getElementById('ss-opt-summary').innerHTML = msg;
+  el.style.display = '';
+}
 
-<section markdown="1">
-## Subscribe for Updates
+const form = document.getElementById('form');
+const btn  = document.getElementById('submit-btn');
+const err  = document.getElementById('error-msg');
+let lastMcRows = null, lastData = null;
 
-New posts are published when there's something truly meaningful to share: a new law change, a modeling insight, or an advanced retirement experiment worth documenting.
+// ---------------------------------------------------------------------------
+// Load form state from URL params (supports shareable links)
+// ---------------------------------------------------------------------------
+(function loadFromUrl() {
+  const p = new URLSearchParams(location.search);
+  if (!p.toString()) return;
+  const fields = [
+    'age','retirement_age','spouse_age','life_expectancy',
+    'trad_balance','roth_balance','taxable_balance','cash_balance',
+    'trad_stocks_allocation','trad_bonds_allocation','trad_real_estate_allocation','trad_cash_allocation','trad_commodities_allocation','trad_crypto_allocation',
+    'roth_stocks_allocation','roth_bonds_allocation','roth_real_estate_allocation','roth_cash_allocation','roth_commodities_allocation','roth_crypto_allocation',
+    'taxable_stocks_allocation','taxable_bonds_allocation','taxable_real_estate_allocation','taxable_cash_allocation','taxable_commodities_allocation','taxable_crypto_allocation',
+    'annual_savings','annual_spending','healthcare_annual','ss_annual','ss_claiming_age',
+    'spouse_ss_annual','spouse_ss_claiming_age',
+    'pension_annual','pension_start_age',
+    'spouse_pension_annual','spouse_pension_start_age',
+    'other_income_annual','other_income_start_age','other_income_end_age',
+    'expected_return','inflation','filing_status','state_code',
+    'mc_volatility','num_simulations',
+  ];
+  fields.forEach(name => {
+    const val = p.get(name);
+    if (val === null) return;
+    const el = document.querySelector(`[name="${name}"]`);
+    if (el) el.value = val;
+  });
+  if (p.get('monte_carlo') === 'true') {
+    document.getElementById('mc-check').checked = true;
+    document.getElementById('mc-options').classList.add('visible');
+  }
+  // Sync spouse SS + pension row visibility
+  const spouseVal = document.querySelector('[name=spouse_age]').value;
+  document.getElementById('spouse-ss-row').style.display      = spouseVal ? '' : 'none';
+  document.getElementById('spouse-pension-row').style.display = spouseVal ? '' : 'none';
+  // Sync SS age label
+  const ssAge = document.querySelector('[name=ss_claiming_age]').value;
+  if (ssAge) document.getElementById('ss-age-label').textContent = ssAge;
+  // Sync retired state after URL values are applied
+  syncRetiredState();
+  // Sync other-income age fields visibility
+  const oi = parseFloat(document.querySelector('[name=other_income_annual]')?.value) || 0;
+  if (oi > 0) document.getElementById('other-income-ages').style.display = '';
+  updateAllocationTotals();
+})();
 
-**RSS Feed:** [Subscribe via RSS]({{ site.baseurl }}/feed.xml) - instant updates for every new article.
+// ---------------------------------------------------------------------------
+// Share — encode current form as URL params and copy to clipboard
+// ---------------------------------------------------------------------------
+function shareUrl() {
+  const fd  = new FormData(form);
+  const p   = new URLSearchParams();
+  for (const [k, v] of fd.entries()) {
+    if (v !== '' && v !== null) p.set(k, v);
+  }
+  const url = location.origin + location.pathname + '?' + p.toString();
+  const btn2 = document.getElementById('share-btn');
+  navigator.clipboard.writeText(url).then(() => {
+    ga('share_link_copied');
+    btn2.textContent = 'Link copied!';
+    btn2.classList.add('btn-copied');
+    setTimeout(() => {
+      btn2.textContent = 'Copy shareable link';
+      btn2.classList.remove('btn-copied');
+    }, 2000);
+  }).catch(() => {
+    prompt('Copy this link to share your scenario:', url);
+  });
+}
 
-Email updates coming soon.
-</section>
+// Already-retired detection — function declaration (hoisted, so IIFE above can call it)
+function syncRetiredState() {
+  const age    = parseInt(document.querySelector('[name=age]').value) || 0;
+  const retAge = parseInt(document.querySelector('[name=retirement_age]').value) || 65;
+  const retired = age >= retAge;
+  document.getElementById('savings-contributions-row').style.display = retired ? 'none' : '';
+  document.getElementById('already-retired-note').style.display      = retired ? '' : 'none';
+}
+document.querySelector('[name=age]').addEventListener('input', syncRetiredState);
+document.querySelector('[name=retirement_age]').addEventListener('input', syncRetiredState);
+syncRetiredState();
 
-<section markdown="1">
-## Contact
+// Part-time income: show age range fields when amount > 0
+document.getElementById('other-income-annual').addEventListener('input', function() {
+  document.getElementById('other-income-ages').style.display = parseFloat(this.value) > 0 ? '' : 'none';
+});
 
-Questions about retirement planning topics we've covered? Want to suggest a future article? Email us at [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com) and we’ll follow up directly.
-</section>
+// Tooltip touch/click support (for mobile where hover doesn't work)
+document.addEventListener('click', e => {
+  const tip = e.target.closest('.tip');
+  if (tip) {
+    e.stopPropagation();
+    document.querySelectorAll('.tip.open').forEach(t => { if (t !== tip) t.classList.remove('open'); });
+    tip.classList.toggle('open');
+  } else {
+    document.querySelectorAll('.tip.open').forEach(t => t.classList.remove('open'));
+  }
+});
 
-<section markdown="1">
-## Get the Software
+// SS age label + break-even + optimizer sync
+document.getElementById('ss-claiming-age').addEventListener('change', e => {
+  document.getElementById('ss-age-label').textContent = e.target.value;
+  updateSsBreakeven();
+  updateSsOptimizer();
+});
+document.querySelector('[name=ss_annual]').addEventListener('input', () => {
+  updateSsBreakeven();
+  updateSsOptimizer();
+});
+document.querySelector('[name=life_expectancy]').addEventListener('input', updateSsOptimizer);
+updateSsBreakeven();
+updateSsOptimizer();
 
-These posts reference modeling that requires proper retirement planning software. Most calculators can't handle the scenarios we explore.
+// Show/hide spouse SS + pension rows
+document.querySelector('[name=spouse_age]').addEventListener('input', e => {
+  const show = e.target.value ? '' : 'none';
+  document.getElementById('spouse-ss-row').style.display      = show;
+  document.getElementById('spouse-pension-row').style.display = show;
+});
+document.getElementById('spouse-ss-row').style.display      = '';
+document.getElementById('spouse-pension-row').style.display = '';
 
-**Fatboy Financial Planner** is built for this level of depth:
+// Live account-allocation total badges
+form.querySelectorAll('[name$="_allocation"]').forEach(el => {
+  el.addEventListener('input', updateAllocationTotals);
+});
 
-- Model Roth conversions year-by-year with full tax impact.
-- Account for OBBBA senior deductions (2026-2028) and optimize every timing decision.
-- Stress test against sequence-of-returns risk with Monte Carlo simulations.
-- Compare scenarios side-by-side with editable tax parameters.
+// MC toggle
+document.getElementById('mc-check').addEventListener('change', e => {
+  document.getElementById('mc-options').classList.toggle('visible', e.target.checked);
+});
 
-Start free. Upgrade for Pro if you need advanced analysis. No subscriptions. Your data stays local.
-</section>
+// Tab switching — redraw chart when MC tab becomes visible
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tab')) return;
+  const target = e.target.dataset.tab;
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === target));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + target));
+  if (target === 'mc' && lastMcRows) {
+    requestAnimationFrame(() => drawMcChart(lastMcRows));
+  }
+});
+
+function fmt(n) {
+  if (n == null || isNaN(n)) return '—';
+  return '$' + Math.round(n).toLocaleString();
+}
+
+function getFriendlyFieldName(field) {
+  const names = {
+    ss_annual: 'Your Social Security',
+    annual_spending: 'Annual Spending in Retirement',
+  };
+  return names[field] || field;
+}
+
+function validateRequiredProjectionFields() {
+  const requiredNumericFields = [
+    { name: 'ss_annual', label: 'Your Social Security' },
+    { name: 'annual_spending', label: 'Annual Spending in Retirement' },
+  ];
+
+  for (const field of requiredNumericFields) {
+    const input = form.querySelector(`[name="${field.name}"]`);
+    if (!input) continue;
+    if (String(input.value || '').trim() === '') {
+      input.focus();
+      return `${field.label} can't be blank.`;
+    }
+  }
+
+  return null;
+}
+
+function validateAllocationBlocks() {
+  const buckets = ['stocks','bonds','real_estate','cash','commodities','crypto'];
+  const blocks = [
+    { prefix: 'trad', label: 'Traditional allocation' },
+    { prefix: 'roth', label: 'Roth allocation' },
+    { prefix: 'taxable', label: 'Taxable allocation' },
+  ];
+  for (const block of blocks) {
+    let total = 0;
+    for (const bucket of buckets) {
+      const el = form.querySelector(`[name="${block.prefix}_${bucket}_allocation"]`);
+      if (!el) continue;
+      const raw = String(el.value ?? '').trim();
+      const n = Number(raw === '' ? '0' : raw);
+      if (!Number.isFinite(n)) {
+        el.focus();
+        return `${block.label}: enter a valid number for ${bucket}.`;
+      }
+      if (n < 0 || n > 100) {
+        el.focus();
+        return `${block.label}: ${bucket} must be between 0 and 100.`;
+      }
+      total += n;
+    }
+    if (Math.abs(total - 100) > 1.0) {
+      return `${block.label} must total 100% (currently ${total.toFixed(1)}%).`;
+    }
+  }
+  return null;
+}
+
+function updateAllocationTotals() {
+  const buckets = ['stocks','bonds','real_estate','cash','commodities','crypto'];
+  const blocks = [
+    { prefix: 'trad', label: 'Traditional', elId: 'trad-allocation-total' },
+    { prefix: 'roth', label: 'Roth', elId: 'roth-allocation-total' },
+    { prefix: 'taxable', label: 'Taxable', elId: 'taxable-allocation-total' },
+  ];
+  for (const block of blocks) {
+    let total = 0;
+    for (const bucket of buckets) {
+      const el = form.querySelector(`[name="${block.prefix}_${bucket}_allocation"]`);
+      const n = Number((el?.value ?? '').trim() || '0');
+      if (Number.isFinite(n)) total += n;
+    }
+    const out = document.getElementById(block.elId);
+    if (!out) continue;
+    const ok = Math.abs(total - 100) <= 1.0;
+    out.textContent = `${block.label}: ${total.toFixed(1)}%`;
+    out.style.color = ok ? '#94a3b8' : '#fbbf24';
+    out.style.borderColor = ok ? '#2d3748' : '#f59e0b';
+  }
+}
+
+function parseApiErrorDetail(detail) {
+  if (!detail) return 'Server error';
+  if (typeof detail === 'string') return detail;
+
+  if (Array.isArray(detail)) {
+    const parts = detail
+      .map(item => {
+        if (typeof item === 'string') return item;
+        if (!item || typeof item !== 'object') return '';
+        const loc = Array.isArray(item.loc) ? item.loc[item.loc.length - 1] : null;
+        const field = loc ? getFriendlyFieldName(String(loc)) : null;
+        const msg = item.msg || item.message || 'Invalid value';
+        return field ? `${field}: ${msg}` : msg;
+      })
+      .filter(Boolean);
+    if (parts.length > 0) return parts.join('; ');
+  }
+
+  if (typeof detail === 'object') return detail.message || JSON.stringify(detail);
+  return String(detail);
+}
+
+function drawMcChart(mcRows) {
+  const canvas = document.getElementById('mc-chart');
+  const dpr = window.devicePixelRatio || 1;
+  const W = canvas.parentElement.clientWidth;
+  const H = 260;
+  canvas.width  = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width  = W + 'px';
+  canvas.style.height = H + 'px';
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  const pad = { top: 16, right: 16, bottom: 36, left: 64 };
+  const cw = W - pad.left - pad.right;
+  const ch = H - pad.top - pad.bottom;
+
+  // Determine scale
+  const maxVal = Math.max(...mcRows.map(r => r.p90));
+  const minVal = 0;
+  const n = mcRows.length;
+
+  function xPos(i)   { return pad.left + (i / (n - 1)) * cw; }
+  function yPos(v)   { return pad.top + ch - ((v - minVal) / (maxVal - minVal || 1)) * ch; }
+
+  // $0 line
+  ctx.strokeStyle = '#2d3748';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(pad.left, yPos(0));
+  ctx.lineTo(pad.left + cw, yPos(0));
+  ctx.stroke();
+
+  // Fan band p10-p90
+  ctx.fillStyle = 'rgba(74,222,128,0.07)';
+  ctx.beginPath();
+  mcRows.forEach((r, i) => i === 0 ? ctx.moveTo(xPos(i), yPos(r.p90)) : ctx.lineTo(xPos(i), yPos(r.p90)));
+  [...mcRows].reverse().forEach((r, i) => ctx.lineTo(xPos(n-1-i), yPos(r.p10)));
+  ctx.closePath();
+  ctx.fill();
+
+  // p25-p75 shading
+  ctx.fillStyle = 'rgba(74,222,128,0.13)';
+  ctx.beginPath();
+  mcRows.forEach((r, i) => i === 0 ? ctx.moveTo(xPos(i), yPos(r.p75)) : ctx.lineTo(xPos(i), yPos(r.p75)));
+  [...mcRows].reverse().forEach((r, i) => ctx.lineTo(xPos(n-1-i), yPos(r.p25)));
+  ctx.closePath();
+  ctx.fill();
+
+  // Lines: p90 (green), p50 (blue), p10 (red)
+  function drawLine(key, color) {
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    mcRows.forEach((r, i) => i === 0 ? ctx.moveTo(xPos(i), yPos(r[key])) : ctx.lineTo(xPos(i), yPos(r[key])));
+    ctx.stroke();
+  }
+  drawLine('p90', '#4ade80');
+  drawLine('p50', '#60a5fa');
+  drawLine('p10', '#f87171');
+
+  // Y axis labels
+  ctx.fillStyle = '#64748b';
+  ctx.font = `${11 * dpr / dpr}px system-ui`;
+  ctx.textAlign = 'right';
+  const ticks = 4;
+  for (let t = 0; t <= ticks; t++) {
+    const v = minVal + (maxVal - minVal) * (t / ticks);
+    const y = yPos(v);
+    ctx.fillText('$' + (v >= 1e6 ? (v/1e6).toFixed(1)+'M' : Math.round(v/1000)+'k'), pad.left - 6, y + 4);
+  }
+
+  // X axis (year labels — show every ~5 years)
+  ctx.textAlign = 'center';
+  mcRows.forEach((r, i) => {
+    if (i === 0 || i === n-1 || r.year % 5 === 0) {
+      ctx.fillText(r.year, xPos(i), H - pad.bottom + 16);
+    }
+  });
+}
+
+
+// ---------------------------------------------------------------------------
+// Projection form submit
+// ---------------------------------------------------------------------------
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  btn.disabled = true;
+  const isMC = document.getElementById('mc-check').checked;
+  btn.textContent = isMC ? 'Running 500 simulations…' : 'Running…';
+  err.textContent = '';
+  document.getElementById('results').style.display = 'none';
+  const validationError = validateRequiredProjectionFields();
+  if (validationError) {
+    err.textContent = validationError;
+    btn.disabled = false;
+    btn.textContent = 'Run Projection';
+    return;
+  }
+  const allocationError = validateAllocationBlocks();
+  if (allocationError) {
+    err.textContent = allocationError;
+    btn.disabled = false;
+    btn.textContent = 'Run Projection';
+    return;
+  }
+
+  const fd = new FormData(form);
+  const payload = {};
+  for (const [k, v] of fd.entries()) {
+    if (v === '' || v === null) continue;
+    if (k === 'monte_carlo') { payload[k] = true; continue; }
+    const num = Number(v);
+    payload[k] = isNaN(num) ? v : num;
+  }
+  if (!payload.monte_carlo) payload.monte_carlo = false;
+  if (!payload.spouse_age)  delete payload.spouse_age;
+  if (!payload.state_code)  delete payload.state_code;
+
+  try {
+    const res = await fetch(apiUrl('/api/project'), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) {
+      let detail = null;
+      try {
+        const e2 = await res.json();
+        detail = e2?.detail ?? e2;
+      } catch {
+        detail = null;
+      }
+      throw new Error(parseApiErrorDetail(detail));
+    }
+    const data = await res.json();
+    lastData = data;
+
+    // Summary
+    const sb = document.getElementById('summary-box');
+    sb.textContent = data.summary;
+    sb.className = 'summary-box' + (data.success ? '' : ' fail');
+
+    // Deterministic table
+    const tbody = document.getElementById('results-body');
+    tbody.innerHTML = '';
+    let hasAnyRmd = false;
+    for (const row of data.years) {
+      const depleted = row.portfolio === 0 && !data.success;
+      const hasRmd   = row.rmd > 0;
+      if (hasRmd) hasAnyRmd = true;
+      const tr = document.createElement('tr');
+      const classes = [depleted ? 'depleted' : '', hasRmd ? 'rmd-year' : ''].filter(Boolean).join(' ');
+      if (classes) tr.className = classes;
+      tr.innerHTML = `
+        <td>${row.year}</td><td>${row.age}</td>
+        <td>${fmt(row.portfolio)}</td><td>${fmt(row.ss_income)}</td>
+        <td>${fmt(row.expenses)}</td><td>${fmt(row.fed_tax)}</td>
+        <td class="${hasRmd ? 'rmd-amt' : ''}">${hasRmd ? fmt(row.rmd) : '—'}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+    // Show RMD teaser if RMDs are present
+    document.getElementById('rmd-teaser').style.display = hasAnyRmd ? '' : 'none';
+
+    // MC results
+    const hasMC = data.success_rate != null && data.mc_years && data.mc_years.length > 0;
+    document.getElementById('success-rate-wrap').style.display = hasMC ? '' : 'none';
+    document.getElementById('tab-bar').style.display = hasMC ? '' : 'none';
+    document.getElementById('panel-det').classList.add('active');
+    document.getElementById('panel-mc').classList.remove('active');
+    document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', i===0));
+
+    if (hasMC) {
+      const rate = data.success_rate;
+      const box  = document.getElementById('success-rate-box');
+      box.className = 'success-rate ' + (rate >= 80 ? 'high' : rate >= 60 ? 'medium' : 'low');
+      document.getElementById('rate-number').textContent = rate.toFixed(0) + '%';
+      const sims = payload.num_simulations || 500;
+      document.getElementById('rate-label').innerHTML =
+        `of ${sims.toLocaleString()} market scenarios<br>result in a fully funded retirement`;
+
+      // MC table
+      const mcBody = document.getElementById('mc-body');
+      mcBody.innerHTML = '';
+      for (const r of data.mc_years) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${r.year}</td><td>${r.age}</td>
+          <td>${fmt(r.p10)}</td><td>${fmt(r.p25)}</td><td>${fmt(r.p50)}</td>
+          <td>${fmt(r.p75)}</td><td>${fmt(r.p90)}</td>`;
+        mcBody.appendChild(tr);
+      }
+
+      // Store for redraw when MC tab is clicked (panel is hidden now, clientWidth=0)
+      lastMcRows = data.mc_years;
+    }
+
+    // GA4 events
+    if (isMC) {
+      ga('monte_carlo_run', {
+        success_rate: data.success_rate != null ? Math.round(data.success_rate) : null,
+        num_simulations: payload.num_simulations || 500,
+        plan_success: data.success,
+      });
+    } else {
+      ga('projection_run', { plan_success: data.success });
+    }
+    if (!data.success) {
+      ga('projection_depleted', { depletion_year: data.depletion_year });
+    }
+
+    // --- Roth conversion teaser ---
+    const tradBal = parseFloat(payload.trad_balance) || 0;
+    const rothTeaser = document.getElementById('roth-teaser');
+    if (tradBal > 0) {
+      const retAge  = parseInt(payload.retirement_age) || 65;
+      const ssAge   = parseInt(payload.ss_claiming_age) || 67;
+      const rmdAge  = 73;
+      const convWin = Math.max(0, ssAge - retAge);
+      const fmtB    = v => '$' + Math.round(v / 1000) * 1000 >= 1e6
+                        ? (Math.round(v / 1e5) / 10).toFixed(1) + 'M'
+                        : '$' + (Math.round(v / 1000)).toLocaleString() + 'k';
+      let msg = `Your ${fmtB(tradBal)} Traditional IRA will trigger Required Minimum Distributions at age ${rmdAge}, potentially pushing you into a higher tax bracket — on top of Social Security and other income.`;
+      if (convWin >= 2) {
+        msg += ` You have a ${convWin}-year window between retirement (${retAge}) and Social Security (${ssAge}) when your taxable income drops — the ideal time for Roth conversions. Fatboy Pro calculates exactly how much to convert each year to fill your current bracket without crossing into the next one.`;
+      } else {
+        msg += ` Fatboy Pro calculates the optimal amount to convert each year, balancing current-year tax cost against future RMD reduction — personalized to your bracket, state, and SS income timeline.`;
+      }
+      document.getElementById('roth-teaser-text').textContent = msg;
+      rothTeaser.style.display = '';
+      ga('roth_teaser_shown', { trad_balance: Math.round(tradBal) });
+    } else {
+      rothTeaser.style.display = 'none';
+    }
+
+    document.getElementById('results').style.display = 'block';
+    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    triggerEmailCapture();
+  } catch (ex) {
+    err.textContent = 'Error: ' + ex.message;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Run Projection';
+  }
+});
+
+// ── Email capture ──────────────────────────────────────────────────────────
+const CAPTURE_URL = 'https://fatboy-license-server-oc13.vercel.app/api/contact';
+let _emailModalTimer = null;
+
+function showEmailModal() {
+  const modal = document.getElementById('email-modal');
+  modal.classList.add('open');
+  ga('email_modal_shown');
+  // Pre-fill email across all capture points if known
+  const saved = localStorage.getItem('fb_captured_email');
+  if (saved) {
+    ['modal-email', 'bar-email', 'cta-email'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el && !el.value) el.value = saved;
+    });
+  }
+}
+
+function closeEmailModal() {
+  const submitted = document.getElementById('modal-status').textContent.startsWith('✓');
+  if (!submitted) ga('email_modal_dismissed');
+  document.getElementById('email-modal').classList.remove('open');
+}
+
+function closeMobileBar() {
+  const submitted = document.getElementById('bar-status').textContent.startsWith('✓');
+  if (!submitted) ga('email_bar_dismissed');
+  document.getElementById('mobile-bar').classList.remove('visible');
+}
+
+function triggerEmailCapture() {
+  // Mobile bar — always show on small screens after results
+  if (window.innerWidth < 640) {
+    document.getElementById('mobile-bar').classList.add('visible');
+    ga('email_bar_shown');
+  }
+  // Modal — show after 2.2s delay on every projection run
+  clearTimeout(_emailModalTimer);
+  _emailModalTimer = setTimeout(showEmailModal, 2200);
+  // Pre-fill any known email
+  const saved = localStorage.getItem('fb_captured_email');
+  if (saved) {
+    ['modal-email', 'bar-email', 'cta-email'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el && !el.value) el.value = saved;
+    });
+  }
+}
+
+async function submitEmailCapture(source) {
+  const inputId  = { modal: 'modal-email', bar: 'bar-email', cta: 'cta-email' };
+  const btnId    = { modal: 'modal-btn',   bar: 'bar-btn',   cta: 'cta-btn'   };
+  const statusId = { modal: 'modal-status',bar: 'bar-status', cta: 'cta-status' };
+  const labels   = { modal: 'Send →', bar: 'Email Me →', cta: 'Email Me the Link' };
+
+  const email = (document.getElementById(inputId[source])?.value || '').trim();
+  const statusEl = document.getElementById(statusId[source]);
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    statusEl.style.color = '#f87171';
+    statusEl.textContent = 'Please enter a valid email.';
+    return;
+  }
+
+  const btn = document.getElementById(btnId[source]);
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  statusEl.style.color = '#94a3b8';
+  statusEl.textContent = '';
+
+  // Build a short results summary to include in the backend notification
+  let summary = 'Requested download link from web app.';
+  if (lastData) {
+    const finalRow = lastData.years[lastData.years.length - 1];
+    const status   = lastData.success ? 'Funded through life expectancy'
+                                      : `Depleted at age ${lastData.depletion_year || '?'}`;
+    summary = `Plan: ${status}. Final portfolio: ${fmt(finalRow?.portfolio ?? 0)}.`;
+    if (lastData.success_rate != null) summary += ` MC success rate: ${lastData.success_rate.toFixed(0)}%.`;
+  }
+
+  try {
+    const res = await fetch(CAPTURE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email,
+        message: summary,
+        source: `web_email_capture_${source}`,
+      }),
+    });
+    if (!res.ok) throw new Error('Server error');
+
+    localStorage.setItem('fb_captured_email', email);
+    // Sync email to other fields
+    ['modal-email', 'bar-email', 'cta-email'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = email;
+    });
+
+    statusEl.style.color = '#4ade80';
+    statusEl.textContent = '✓ Sent! Check your inbox.';
+    ga('email_capture_submit', { capture_source: source });
+
+    if (source === 'modal') setTimeout(closeEmailModal, 2500);
+    if (source === 'bar')   setTimeout(closeMobileBar,  2500);
+  } catch {
+    statusEl.style.color = '#f87171';
+    statusEl.textContent = 'Something went wrong. Try again.';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = labels[source];
+  }
+}
+
+async function submitContact(e) {
+  e.preventDefault();
+  const btn = document.getElementById('contact-btn');
+  const status = document.getElementById('contact-status');
+  const name    = document.getElementById('c-name').value.trim() || null;
+  const email   = document.getElementById('c-email').value.trim();
+  const message = document.getElementById('c-message').value.trim() || null;
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  status.style.color = '#94a3b8';
+  status.textContent = '';
+
+  try {
+    const res = await fetch('https://fatboy-license-server-oc13.vercel.app/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message, source: 'web_contact_form' }),
+    });
+    if (!res.ok) throw new Error('Server error');
+    status.style.color = '#4ade80';
+    status.textContent = 'Message sent! We\'ll get back to you soon.';
+    document.getElementById('contact-form').reset();
+    ga('contact_form_submit');
+  } catch {
+    status.style.color = '#f87171';
+    status.textContent = 'Something went wrong. Please try emailing us directly.';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
+}
+</script>
+</body>
+</html>
