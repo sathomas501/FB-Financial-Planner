@@ -172,6 +172,28 @@
       }
     }
 
+    .feature-screenshots {
+      margin-top: 2rem;
+    }
+
+    .feature-screenshots h2 {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 0 0 1rem;
+    }
+
+    .screenshot {
+      margin-bottom: 1rem;
+    }
+
+.screenshot p {
+      margin: 0.4rem 0 0;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
     /* Desktop */
     @media (min-width: 768px) {
       body {
@@ -179,6 +201,7 @@
       }
 
       .card {
+        max-width: 720px;
         padding: 2rem;
       }
 
@@ -203,6 +226,34 @@
       <p style="color:#94a3b8;font-size:0.9rem;">On mobile? Try the free web preview — basic retirement projection, no account needed.</p>
 
       <a href="https://web-production-b3fa0.up.railway.app" class="try-btn">Try free web preview →</a>
+
+      <div class="feature-screenshots">
+        <h2>Safe Withdrawal Rate Strategies</h2>
+        <div class="screenshot">
+          <picture>
+            <source srcset="assets/images/optimized/Safe_withdrawal_1-400w.webp 400w, assets/images/optimized/Safe_withdrawal_1-800w.webp 800w, assets/images/optimized/Safe_withdrawal_1-1200w.webp 1200w"
+                    sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 720px"
+                    type="image/webp">
+            <source srcset="assets/images/optimized/Safe_withdrawal_1-400w.png 400w, assets/images/optimized/Safe_withdrawal_1-800w.png 800w, assets/images/optimized/Safe_withdrawal_1-1200w.png 1200w"
+                    sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 720px"
+                    type="image/png">
+            <img src="assets/images/optimized/Safe_withdrawal_1-800w.png" alt="Safe withdrawal strategy comparison: Fixed SWR, Constant Percentage, Guardrails, and Floor Ceiling methods side by side" loading="lazy" style="width:100%;border-radius:0.5rem;border:1px solid #1e293b;display:block;" />
+          </picture>
+          <p>Compare four withdrawal strategies — Fixed SWR, Constant Percentage, Guardrails, and Floor Ceiling — to find the right fit for your plan.</p>
+        </div>
+        <div class="screenshot">
+          <picture>
+            <source srcset="assets/images/optimized/Safe_withdrawal_2-400w.webp 400w, assets/images/optimized/Safe_withdrawal_2-800w.webp 800w, assets/images/optimized/Safe_withdrawal_2-1200w.webp 1200w"
+                    sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 720px"
+                    type="image/webp">
+            <source srcset="assets/images/optimized/Safe_withdrawal_2-400w.png 400w, assets/images/optimized/Safe_withdrawal_2-800w.png 800w, assets/images/optimized/Safe_withdrawal_2-1200w.png 1200w"
+                    sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 720px"
+                    type="image/png">
+            <img src="assets/images/optimized/Safe_withdrawal_2-800w.png" alt="Personalized Safe Rate Monte Carlo analysis showing survival curve and spending table" loading="lazy" style="width:100%;border-radius:0.5rem;border:1px solid #1e293b;display:block;" />
+          </picture>
+          <p>Monte Carlo simulation shows your portfolio survival curve and safe spending amounts across thousands of market scenarios.</p>
+        </div>
+      </div>
 
       <div class="divider">get the desktop version</div>
 

@@ -48,6 +48,8 @@ const SCREENSHOTS = [
   'stress_test.png',
   'sensitivity_analysis.png',
   'comprehensive_stress_test.png',
+  'Safe_withdrawal_1.png',
+  'Safe_withdrawal_2.png',
 ];
 
 const LOGO = 'Fatboy Software Logo.png';
