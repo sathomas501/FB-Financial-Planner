@@ -9,7 +9,7 @@
     // Configuration
     const GITHUB_REPO = 'sathomas501/FB-Financial-Planner';
     const GITHUB_API_URL = `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`;
-    const CACHE_KEY = 'fb_release_cache';
+    const CACHE_KEY = 'fb_release_cache_v2';
     const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
 
     /**
