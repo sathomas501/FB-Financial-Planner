@@ -237,7 +237,7 @@ Desktop application. Everything runs locally. No cloud sync. No "storing your da
 <div class="download-buttons">
   <a href="#" id="download-free-version" class="btn-download" data-version="">⊞ Download for Windows</a>
   <a href="#" id="download-linux" class="btn-download" data-version="">🐧 Download for Linux</a>
-  <a href="https://web-production-b3fa0.up.railway.app" class="btn-download" style="background: #475569;">Try Web Preview (Free, limited)</a>
+  <a href="https://web-production-b3fa0.up.railway.app" class="btn-download" style="background: #475569;" target="_blank" rel="noopener">Try Web Preview (Free, limited)</a>
   <a href="https://fatboy-license-server-oc13.vercel.app/api/create-checkout-session" class="btn-download" style="background: #28a745;">Buy Pro Version Now - $149</a>
 </div>
 
