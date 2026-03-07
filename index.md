@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Fatboy Financial Planner - Professional Retirement Planning Software You Own
-description: Sophisticated retirement planning for people who don't need a financial advisor. Model Roth conversions, OBBBA senior deduction strategies, IRMAA impacts, and complex withdrawal strategies. Editable tax parameters - update yourself when laws change.
+description: Sophisticated retirement planning for independent investors and planners. Model Roth conversions, OBBBA senior deduction strategies, IRMAA impacts, and complex withdrawal strategies with editable tax parameters.
 keywords: retirement planning software, Roth conversion calculator, OBBBA 2026, senior deduction, IRMAA planning, tax optimization, Monte Carlo retirement analysis, editable tax parameters, estate planning retirement software, inherited IRA analysis, retirement legacy planning, estate tax exemption 2026
 ---
 
@@ -13,14 +13,14 @@ keywords: retirement planning software, Roth conversion calculator, OBBBA 2026, 
        style="max-width: 150px; height: auto;">
 </picture>
 
-# Professional-Grade Retirement Planning Software
-## For People Who Don't Need a Financial Advisor
+# Plan Retirement with Confidence
+## Advanced Tools for Independent Investors
 
-You've built a seven-figure portfolio. You understand tax brackets, sequence of returns risk, and why IRMAA matters. You don't need someone to explain dollar-cost averaging or sell you a target-date fund.
+Whether you already know the tax code or are learning as you go, you need tools that show the full picture. Fatboy is for people who want to make informed decisions on their own, with advisor-level depth when they need it.
 
-**What you need:** The same modeling tools advisors use - without the 1% AUM fee or the simplified "consumer software" that treats you like you're financially illiterate.
+**What you need:** The same modeling power advisors use - without the 1% AUM fee and without tools that hide the details you care about.
 
-**What you get:** Desktop software that models the complex scenarios that actually matter to your retirement. Roth conversion ladders. TCJA expiration impacts. IRMAA threshold management. Withdrawal sequencing across account types. 
+**What you get:** Desktop software for the scenarios that matter most in retirement. Roth conversion ladders. TCJA expiration impacts. IRMAA threshold management. Withdrawal order across account types.
 
 Your data never leaves your computer. You own the software. One price. No subscriptions.
 
@@ -28,19 +28,19 @@ Your data never leaves your computer. You own the software. One price. No subscr
 
 <div style="background: #f8f9fa; border-left: 4px solid #0066cc; padding: 1.5rem; margin: 2rem 0;">
 <h3 style="margin-top: 0; color: #0066cc;">Tax Laws Changed in 2025. Your Calculator Shouldn't Be Stuck in 2024.</h3>
-<p style="margin-bottom: 1rem;">The TCJA→OBBBA transition just proved why <strong>editable tax parameters</strong> matter. When OBBBA passed in July 2025, most retirement software became obsolete overnight. Fatboy users updated their tax parameters in 10 minutes and kept planning.</p>
+<p style="margin-bottom: 1rem;">The TCJA→OBBBA transition just proved why <strong>editable tax parameters</strong> matter. When OBBBA passed in July 2025, many retirement tools were suddenly out of date. Fatboy users updated their tax parameters in about 10 minutes and kept planning.</p>
 <p style="margin-bottom: 0;"><strong>Tax laws will change again.</strong> Probably in 2027-2028. When they do, you'll be ready. <a href="{{ site.baseurl }}/why-fatboy" style="color: #0066cc; font-weight: 600;">Read why this matters →</a></p>
 </div>
 
-## Why Sophisticated Planners Choose Fatboy
+## Why Fatboy Works for Real-World Planning
 
-### Tax Modeling That Doesn't Insult Your Intelligence
+### Tax Modeling You Can Control
 
-Model OBBBA senior deduction strategies (2026-2028). Edit federal and state tax parameters yourself. See exactly how a $50k Roth conversion impacts your taxes this year, your IRMAA brackets at 65, and your RMDs at 75. Compare strategies side-by-side with full tax implications flowing through every projection.
+Model OBBBA senior deduction strategies (2026-2028). Edit federal and state tax settings yourself. See how a $50k Roth conversion changes your taxes this year, your IRMAA brackets at 65, and your RMDs at 75. Compare strategies side-by-side with full tax effects in every projection.
 
-**This isn't a calculator with hardcoded 2024 tax brackets.** It's a modeling engine you control. When tax laws change, you update the parameters yourself - no waiting 6-18 months for vendor updates.
+**This goes beyond a calculator with fixed 2024 tax brackets.** It's a modeling engine you control. When tax laws change, you can update settings yourself instead of waiting 6-18 months for vendor updates.
 
-### "What If" Analysis That Actually Works
+### What-If Planning for Real Decisions
 
 - Retire at 62 vs 65 vs 67 - full cash flow impact
 - Roth conversion strategies year-by-year
@@ -49,50 +49,50 @@ Model OBBBA senior deduction strategies (2026-2028). Edit federal and state tax 
 - Healthcare costs before Medicare
 - Different spending levels (lean / baseline / comfortable)
 
-Every scenario change propagates through taxes, account balances, Social Security timing, and long-term outcomes. **You can see the tradeoffs, not just a "probability of success" number.**
+Each scenario change flows through taxes, account balances, Social Security timing, and long-term outcomes. **You can see tradeoffs, not just a single "probability of success" number.**
 
-### Find Your Plan's Breaking Points (Pro Feature)
+### Find Your Plan's Breaking Points (Pro)
 
-Stop wondering "am I being too conservative?" or "is this sustainable?"
+Answer questions like "am I being too conservative?" or "is this sustainable?" with data.
 
-**Breakpoint Analysis** tells you exactly where your plan fails:
+**Breakpoint Analysis** shows you where your plan starts to break down:
 - How low can returns go before you run out of money?
-- What's the maximum safe withdrawal rate for YOUR portfolio?
+- What's the maximum safe withdrawal rate for your portfolio?
 - Which assumptions actually matter vs which are just noise?
 
-Interactive stress testing with color-coded risk zones. Sensitivity analysis that separates real risks from worries.
+Interactive stress testing with color-coded risk zones. Sensitivity analysis to separate key risks from low-impact assumptions.
 
-### Monte Carlo Simulations Built for Planners
+### Monte Carlo Stress Testing for Real Plans
 
-Not the dumbed-down version. Full control over:
+Full control over:
 - Asset allocation by account type
 - Volatility assumptions
 - Return sequences
 - Number of iterations
 - Risk-free rate assumptions
 
-Run Monte Carlo against any of your scenarios and compare results side-by-side. Enhanced results dashboard breaks down the full distribution of outcomes - percentile bands, success rates by time period, and tail-risk exposure - so you can see not just whether your plan survives, but by how much.
+Run Monte Carlo on any scenario and compare results side-by-side. The dashboard shows full outcome distributions: percentile bands, success rates by time period, and tail-risk exposure. You can see not only if your plan holds, but by how much.
 
-Seven distinct market environments — from the optimistic GBM baseline to conservative regime switching to a full century of historical data. A plan that holds up across all seven is a plan you can actually retire on. [Deep dive: how the seven Monte Carlo scenarios work and what each one is telling you →](/blog/2026/03/01/monte-carlo-stress-testing)
+Seven distinct market environments — from an optimistic GBM baseline to conservative regime switching to a full century of historical data. If your plan holds up across all seven, you can have more confidence in your strategy. [Deep dive: how the seven Monte Carlo scenarios work and what each one is telling you →](/blog/2026/03/01/monte-carlo-stress-testing)
 
 ### Safe Withdrawal Rate Analyzer
 
 Know exactly what you can spend — without running out of money.
 
-Most retirement calculators hand you a number. Fatboy shows you why that number works — or why it doesn't.
+Many retirement calculators hand you a number. Fatboy shows you why that number works — or where it needs adjustment.
 
-The Safe Withdrawal Rate Analyzer takes your real spending, your Social Security timing, your pensions, and your investable portfolio and breaks your withdrawal strategy into two phases that actually matter:
+The Safe Withdrawal Rate Analyzer uses your spending, Social Security timing, pensions, and investable portfolio. It breaks your withdrawal plan into two key phases:
 
-**The Gap Phase** — the years between retirement and Social Security — is when sequence-of-returns risk is highest and your portfolio is most exposed. Most tools gloss over this. Fatboy puts it front and center.
+**The Gap Phase** — the years between retirement and Social Security — is when sequence-of-returns risk is highest and your portfolio is most exposed. Fatboy keeps this risk visible so you can plan around it.
 
 **The Steady State** — once income floors kick in — shows your true long-run portfolio dependency.
 
 What you get:
-- **Personalized withdrawal rates** — not a generic 4% rule, but your actual net draw calculated from your income, SS timing, and portfolio size
-- **Historical benchmarking** — see how your rate stacks up against 30, 35, and 40-year survival data going back to 1926
-- **Monte Carlo survival curve** (Pro) — sweep net withdrawal rates from 1–12% and see exactly where your plan's success probability falls on the curve
-- **Four withdrawal strategies compared** — Fixed Dollar, Guardrails, Flexible Spending, and Rising Equity Glidepath — each calculated with your actual numbers, not hypotheticals
-- **Gap phase risk flagged explicitly** — if you're retiring before SS, you'll see your pre-SS draw rate as the headline number, because that's the one that can sink your plan
+- **Personalized withdrawal rates** — your actual net draw based on income, SS timing, and portfolio size
+- **Historical benchmarking** — compare your rate with 30, 35, and 40-year survival data since 1926
+- **Monte Carlo survival curve** (Pro) — test net withdrawal rates from 1–12% and see where your success probability falls
+- **Four withdrawal strategies compared** — Fixed Dollar, Guardrails, Flexible Spending, and Rising Equity Glidepath, all with your numbers
+- **Gap phase risk flagged clearly** — if you retire before SS, your pre-SS draw rate is shown as the headline risk metric
 
 Monte Carlo survival curve requires Pro.
 
@@ -105,11 +105,11 @@ See the full picture - not just whether you'll run out of money, but what you'll
 - **Beneficiary & inheritance analysis** - See what heirs will receive, including inherited IRA RMD implications under current rules
 - **Estate tax exposure** - Track your estate against federal exemption thresholds, including TCJA exemption sunset scenarios
 
-Estate planning isn't just for the ultra-wealthy. If you have a seven-figure portfolio, a paid-off house, and IRAs with RMD obligations, your heirs have an inheritance tax problem whether you've planned for it or not. The SECURE Act's 10-year rule means a $1M traditional IRA can cost heirs $300k+ in taxes — distributed during their peak earning years. [Why your heirs' tax problem starts with your retirement plan →](/blog/2026/03/01/inherited-ira-estate-planning)
+Estate planning matters for more households than most people think. If you have retirement accounts, home equity, or other assets to pass on, your heirs may face avoidable taxes without a clear strategy. Under the SECURE Act 10-year rule, inherited traditional IRAs can create meaningful tax drag during beneficiaries' peak earning years. [Why your heirs' tax problem starts with your retirement plan →](/blog/2026/03/01/inherited-ira-estate-planning)
 
 ---
 
-## Professional Plan Summary Reports (Pro)
+## Professional Plan Reports (Pro)
 
 Generate polished, client-ready PDFs of your analysis. Perfect for:
 - Couples who want to review plans together
@@ -150,7 +150,7 @@ Export professional reports. Share with advisors. Review annually. Adjust as lif
 
 ---
 
-## See the Software In Action
+## See Fatboy in Action
 
 <picture>
   <source srcset="/assets/images/optimized/gas_guage_chart-800w.webp" type="image/webp">
@@ -183,9 +183,9 @@ Export professional reports. Share with advisors. Review annually. Adjust as lif
 
 ---
 
-## Pricing That Makes Sense
+## Straightforward Pricing
 
-**Free Version:** Full planning capability. 3 scenarios. Core features unlocked. This isn't a trial - it's genuinely useful software.
+**Free Version:** Full planning capability. 3 scenarios. Core features unlocked. It is fully usable from day one.
 
 **Pro Version - $149 (One-Time):**
 - Unlimited scenarios
@@ -198,41 +198,39 @@ Export professional reports. Share with advisors. Review annually. Adjust as lif
 
 **No subscriptions. No annual "update" fees. You own it.**
 
-Compare that to advisor fees (1% of $1M = $10,000/year) or subscription software ($20-50/month forever). This pays for itself immediately.
+Compared with advisor fees (1% of $1M = $10,000/year) or subscription software ($20-50/month), a one-time price can become cost-effective quickly.
 
 [**See Detailed Comparison**](/comparison) with other retirement planning software.
 
 ---
 
-## Your Data, Your Computer
+## Private by Design
 
-Desktop application. Everything runs locally. No cloud sync. No "storing your data for your convenience." No harvesting your financial information to train AI models or sell to marketers.
+Desktop application. Everything runs locally. No cloud sync. Your financial data stays on your computer, not in cloud systems used for analytics or ad targeting.
 
 **System Requirements:**
 - Windows 10/11 (fully supported)
 - Linux (beta available)
 - macOS (coming soon)
 - 4GB RAM recommended
-- 1366x768 display minimum (realistically: get a bigger monitor for this kind of work)
+- 1366x768 display minimum (a larger monitor is recommended for detailed planning work)
 - Internet optional (only for tax data updates)
 
 ---
 
-## Who This Is For
+## Who It's For
 
-✓ **Engineers, executives, and professionals** with 7-figure portfolios who understand their finances  
-✓ **DIY investors** who want advisor-level tools without advisor fees  
-✓ **Fee-only financial planners** who need professional software without SaaS pricing  
-✓ **Anyone planning Roth conversions** and tired of spreadsheets  
-✓ **Pre-retirees modeling TCJA 2026 impacts** on their tax strategy  
+- **DIY investors** who want advisor-level tools without advisor fees  
+- **Engineers, executives, and professionals** with complex retirement and tax questions  
+- **Pre-retirees and recent retirees** comparing withdrawal and Roth conversion strategies  
+- **Anyone moving beyond spreadsheets** and ready for scenario-based planning  
+- **Fee-only financial planners** who need professional software without SaaS pricing  
 
-❌ People who need someone to tell them what to invest in  
-❌ Anyone looking for portfolio management or investment advice  
-❌ People who want their phone to make financial decisions for them  
+Fatboy is planning software, not investment management. It helps you evaluate tradeoffs and stress-test decisions. It works best for people who want to engage with their plan in detail.
 
 ---
 
-## Get Started
+## Start Free
 
 <div class="download-buttons">
   <a href="#" id="download-free-version" class="btn-download" data-version="">⊞ Download for Windows</a>
