@@ -132,9 +132,13 @@ When we reach 200 users. Could be weeks, could be months. We're not putting a ti
 
 Not yet, but we're open to it. Email us and let's talk.
 
+### Is there a trial of Pro?
+
+Yes. Enter your email on the [home page](/) or below and we'll email you a 14-day Pro trial key + download link instantly. No credit card required. One trial per email address. Excel export and CSV/OFX import are not available during the trial.
+
 ### Will the Free version always be free?
 
-Yes. The Free version will always be available at no cost with the features listed above. We believe in a genuinely useful free tier, not a crippled trial.
+Yes. The Free version will always be available at no cost with the features listed above. We believe in a genuinely useful free tier.
 
 ---
 
@@ -177,7 +181,58 @@ No risk. No credit card. Download and start planning today.
   <a href="#" class="btn-download auto-download-linux" data-version="">🐧 Download for Linux</a>
 </div>
 
-### Option 2: Join as a Founding Member
+### Option 2: Try Pro Free — 14 Days
+
+Full Pro access. No credit card. Trial key + download link emailed instantly.
+
+<div style="background:#f0f7f0;border:2px solid #28a745;border-radius:8px;padding:1.5rem;margin:1rem 0;">
+  <div id="pricing-trial-form">
+    <input id="pricing-trial-name" type="text" placeholder="Your first name" autocomplete="given-name"
+           style="width:100%;padding:10px 12px;margin-bottom:8px;border:1px solid #ccc;border-radius:6px;font-size:15px;box-sizing:border-box;">
+    <input id="pricing-trial-email" type="email" placeholder="your@email.com" autocomplete="email"
+           style="width:100%;padding:10px 12px;margin-bottom:8px;border:1px solid #ccc;border-radius:6px;font-size:15px;box-sizing:border-box;">
+    <div id="pricing-trial-status" style="font-size:13px;min-height:18px;margin-bottom:8px;"></div>
+    <button onclick="submitPricingTrial()"
+            style="width:100%;padding:12px;background:#28a745;color:white;border:none;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;">
+      Send Me My Free Trial Key &rarr;
+    </button>
+  </div>
+  <p style="font-size:12px;color:#666;margin-top:10px;margin-bottom:0;">One trial per email &middot; 14 days &middot; No credit card &middot; Windows desktop app</p>
+</div>
+
+<script>
+async function submitPricingTrial() {
+  var name  = document.getElementById('pricing-trial-name').value.trim();
+  var email = document.getElementById('pricing-trial-email').value.trim();
+  var status = document.getElementById('pricing-trial-status');
+  if (!name)  { status.textContent = 'Please enter your name.';          status.style.color = '#c0392b'; return; }
+  if (!email || !email.includes('@')) { status.textContent = 'Please enter a valid email.'; status.style.color = '#c0392b'; return; }
+  status.textContent = 'Sending\u2026'; status.style.color = '#555';
+  try {
+    var res  = await fetch('https://fatboy-license-server-oc13.vercel.app/api/start-trial', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, email: email })
+    });
+    var data = await res.json();
+    if (res.ok && data.success) {
+      document.getElementById('pricing-trial-form').innerHTML =
+        '<p style="color:#1a5c2a;font-weight:600;font-size:16px;">\u2713 Check your email \u2014 trial key + download link on the way!</p>';
+    } else {
+      status.textContent = data.error || 'Something went wrong. Try again.';
+      status.style.color = '#c0392b';
+    }
+  } catch(e) {
+    status.textContent = 'Network error. Please try again.';
+    status.style.color = '#c0392b';
+  }
+}
+document.addEventListener('DOMContentLoaded', function() {
+  var el = document.getElementById('pricing-trial-email');
+  if (el) el.addEventListener('keydown', function(e) { if (e.key === 'Enter') submitPricingTrial(); });
+});
+</script>
+
+### Option 3: Join as a Founding Member
 
 Lock in $149 pricing forever. Be part of shaping the product.
 

@@ -187,6 +187,8 @@ Export professional reports. Share with advisors. Review annually. Adjust as lif
 
 **Free Version:** Full planning capability. 3 scenarios. Core features unlocked. It is fully usable from day one.
 
+**Pro Trial — Free, 14 Days:** Full Pro access with no credit card required. One trial key emailed instantly. [Jump to trial signup ↓](#trial-signup)
+
 **Pro Version - $149 (One-Time):**
 - Unlimited scenarios
 - Breakpoint analysis & stress testing
@@ -236,8 +238,59 @@ Fatboy is planning software, not investment management. It helps you evaluate tr
   <a href="#" id="download-free-version" class="btn-download" data-version="">⊞ Download for Windows</a>
   <a href="#" id="download-linux" class="btn-download" data-version="">🐧 Download for Linux</a>
   <a href="https://web-production-b3fa0.up.railway.app" class="btn-download" style="background: #475569;" target="_blank" rel="noopener">Try Web Preview (Free, limited)</a>
-  <a href="https://fatboy-license-server-oc13.vercel.app/api/create-checkout-session" class="btn-download" style="background: #28a745;">Buy Pro Version Now - $149</a>
+  <a href="https://fatboy-license-server-oc13.vercel.app/api/create-checkout-session?force=1" class="btn-download" style="background: #28a745;">Buy Pro Version Now - $149</a>
 </div>
+
+<div id="trial-signup" style="background: #f0f7f0; border: 2px solid #28a745; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
+  <h3 style="margin-top: 0; color: #1a5c2a;">Try Pro Free — 14 Days</h3>
+  <p style="color: #444; margin-bottom: 1rem;">Full Pro access. No credit card. Your trial key + download link emailed instantly.</p>
+  <div id="trial-form">
+    <input id="trial-name" type="text" placeholder="Your first name" autocomplete="given-name"
+           style="width:100%;padding:10px 12px;margin-bottom:8px;border:1px solid #ccc;border-radius:6px;font-size:15px;box-sizing:border-box;">
+    <input id="trial-email" type="email" placeholder="your@email.com" autocomplete="email"
+           style="width:100%;padding:10px 12px;margin-bottom:8px;border:1px solid #ccc;border-radius:6px;font-size:15px;box-sizing:border-box;">
+    <div id="trial-status" style="font-size:13px;min-height:18px;margin-bottom:8px;"></div>
+    <button onclick="submitTrial()"
+            style="width:100%;padding:12px;background:#28a745;color:white;border:none;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;">
+      Send Me My Free Trial Key &rarr;
+    </button>
+  </div>
+  <p style="font-size:12px;color:#666;margin-top:10px;margin-bottom:0;">
+    One trial per email address &middot; 14 days &middot; No credit card &middot; Windows desktop app
+  </p>
+</div>
+
+<script>
+async function submitTrial() {
+  var name  = document.getElementById('trial-name').value.trim();
+  var email = document.getElementById('trial-email').value.trim();
+  var status = document.getElementById('trial-status');
+  if (!name)  { status.textContent = 'Please enter your name.';          status.style.color = '#c0392b'; return; }
+  if (!email || !email.includes('@')) { status.textContent = 'Please enter a valid email.'; status.style.color = '#c0392b'; return; }
+  status.textContent = 'Sending\u2026'; status.style.color = '#555';
+  try {
+    var res  = await fetch('https://fatboy-license-server-oc13.vercel.app/api/start-trial', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, email: email })
+    });
+    var data = await res.json();
+    if (res.ok && data.success) {
+      document.getElementById('trial-form').innerHTML =
+        '<p style="color:#1a5c2a;font-weight:600;font-size:16px;">\u2713 Check your email \u2014 trial key + download link on the way!</p>';
+    } else {
+      status.textContent = data.error || 'Something went wrong. Try again.';
+      status.style.color = '#c0392b';
+    }
+  } catch(e) {
+    status.textContent = 'Network error. Please try again.';
+    status.style.color = '#c0392b';
+  }
+}
+document.addEventListener('DOMContentLoaded', function() {
+  var el = document.getElementById('trial-email');
+  if (el) el.addEventListener('keydown', function(e) { if (e.key === 'Enter') submitTrial(); });
+});
+</script>
 
 <nav class="page-nav">
   <a href="/why-fatboy">Why Fatboy?</a>
