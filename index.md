@@ -1,306 +1,1043 @@
 ---
-layout: default
-title: Fatboy Financial Planner - Professional Retirement Planning Software You Own
-description: Sophisticated retirement planning for independent investors and planners. Model Roth conversions, OBBBA senior deduction strategies, IRMAA impacts, and complex withdrawal strategies with editable tax parameters.
-keywords: retirement planning software, Roth conversion calculator, OBBBA 2026, senior deduction, IRMAA planning, tax optimization, Monte Carlo retirement analysis, editable tax parameters, estate planning retirement software, inherited IRA analysis, retirement legacy planning, estate tax exemption 2026
+layout: none
+title: "Fatboy Financial Planner - Serious Retirement Planning. One Price. Desktop + Web."
+permalink: /
 ---
-
-<picture>
-  <source srcset="/assets/images/optimized/Fatboy_Software_Logo.webp" type="image/webp">
-  <img src="/assets/images/optimized/Fatboy_Software_Logo.png"
-       alt="Fatboy Software Logo"
-       loading="eager"
-       style="max-width: 150px; height: auto;">
-</picture>
-
-# Plan Retirement with Confidence
-## Advanced Tools for Independent Investors
-
-Whether you already know the tax code or are learning as you go, you need tools that show the full picture. Fatboy is for people who want to make informed decisions on their own, with advisor-level depth when they need it.
-
-**What you need:** The same modeling power advisors use - without the 1% AUM fee and without tools that hide the details you care about.
-
-**What you get:** Desktop software for the scenarios that matter most in retirement. Roth conversion ladders. TCJA expiration impacts. IRMAA threshold management. Withdrawal order across account types.
-
-Your data never leaves your computer. You own the software. One price. No subscriptions.
-
----
-
-<div style="background: #f8f9fa; border-left: 4px solid #0066cc; padding: 1.5rem; margin: 2rem 0;">
-<h3 style="margin-top: 0; color: #0066cc;">Tax Laws Changed in 2025. Your Calculator Shouldn't Be Stuck in 2024.</h3>
-<p style="margin-bottom: 1rem;">The TCJA→OBBBA transition just proved why <strong>editable tax parameters</strong> matter. When OBBBA passed in July 2025, many retirement tools were suddenly out of date. Fatboy users updated their tax parameters in about 10 minutes and kept planning.</p>
-<p style="margin-bottom: 0;"><strong>Tax laws will change again.</strong> Probably in 2027-2028. When they do, you'll be ready. <a href="{{ site.baseurl }}/why-fatboy" style="color: #0066cc; font-weight: 600;">Read why this matters →</a></p>
-</div>
-
-## Why Fatboy Works for Real-World Planning
-
-### Tax Modeling You Can Control
-
-Model OBBBA senior deduction strategies (2026-2028). Edit federal and state tax settings yourself. See how a $50k Roth conversion changes your taxes this year, your IRMAA brackets at 65, and your RMDs at 75. Compare strategies side-by-side with full tax effects in every projection.
-
-**This goes beyond a calculator with fixed 2024 tax brackets.** It's a modeling engine you control. When tax laws change, you can update settings yourself instead of waiting 6-18 months for vendor updates.
-
-### What-If Planning for Real Decisions
-
-- Retire at 62 vs 65 vs 67 - full cash flow impact
-- Roth conversion strategies year-by-year
-- Pay off mortgage early vs invest the difference  
-- Semi-retirement with part-time income
-- Healthcare costs before Medicare
-- Different spending levels (lean / baseline / comfortable)
-
-Each scenario change flows through taxes, account balances, Social Security timing, and long-term outcomes. **You can see tradeoffs, not just a single "probability of success" number.**
-
-### Find Your Plan's Breaking Points (Pro)
-
-Answer questions like "am I being too conservative?" or "is this sustainable?" with data.
-
-**Breakpoint Analysis** shows you where your plan starts to break down:
-- How low can returns go before you run out of money?
-- What's the maximum safe withdrawal rate for your portfolio?
-- Which assumptions actually matter vs which are just noise?
-
-Interactive stress testing with color-coded risk zones. Sensitivity analysis to separate key risks from low-impact assumptions.
-
-### Monte Carlo Stress Testing for Real Plans
-
-Full control over:
-- Asset allocation by account type
-- Volatility assumptions
-- Return sequences
-- Number of iterations
-- Risk-free rate assumptions
-
-Run Monte Carlo on any scenario and compare results side-by-side. The dashboard shows full outcome distributions: percentile bands, success rates by time period, and tail-risk exposure. You can see not only if your plan holds, but by how much.
-
-Seven distinct market environments — from an optimistic GBM baseline to conservative regime switching to a full century of historical data. If your plan holds up across all seven, you can have more confidence in your strategy. [Deep dive: how the seven Monte Carlo scenarios work and what each one is telling you →](/blog/2026/03/01/monte-carlo-stress-testing)
-
-### Safe Withdrawal Rate Analyzer
-
-Know exactly what you can spend — without running out of money.
-
-Many retirement calculators hand you a number. Fatboy shows you why that number works — or where it needs adjustment.
-
-The Safe Withdrawal Rate Analyzer uses your spending, Social Security timing, pensions, and investable portfolio. It breaks your withdrawal plan into two key phases:
-
-**The Gap Phase** — the years between retirement and Social Security — is when sequence-of-returns risk is highest and your portfolio is most exposed. Fatboy keeps this risk visible so you can plan around it.
-
-**The Steady State** — once income floors kick in — shows your true long-run portfolio dependency.
-
-What you get:
-- **Personalized withdrawal rates** — your actual net draw based on income, SS timing, and portfolio size
-- **Historical benchmarking** — compare your rate with 30, 35, and 40-year survival data since 1926
-- **Monte Carlo survival curve** (Pro) — test net withdrawal rates from 1–12% and see where your success probability falls
-- **Four withdrawal strategies compared** — Fixed Dollar, Guardrails, Flexible Spending, and Rising Equity Glidepath, all with your numbers
-- **Gap phase risk flagged clearly** — if you retire before SS, your pre-SS draw rate is shown as the headline risk metric
-
-Monte Carlo survival curve requires Pro.
-
-### Estate & Legacy Planning
-
-See the full picture - not just whether you'll run out of money, but what you'll leave behind.
-
-- **Estate value projections** - See how your estate grows or draws down year-by-year through retirement and into legacy
-- **Legacy goal tracking** - Set a target bequest and see whether your plan meets it
-- **Beneficiary & inheritance analysis** - See what heirs will receive, including inherited IRA RMD implications under current rules
-- **Estate tax exposure** - Track your estate against federal exemption thresholds, including TCJA exemption sunset scenarios
-
-Estate planning matters for more households than most people think. If you have retirement accounts, home equity, or other assets to pass on, your heirs may face avoidable taxes without a clear strategy. Under the SECURE Act 10-year rule, inherited traditional IRAs can create meaningful tax drag during beneficiaries' peak earning years. [Why your heirs' tax problem starts with your retirement plan →](/blog/2026/03/01/inherited-ira-estate-planning)
-
----
-
-## Professional Plan Reports (Pro)
-
-Generate polished, client-ready PDFs of your analysis. Perfect for:
-- Couples who want to review plans together
-- Sharing with a CPA or tax advisor for validation
-- Documenting your strategy for future reference
-- Financial advisors who need professional deliverables
-
-<picture>
-  <source srcset="/assets/images/optimized/summary_report-400w.webp 400w, /assets/images/optimized/summary_report-800w.webp 800w, /assets/images/optimized/summary_report-1200w.webp 1200w"
-          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-          type="image/webp">
-  <source srcset="/assets/images/optimized/summary_report-400w.png 400w, /assets/images/optimized/summary_report-800w.png 800w, /assets/images/optimized/summary_report-1200w.png 1200w"
-          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-          type="image/png">
-  <img src="/assets/images/optimized/summary_report-800w.png"
-       alt="Professional Plan Summary Report"
-       loading="lazy"
-       style="max-width: 100%; height: auto; margin: 1.5rem 0;">
-</picture>
-
-Executive summary, detailed projections, Monte Carlo analysis, sequence-of-returns risk, and compliance-friendly disclosures. All formatted for professional presentation.
-
----
-
-## How It Works
-
-**1. Input your situation**  
-Accounts, income sources, expenses, debts. Your assumptions on returns, inflation, salary growth.
-
-**2. Build and compare scenarios**  
-Different retirement dates. Roth strategies. Withdrawal orders. Tax law changes. Lifestyle variations. See side-by-side comparisons with full details.
-
-**3. Stress test and refine**  
-Monte Carlo simulations. Breakpoint analysis (Pro). Find where your plan is vulnerable and where you have margin for error.
-
-**4. Document your strategy** (Pro)  
-Export professional reports. Share with advisors. Review annually. Adjust as life changes.
-
----
-
-## See Fatboy in Action
-
-<picture>
-  <source srcset="/assets/images/optimized/gas_guage_chart-800w.webp" type="image/webp">
-  <img src="/assets/images/optimized/gas_guage_chart-800w.png"
-       alt="Retirement success probability gauge"
-       loading="lazy"
-       style="max-width: 100%; height: auto;">
-</picture>
-*Color-coded success probability with risk zones - at a glance assessment of plan viability*
-
-<picture>
-  <source srcset="/assets/images/optimized/MC_dashboard-800w.webp" type="image/webp">
-  <img src="/assets/images/optimized/MC_dashboard-800w.png"
-       alt="Monte Carlo simulation dashboard"
-       loading="lazy"
-       style="max-width: 100%; height: auto;">
-</picture>
-*Monte Carlo simulation showing distribution of outcomes across thousands of scenarios*
-
-<picture>
-  <source srcset="/assets/images/optimized/assets_over_time-800w.webp" type="image/webp">
-  <img src="/assets/images/optimized/assets_over_time-800w.png"
-       alt="Asset projection over retirement timeline"
-       loading="lazy"
-       style="max-width: 100%; height: auto;">
-</picture>
-*Long-term asset trajectories comparing different strategies and spending levels*
-
-[View All Screenshots](/screenshots) - Portfolio analysis, cash flow projections, tax modeling, goal planning, and more.
-
----
-
-## Straightforward Pricing
-
-**Free Version:** Full planning capability. 3 scenarios. Core features unlocked. It is fully usable from day one.
-
-**Pro Trial — Free, 14 Days:** Full Pro access with no credit card required. One trial key emailed instantly. [Jump to trial signup ↓](#trial-signup)
-
-**Pro Version - $149 (One-Time):**
-- Unlimited scenarios
-- Breakpoint analysis & stress testing
-- Professional PDF reports
-- Advanced Monte Carlo controls with enhanced results dashboard
-- Sensitivity analysis
-- Estate & legacy forecasting (estate value projections, legacy goals, estate tax analysis)
-- All future updates included
-
-**No subscriptions. No annual "update" fees. You own it.**
-
-Compared with advisor fees (1% of $1M = $10,000/year) or subscription software ($20-50/month), a one-time price can become cost-effective quickly.
-
-[**See Detailed Comparison**](/comparison) with other retirement planning software.
-
----
-
-## Private by Design
-
-Desktop application. Everything runs locally. No cloud sync. Your financial data stays on your computer, not in cloud systems used for analytics or ad targeting.
-
-**System Requirements:**
-- Windows 10/11 (fully supported)
-- Linux (beta available)
-- macOS (coming soon)
-- 4GB RAM recommended
-- 1366x768 display minimum (a larger monitor is recommended for detailed planning work)
-- Internet optional (only for tax data updates)
-
----
-
-## Who It's For
-
-- **DIY investors** who want advisor-level tools without advisor fees  
-- **Engineers, executives, and professionals** with complex retirement and tax questions  
-- **Pre-retirees and recent retirees** comparing withdrawal and Roth conversion strategies  
-- **Anyone moving beyond spreadsheets** and ready for scenario-based planning  
-- **Fee-only financial planners** who need professional software without SaaS pricing  
-
-Fatboy is planning software, not investment management. It helps you evaluate tradeoffs and stress-test decisions. It works best for people who want to engage with their plan in detail.
-
----
-
-## Start Free
-
-<div class="download-buttons">
-  <a href="#" id="download-free-version" class="btn-download" data-version="">⊞ Download for Windows</a>
-  <a href="#" id="download-linux" class="btn-download" data-version="">🐧 Download for Linux</a>
-  <a href="https://web-production-b3fa0.up.railway.app" class="btn-download" style="background: #475569;" target="_blank" rel="noopener">Try Web Preview (Free, limited)</a>
-  <a href="https://fatboy-license-server-oc13.vercel.app/api/create-checkout-session?force=1" class="btn-download" style="background: #28a745;">Buy Pro Version Now - $149</a>
-</div>
-
-<div id="trial-signup" style="background: #f0f7f0; border: 2px solid #28a745; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0;">
-  <h3 style="margin-top: 0; color: #1a5c2a;">Try Pro Free — 14 Days</h3>
-  <p style="color: #444; margin-bottom: 1rem;">Full Pro access. No credit card. Your trial key + download link emailed instantly.</p>
-  <div id="trial-form">
-    <input id="trial-name" type="text" placeholder="Your first name" autocomplete="given-name"
-           style="width:100%;padding:10px 12px;margin-bottom:8px;border:1px solid #ccc;border-radius:6px;font-size:15px;box-sizing:border-box;">
-    <input id="trial-email" type="email" placeholder="your@email.com" autocomplete="email"
-           style="width:100%;padding:10px 12px;margin-bottom:8px;border:1px solid #ccc;border-radius:6px;font-size:15px;box-sizing:border-box;">
-    <div id="trial-status" style="font-size:13px;min-height:18px;margin-bottom:8px;"></div>
-    <button onclick="submitTrial()"
-            style="width:100%;padding:12px;background:#28a745;color:white;border:none;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;">
-      Send Me My Free Trial Key &rarr;
-    </button>
-  </div>
-  <p style="font-size:12px;color:#666;margin-top:10px;margin-bottom:0;">
-    One trial per email address &middot; 14 days &middot; No credit card &middot; Windows desktop app
-  </p>
-</div>
-
-<script>
-async function submitTrial() {
-  var name  = document.getElementById('trial-name').value.trim();
-  var email = document.getElementById('trial-email').value.trim();
-  var status = document.getElementById('trial-status');
-  if (!name)  { status.textContent = 'Please enter your name.';          status.style.color = '#c0392b'; return; }
-  if (!email || !email.includes('@')) { status.textContent = 'Please enter a valid email.'; status.style.color = '#c0392b'; return; }
-  status.textContent = 'Sending\u2026'; status.style.color = '#555';
-  try {
-    var res  = await fetch('https://fatboy-license-server-oc13.vercel.app/api/start-trial', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, email: email })
-    });
-    var data = await res.json();
-    if (res.ok && data.success) {
-      document.getElementById('trial-form').innerHTML =
-        '<p style="color:#1a5c2a;font-weight:600;font-size:16px;">\u2713 Check your email \u2014 trial key + download link on the way!</p>';
-    } else {
-      status.textContent = data.error || 'Something went wrong. Try again.';
-      status.style.color = '#c0392b';
-    }
-  } catch(e) {
-    status.textContent = 'Network error. Please try again.';
-    status.style.color = '#c0392b';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatboy Financial Planner - Serious Retirement Planning. One Price. Desktop + Web.</title>
+<meta name="description" content="Model Roth conversions, IRMAA, Monte Carlo scenarios, and estate planning without a financial advisor or subscription. $149 once. Desktop app + full web app included.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --paper: #f5f0e8;
+    --cream: #ede8dc;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --rust: #8b3a2a;
+    --sage: #4a5e4a;
+    --mid: #6b6b60;
+    --rule: #c8c0b0;
   }
-}
-document.addEventListener('DOMContentLoaded', function() {
-  var el = document.getElementById('trial-email');
-  if (el) el.addEventListener('keydown', function(e) { if (e.key === 'Enter') submitTrial(); });
-});
-</script>
 
-<nav class="page-nav">
-  <a href="/why-fatboy">Why Fatboy?</a>
-  <a href="/research-methodology">Research & Methodology</a>
-  <a href="/blog">Blog</a>
-  <a href="/pricing">Pricing</a>
-  <a href="/about">About</a>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  /* NAV */
+  nav {
+    border-bottom: 1px solid var(--rule);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    background: var(--paper);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  .nav-cta {
+    background: var(--ink);
+    color: var(--paper) !important;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-weight: 500 !important;
+  }
+
+  .nav-cta:hover { background: var(--gold) !important; color: var(--ink) !important; }
+
+  /* HERO */
+  .hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 40px 80px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-bottom: 44px;
+    max-width: 520px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 16px 32px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold);
+    color: var(--ink);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary .price-badge {
+    font-size: 0.85rem;
+    background: rgba(255,255,255,0.15);
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1.5px solid var(--rule);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 14px 32px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--ink);
+    background: var(--cream);
+  }
+
+  .hero-note {
+    font-size: 0.8rem;
+    color: var(--mid);
+    margin-top: 8px;
+    letter-spacing: 0.01em;
+  }
+
+  /* HERO CARD */
+  .hero-card {
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  }
+
+  .hero-card-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 20px;
+  }
+
+  .hero-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .hero-card .price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .hero-card .price-note {
+    font-size: 0.82rem;
+    color: var(--mid);
+    margin-bottom: 24px;
+  }
+
+  .includes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .includes-list li {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--ink);
+  }
+
+  .includes-list li::before {
+    content: '✓';
+    color: var(--sage);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .includes-list li strong { font-weight: 500; }
+
+  .divider-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 20px 0;
+  }
+
+  /* SECTION STRUCTURE */
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .section-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .section-intro {
+    font-size: 1.05rem;
+    color: var(--mid);
+    max-width: 600px;
+    margin-bottom: 56px;
+    line-height: 1.7;
+  }
+
+  /* PRODUCT COMPARISON */
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .product-card {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 40px;
+    background: white;
+    position: relative;
+  }
+
+  .product-card.featured {
+    border-color: var(--gold);
+    background: var(--cream);
+  }
+
+  .product-card.featured::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 4px 4px 0 0;
+  }
+
+  .product-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  .tag-web { background: #e8f0e8; color: var(--sage); }
+  .tag-desktop { background: var(--ink); color: var(--paper); }
+
+  .product-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .product-card .product-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+
+  .product-card .product-price-note {
+    font-size: 0.82rem;
+    color: var(--mid);
+    margin-bottom: 28px;
+  }
+
+  .product-card .product-desc {
+    font-size: 0.92rem;
+    color: var(--mid);
+    line-height: 1.65;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 32px;
+  }
+
+  .feature-list li {
+    font-size: 0.88rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.45;
+  }
+
+  .feature-list .yes { color: var(--sage); font-weight: 700; flex-shrink: 0; }
+  .feature-list .no { color: var(--rule); font-weight: 700; flex-shrink: 0; }
+  .feature-list .text { color: var(--ink); }
+  .feature-list .sub { color: var(--mid); font-size: 0.82rem; }
+
+  /* FEATURE SECTIONS */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .feature-block {
+    border-top: 2px solid var(--rule);
+    padding-top: 24px;
+  }
+
+  .feature-block.highlight { border-top-color: var(--gold); }
+
+  .feature-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--rule);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .feature-block h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .feature-block p {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  /* CALLOUT BAND */
+  .callout-band {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 40px;
+    margin: 0;
+  }
+
+  .callout-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .callout-band h2 {
+    color: var(--paper);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    margin-bottom: 10px;
+  }
+
+  .callout-band p {
+    color: rgba(245,240,232,0.7);
+    font-size: 0.95rem;
+    max-width: 560px;
+  }
+
+  .callout-band .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 14px 28px;
+    border-radius: 2px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .callout-band .btn-gold:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  /* WHO IT'S FOR */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .audience-card {
+    padding: 28px 32px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: white;
+  }
+
+  .audience-card.yes-card { border-left: 3px solid var(--sage); }
+  .audience-card.no-card { border-left: 3px solid var(--rule); opacity: 0.75; }
+
+  .audience-card h4 {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 16px;
+  }
+
+  .audience-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .audience-card ul li {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .yes-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .no-card ul li::before {
+    content: '✕';
+    position: absolute;
+    left: 0;
+    color: var(--rule);
+    font-weight: 700;
+  }
+
+  /* PRIVACY */
+  .privacy-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .privacy-split .privacy-text h2 { margin-bottom: 20px; }
+
+  .privacy-split .privacy-text p {
+    font-size: 0.95rem;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .privacy-points {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 36px;
+  }
+
+  .privacy-point {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .privacy-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .privacy-point h5 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+
+  .privacy-point p {
+    font-size: 0.82rem;
+    color: var(--mid);
+    line-height: 1.55;
+  }
+
+  /* FINAL CTA */
+  .final-cta {
+    text-align: center;
+    padding: 100px 40px;
+    background: var(--cream);
+    border-top: 1px solid var(--rule);
+  }
+
+  .final-cta h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 16px;
+  }
+
+  .final-cta p {
+    font-size: 1.05rem;
+    color: var(--mid);
+    max-width: 500px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .final-note {
+    font-size: 0.82rem;
+    color: var(--mid);
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  footer p { font-size: 0.82rem; color: var(--mid); }
+
+  footer a { color: var(--mid); text-decoration: none; font-size: 0.82rem; }
+  footer a:hover { color: var(--ink); }
+
+  .footer-links { display: flex; gap: 24px; }
+
+  /* COMPARISON TABLE */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin-top: 40px;
+  }
+
+  .comparison-table th {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 2px solid var(--ink);
+    background: var(--cream);
+  }
+
+  .comparison-table th:first-child { width: 40%; }
+
+  .comparison-table td {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  .comparison-table tr:last-child td { border-bottom: none; }
+
+  .comparison-table .check { color: var(--sage); font-weight: 700; }
+  .comparison-table .cross { color: var(--rule); }
+  .comparison-table .highlight-col { background: rgba(184,134,11,0.04); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 60px 20px; gap: 40px; }
+    section { padding: 60px 20px; }
+    .product-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr 1fr; }
+    .audience-grid { grid-template-columns: 1fr; }
+    .privacy-split { grid-template-columns: 1fr; gap: 40px; }
+    .callout-inner { grid-template-columns: 1fr; gap: 28px; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+  }
+
+  @media (max-width: 600px) {
+    .features-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.5s ease both; }
+  h1 { animation: fadeUp 0.5s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.5s 0.2s ease both; }
+  .hero-actions { animation: fadeUp 0.5s 0.3s ease both; }
+  .hero-card { animation: fadeUp 0.6s 0.2s ease both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Fatboy <span>Financial</span></a>
+  <ul class="nav-links">
+    <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/screenshots">Screenshots</a></li>
+    <li><a href="/comparison">Compare</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="https://buy.stripe.com/4gM8wI92w9i98r95sSawo00" class="nav-cta">Buy Pro — $149</a></li>
+  </ul>
 </nav>
 
----
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Retirement Planning Software</div>
+    <h1>One price.<br><em>Desktop + Web.</em><br>Yours forever.</h1>
+    <p class="hero-sub">
+      Model Roth conversions, IRMAA thresholds, Monte Carlo outcomes, and estate strategy — 
+      with the depth of a professional tool and the privacy of software you actually own.
+      $149 unlocks both the desktop app and the full web app. No subscriptions. No cloud.
+    </p>
+    <div class="hero-actions">
+      <a href="https://buy.stripe.com/4gM8wI92w9i98r95sSawo00" class="btn-primary">
+        Buy Pro — Founding Member <span class="price-badge">$149</span>
+      </a>
+      <a href="https://app.fatboysoftware.com" class="btn-secondary">
+        Try the web app free →
+      </a>
+      <p class="hero-note" data-founding-label>⚑ Price increases to $249 after 200 Founding Members · Free trial includes limited scenarios</p>
+    </div>
+  </div>
 
-**Questions? Email: [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)**
-**Note:**  Linux version available.  Code signing certificate received and in place
+  <div class="hero-card">
+    <div class="hero-card-label">Pro License — What You Get</div>
+    <h3>One purchase.</h3>
+    <div class="price">$149 <span style="font-size:1.2rem;color:var(--mid);text-decoration:line-through;font-weight:400;">$249</span></div>
+    <p class="price-note">Founding Member price · Increases to $249 at 200 users</p>
+    <p style="font-size:0.8rem;color:var(--gold);margin-bottom:16px;font-weight:500;" data-founding-remaining>Price increases to $249 after 200 Founding Members</p>
+    <ul class="includes-list">
+      <li><strong>Windows desktop app</strong> — full install, runs offline</li>
+      <li><strong>Linux AppImage</strong> — same full app</li>
+      <li><strong>Full web app</strong> — browser-based, works on any device</li>
+      <li><strong>Unlimited scenarios</strong> — save, compare, revisit</li>
+      <li><strong>PDF &amp; Excel export</strong> — share with your CPA</li>
+      <li><strong>Full Monte Carlo depth</strong> — 7 market environments</li>
+      <li><strong>All future updates</strong> — no upgrade fees</li>
+    </ul>
+    <hr class="divider-rule">
+    <p style="font-size:0.8rem;color:var(--mid);margin-bottom:8px;">Founding Member spots</p>
+    <div style="background:var(--rule);border-radius:2px;height:6px;overflow:hidden;margin-bottom:6px;">
+      <div data-founding-bar style="height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));width:0%;transition:width 0.6s ease;" aria-valuemin="0" aria-valuemax="200"></div>
+    </div>
+    <p style="font-size:0.75rem;color:var(--mid);" data-founding-pct>Founding Member pricing</p>
+  </div>
+</div>
+
+<hr class="section-rule">
+
+<!-- TWO PRODUCTS -->
+<section id="products">
+  <div class="section-eyebrow">Two Ways to Plan</div>
+  <h2>The right tool<br>for where you are.</h2>
+  <p class="section-intro">
+    The free trial gives you a real taste. The Pro license unlocks everything — on your desktop and in your browser.
+  </p>
+
+  <div class="product-grid">
+    <!-- WEB APP -->
+    <div class="product-card">
+      <span class="product-tag tag-web">Web App — Free Trial</span>
+      <h3>Plan anywhere.<br>No install required.</h3>
+      <div class="product-price">Free</div>
+      <p class="product-price-note">Limited trial · No account required</p>
+      <p class="product-desc">
+        Runs entirely in your browser via Pyodide — Python in the browser, no server, your data never leaves your machine. 
+        Try the full interface with limited scenarios before you buy.
+      </p>
+      <ul class="feature-list">
+        <li><span class="yes">✓</span><span class="text">All planning modules — Roth, IRMAA, estate, goals</span></li>
+        <li><span class="yes">✓</span><span class="text">Works on any device — Mac, iPad, Windows, Linux</span></li>
+        <li><span class="yes">✓</span><span class="text">Data stays in your browser — zero server calls</span></li>
+        <li><span class="no">—</span><span class="text sub">Limited to 1 scenario</span></li>
+        <li><span class="no">—</span><span class="text sub">No save / load between sessions</span></li>
+        <li><span class="no">—</span><span class="text sub">No PDF or Excel export</span></li>
+        <li><span class="no">—</span><span class="text sub">Monte Carlo limited to 500 simulations</span></li>
+      </ul>
+      <a href="https://app.fatboysoftware.com" class="btn-secondary">Try free →</a>
+    </div>
+
+    <!-- DESKTOP + WEB PRO -->
+    <div class="product-card featured">
+      <span class="product-tag tag-desktop">Pro License — Desktop + Web</span>
+      <h3>Everything unlocked.<br>On every platform.</h3>
+      <div class="product-price">$149 <span style="font-size:1rem;color:var(--mid);text-decoration:line-through;font-weight:400;">$249</span></div>
+      <p class="product-price-note">Founding Member · Price increases to $249 at 200 users</p>
+      <p class="product-desc">
+        One license key unlocks the Windows desktop app, the Linux AppImage, and the full web app. 
+        Use whichever fits the moment. Your data is always yours.
+      </p>
+      <ul class="feature-list">
+        <li><span class="yes">✓</span><span class="text">Everything in the free trial</span></li>
+        <li><span class="yes">✓</span><span class="text">Unlimited named scenarios — save and compare</span></li>
+        <li><span class="yes">✓</span><span class="text">Save &amp; load plans between sessions</span></li>
+        <li><span class="yes">✓</span><span class="text">Full Monte Carlo — all 7 market environments</span></li>
+        <li><span class="yes">✓</span><span class="text">PDF &amp; Excel export — share with your CPA</span></li>
+        <li><span class="yes">✓</span><span class="text">Breakpoint &amp; stress test analysis</span></li>
+        <li><span class="yes">✓</span><span class="text">Editable tax parameters — model future law changes</span></li>
+        <li><span class="yes">✓</span><span class="text">Estate &amp; legacy forecasting</span></li>
+        <li><span class="yes">✓</span><span class="text">Desktop app — full native performance, offline</span></li>
+        <li><span class="yes">✓</span><span class="text">All future updates included</span></li>
+      </ul>
+      <a href="https://buy.stripe.com/4gM8wI92w9i98r95sSawo00" class="btn-primary" data-founding-btn>Buy Now — $149</a>
+      <p style="font-size:0.78rem;color:var(--mid);margin-top:10px;text-align:center;" data-founding-remaining>Price increases to $249 after 200 Founding Members</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- TAX PARAMETERS -->
+<section>
+  <div class="section-eyebrow">What Makes Fatboy Different</div>
+  <h2>Tax laws change.<br>Your software should too.</h2>
+  <p class="section-intro">
+    When OBBBA passed in July 2025, most retirement tools went stale. Fatboy users updated their 
+    tax parameters in 10 minutes and kept planning.
+  </p>
+
+  <div class="features-grid">
+    <div class="feature-block highlight">
+      <div class="feature-num">01</div>
+      <h4>Editable Tax Parameters</h4>
+      <p>Edit federal and state tax brackets yourself. Model TCJA expiration, OBBBA senior deductions, capital gains rate changes — without waiting 6 months for a vendor update.</p>
+    </div>
+    <div class="feature-block">
+      <div class="feature-num">02</div>
+      <h4>Roth Conversion Modeling</h4>
+      <p>See exactly how a $50k Roth conversion impacts your taxes this year, your IRMAA brackets at 65, and your RMDs at 75. Year-by-year, full tax effects.</p>
+    </div>
+    <div class="feature-block">
+      <div class="feature-num">03</div>
+      <h4>Seven Monte Carlo Environments</h4>
+      <p>From optimistic GBM baseline to conservative regime switching to a full century of historical data. A plan that holds up across all seven is a plan you can retire on.</p>
+    </div>
+    <div class="feature-block">
+      <div class="feature-num">04</div>
+      <h4>Breakpoint Analysis</h4>
+      <p>Find exactly where your plan starts to fail. Minimum required returns. Maximum safe withdrawal rate. Color-coded risk zones so you know what margin you actually have.</p>
+    </div>
+    <div class="feature-block">
+      <div class="feature-num">05</div>
+      <h4>Estate &amp; Legacy Forecasting</h4>
+      <p>Year-by-year estate projections, legacy goal tracking, inherited IRA RMD implications under the SECURE Act 10-year rule, and estate tax exposure against TCJA exemption thresholds.</p>
+    </div>
+    <div class="feature-block">
+      <div class="feature-num">06</div>
+      <h4>Professional PDF Reports</h4>
+      <p>Export polished, client-ready summaries of your analysis. Useful for reviewing with a spouse, sharing with a CPA, or documenting your strategy for annual review.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CALLOUT BAND -->
+<div class="callout-band">
+  <div class="callout-inner">
+    <div>
+      <h2>Compared to paying an advisor — or a subscription</h2>
+      <p>1% AUM on $1M is $10,000 a year. Boldin is $12/month. ProjectionLab is $109/year. 
+      Fatboy is $149 once — desktop app, web app, all future updates. 
+      By year two you've paid less than one month of a competing subscription.</p>
+    </div>
+    <a href="https://fatboysoftware.com/comparison" class="btn-gold">See Full Comparison →</a>
+  </div>
+</div>
+
+<hr class="section-rule">
+
+<!-- WHO IT'S FOR -->
+<section>
+  <div class="section-eyebrow">Right Fit</div>
+  <h2>Who Fatboy is for.<br>And who it isn't.</h2>
+  <p class="section-intro">
+    Fatboy is planning depth, not hand-holding. The people who get the most from it know what they want to model.
+  </p>
+
+  <div class="audience-grid">
+    <div class="audience-card yes-card">
+      <h4>Great fit</h4>
+      <ul>
+        <li>Engineers, executives, and professionals with 7-figure portfolios who understand their finances</li>
+        <li>DIY investors who want advisor-level tools without advisor fees</li>
+        <li>Pre-retirees modeling Roth conversions, IRMAA exposure, and TCJA impacts</li>
+        <li>Fee-only financial planners who need professional software without SaaS pricing</li>
+        <li>Anyone who wants their data on their own machine — not in someone else's cloud</li>
+        <li>Mac and iPad users who want serious browser-based planning (web app works on any device)</li>
+      </ul>
+    </div>
+    <div class="audience-card no-card">
+      <h4>Not a fit</h4>
+      <ul>
+        <li>People who need someone to tell them what to invest in</li>
+        <li>Anyone looking for portfolio management or investment advice</li>
+        <li>People who want their phone to make financial decisions for them</li>
+        <li>Users who want a simple one-number retirement readiness score</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- PRIVACY -->
+<section>
+  <div class="privacy-split">
+    <div class="privacy-text">
+      <div class="section-eyebrow">Privacy by Design</div>
+      <h2>Your financial data belongs to you.</h2>
+      <p>
+        Most retirement software sends your income, assets, and account details to a cloud 
+        server. That data is used for analytics, shared with marketing partners, and potentially 
+        used to train AI models.
+      </p>
+      <p>
+        Fatboy is built differently. The desktop app runs entirely on your machine — no cloud sync, 
+        no account creation, no data harvesting. The web app runs Python locally in your browser 
+        via Pyodide — there's no server receiving your numbers.
+      </p>
+      <p>
+        Your retirement plan is nobody else's business.
+      </p>
+    </div>
+    <div class="privacy-points">
+      <div class="privacy-point">
+        <div class="privacy-icon">🖥</div>
+        <div>
+          <h5>Desktop: fully local</h5>
+          <p>The Windows and Linux apps run entirely on your machine. No internet required for planning. Data lives only on your computer.</p>
+        </div>
+      </div>
+      <div class="privacy-point">
+        <div class="privacy-icon">🌐</div>
+        <div>
+          <h5>Web app: Pyodide in-browser</h5>
+          <p>The web app runs Python locally in your browser — not on a server. Your numbers never leave your device. No account required for the trial.</p>
+        </div>
+      </div>
+      <div class="privacy-point">
+        <div class="privacy-icon">🔑</div>
+        <div>
+          <h5>License validation only</h5>
+          <p>The only server call made is license key validation. No financial data is transmitted — just your license key.</p>
+        </div>
+      </div>
+      <div class="privacy-point">
+        <div class="privacy-icon">🚫</div>
+        <div>
+          <h5>No ads. No data harvesting.</h5>
+          <p>We don't sell data, run analytics on your plans, or share anything with third parties. There's no business model that requires it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2>Start planning seriously.</h2>
+  <p>Try the web app free, or lock in Founding Member pricing — $149 before the price rises to $249 at 200 users.</p>
+  <div class="cta-buttons">
+    <a href="https://buy.stripe.com/4gM8wI92w9i98r95sSawo00" class="btn-primary">
+      Buy Pro — <span style="text-decoration:line-through;opacity:0.6;">$249</span>&nbsp;<span class="price-badge">$149</span>
+    </a>
+    <a href="https://app.fatboysoftware.com" class="btn-secondary">Try free first →</a>
+  </div>
+  <p class="final-note">Founding Member price · Increases to $249 at 200 users · Desktop + Web included · All future updates free</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Fatboy Software · <a href="mailto:fbfinancialplanner@gmail.com">fbfinancialplanner@gmail.com</a></p>
+  <div class="footer-links">
+    <a href="/pricing">Pricing</a>
+    <a href="/screenshots">Screenshots</a>
+    <a href="/comparison">Compare</a>
+    <a href="/blog">Blog</a>
+    <a href="/about">About</a>
+    <a href="/research-methodology">Research</a>
+  </div>
+</footer>
+
+<script src="/assets/js/founding-count.js"></script>
+</body>
+</html>
