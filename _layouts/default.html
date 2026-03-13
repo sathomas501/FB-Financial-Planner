@@ -1,70 +1,374 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | Fatboy Software{% else %}Fatboy Financial Planner{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Serious retirement planning software. Model Roth conversions, IRMAA, Monte Carlo scenarios, and estate planning. One price. Desktop + Web.{% endif %}">
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <link rel="icon" type="image/png" href="{{ '/assets/images/favicon_64.png' | relative_url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }} - Blog RSS Feed" href="{{ '/feed.xml' | relative_url }}">
+  {% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}">{% endif %}
 
-{% seo %}
-    {% include schema-markup.html %}
-    {% include google-analytics.html %}
-  </head>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <body>
+  <!-- GA4 — keep your existing tag if you have one -->
+  {% if site.google_analytics %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+  {% endif %}
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          {% if site.github.is_project_page %}
-            <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
-          {% endif %}
+  <style>
+    :root {
+      --ink: #1a1a18;
+      --paper: #f5f0e8;
+      --cream: #ede8dc;
+      --gold: #b8860b;
+      --gold-light: #d4a017;
+      --sage: #4a5e4a;
+      --mid: #6b6b60;
+      --rule: #c8c0b0;
+      --rust: #8b3a2a;
+    }
 
-          <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
-          <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-          <nav style="margin-top: 20px; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.2);">
-            <a href="{{ site.baseurl }}/" style="color: #fff; text-decoration: none; margin-right: 20px; font-weight: 500;">Home</a>
-            <a href="{{ site.baseurl }}/blog" style="color: #fff; text-decoration: none; margin-right: 20px; font-weight: 500;">Blog</a>
-            <a href="{{ site.baseurl }}/research-methodology" style="color: #fff; text-decoration: none; margin-right: 20px; font-weight: 500;">Research</a>
-            <a href="{{ site.baseurl }}/pricing" style="color: #fff; text-decoration: none; margin-right: 20px; font-weight: 500;">Pricing</a>
-            <a href="{{ site.baseurl }}/about" style="color: #fff; text-decoration: none; margin-right: 20px; font-weight: 500;">About</a>
-          </nav>
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.65;
+    }
 
-          {% if site.show_downloads %}
-            <section id="downloads">
-              <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="{{ site.github.tar_url }}">Download this project as a tar.gz file</a>
-            </section>
-          {% endif %}
-        </header>
-    </div>
+    /* ── NAV ── */
+    nav {
+      border-bottom: 1px solid var(--rule);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      background: var(--paper);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        {{ content }}
-      </section>
-    </div>
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      text-decoration: none;
+    }
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        {% if site.github.is_project_page %}
-        <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-        {% endif %}
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+    .nav-logo span { color: var(--gold); }
 
-    <!-- Automatic Download Link Updater -->
-    <script src="{{ '/assets/js/website_download_updater.js' | relative_url }}"></script>
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
 
-    <!-- GA4 Custom Event Tracking -->
-    <script src="{{ '/assets/js/ga4-events.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/ga4-download-tracking.js' | relative_url }}"></script>
-  </body>
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .nav-links a.active { color: var(--ink); }
+
+    .nav-cta {
+      background: var(--ink) !important;
+      color: var(--paper) !important;
+      padding: 8px 18px !important;
+      border-radius: 2px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold) !important;
+      color: var(--ink) !important;
+    }
+
+    /* ── PAGE CONTENT WRAPPER ── */
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 40px 100px;
+    }
+
+    /* ── TYPOGRAPHY for markdown content ── */
+    .page-wrap h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .page-wrap h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-top: 56px;
+      margin-bottom: 16px;
+      padding-top: 56px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .page-wrap h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+    .page-wrap h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-top: 36px;
+      margin-bottom: 10px;
+    }
+
+    .page-wrap h4 {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 28px;
+      margin-bottom: 8px;
+    }
+
+    .page-wrap p {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.75;
+      margin-bottom: 20px;
+      max-width: 680px;
+    }
+
+    .page-wrap p strong { color: var(--ink); font-weight: 500; }
+
+    .page-wrap a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .page-wrap a:hover { border-bottom-color: var(--gold); }
+
+    .page-wrap ul,
+    .page-wrap ol {
+      margin: 0 0 24px 0;
+      padding-left: 24px;
+      max-width: 680px;
+    }
+
+    .page-wrap li {
+      font-size: 0.97rem;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .page-wrap li strong { color: var(--ink); font-weight: 500; }
+
+    .page-wrap blockquote {
+      border-left: 3px solid var(--gold);
+      padding: 16px 24px;
+      margin: 32px 0;
+      background: var(--cream);
+      border-radius: 0 3px 3px 0;
+    }
+
+    .page-wrap blockquote p {
+      color: var(--ink);
+      font-style: italic;
+      margin: 0;
+    }
+
+    .page-wrap hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 48px 0;
+    }
+
+    .page-wrap code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      background: var(--cream);
+      padding: 2px 6px;
+      border-radius: 2px;
+      color: var(--rust);
+    }
+
+    .page-wrap pre {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 24px;
+      border-radius: 3px;
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+
+    .page-wrap pre code {
+      background: none;
+      color: var(--paper);
+      padding: 0;
+    }
+
+    /* Tables in markdown */
+    .page-wrap table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 32px 0;
+    }
+
+    .page-wrap th {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 2px solid var(--ink);
+      background: var(--cream);
+      color: var(--ink);
+    }
+
+    .page-wrap td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--rule);
+      color: var(--mid);
+      vertical-align: top;
+    }
+
+    .page-wrap tr:last-child td { border-bottom: none; }
+
+    /* Images */
+    .page-wrap img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 3px;
+      border: 1px solid var(--rule);
+      margin: 24px 0;
+      display: block;
+    }
+
+    /* Page eyebrow — set via front matter class */
+    .page-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .page-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    footer p { font-size: 0.82rem; color: var(--mid); }
+    footer a { color: var(--mid); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    footer a:hover { color: var(--ink); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+
+      .nav-links { gap: 16px; }
+      .nav-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
+
+      .page-wrap { padding: 40px 20px 80px; }
+
+      footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 32px 20px;
+      }
+
+      .footer-links { justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links li:not(:last-child) { display: none; }
+    }
+  </style>
+
+  {% if page.extra_css %}{{ page.extra_css }}{% endif %}
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Fatboy <span>Software</span></a>
+  <ul class="nav-links">
+    <li><a href="/pricing" {% if page.url contains 'pricing' %}class="active"{% endif %}>Pricing</a></li>
+    <li><a href="/screenshots" {% if page.url contains 'screenshots' %}class="active"{% endif %}>Screenshots</a></li>
+    <li><a href="/comparison" {% if page.url contains 'comparison' %}class="active"{% endif %}>Compare</a></li>
+    <li><a href="/blog" {% if page.url contains 'blog' %}class="active"{% endif %}>Blog</a></li>
+    <li><a href="/about" {% if page.url contains 'about' %}class="active"{% endif %}>About</a></li>
+    <li><a href="https://buy.stripe.com/4gM8wI92w9i98r95sSawo00" class="nav-cta">Buy Pro — $149</a></li>
+  </ul>
+</nav>
+
+<main class="page-wrap">
+  {% if page.eyebrow %}
+  <div class="page-eyebrow">{{ page.eyebrow }}</div>
+  {% endif %}
+  {{ content }}
+</main>
+
+<footer>
+  <p>© 2026 Fatboy Software · <a href="mailto:fbfinancialplanner@gmail.com">fbfinancialplanner@gmail.com</a></p>
+  <div class="footer-links">
+    <a href="/pricing">Pricing</a>
+    <a href="/screenshots">Screenshots</a>
+    <a href="/comparison">Compare</a>
+    <a href="/blog">Blog</a>
+    <a href="/about">About</a>
+    <a href="/research-methodology">Research</a>
+  </div>
+</footer>
+
+</body>
 </html>
