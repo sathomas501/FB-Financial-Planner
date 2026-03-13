@@ -236,7 +236,7 @@ openssl rand -base64 32
 
 ### 8.2 Update Payment Link
 - Make sure your website links to the **live mode** Stripe Payment Link
-- Currently in your site: `https://buy.stripe.com/4gM8wI92w9i98r95sSawo00`
+- Currently in your site: `https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00`
 - Verify this is a live mode link (check in Stripe dashboard)
 
 ### 8.3 Redeploy

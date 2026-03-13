@@ -226,7 +226,7 @@ No scenario predicts the future. But a plan that survives seven different simula
   <p style="margin-bottom:0.5rem;font-weight:700;font-size:1.1rem;color:#1a1a2e">Run all seven scenarios against your actual plan.</p>
   <p style="margin-bottom:1.25rem;color:#555;font-size:0.95rem">All 7 Monte Carlo scenarios are a Pro feature. Free version includes core planning and GBM simulation.</p>
   <a href="/pricing" style="display:inline-block;padding:10px 22px;background:#0066cc;color:white;text-decoration:none;border-radius:6px;font-weight:600;margin:4px">Download Free Version</a>
-  <a href="https://buy.stripe.com/4gM8wI92w9i98r95sSawo00" style="display:inline-block;padding:10px 22px;background:#28a745;color:white;text-decoration:none;border-radius:6px;font-weight:600;margin:4px">Buy Pro — $149 One-Time</a>
+  <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" style="display:inline-block;padding:10px 22px;background:#28a745;color:white;text-decoration:none;border-radius:6px;font-weight:600;margin:4px">Buy Pro — $149 One-Time</a>
   <p style="margin-top:1rem;margin-bottom:0"><a href="https://app.fatboysoftware.com" target="_blank" style="font-size:0.875rem;color:#0066cc;text-decoration:none">Try GBM Monte Carlo free in your browser — no account required →</a></p>
 </div>
 

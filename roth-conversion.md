@@ -158,7 +158,7 @@ Desktop application. Your financial data stays on your computer. No cloud sync. 
   <a href="#" id="download-linux" class="btn-download" data-version="">🐧 Download for Linux</a>
 </div>
 
-[Buy Pro Version - $149 (One-Time)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00)
+[Buy Pro Version - $149 (One-Time)](https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00)
 
 Try the free version. Model a few Roth conversion scenarios. See if the tax impact makes sense for your situation. Upgrade to Pro when you want unlimited scenarios and advanced features.
 

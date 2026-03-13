@@ -161,7 +161,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
 
 **Download Links:**
 - <a href="#" class="auto-download-installer" data-version="">Free Version</a>
-- [Pro Version - Founding Member](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00)
+- [Pro Version - Founding Member](https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00)
 
 ### Response Time
 

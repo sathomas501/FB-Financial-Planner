@@ -215,7 +215,7 @@ Seeing this clearly doesn't require an estate attorney (though working with one 
   <p style="margin-bottom:0.5rem;font-weight:700;font-size:1.1rem;color:#1a1a2e">Ready to see what you're actually leaving behind?</p>
   <p style="margin-bottom:1.25rem;color:#555;font-size:0.95rem">Estate & legacy forecasting is a Pro feature. Free version includes full core retirement planning.</p>
   <a href="/pricing" style="display:inline-block;padding:10px 22px;background:#0066cc;color:white;text-decoration:none;border-radius:6px;font-weight:600;margin:4px">Download Free Version</a>
-  <a href="https://buy.stripe.com/4gM8wI92w9i98r95sSawo00" style="display:inline-block;padding:10px 22px;background:#28a745;color:white;text-decoration:none;border-radius:6px;font-weight:600;margin:4px">Buy Pro — $149 One-Time</a>
+  <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" style="display:inline-block;padding:10px 22px;background:#28a745;color:white;text-decoration:none;border-radius:6px;font-weight:600;margin:4px">Buy Pro — $149 One-Time</a>
 </div>
 
 *Questions? Email: [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)*

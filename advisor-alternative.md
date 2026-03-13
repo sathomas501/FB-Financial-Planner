@@ -249,7 +249,7 @@ Your data never leaves your computer. No cloud sync. No vendor harvesting your f
   <a href="#" id="download-linux" class="btn-download" data-version="">🐧 Download for Linux</a>
 </div>
 
-[Buy Pro Version - $149 (One-Time)](https://buy.stripe.com/4gM8wI92w9i98r95sSawo00)
+[Buy Pro Version - $149 (One-Time)](https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00)
 
 Try the free version. Run a few retirement scenarios. See if the tools give you what you need. Upgrade to Pro when you want unlimited scenarios and professional reports.
 
