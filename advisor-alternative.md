@@ -210,7 +210,7 @@ Full retirement planning. 3 scenarios. Monte Carlo simulations. Core features un
 | **Tax Optimization** | ✅ Yes | ✅ Yes |
 | **Professional Reports** | ✅ Yes | ✅ Yes (Pro) |
 | **Update Tax Laws Yourself** | ❌ No | ✅ Yes |
-| **Your Data Private** | ❌ No (they have it) | ✅ Yes (stays local) |
+| **Your Data Private** | ❌ No (they have it) | ✅ Yes — local by default; optional cloud sync is end-to-end encrypted |
 | **Make Your Own Decisions** | ❌ No (they decide) | ✅ Yes |
 | **No Conflicts of Interest** | ❌ No (commission bias) | ✅ Yes |
 

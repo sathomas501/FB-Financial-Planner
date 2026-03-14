@@ -902,6 +902,8 @@ permalink: /
         <li><span class="yes">✓</span><span class="text">Everything in the free trial</span></li>
         <li><span class="yes">✓</span><span class="text">Unlimited named scenarios — save and compare</span></li>
         <li><span class="yes">✓</span><span class="text">Save &amp; load plans between sessions</span></li>
+        <li><span class="yes">✓</span><span class="text">Export &amp; import plan as JSON — portable across web and desktop</span></li>
+        <li><span class="yes">✓</span><span class="text">Encrypted cloud sync — sync across devices, plan encrypted before it leaves your browser</span></li>
         <li><span class="yes">✓</span><span class="text">Full Monte Carlo — all 7 market environments</span></li>
         <li><span class="yes">✓</span><span class="text">PDF &amp; Excel export — share with your CPA</span></li>
         <li><span class="yes">✓</span><span class="text">Breakpoint &amp; stress test analysis</span></li>
@@ -1040,12 +1042,14 @@ permalink: /
         used to train AI models.
       </p>
       <p>
-        Fatboy is built differently. The desktop app runs entirely on your machine — no cloud sync, 
-        no account creation, no data harvesting. The web app runs Python locally in your browser 
-        via Pyodide — there's no server receiving your numbers.
+        Fatboy is built differently. The desktop app runs entirely on your machine — no account
+        creation, no data harvesting. The web app runs Python locally in your browser via Pyodide —
+        your calculations never touch a server.
       </p>
       <p>
-        Your retirement plan is nobody else's business.
+        Pro users can optionally sync an encrypted backup across devices. Your plan is encrypted
+        in your browser before it leaves — using your license key as the encryption key. We receive
+        ciphertext we cannot read. Your retirement plan is nobody else's business.
       </p>
     </div>
     <div class="privacy-points">
@@ -1060,14 +1064,14 @@ permalink: /
         <div class="privacy-icon">🌐</div>
         <div>
           <h5>Web app: Pyodide in-browser</h5>
-          <p>The web app runs Python locally in your browser — not on a server. Your numbers never leave your device. No account required for the trial.</p>
+          <p>The web app runs Python locally in your browser — not on a server. Your numbers stay on your device by default. No account required for the trial.</p>
         </div>
       </div>
       <div class="privacy-point">
         <div class="privacy-icon">🔑</div>
         <div>
-          <h5>License validation only</h5>
-          <p>The only server call made is license key validation. No financial data is transmitted — just your license key.</p>
+          <h5>Encrypted cloud sync (optional)</h5>
+          <p>The only automatic server call is license key validation. Pro users can optionally sync plans across devices — but the data is encrypted in your browser before upload, using a key only you hold. We store ciphertext we cannot read.</p>
         </div>
       </div>
       <div class="privacy-point">

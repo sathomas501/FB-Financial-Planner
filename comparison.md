@@ -58,6 +58,9 @@ We built Fatboy Financial Planner for people who want serious planning tools wit
 | **Monte Carlo Analysis** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
 | **Social Security Planning** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Advanced | ✅ Yes |
 | **Data Import** | ✅ CSV/Manual | ✅ CSV/Manual | ✅ Link accounts | ⚠️ Manual | ⚠️ Manual |
+| **Export / Import Plan (JSON)** | ✅ Yes | ✅ Yes | ❌ No | ❌ No | ❌ No |
+| **Cloud Sync** | ❌ No | ✅ E2E encrypted | ✅ Unencrypted | ✅ Unencrypted | ❌ No |
+| **Data stays on your device** | ✅ By default | ✅ By default | ❌ Always cloud | ❌ Always cloud | ✅ Yes |
 | **Account Types Supported** | ✅ All major | ✅ All major | ✅ All major | ✅ All major | ✅ All major |
 | **Tax Assumptions** | ✅ Editable | ✅ Editable | 🔄 Auto-updated | 🔄 Auto-updated | ⚠️ Fixed |
 
