@@ -35,6 +35,7 @@ const SCREENSHOTS = [
   'assets_over_time.png',
   'projection_center.png',
   'landing_page.png',
+  'landing_page1.png',
   'plan_wizard.png',
   'goal_solver.png',
   'sankey_cashflow.png',
