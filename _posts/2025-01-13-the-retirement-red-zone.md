@@ -11,6 +11,9 @@ tags:
   - retirement-timing
   - portfolio-protection
   - pre-retirement-planning
+  - FIRE
+  - Coast-FIRE
+  - early-retirement
 description: "The retirement red zone - the 5 years before and after you retire - is when your portfolio is most vulnerable to permanent damage. Learn why this decade matters more than the previous 30 years combined."
 excerpt: "You've spent 30 years building your nest egg. A market crash in the wrong 24-month window can destroy decades of careful saving. Welcome to the retirement red zone."
 ---
@@ -153,7 +156,7 @@ But many people enter the red zone with 70-80% equity allocation because:
 
 ### Aggressive Withdrawal Assumptions
 
-Planning to withdraw 5-6% of your portfolio in early retirement? That's risky any time, but it's especially dangerous if a bear market hits in your red zone years.
+Planning to withdraw 5-6% of your portfolio in early retirement, FIRE, or Coast FIRE? That's risky any time, but it's especially dangerous if a bear market hits in your red zone years.
 
 4% withdrawal rate with a 30% crash = you're withdrawing 5.7% of your crashed portfolio value. That's often unsurvivable.
 

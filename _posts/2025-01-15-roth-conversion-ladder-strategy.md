@@ -12,6 +12,9 @@ tags:
   - tax-optimization
   - traditional-IRA
   - RMD-planning
+  - FIRE
+  - Coast-FIRE
+  - early-retirement-tax-planning
 description: "Stop paying taxes at the worst possible time. A properly executed Roth conversion ladder lets you control when and how much tax you pay, minimize RMDs, avoid IRMAA surcharges, and leave tax-free money to heirs. Here's how to build yours."
 excerpt: "You spent 30 years deferring taxes into traditional IRAs. At 73, the IRS forces you to withdraw money you don't need, pushing you into higher brackets and triggering Medicare surcharges. There's a better way."
 ---
@@ -321,7 +324,7 @@ You pay 12% on the conversion. Compare to taking that as RMDs later at 22%+.
 
 ### Strategy 2: The "Roth Bridge"
 
-For early retirees using the Roth conversion ladder to fund FIRE:
+For early retirees using the Roth conversion ladder to fund FIRE or Coast FIRE:
 
 **The setup:**
 - Retire at 55
@@ -336,7 +339,7 @@ For early retirees using the Roth conversion ladder to fund FIRE:
 - Age 58: Convert $50k (available at 63)
 - Age 59: Convert $50k (available at 64)
 
-By age 60, you have $50k/year available from conversions to fund living expenses while avoiding the 10% early withdrawal penalty.
+By age 60, you have $50k/year available from conversions to fund living expenses while avoiding the 10% early withdrawal penalty. For many FIRE and Coast FIRE households, this is the tax bridge that connects work-optional years to traditional retirement age.
 
 ### Strategy 3: Backdoor Roth + Mega Backdoor
 
