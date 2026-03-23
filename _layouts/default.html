@@ -5,8 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} | Fatboy Software{% else %}Fatboy Financial Planner{% endif %}</title>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}Serious retirement planning software. Model Roth conversions, IRMAA, Monte Carlo scenarios, and estate planning. One price. Desktop + Web.{% endif %}">
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% elsif page.tags %}{{ page.tags | join: ', ' }}{% else %}retirement planning, Roth conversions, Monte Carlo, IRMAA, estate planning{% endif %}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} | Fatboy Software{% else %}Fatboy Financial Planner{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{% if page.canonical %}{{ page.canonical }}{% else %}{{ site.url }}{{ page.url }}{% endif %}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:image" content="{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}/assets/images/landing_page.png{% endif %}">
+  <meta property="og:locale" content="{{ site.lang | default: 'en_US' }}">
+  {% if page.date %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+  {% if page.author %}<meta property="article:author" content="{{ page.author }}">{% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | Fatboy Software{% else %}Fatboy Financial Planner{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image" content="{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}/assets/images/landing_page.png{% endif %}">
 
-  {% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}">{% endif %}
+  {% if page.canonical %}<link rel="canonical" href="{{ page.canonical }}">{% else %}<link rel="canonical" href="{{ site.url }}{{ page.url }}">{% endif %}
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -366,3 +380,4 @@
     <a href="/pricing">Pricing</a>
     <a href="/screenshots">Screenshots</a>
     <a href="/comparison">Comp
+

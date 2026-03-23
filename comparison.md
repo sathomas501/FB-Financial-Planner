@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 title: Retirement Planning Software Comparison - One-Time vs Subscription
 description: Compare Fatboy Financial Planner to Boldin, MaxiFi, WealthTrace, and others. See why a one-time license with editable tax assumptions beats annual subscriptions.
@@ -44,30 +44,33 @@ We built Fatboy Financial Planner for people who want serious planning tools wit
 
 | Feature | Fatboy Free | Fatboy Pro | Boldin | MaxiFi | Pralana |
 |---------|-------------|------------|---------|---------|---------|
-| **Pricing Model** | ✅ Free | ✅ One-time | ❌ Annual | ❌ Annual | ✅ One-time |
-| **Plan Scenarios** | ⚠️ 3 max | ✅ Unlimited | ✅ Yes | ✅ Yes | ✅ Yes |
-| **Core Planning** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
-| **Cash Flow Projections** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
-| **Roth Conversion Optimizer** | ❌ No | ✅ Advanced | ⚠️ Basic | ✅ Yes | ✅ Yes |
-| **Goal Solver** | ❌ No | ✅ Interactive | ⚠️ Limited | ✅ Yes | ❌ No |
-| **Sankey Cash Flow Diagrams** | ❌ No | ✅ Yes | ⚠️ Basic | ✅ Yes | ⚠️ Basic |
-| **Tax Optimization** | ✅ Basic | ✅ Advanced | ✅ Yes | ✅ Advanced | ✅ Yes |
-| **Withdrawal Strategy** | ✅ Yes | ✅ Customizable | ✅ Yes | ✅ Yes | ✅ Yes |
-| **Portfolio Allocation** | ✅ Yes | ✅ Multi-account | ✅ Yes | ⚠️ Limited | ✅ Yes |
-| **Debt Management** | ✅ Yes | ✅ Yes | ✅ Yes | ⚠️ Basic | ⚠️ Basic |
-| **Monte Carlo Analysis** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
-| **Social Security Planning** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Advanced | ✅ Yes |
-| **Data Import** | ✅ CSV/Manual | ✅ CSV/Manual | ✅ Link accounts | ⚠️ Manual | ⚠️ Manual |
-| **Export / Import Plan (JSON)** | ✅ Yes | ✅ Yes | ❌ No | ❌ No | ❌ No |
-| **Cloud Sync** | ❌ No | ✅ E2E encrypted | ✅ Unencrypted | ✅ Unencrypted | ❌ No |
-| **Data stays on your device** | ✅ By default | ✅ By default | ❌ Always cloud | ❌ Always cloud | ✅ Yes |
-| **Account Types Supported** | ✅ All major | ✅ All major | ✅ All major | ✅ All major | ✅ All major |
-| **Tax Assumptions** | ✅ Editable | ✅ Editable | 🔄 Auto-updated | 🔄 Auto-updated | ⚠️ Fixed |
+| **Pricing Model** | Yes - Free | Yes - One-time | No - Annual | No - Annual | Yes - One-time |
+| **Plan Scenarios** | Basic - 3 max | Yes - Unlimited | Yes | Yes | Yes |
+| **Core Planning** | Yes | Yes | Yes | Yes | Yes |
+| **Cash Flow Projections** | Yes | Yes | Yes | Yes | Yes |
+| **Roth Conversion Optimizer** | No | Yes - Advanced | Basic | Yes | Yes |
+| **Goal Solver** | No | Yes - Interactive | Basic - Limited | Yes | No |
+| **Sankey Cash Flow Diagrams** | No | Yes | Basic | Yes | Basic |
+| **Tax Optimization** | Basic | Yes - Advanced | Yes | Yes - Advanced | Yes |
+| **Withdrawal Strategy** | Yes | Yes - Customizable | Yes | Yes | Yes |
+| **Portfolio Allocation** | Yes | Yes - Multi-account | Yes | Basic - Limited | Yes |
+| **Debt Management** | Yes | Yes | Yes | Basic | Basic |
+| **Monte Carlo Analysis** | Yes | Yes | Yes | Yes | Yes |
+| **Social Security Planning** | Yes | Yes | Yes | Yes - Advanced | Yes |
+| **Advanced Pension / Bridge-Income Modeling** | Basic | Yes | Basic | Basic | Basic |
+| **Data Import** | Yes - CSV/Manual | Yes - CSV/Manual | Yes - Link accounts | Basic - Manual | Basic - Manual |
+| **Export / Import Plan (JSON)** | Yes | Yes | No | No | No |
+| **Cloud Sync** | No | Yes - E2E encrypted | Yes - Unencrypted | Yes - Unencrypted | No |
+| **Data stays on your device** | Yes - By default | Yes - By default | No - Always cloud | No - Always cloud | Yes |
+| **Account Types Supported** | Yes - All major | Yes - All major | Yes - All major | Yes - All major | Yes - All major |
+| **Tax Assumptions** | Yes - Editable | Yes - Editable | Subscription update | Subscription update | Basic - Fixed |
 
 </div>
 
 **Legend:**
-✅ Full support | ⚠️ Limited/Basic | ❌ Not available | 🔄 Subscription-based updates
+Yes | Basic | No | Subscription update
+
+**Fatboy Pro note:** Advanced pension / bridge-income modeling includes pension COLA, FERS supplement modeling, temporary bridge income, governmental 457(b) support, and later pension offsets / step-downs.
 
 ## Tax Assumptions: Planning Direction vs Tax-Filing Precision
 
@@ -153,3 +156,8 @@ We think you'll like Fatboy Financial Planner. It'll save you money and give you
 ---
 
 [Back to Home](/) | [Research & Methodology](/research-methodology) | [View Screenshots](/screenshots) | [View Pricing](/pricing) | [About & Contact](/about)
+
+
+
+
+
