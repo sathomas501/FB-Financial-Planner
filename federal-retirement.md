@@ -1,0 +1,162 @@
+---
+layout: default
+title: Federal Retirement Planner for FERS and CSRS
+description: Retirement planning software for federal employees. Model FERS supplement, CSRS-style pension changes, TSP withdrawals, Social Security, taxes, and year-by-year cash flow.
+keywords: federal retirement planner, FERS retirement calculator, CSRS retirement calculator, federal employee retirement planning, FERS supplement calculator, federal pension planner, TSP retirement planning
+image: /assets/images/federal-advanced.png
+canonical: https://fatboysoftware.com/federal-retirement
+permalink: /federal-retirement/
+---
+
+# Federal Retirement Planner for FERS and CSRS
+## Model pension timing, FERS supplement income, TSP withdrawals, Social Security, and taxes in one plan.
+
+Federal retirement planning is not just a generic retirement calculator with the word "pension" stapled on. You need to see how a government pension, a temporary FERS annuity supplement, TSP withdrawals, Social Security timing, taxes, and spouse income work together across the full plan.
+
+**That is what this page is for.**
+
+<picture>
+  <img src="/assets/images/federal-advanced.png"
+       alt="Government retirement planning controls showing pension COLA, age-62 pension changes, and FERS annuity supplement settings"
+       loading="eager"
+       style="max-width: 100%; height: auto; border: 1px solid #c8c0b0; border-radius: 6px; box-shadow: 0 16px 34px rgba(0,0,0,0.08);">
+</picture>
+<em>Built for federal-style retirement income details: pension COLA, age-based pension change events, spouse pension handling, and temporary FERS supplement income.</em>
+
+---
+
+## Why Generic Retirement Calculators Miss Federal Retirement
+
+Most retirement tools flatten everything into one income number.
+
+That misses the parts federal workers actually care about:
+- **FERS supplement timing** before age 62
+- **Pension COLA** assumptions over time
+- **Age-based pension changes** like offset or step-down behavior
+- **TSP withdrawals** interacting with pension and Social Security
+- **Spouse pension coordination**
+- **Federal and state taxes** changing the actual spending gap
+
+If your income changes at age 62, if your supplement ends before Social Security starts, or if one spouse retires years earlier than the other, a generic tool can give you the wrong answer while still looking polished.
+
+---
+
+## What Fatboy Models for Federal Workers
+
+### Pension Timing and COLA
+- Model annual pension income by owner
+- Add pension COLA assumptions
+- Show year-by-year pension cash flow inside the full retirement plan
+
+### FERS Supplement and Bridge Income
+- Model temporary monthly or annual income streams
+- Show exactly what happens when the supplement ends
+- Use the same engine for other bridge-income periods, not just federal cases
+
+### Age-Based Pension Changes
+- Add a later pension change event at a specific age or year
+- Useful for offset-style scenarios, step-down income, or pension coordination cases
+
+### TSP, Social Security, and Taxes
+- See pension income alongside TSP withdrawals and Social Security
+- Show the effect on federal tax, state tax, healthcare, and spending gaps
+- Compare how your plan changes if you retire earlier, later, or phase income differently
+
+---
+
+## See Federal Retirement Cash Flow Year by Year
+
+<picture>
+  <img src="/assets/images/Federal_sankey.png"
+       alt="Federal retirement Sankey diagram showing salary, pension, taxes, healthcare, living expenses, and withdrawals by plan year"
+       loading="lazy"
+       style="max-width: 100%; height: auto; border: 1px solid #c8c0b0; border-radius: 6px; box-shadow: 0 16px 34px rgba(0,0,0,0.08);">
+</picture>
+<em>Year-by-year cash flow view showing how federal salary, pension income, taxes, healthcare, living expenses, and withdrawals fit together inside the plan.</em>
+
+This is where the planning actually gets useful. A federal worker does not just need a "success probability" number. You need to see:
+- when salary stops
+- when pension starts
+- when the FERS supplement ends
+- what taxes do to take-home spending
+- whether you need portfolio withdrawals in the gap years
+
+---
+
+## Real Federal Scenarios This Handles
+
+**Scenario 1: FERS supplement from retirement until age 62**  
+Retire before Social Security starts, use pension plus temporary supplement income, then see the spending gap when the supplement ends.
+
+**Scenario 2: Pension with COLA and later reduction**  
+Start with one pension amount, apply COLA, then model a later reduction or offset event at a specific age.
+
+**Scenario 3: TSP + pension + spouse timing mismatch**  
+One spouse retires first, one keeps earning, then later both transition to pension and Social Security income.
+
+**Scenario 4: Federal worker comparing retirement dates**  
+Retire at 57, 60, or 62 and see how salary, pension timing, supplement years, taxes, and withdrawals change the plan.
+
+---
+
+## Web App and Desktop Support
+
+These federal retirement features are now supported across the planning workflow:
+- **Desktop import** for structured retirement-income scenarios
+- **Web editing** for pension COLA, pension change events, and FERS supplement settings
+- **Cloud sync** so imported or edited federal plans can be reopened in the web app
+- **Timeline and cash flow views** that surface the federal-specific income changes
+
+This matters because a federal landing page should not promise features that only exist on paper. The federal retirement controls now flow through the actual projection engine, not just the UI.
+
+---
+
+## Who This Is For
+
+This page is a fit if you are:
+- a **FERS employee** planning around the annuity supplement
+- a **CSRS or offset-style pension household** with pension timing changes
+- a **federal worker with TSP plus pension**
+- a **DIY planner** who wants to model taxes and spending instead of relying on rules of thumb
+
+If you just want a one-number retirement guess, this is overkill. If you want to understand how your federal retirement actually behaves year by year, it is the right kind of overkill.
+
+---
+
+## Get Started
+
+You can start with the web calculator or go straight to the full product details.
+
+<div class="download-buttons">
+  <a href="https://planner.fatboysoftware.com" class="btn-download">Try Federal Retirement Planner</a>
+  <a href="/pricing" class="btn-download">See Pricing</a>
+</div>
+
+[See all screenshots and feature examples](/screenshots)
+
+---
+
+## Frequently Asked Questions
+
+**Q: Does this handle the FERS annuity supplement?**  
+A: Yes. You can model temporary federal-style supplement income with start and end timing, then see the effect on yearly cash flow when it drops off.
+
+**Q: Can I model pension COLA and an age-62 change event?**  
+A: Yes. The government-retirement controls support pension COLA and a later pension change by age or year.
+
+**Q: Can I use this with TSP, Social Security, and spouse income?**  
+A: Yes. The planner treats pension income as one part of the full retirement-income system, alongside TSP withdrawals, Social Security, taxes, and other income.
+
+**Q: Is this only for federal workers?**  
+A: No. The underlying retirement-income engine is broader than federal use cases. But this page is specifically about the federal scenarios it now supports well.
+
+---
+
+**Questions? Email: [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)**
+
+<nav class="page-nav">
+  <a href="/screenshots">See All Features</a>
+  <a href="/pricing">Pricing Details</a>
+  <a href="/comparison">Compare Versions</a>
+  <a href="/blog">Blog</a>
+</nav>

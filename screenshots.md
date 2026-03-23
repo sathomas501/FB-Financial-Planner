@@ -51,6 +51,24 @@ Explore the features and capabilities of Fatboy Financial Planner through these 
 
 ## Planning & Analysis
 
+### Federal Retirement Controls
+<picture>
+  <img src="/assets/images/federal-advanced.png"
+       alt="Government retirement controls for pension COLA, age-based pension changes, and FERS annuity supplement"
+       loading="lazy"
+       style="max-width: 100%; height: auto;">
+</picture>
+<em>Federal retirement controls for pension COLA, age-62 pension changes, spouse pension handling, and FERS annuity supplement timing.</em>
+
+### Federal Retirement Cash Flow
+<picture>
+  <img src="/assets/images/Federal_sankey.png"
+       alt="Federal retirement cash flow Sankey diagram"
+       loading="lazy"
+       style="max-width: 100%; height: auto;">
+</picture>
+<em>Year-by-year Sankey view showing federal salary, pension income, taxes, healthcare, expenses, and withdrawals inside the retirement plan.</em>
+
 ### Plan Summary Dashboard
 <picture>
   <source srcset="/assets/images/optimized/plan_summary-400w.webp 400w, /assets/images/optimized/plan_summary-800w.webp 800w, /assets/images/optimized/plan_summary-1200w.webp 1200w"
