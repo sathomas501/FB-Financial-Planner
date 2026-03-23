@@ -128,11 +128,11 @@ If you just want a one-number retirement guess, this is overkill. If you want to
 You can start with the web calculator or go straight to the full product details.
 
 <div class="download-buttons">
-  <a href="https://planner.fatboysoftware.com" class="btn-download">Try Federal Retirement Planner</a>
-  <a href="/pricing" class="btn-download">See Pricing</a>
+  <a href="https://planner.fatboysoftware.com" class="btn-download" data-federal-cta="planner">Try Federal Retirement Planner</a>
+  <a href="/pricing" class="btn-download" data-federal-cta="pricing">See Pricing</a>
 </div>
 
-[See all screenshots and feature examples](/screenshots)
+<a href="/screenshots" data-federal-cta="screenshots">See all screenshots and feature examples</a>
 
 ---
 
@@ -155,8 +155,90 @@ A: No. The underlying retirement-income engine is broader than federal use cases
 **Questions? Email: [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)**
 
 <nav class="page-nav">
-  <a href="/screenshots">See All Features</a>
-  <a href="/pricing">Pricing Details</a>
-  <a href="/comparison">Compare Versions</a>
-  <a href="/blog">Blog</a>
+  <a href="/screenshots" data-federal-cta="nav_screenshots">See All Features</a>
+  <a href="/pricing" data-federal-cta="nav_pricing">Pricing Details</a>
+  <a href="/comparison" data-federal-cta="nav_comparison">Compare Versions</a>
+  <a href="/blog" data-federal-cta="nav_blog">Blog</a>
 </nav>
+
+<script>
+  (function () {
+    var pagePath = window.location.pathname || '/federal-retirement/';
+    var pageUrl = window.location.href;
+    var pageTitle = document.title;
+    var query = new URLSearchParams(window.location.search || '');
+    var plannerLink = document.querySelector('[data-federal-cta="planner"]');
+    var ctaLinks = document.querySelectorAll('[data-federal-cta]');
+
+    function track(eventName, params) {
+      if (typeof window.gtag !== 'function') {
+        return;
+      }
+      window.gtag('event', eventName, params || {});
+    }
+
+    function appendAttributionParams(link) {
+      if (!link || !link.href) {
+        return;
+      }
+
+      var nextUrl = new URL(link.href);
+      ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function (key) {
+        var value = query.get(key);
+        if (value && !nextUrl.searchParams.get(key)) {
+          nextUrl.searchParams.set(key, value);
+        }
+      });
+
+      if (!nextUrl.searchParams.get('utm_source')) nextUrl.searchParams.set('utm_source', 'website');
+      if (!nextUrl.searchParams.get('utm_medium')) nextUrl.searchParams.set('utm_medium', 'landing_page');
+      if (!nextUrl.searchParams.get('utm_campaign')) nextUrl.searchParams.set('utm_campaign', 'federal_retirement');
+      if (!nextUrl.searchParams.get('utm_content')) nextUrl.searchParams.set('utm_content', 'primary_cta');
+
+      link.href = nextUrl.toString();
+    }
+
+    appendAttributionParams(plannerLink);
+
+    track('view_federal_retirement_page', {
+      page_location: pageUrl,
+      page_path: pagePath,
+      page_title: pageTitle,
+      plan_type: 'federal',
+      content_group: 'landing_page'
+    });
+
+    Array.prototype.forEach.call(ctaLinks, function (link) {
+      link.addEventListener('click', function () {
+        var ctaName = link.getAttribute('data-federal-cta') || 'unknown';
+        var destination = link.href || link.getAttribute('href') || '';
+
+        track('federal_landing_cta_click', {
+          page_location: pageUrl,
+          page_path: pagePath,
+          page_title: pageTitle,
+          cta_name: ctaName,
+          destination_url: destination,
+          plan_type: 'federal'
+        });
+
+        track('select_promotion', {
+          promotion_id: 'federal-retirement-landing',
+          promotion_name: 'Federal Retirement Landing Page',
+          creative_slot: ctaName,
+          location_id: pagePath
+        });
+
+        if (ctaName === 'planner') {
+          track('start_federal_plan', {
+            page_location: pageUrl,
+            page_path: pagePath,
+            cta_name: ctaName,
+            destination_url: destination,
+            plan_type: 'federal'
+          });
+        }
+      });
+    });
+  })();
+</script>
