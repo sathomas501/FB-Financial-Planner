@@ -842,7 +842,7 @@ permalink: /
         Buy Pro — Founding Member <span class="price-badge">$149</span>
       </a>
       <a href="https://planner.fatboysoftware.com" class="btn-secondary">
-        Try the web app free →
+        Open Full Web App →
       </a>
       <p class="hero-note" data-founding-label>⚑ Price increases to $249 after 200 Founding Members · Free trial includes limited scenarios</p>
     </div>
@@ -902,7 +902,7 @@ permalink: /
          target="_blank"
          onclick="gtag('event','homepage_calculator_cta_click')"
          style="display: inline-block; background: var(--ink); color: var(--paper); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 32px; border-radius: 2px; text-decoration: none; transition: background 0.2s; white-space: nowrap;">
-        Try Free Calculator →
+        Try Interactive Demo →
       </a>
       <span style="font-size: 0.75rem; color: var(--mid);">No account · No install · Opens instantly</span>
       <a href="https://planner.fatboysoftware.com"
@@ -911,7 +911,7 @@ permalink: /
          style="font-size: 0.78rem; color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;"
          onmouseover="this.style.borderBottomColor='var(--gold)'"
          onmouseout="this.style.borderBottomColor='transparent'">
-        Or try the full planner (more features) →
+        Or open the full web app →
       </a>
     </div>
   </div>
@@ -947,7 +947,7 @@ permalink: /
         <li><span class="no">—</span><span class="text sub">No PDF or Excel export</span></li>
         <li><span class="no">—</span><span class="text sub">Monte Carlo limited to 500 simulations</span></li>
       </ul>
-      <a href="https://planner.fatboysoftware.com" class="btn-secondary">Try free →</a>
+      <a href="https://planner.fatboysoftware.com" class="btn-secondary">Open Full Web App →</a>
     </div>
 
     <!-- DESKTOP + WEB PRO -->
@@ -1151,12 +1151,12 @@ permalink: /
 <div class="final-cta">
   <h2>Start planning seriously.</h2>
   <p class="final-note">Built for serious DIY planners who want to compare strategies, save scenarios, export reports, and keep using the tool for years.</p>
-  <p>Try the web app free, or lock in Founding Member pricing — $149 before the price rises to $249 at 200 users.</p>
+  <p>Try the interactive demo, open the full web app, or lock in Founding Member pricing — $149 before the price rises to $249 at 200 users.</p>
   <div class="cta-buttons">
     <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" class="btn-primary">
       Buy Pro — <span style="text-decoration:line-through;opacity:0.6;">$249</span>&nbsp;<span class="price-badge">$149</span>
     </a>
-    <a href="https://planner.fatboysoftware.com" class="btn-secondary">Try free first →</a>
+    <a href="https://planner.fatboysoftware.com" class="btn-secondary">Open Full Web App →</a>
   </div>
   <p class="final-note">Founding Member price · Increases to $249 at 200 users · Desktop + Web included · All future updates free</p>
 </div>
@@ -1202,9 +1202,9 @@ permalink: /
 
     const secondary = hero.querySelector('.btn-secondary');
     if (secondary) {
-      secondary.href = 'https://app.fatboysoftware.com/?sample=1';
-      secondary.textContent = 'See Sample Plan';
-      secondary.onclick = function() { gtag('event', 'homepage_hero_sample_click'); };
+      secondary.href = 'https://planner.fatboysoftware.com';
+      secondary.textContent = 'Open Full Web App';
+      secondary.onclick = function() { gtag('event', 'homepage_hero_full_app_click'); };
     }
 
     const note = hero.querySelector('.hero-note');
@@ -1223,7 +1223,7 @@ permalink: /
           <strong>Sample insight: income gap appears in ages 78-82</strong>
           <span>The planner surfaces when withdrawals, taxes, and benefit timing stop working well together so you can adjust before you retire.</span>
         </div>
-        <p class="hero-visual-note">Start with the sample plan to see the diagnosis screen first, then switch to your own numbers when you want to test your situation.</p>
+        <p class="hero-visual-note">Start with the interactive demo to see the diagnosis first, then open the full web app when you want the complete planning workflow.</p>
       `;
     }
   })();
