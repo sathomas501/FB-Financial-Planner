@@ -2,6 +2,7 @@
 layout: default
 title: Thank You - Fatboy Financial Planner
 description: Thank you for your purchase! Here's what happens next.
+permalink: /thank-you/
 ---
 
 <!-- Google Analytics Purchase Conversion Tracking -->

@@ -39,12 +39,12 @@
 </script>
 
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P646SLC5ZF"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-68L4Z2S1P5"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-P646SLC5ZF');
+  gtag('config', 'G-68L4Z2S1P5');
 </script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -676,6 +676,11 @@
       <p>This tool uses a simplified GBM model. Fatboy Pro includes 7 Monte Carlo return models
       (Market Regime, Crash Scenario, Historical), up to 10,000 paths, Roth conversion
       optimization, and full per-year tax analysis.</p>
+      <p style="font-size:0.8rem;color:#cbd5e1;margin-bottom:10px;">Buy once for unlimited scenarios, exports, desktop access, and the full planning toolkit.</p>
+      <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" target="_blank" onclick="ga('app_buy_now_click')"
+         style="display:inline-flex;align-items:center;justify-content:center;background:#4ade80;color:#0f1117;font-weight:700;font-size:0.84rem;padding:10px 16px;border-radius:10px;text-decoration:none;margin-bottom:12px;">
+        Buy Fatboy Pro - $149
+      </a>
       <p style="font-size:0.8rem;color:#64748b;margin-bottom:0;">We'll email you the download link:</p>
       <div class="cta-email-row">
         <input id="cta-email" type="email" placeholder="your@email.com" autocomplete="email"
@@ -1468,6 +1473,12 @@ async function submitEmailCapture(source) {
     statusEl.style.color = '#4ade80';
     statusEl.textContent = '✓ Sent! Check your inbox.';
     ga('email_capture_submit', { capture_source: source });
+    ga('generate_lead', {
+      source: 'web_app',
+      method: 'email_capture',
+      capture_source: source,
+      value: 1
+    });
 
     if (source === 'modal') setTimeout(closeEmailModal, 2500);
     if (source === 'bar')   setTimeout(closeMobileBar,  2500);
@@ -1504,6 +1515,11 @@ async function submitContact(e) {
     status.textContent = 'Message sent! We\'ll get back to you soon.';
     document.getElementById('contact-form').reset();
     ga('contact_form_submit');
+    ga('generate_lead', {
+      source: 'web_app',
+      method: 'contact_form',
+      value: 1
+    });
   } catch {
     status.style.color = '#f87171';
     status.textContent = 'Something went wrong. Please try emailing us directly.';
