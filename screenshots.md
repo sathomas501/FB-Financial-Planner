@@ -52,6 +52,8 @@ Explore the features and capabilities of Fatboy Financial Planner through these 
 ## Planning & Analysis
 
 ### Federal Retirement Controls
+For the federal-specific overview and messaging, visit the [FERS retirement calculator page](/federal-retirement/).
+
 <picture>
   <img src="/assets/images/federal-advanced.png"
        alt="Government retirement controls for pension COLA, age-based pension changes, and FERS annuity supplement"

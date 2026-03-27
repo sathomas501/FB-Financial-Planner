@@ -29,6 +29,8 @@ Those details are not edge-case trivia. They change withdrawal timing, tax expos
 
 Starting now, Fatboy models those scenarios much more cleanly.
 
+If you want the focused overview for this use case, see the [FERS retirement calculator page](/federal-retirement/).
+
 ---
 
 ## What Changed
@@ -206,6 +208,8 @@ If that sounds like your situation, the planner should now feel less like it is 
 
 It should feel more like it is finally modeling the retirement you actually have.
 
+If you want to see the feature set framed specifically for federal households, the [federal retirement page](/federal-retirement/) is the best place to start.
+
 ---
 
 ## Where You Will See It
@@ -229,5 +233,7 @@ We wanted to fix that without turning the product into a maze.
 This release gets us much closer.
 
 If your retirement has a bridge period, a temporary supplement, a pension offset, or a 457(b) alongside pension income, Fatboy now has a much better chance of reflecting the real shape of your plan instead of flattening it into something easier to code but less useful to trust.
+
+Want the direct version for FERS and related federal scenarios? Visit the [FERS retirement calculator page](/federal-retirement/).
 
 

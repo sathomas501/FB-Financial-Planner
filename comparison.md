@@ -72,6 +72,8 @@ Yes | Basic | No | Subscription update
 
 **Fatboy Pro note:** Advanced pension / bridge-income modeling includes pension COLA, FERS supplement modeling, temporary bridge income, governmental 457(b) support, and later pension offsets / step-downs.
 
+If you are specifically comparing tools for a federal household, start with the [FERS retirement calculator page](/federal-retirement/).
+
 ## Tax Assumptions: Planning Direction vs Tax-Filing Precision
 
 ### Our Approach: You Control the Tax Assumptions
