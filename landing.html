@@ -5,7 +5,6 @@
   <title>Fatboy Financial Planner</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    /* Mobile-first base styles */
     body {
       font-family: system-ui, sans-serif;
       margin: 0;
@@ -16,7 +15,7 @@
     }
 
     .card {
-      max-width: 600px;
+      max-width: 720px;
       margin: 0 auto;
       background: #020617;
       padding: 1.5rem;
@@ -24,8 +23,18 @@
       box-shadow: 0 25px 50px rgba(0,0,0,0.5);
     }
 
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      color: #22c55e;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
     h1 {
-      margin-top: 0;
+      margin: 0 0 1rem;
       font-size: 1.75rem;
       line-height: 1.2;
     }
@@ -33,6 +42,95 @@
     p {
       font-size: 1rem;
       margin: 1rem 0;
+    }
+
+    .promise {
+      color: #94a3b8;
+      margin-top: 0;
+    }
+
+    .hero-points {
+      margin: 1rem 0 1.5rem;
+      padding-left: 1.25rem;
+      color: #cbd5e1;
+    }
+
+    .hero-points li {
+      margin: 0.5rem 0;
+    }
+
+    .try-btn,
+    .secondary-btn,
+    button[type="submit"] {
+      display: block;
+      padding: 0.875rem 1.5rem;
+      min-height: 44px;
+      width: 100%;
+      border-radius: 999px;
+      text-align: center;
+      text-decoration: none;
+      box-sizing: border-box;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    .try-btn,
+    button[type="submit"] {
+      border: none;
+      background: #22c55e;
+      color: #022c22;
+    }
+
+    .try-btn:hover,
+    button[type="submit"]:hover:not(:disabled) {
+      background: #16a34a;
+    }
+
+    .secondary-btn {
+      margin-top: 0.75rem;
+      border: 1px solid #334155;
+      color: #e5e7eb;
+    }
+
+    .secondary-btn:hover {
+      border-color: #22c55e;
+      color: #22c55e;
+    }
+
+    .feature-screenshots {
+      margin-top: 2rem;
+    }
+
+    .feature-screenshots h2 {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 0 0 1rem;
+    }
+
+    .screenshot p {
+      margin: 0.4rem 0 0;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 1.5rem 0 1rem;
+      color: #475569;
+      font-size: 0.85rem;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #1e293b;
     }
 
     .form-group {
@@ -53,90 +151,10 @@
       width: 100%;
       box-sizing: border-box;
       outline: none;
-      -webkit-appearance: none;
-      appearance: none;
     }
 
     input[type="email"]:focus {
       border-color: #22c55e;
-    }
-
-    input[type="email"]::placeholder {
-      color: #64748b;
-    }
-
-    button[type="submit"] {
-      padding: 0.875rem 1.5rem;
-      min-height: 44px;
-      width: 100%;
-      border-radius: 999px;
-      border: none;
-      background: #22c55e;
-      color: #022c22;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    button[type="submit"]:hover:not(:disabled) {
-      background: #16a34a;
-    }
-
-    button[type="submit"]:active:not(:disabled) {
-      transform: scale(0.98);
-      background: #15803d;
-    }
-
-    button[type="submit"]:focus-visible {
-      outline: 2px solid #22c55e;
-      outline-offset: 2px;
-    }
-
-    button[type="submit"]:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    .try-btn {
-      display: block;
-      margin: 1.5rem 0 0.5rem;
-      padding: 0.875rem 1.5rem;
-      min-height: 44px;
-      width: 100%;
-      border-radius: 999px;
-      border: none;
-      background: #22c55e;
-      color: #022c22;
-      font-weight: 700;
-      font-size: 1.1rem;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      box-sizing: border-box;
-      transition: all 0.2s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .try-btn:hover { background: #16a34a; }
-    .try-btn:active { transform: scale(0.98); background: #15803d; }
-
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin: 1.5rem 0 1rem;
-      color: #475569;
-      font-size: 0.85rem;
-    }
-
-    .divider::before,
-    .divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #1e293b;
     }
 
     .status {
@@ -147,16 +165,17 @@
     }
 
     .status.success { color: #22c55e; }
-    .status.error   { color: #f87171; }
+    .status.error { color: #f87171; }
 
     .desktop-link {
       color: #22c55e;
       text-decoration: none;
     }
 
-    .desktop-link:hover { text-decoration: underline; }
+    .desktop-link:hover {
+      text-decoration: underline;
+    }
 
-    /* Tablet and up: side-by-side input + button */
     @media (min-width: 480px) {
       .form-group {
         flex-direction: row;
@@ -172,36 +191,12 @@
       }
     }
 
-    .feature-screenshots {
-      margin-top: 2rem;
-    }
-
-    .feature-screenshots h2 {
-      font-size: 1.1rem;
-      color: #94a3b8;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin: 0 0 1rem;
-    }
-
-    .screenshot {
-      margin-bottom: 1rem;
-    }
-
-.screenshot p {
-      margin: 0.4rem 0 0;
-      font-size: 0.85rem;
-      color: #64748b;
-    }
-
-    /* Desktop */
     @media (min-width: 768px) {
       body {
         padding: 3rem;
       }
 
       .card {
-        max-width: 720px;
         padding: 2rem;
       }
 
@@ -210,48 +205,40 @@
       }
 
       p {
-        font-size: 1.125rem;
+        font-size: 1.08rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>Fatboy Financial Planner</h1>
-    <p>Financial and retirement planning, without the spreadsheets.</p>
+    <div class="eyebrow">Retirement Income Planner</div>
+    <h1>Model retirement income, taxes, Social Security, and Roth conversions in one planner.</h1>
+    <p class="promise">Takes about 30 seconds. No sign-up required. See your projected income and account trajectory instantly.</p>
+    <ul class="hero-points">
+      <li>Models taxes, Social Security, withdrawals, and account types together</li>
+      <li>Shows plan longevity, income gaps, and tax pressure before retirement</li>
+      <li>Built for real retirement decisions, not generic calculators</li>
+    </ul>
 
-    <!-- Shown to mobile/tablet visitors -->
     <div id="mobile-content">
-      <p>The full app runs on <strong>Windows and Linux</strong> — with tax modeling, Roth conversions, Monte Carlo simulations, and more.</p>
-      <p style="color:#94a3b8;font-size:0.9rem;">On mobile? Try the free web preview — basic retirement projection, no account needed.</p>
-
-      <a href="https://web-production-b3fa0.up.railway.app" class="try-btn">Try free web preview →</a>
+      <p>Start with the interactive demo to see the result first, then move into the full planner when you want to save plans, compare scenarios, and go deeper.</p>
+      <a href="https://app.fatboysoftware.com" class="try-btn">Try Interactive Demo →</a>
+      <a href="https://app.fatboysoftware.com/?sample=1" class="secondary-btn">See Sample Plan</a>
 
       <div class="feature-screenshots">
-        <h2>Safe Withdrawal Rate Strategies</h2>
+        <h2>See The Output First</h2>
         <div class="screenshot">
           <picture>
-            <source srcset="assets/images/optimized/Safe_withdrawal_1-400w.webp 400w, assets/images/optimized/Safe_withdrawal_1-800w.webp 800w, assets/images/optimized/Safe_withdrawal_1-1200w.webp 1200w"
+            <source srcset="assets/images/optimized/projection_center-400w.webp 400w, assets/images/optimized/projection_center-800w.webp 800w, assets/images/optimized/projection_center-1200w.webp 1200w"
                     sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 720px"
                     type="image/webp">
-            <source srcset="assets/images/optimized/Safe_withdrawal_1-400w.png 400w, assets/images/optimized/Safe_withdrawal_1-800w.png 800w, assets/images/optimized/Safe_withdrawal_1-1200w.png 1200w"
+            <source srcset="assets/images/optimized/projection_center-400w.png 400w, assets/images/optimized/projection_center-800w.png 800w, assets/images/optimized/projection_center-1200w.png 1200w"
                     sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 720px"
                     type="image/png">
-            <img src="assets/images/optimized/Safe_withdrawal_1-800w.png" alt="Safe withdrawal strategy comparison: Fixed SWR, Constant Percentage, Guardrails, and Floor Ceiling methods side by side" loading="lazy" style="width:100%;border-radius:0.5rem;border:1px solid #1e293b;display:block;" />
+            <img src="assets/images/optimized/projection_center-800w.png" alt="Retirement projection results showing balances, income, and outcome analysis" loading="lazy" style="width:100%;border-radius:0.5rem;border:1px solid #1e293b;display:block;" />
           </picture>
-          <p>Compare four withdrawal strategies — Fixed SWR, Constant Percentage, Guardrails, and Floor Ceiling — to find the right fit for your plan.</p>
-        </div>
-        <div class="screenshot">
-          <picture>
-            <source srcset="assets/images/optimized/Safe_withdrawal_2-400w.webp 400w, assets/images/optimized/Safe_withdrawal_2-800w.webp 800w, assets/images/optimized/Safe_withdrawal_2-1200w.webp 1200w"
-                    sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 720px"
-                    type="image/webp">
-            <source srcset="assets/images/optimized/Safe_withdrawal_2-400w.png 400w, assets/images/optimized/Safe_withdrawal_2-800w.png 800w, assets/images/optimized/Safe_withdrawal_2-1200w.png 1200w"
-                    sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 720px"
-                    type="image/png">
-            <img src="assets/images/optimized/Safe_withdrawal_2-800w.png" alt="Personalized Safe Rate Monte Carlo analysis showing survival curve and spending table" loading="lazy" style="width:100%;border-radius:0.5rem;border:1px solid #1e293b;display:block;" />
-          </picture>
-          <p>Monte Carlo simulation shows your portfolio survival curve and safe spending amounts across thousands of market scenarios.</p>
+          <p>Start with a sample plan and land on an actual diagnosis: projected longevity, pressure years, and the next lever to test.</p>
         </div>
       </div>
 
@@ -274,27 +261,21 @@
       </form>
     </div>
 
-    <!-- Shown to desktop visitors before redirect -->
     <div id="desktop-content" hidden>
-      <p>
-        Looks like you're on a desktop.<br>
-        <a href="https://fatboysoftware.com" class="desktop-link">Visit fatboysoftware.com →</a> to download the app for Windows or Linux.
-      </p>
-      <p style="color:#64748b;font-size:0.875rem;">Redirecting in a moment&hellip;</p>
+      <p>On desktop? The interactive demo is still the fastest first click.</p>
+      <p class="promise">Use the demo to see the output first, then open the full planner when you want saved scenarios and deeper analysis.</p>
+      <a href="https://app.fatboysoftware.com" class="try-btn">Try Interactive Demo →</a>
+      <a href="https://app.fatboysoftware.com/?sample=1" class="secondary-btn">See Sample Plan</a>
+      <p>Want the full desktop app instead? <a href="https://fatboysoftware.com" class="desktop-link">Open fatboysoftware.com →</a></p>
     </div>
   </div>
 
   <script>
-    // Redirect desktop visitors to the main site
     if (window.matchMedia('(pointer: fine) and (min-width: 1024px)').matches) {
       document.getElementById('mobile-content').hidden = true;
       document.getElementById('desktop-content').hidden = false;
-      setTimeout(function () {
-        window.location.href = 'https://fatboysoftware.com';
-      }, 3000);
     }
 
-    // Email capture
     var form = document.getElementById('waitlist-form');
     var statusEl = document.getElementById('form-status');
 
@@ -313,7 +294,7 @@
       }
 
       btn.disabled = true;
-      btn.textContent = 'Sending\u2026';
+      btn.textContent = 'Sending...';
       statusEl.textContent = '';
       statusEl.className = 'status';
 
@@ -325,7 +306,7 @@
         .then(function (res) {
           if (res.ok) {
             form.querySelector('.form-group').hidden = true;
-            statusEl.textContent = '\u2713 Got it! We\u2019ll send you the desktop download link.';
+            statusEl.textContent = 'Got it. We will send you the desktop download link.';
             statusEl.className = 'status success';
           } else {
             throw new Error('Server error');
