@@ -4,6 +4,13 @@
   <meta charset="utf-8" />
   <title>Fatboy Financial Planner</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-68L4Z2S1P5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-68L4Z2S1P5');
+  </script>
   <style>
     body {
       font-family: system-ui, sans-serif;
@@ -271,10 +278,37 @@
   </div>
 
   <script>
+    function track(event, params) {
+      if (typeof gtag === 'function') gtag('event', event, params || {});
+    }
+
+    track('landing_view', {
+      landing_page: window.location.pathname || '/landing.html'
+    });
+
     if (window.matchMedia('(pointer: fine) and (min-width: 1024px)').matches) {
       document.getElementById('mobile-content').hidden = true;
       document.getElementById('desktop-content').hidden = false;
+      track('landing_desktop_view');
+    } else {
+      track('landing_mobile_view');
     }
+
+    document.querySelectorAll('a[href="https://app.fatboysoftware.com"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        track('landing_demo_click', {
+          cta_location: link.closest('#desktop-content') ? 'desktop' : 'mobile'
+        });
+      });
+    });
+
+    document.querySelectorAll('a[href="https://app.fatboysoftware.com/?sample=1"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        track('landing_sample_click', {
+          cta_location: link.closest('#desktop-content') ? 'desktop' : 'mobile'
+        });
+      });
+    });
 
     var form = document.getElementById('waitlist-form');
     var statusEl = document.getElementById('form-status');
@@ -297,6 +331,7 @@
       btn.textContent = 'Sending...';
       statusEl.textContent = '';
       statusEl.className = 'status';
+      track('landing_waitlist_submit');
 
       fetch('https://fb-financial-planner.vercel.app/api/waitlist', {
         method: 'POST',
