@@ -102,12 +102,14 @@ Retire at 57, 60, or 62 and see how salary, pension timing, supplement years, ta
 ## Web App and Desktop Support
 
 These federal retirement features are now supported across the planning workflow:
-- **Desktop import** for structured retirement-income scenarios
-- **Web editing** for pension COLA, pension change events, and FERS supplement settings
-- **Cloud sync** so imported or edited federal plans can be reopened in the web app
+- **Free web app preview** with a federal sample plan, visible pension/supplement inputs, and year-by-year projection output
+- **Full planner editing** for deeper federal workflows, including advanced controls beyond the lightweight web preview
+- **Cloud sync** so federal plans can move between environments when you are using the full planner
 - **Timeline and cash flow views** that surface the federal-specific income changes
 
 This matters because a federal landing page should not promise features that only exist on paper. The federal retirement controls now flow through the actual projection engine, not just the UI.
+
+The packaging is simple: the free web app gives you a federal sample plan plus light federal inputs, while the complete planner is where the deeper federal editing and advanced controls live.
 
 ---
 
@@ -125,11 +127,11 @@ If you just want a one-number retirement guess, this is overkill. If you want to
 
 ## Get Started
 
-You can start with a free estimate or open a sample federal plan right away.
+You can start with a federal preview in the free web app, then move into the full planner when you want the deeper editing experience.
 
 <div class="download-buttons">
-  <a href="https://planner.fatboysoftware.com" class="btn-download" data-federal-cta="planner">Run a Free Federal Retirement Estimate</a>
-  <a href="/pricing" class="btn-download" data-federal-cta="pricing">Use Sample Federal Plan</a>
+  <a href="https://app.fatboysoftware.com/?federal=1" class="btn-download" data-federal-cta="planner">Load Federal Example</a>
+  <a href="https://planner.fatboysoftware.com" class="btn-download" data-federal-cta="pricing">Open Full Federal Planner</a>
 </div>
 
 <a href="/screenshots" data-federal-cta="screenshots">See all screenshots and feature examples</a>

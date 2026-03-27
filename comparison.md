@@ -74,6 +74,8 @@ Yes | Basic | No | Subscription update
 
 If you are specifically comparing tools for a federal household, start with the [FERS retirement calculator page](/federal-retirement/).
 
+For packaging clarity: the free web app is the place to start with a federal sample plan and light federal inputs, while Fatboy Pro is where the full federal editing and advanced controls live.
+
 ## Tax Assumptions: Planning Direction vs Tax-Filing Precision
 
 ### Our Approach: You Control the Tax Assumptions

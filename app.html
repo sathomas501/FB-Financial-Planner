@@ -58,13 +58,36 @@
   .promise-card { background: linear-gradient(145deg, #132033, #181b28); border: 1px solid #2a364d; }
   .promise-line { display: flex; flex-wrap: wrap; gap: 8px 16px; color: #cbd5e1; font-size: 0.8rem; margin-bottom: 18px; }
   .promise-line span { padding: 6px 10px; border: 1px solid #334155; border-radius: 999px; background: rgba(15,17,23,0.55); }
-  .entry-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .mode-card { background: rgba(15,17,23,0.55); border: 1px solid #334155; border-radius: 12px; padding: 14px; cursor: pointer; transition: border-color 0.2s, transform 0.15s; }
+  .mode-card:hover { border-color: #4ade80; transform: translateY(-1px); }
+  .mode-card.active { border-color: #4ade80; background: rgba(20, 34, 51, 0.9); }
+  .mode-card-title { color: #e2e8f0; font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; }
+  .mode-card-copy { color: #94a3b8; font-size: 0.78rem; line-height: 1.5; }
+  .mode-note { color: #94a3b8; font-size: 0.76rem; line-height: 1.6; margin-top: 12px; }
+  .entry-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
   .entry-actions button { margin-top: 0; }
   .ghost-btn { background: transparent; color: #e2e8f0; border: 1px solid #334155; }
   .ghost-btn:hover { border-color: #4ade80; color: #4ade80; }
   .quick-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .quick-grid .full { grid-column: 1 / -1; }
   .quick-note { font-size: 0.78rem; color: #94a3b8; margin-top: 10px; line-height: 1.6; }
+  .federal-preview-banner { display: none; background: #132033; border: 1px solid #2a364d; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+  .federal-preview-banner.active { display: block; }
+  .federal-preview-banner h2 { margin-bottom: 8px; }
+  .federal-preview-banner p { color: #cbd5e1; font-size: 0.84rem; line-height: 1.6; }
+  .federal-preview-banner strong { color: #e2e8f0; }
+  .federal-surface-card { display: none; background: linear-gradient(145deg, #132033, #171d2b); border: 1px solid #2a364d; }
+  .federal-surface-card.active { display: block; }
+  .federal-surface-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .federal-surface-note { color: #94a3b8; font-size: 0.76rem; line-height: 1.6; margin-top: 10px; }
+  .federal-feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .federal-feature-item { background: rgba(15,17,23,0.55); border: 1px solid #334155; border-radius: 10px; padding: 12px; }
+  .federal-feature-item strong { display: block; color: #e2e8f0; font-size: 0.82rem; margin-bottom: 4px; }
+  .federal-feature-item span { color: #94a3b8; font-size: 0.74rem; line-height: 1.5; }
+  .feature-pill { display: inline-block; margin-top: 6px; padding: 3px 8px; border-radius: 999px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+  .feature-pill.live { background: #12311f; color: #4ade80; }
+  .feature-pill.pro { background: #2b1b49; color: #c4b5fd; }
   .preview-card { background: #111827; border: 1px solid #253044; }
   .preview-kicker { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: #4ade80; margin-bottom: 10px; }
   .preview-headline { font-size: 1.1rem; font-weight: 700; color: #e2e8f0; margin-bottom: 8px; }
@@ -87,6 +110,9 @@
   button { width: 100%; padding: 14px; background: #4ade80; color: #0f1117; font-weight: 700;
            font-size: 1rem; border: none; border-radius: 10px; cursor: pointer; margin-top: 8px; }
   button:disabled { opacity: 0.5; cursor: not-allowed; }
+  .mode-grid .mode-card { width: 100%; margin-top: 0; text-align: left; background: rgba(15,17,23,0.55); color: #e2e8f0; border: 1px solid #334155; }
+  .mode-grid .mode-card:hover { color: #e2e8f0; }
+  .mode-grid .mode-card.active { background: rgba(20, 34, 51, 0.9); color: #e2e8f0; }
   /* MC toggle row */
   .mc-toggle { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
   .mc-toggle input[type=checkbox] { width: auto; accent-color: #4ade80; width: 18px; height: 18px; }
@@ -208,7 +234,10 @@
                 font-weight: 400; }
   .tip:hover::after, .tip.open::after { display: block; }
   @media (max-width: 520px) {
+    .mode-grid,
     .entry-actions,
+    .federal-surface-grid,
+    .federal-feature-list,
     .quick-grid,
     .preview-grid { grid-template-columns: 1fr; }
   }
@@ -236,10 +265,27 @@
       <p style="color:#cbd5e1;font-size:0.92rem;line-height:1.7">
         Start with a sample plan if you want the payoff first, or enter a few numbers and watch the preview update as you go.
       </p>
+      <div class="mode-grid" id="planner-mode-switch">
+        <button type="button" class="mode-card active" id="general-mode-btn" data-planner-mode="general" aria-pressed="true">
+          <div class="mode-card-title">General Retirement</div>
+          <div class="mode-card-copy">Use the standard quick-start flow for broad retirement income, savings, and Social Security planning.</div>
+        </button>
+        <button type="button" class="mode-card" id="federal-mode-btn" data-planner-mode="federal" aria-pressed="false">
+          <div class="mode-card-title">Federal Retirement</div>
+          <div class="mode-card-copy">Start with a federal example built around pension income, a FERS-style supplement ending at 62, TSP-style balances, and Social Security timing.</div>
+        </button>
+      </div>
+      <p class="mode-note" id="mode-note">Federal mode loads a guided preview scenario in the free app. Full federal editing lives in the full planner.</p>
       <div class="entry-actions">
         <button type="button" id="sample-plan-btn">Use Sample Plan</button>
+        <button type="button" id="federal-sample-btn" class="ghost-btn">Load Federal Example</button>
         <button type="button" id="own-numbers-btn" class="ghost-btn">Enter My Own Numbers</button>
       </div>
+    </div>
+
+    <div class="federal-preview-banner" id="federal-preview-banner">
+      <h2>Federal Retirement Preview</h2>
+      <p><strong>This free app shows the shape of a federal plan.</strong> The sample uses pension income plus a FERS-style temporary supplement that ends at age 62 before Social Security begins. For full federal editing, use the complete planner.</p>
     </div>
 
     <div class="card">
@@ -266,7 +312,52 @@
           <input type="number" id="quick-ss-annual" value="24000" min="0" step="any">
         </div>
       </div>
-      <p class="quick-note">Need spouse income, taxes, pensions, custom account types, or allocation details? Open the advanced inputs below.</p>
+      <p class="quick-note" id="quick-start-note">Need spouse income, taxes, pensions, custom account types, or allocation details? Open the advanced inputs below.</p>
+    </div>
+
+    <div class="card federal-surface-card" id="federal-surface-card">
+      <h2>Federal Pension and Supplement</h2>
+      <div class="federal-surface-grid">
+        <div>
+          <label>FERS / Federal Pension Amount (annual)</label>
+          <input type="number" id="federal-pension-annual" min="0" step="any">
+        </div>
+        <div>
+          <label>Pension Start Age</label>
+          <input type="number" id="federal-pension-start-age" min="40" max="100" step="1">
+        </div>
+        <div>
+          <label>Temporary Supplement Amount (annual)</label>
+          <input type="number" id="federal-supplement-annual" min="0" step="any">
+        </div>
+        <div>
+          <label>Supplement End Age</label>
+          <input type="number" id="federal-supplement-end-age" min="40" max="100" step="1">
+        </div>
+      </div>
+      <p class="federal-surface-note" id="federal-surface-note">Use this section to model the core federal timing pattern: pension starts, supplement runs for a few years, then ends before Social Security.</p>
+      <div class="federal-feature-list">
+        <div class="federal-feature-item">
+          <strong>TSP / Government Account Balances</strong>
+          <span>Use Total Savings / Investments above for a quick estimate, or open advanced inputs for traditional, Roth, taxable, and cash account detail.</span>
+          <span class="feature-pill live">Visible now</span>
+        </div>
+        <div class="federal-feature-item">
+          <strong>Pension COLA</strong>
+          <span>Editable COLA assumptions are part of the deeper federal workflow in the full planner.</span>
+          <span class="feature-pill pro">Full Planner</span>
+        </div>
+        <div class="federal-feature-item">
+          <strong>Later Pension Change Event</strong>
+          <span>Use the full planner when you need an age-based pension step-down, offset, or later change event.</span>
+          <span class="feature-pill pro">Full Planner</span>
+        </div>
+        <div class="federal-feature-item">
+          <strong>Spouse Federal Coordination</strong>
+          <span>Spouse pension and Social Security inputs are still available in advanced inputs when you want the fuller household view.</span>
+          <span class="feature-pill live">Available</span>
+        </div>
+      </div>
     </div>
 
     <div class="card preview-card" id="live-preview-card">
@@ -555,11 +646,11 @@
       <!-- Part-time / other income -->
       <div class="row">
         <div>
-          <label>Part-time / Other Income (annual) <span class="tip" data-tip="Consulting, rental, part-time work, or any other income that offsets expenses. Enter the annual amount and the ages it applies. The projection subtracts this from withdrawals needed each year.">?</span></label>
+          <label id="other-income-label">Part-time / Other Income (annual) <span class="tip" data-tip="Consulting, rental, part-time work, or any other income that offsets expenses. Enter the annual amount and the ages it applies. The projection subtracts this from withdrawals needed each year.">?</span></label>
           <input type="number" name="other_income_annual" value="0" min="0" step="any" id="other-income-annual">
         </div>
         <div id="other-income-ages" style="display:none">
-          <label>From age / to age</label>
+          <label id="other-income-range-label">From age / to age</label>
           <div style="display:flex;gap:8px;align-items:center">
             <input type="number" name="other_income_start_age" placeholder="start age" min="18" max="100" step="1" style="width:90px">
             <span style="color:#475569;font-size:0.85rem">–</span>
@@ -890,6 +981,38 @@ const SAMPLE_PLAN = {
   mc_volatility: 0.15,
   num_simulations: 500
 };
+const FEDERAL_SAMPLE_PLAN = {
+  age: 57,
+  retirement_age: 58,
+  spouse_age: 55,
+  life_expectancy: 92,
+  filing_status: 'married',
+  state_code: 'VA',
+  annual_savings: 0,
+  trad_balance: 540000,
+  roth_balance: 90000,
+  taxable_balance: 70000,
+  cash_balance: 25000,
+  annual_spending: 78000,
+  healthcare_annual: 7000,
+  ss_annual: 28000,
+  ss_claiming_age: 67,
+  spouse_ss_annual: 22000,
+  spouse_ss_claiming_age: 67,
+  pension_annual: 36000,
+  pension_start_age: 58,
+  spouse_pension_annual: 0,
+  spouse_pension_start_age: '',
+  other_income_annual: 15000,
+  other_income_start_age: 58,
+  other_income_end_age: 62,
+  expected_return: 0.07,
+  inflation: 0.03,
+  monte_carlo: true,
+  mc_volatility: 0.15,
+  num_simulations: 500
+};
+let plannerMode = 'general';
 
 // ---------------------------------------------------------------------------
 // Load form state from URL params (supports shareable links)
@@ -979,6 +1102,7 @@ function syncQuickInputsFromForm() {
   document.getElementById('quick-annual-spending').value = spending;
   document.getElementById('quick-ss-annual').value = ssAnnual;
   document.getElementById('quick-portfolio-total').value = Math.round(getTotalPortfolio());
+  syncFederalSurfaceFromForm();
 }
 
 function syncFormFromQuickInputs(changedField) {
@@ -1003,6 +1127,46 @@ function syncFormFromQuickInputs(changedField) {
   updateLivePreview();
 }
 
+function syncFederalSurfaceFromForm() {
+  const pensionAnnual = document.querySelector('[name=pension_annual]')?.value || '';
+  const pensionStartAge = document.querySelector('[name=pension_start_age]')?.value || '';
+  const supplementAnnual = document.querySelector('[name=other_income_annual]')?.value || '';
+  const supplementEndAge = document.querySelector('[name=other_income_end_age]')?.value || '';
+  const pensionAnnualEl = document.getElementById('federal-pension-annual');
+  const pensionStartEl = document.getElementById('federal-pension-start-age');
+  const supplementAnnualEl = document.getElementById('federal-supplement-annual');
+  const supplementEndEl = document.getElementById('federal-supplement-end-age');
+  if (pensionAnnualEl) pensionAnnualEl.value = pensionAnnual;
+  if (pensionStartEl) pensionStartEl.value = pensionStartAge;
+  if (supplementAnnualEl) supplementAnnualEl.value = supplementAnnual;
+  if (supplementEndEl) supplementEndEl.value = supplementEndAge;
+}
+
+function syncFormFromFederalSurface(changedId) {
+  const pensionAnnualEl = document.getElementById('federal-pension-annual');
+  const pensionStartEl = document.getElementById('federal-pension-start-age');
+  const supplementAnnualEl = document.getElementById('federal-supplement-annual');
+  const supplementEndEl = document.getElementById('federal-supplement-end-age');
+  const pensionAnnual = document.querySelector('[name=pension_annual]');
+  const pensionStartAge = document.querySelector('[name=pension_start_age]');
+  const supplementAnnual = document.querySelector('[name=other_income_annual]');
+  const supplementStartAge = document.querySelector('[name=other_income_start_age]');
+  const supplementEndAge = document.querySelector('[name=other_income_end_age]');
+
+  if (pensionAnnual && pensionAnnualEl) pensionAnnual.value = pensionAnnualEl.value;
+  if (pensionStartAge && pensionStartEl) pensionStartAge.value = pensionStartEl.value;
+  if (supplementAnnual && supplementAnnualEl) supplementAnnual.value = supplementAnnualEl.value;
+  if (supplementEndAge && supplementEndEl) supplementEndAge.value = supplementEndEl.value;
+
+  if (changedId === 'federal-supplement-end-age' && supplementStartAge && !supplementStartAge.value) {
+    supplementStartAge.value = document.querySelector('[name=retirement_age]')?.value || '';
+  }
+  if ((parseFloat(supplementAnnualEl?.value) || 0) > 0) {
+    document.getElementById('other-income-ages').style.display = '';
+  }
+  updateLivePreview();
+}
+
 function updateLivePreview() {
   const age = parseInt(document.getElementById('quick-age').value) || parseInt(document.querySelector('[name=age]').value) || 0;
   const retirementAge = parseInt(document.getElementById('quick-retirement-age').value) || parseInt(document.querySelector('[name=retirement_age]').value) || 65;
@@ -1012,6 +1176,9 @@ function updateLivePreview() {
   const ssAnnual = parseFloat(document.getElementById('quick-ss-annual').value) || parseFloat(document.querySelector('[name=ss_annual]').value) || 0;
   const bridgeYears = Math.max(0, (parseInt(document.querySelector('[name=ss_claiming_age]').value) || 67) - retirementAge);
   const tradBalance = parseFloat(document.querySelector('[name=trad_balance]').value) || 0;
+  const pensionAnnual = parseFloat(document.querySelector('[name=pension_annual]')?.value) || 0;
+  const bridgeIncome = parseFloat(document.querySelector('[name=other_income_annual]')?.value) || 0;
+  const bridgeEndAge = parseInt(document.querySelector('[name=other_income_end_age]')?.value) || null;
   const safeIncome = totalPortfolio * 0.04 + ssAnnual;
   const gap = safeIncome - annualSpending;
   const annualNeedFromPortfolio = Math.max(0, annualSpending - ssAnnual);
@@ -1032,6 +1199,16 @@ function updateLivePreview() {
     copy = `Retiring at ${retirementAge} means covering about ${bridgeYears} years before Social Security reaches full force.`;
   }
 
+  if (plannerMode === 'federal') {
+    headline = `Your federal retirement income changes at age ${Math.max(retirementAge, bridgeEndAge || retirementAge)}.`;
+    copy = bridgeIncome > 0 && bridgeEndAge
+      ? `This preview uses pension income plus a temporary FERS-style supplement through age ${bridgeEndAge}, then shows the gap after the supplement ends and before Social Security starts.`
+      : 'This preview highlights how pension timing, a temporary supplement, and Social Security work together year by year.';
+    if (pensionAnnual <= 0) {
+      copy = 'Federal mode works best when pension income is included. Add pension timing in advanced inputs or load the federal example.';
+    }
+  }
+
   let warning = 'Traditional balances can raise later tax pressure.';
   if (tradBalance > totalPortfolio * 0.65) {
     warning = 'Traditional account concentration may increase future RMD pressure.';
@@ -1039,6 +1216,11 @@ function updateLivePreview() {
     warning = 'Early retirement timing is the first place to stress-test.';
   } else if (gap >= 0) {
     warning = 'This quick preview looks stable, but taxes and withdrawal order still matter.';
+  }
+  if (plannerMode === 'federal') {
+    warning = bridgeIncome > 0 && bridgeEndAge
+      ? `Watch the income drop when the temporary supplement ends at age ${bridgeEndAge}.`
+      : 'Federal timing changes often hide in pension start dates and temporary supplement periods.';
   }
 
   document.getElementById('preview-headline').textContent = headline;
@@ -1075,11 +1257,68 @@ function applyPlanValues(values) {
   updateLivePreview();
 }
 
+function setPlannerMode(mode) {
+  plannerMode = mode === 'federal' ? 'federal' : 'general';
+  const isFederal = plannerMode === 'federal';
+  const generalBtn = document.getElementById('general-mode-btn');
+  const federalBtn = document.getElementById('federal-mode-btn');
+  const banner = document.getElementById('federal-preview-banner');
+  const federalSurfaceCard = document.getElementById('federal-surface-card');
+  const quickNote = document.getElementById('quick-start-note');
+  const sampleBtn = document.getElementById('sample-plan-btn');
+  const federalSampleBtn = document.getElementById('federal-sample-btn');
+  const modeNote = document.getElementById('mode-note');
+  const federalSurfaceNote = document.getElementById('federal-surface-note');
+
+  generalBtn.classList.toggle('active', !isFederal);
+  generalBtn.setAttribute('aria-pressed', String(!isFederal));
+  federalBtn.classList.toggle('active', isFederal);
+  federalBtn.setAttribute('aria-pressed', String(isFederal));
+  banner.classList.toggle('active', isFederal);
+  federalSurfaceCard.classList.toggle('active', isFederal);
+
+  if (quickNote) {
+    quickNote.textContent = isFederal
+      ? 'Federal preview uses pension plus a temporary supplement that ends at 62. Open advanced inputs to inspect the pension, spouse, and timing assumptions.'
+      : 'Need spouse income, taxes, pensions, custom account types, or allocation details? Open the advanced inputs below.';
+  }
+  if (sampleBtn) sampleBtn.textContent = isFederal ? 'Use General Sample' : 'Use Sample Plan';
+  if (federalSampleBtn) federalSampleBtn.textContent = isFederal ? 'Reload Federal Example' : 'Load Federal Example';
+  if (modeNote) {
+    modeNote.textContent = isFederal
+      ? 'Federal mode highlights a FERS-style supplement preview in the free app. Full federal editing lives in the full planner.'
+      : 'Federal mode loads a guided preview scenario in the free app. Full federal editing lives in the full planner.';
+  }
+  const otherIncomeLabel = document.getElementById('other-income-label');
+  const otherIncomeRangeLabel = document.getElementById('other-income-range-label');
+  const otherIncomeNote = document.querySelector('#other-income-ages span');
+  if (otherIncomeLabel) {
+    otherIncomeLabel.innerHTML = isFederal
+      ? 'FERS Supplement / Temporary Bridge Income (annual) <span class="tip" data-tip="Use this field to model a temporary federal-style supplement or other bridge income that ends before Social Security begins. The projection subtracts this amount from withdrawals needed during those years.">?</span>'
+      : 'Part-time / Other Income (annual) <span class="tip" data-tip="Consulting, rental, part-time work, or any other income that offsets expenses. Enter the annual amount and the ages it applies. The projection subtracts this from withdrawals needed each year.">?</span>';
+  }
+  if (otherIncomeRangeLabel) {
+    otherIncomeRangeLabel.textContent = isFederal ? 'Supplement start age / end age' : 'From age / to age';
+  }
+  if (otherIncomeNote) {
+    otherIncomeNote.textContent = isFederal ? 'For the sample plan, the temporary supplement runs from retirement through age 62.' : 'Defaults: current age to retirement age';
+  }
+  if (federalSurfaceNote) {
+    federalSurfaceNote.textContent = isFederal
+      ? 'Start with the visible federal controls here, then use advanced inputs if you want spouse coordination or detailed account breakdowns.'
+      : 'Use this section to model the core federal timing pattern: pension starts, supplement runs for a few years, then ends before Social Security.';
+  }
+  syncFederalSurfaceFromForm();
+  updateLivePreview();
+}
+
 function renderAha(data, payload) {
   const years = Array.isArray(data.years) ? data.years : [];
   const finalAge = years.length ? years[years.length - 1].age : null;
   const taxPeak = years.reduce((best, row) => !best || row.fed_tax > best.fed_tax ? row : best, null);
   const bridgeYears = Math.max(0, (parseInt(payload.ss_claiming_age) || 67) - (parseInt(payload.retirement_age) || 65));
+  const supplementEndAge = parseInt(payload.other_income_end_age) || null;
+  const supplementAnnual = parseFloat(payload.other_income_annual) || 0;
   const tradBalance = parseFloat(payload.trad_balance) || 0;
   const ahaCard = document.getElementById('aha-card');
 
@@ -1101,6 +1340,22 @@ function renderAha(data, payload) {
     actionCopy = `Now the useful next move is testing alternatives, not re-entering data. Save this plan and compare retirement dates, spending, or conversion scenarios.`;
   }
 
+  if (plannerMode === 'federal') {
+    if (!data.success) {
+      headline = `The federal plan starts to strain after the supplement ends${supplementEndAge ? ` at age ${supplementEndAge}` : ''}.`;
+      actionCopy = supplementEndAge
+        ? `The first thing to test is the gap that opens after the temporary supplement ends at ${supplementEndAge} and before Social Security takes over.`
+        : 'The first thing to test is the gap between retirement income and later Social Security.';
+    } else {
+      headline = supplementEndAge
+        ? `Your federal sample stays on track, but income changes when the supplement ends at age ${supplementEndAge}.`
+        : `Your federal sample looks durable through age ${finalAge || '?'}.`;
+      actionCopy = supplementEndAge
+        ? `The key federal stress point is the handoff from pension plus supplement to pension plus TSP withdrawals before Social Security begins.`
+        : `The next useful move is comparing retirement timing and later Social Security decisions.`;
+    }
+  }
+
   document.getElementById('aha-headline').textContent = headline;
   document.getElementById('aha-fact-1').textContent = data.success
     ? `Through age ${finalAge || '?'} in the base projection`
@@ -1111,6 +1366,18 @@ function renderAha(data, payload) {
   document.getElementById('aha-fact-3').textContent = taxPeak
     ? `Age ${taxPeak.age} at about ${fmt(taxPeak.fed_tax)}`
     : 'Tax peak not available';
+  if (plannerMode === 'federal') {
+    document.querySelector('.aha-fact-label').textContent = 'Projected federal plan longevity';
+    document.querySelectorAll('.aha-fact-label')[1].textContent = supplementAnnual > 0 ? 'Supplement end timing' : 'First shortfall year';
+    document.querySelectorAll('.aha-fact-label')[2].textContent = 'Largest tax pressure period';
+    document.getElementById('aha-fact-2').textContent = supplementAnnual > 0 && supplementEndAge
+      ? `Temporary supplement ends at age ${supplementEndAge}`
+      : document.getElementById('aha-fact-2').textContent;
+  } else {
+    document.querySelector('.aha-fact-label').textContent = 'Projected plan longevity';
+    document.querySelectorAll('.aha-fact-label')[1].textContent = 'First shortfall year';
+    document.querySelectorAll('.aha-fact-label')[2].textContent = 'Largest tax pressure period';
+  }
   document.getElementById('aha-action-copy').textContent = actionCopy;
   document.getElementById('aha-upgrade-link').textContent = tradBalance > 0
     ? 'Unlock Roth conversion and scenario analysis'
@@ -1160,11 +1427,20 @@ updateLivePreview();
   document.getElementById(id).addEventListener('input', () => syncFormFromQuickInputs(id));
 });
 
+['federal-pension-annual', 'federal-pension-start-age', 'federal-supplement-annual', 'federal-supplement-end-age'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('input', () => syncFormFromFederalSurface(id));
+});
+
 [
   '[name=age]',
   '[name=retirement_age]',
   '[name=annual_spending]',
   '[name=ss_annual]',
+  '[name=pension_annual]',
+  '[name=pension_start_age]',
+  '[name=other_income_annual]',
+  '[name=other_income_end_age]',
   '[name=trad_balance]',
   '[name=roth_balance]',
   '[name=taxable_balance]',
@@ -1184,9 +1460,27 @@ updateLivePreview();
 });
 
 document.getElementById('sample-plan-btn').addEventListener('click', () => {
+  setPlannerMode('general');
   applyPlanValues(SAMPLE_PLAN);
   ga('sample_plan_selected');
   form.requestSubmit();
+});
+
+document.getElementById('federal-sample-btn').addEventListener('click', () => {
+  setPlannerMode('federal');
+  applyPlanValues(FEDERAL_SAMPLE_PLAN);
+  document.getElementById('advanced-fields').open = true;
+  ga('federal_sample_plan_selected');
+  form.requestSubmit();
+});
+
+document.getElementById('general-mode-btn').addEventListener('click', () => {
+  setPlannerMode('general');
+});
+
+document.getElementById('federal-mode-btn').addEventListener('click', () => {
+  setPlannerMode('federal');
+  applyPlanValues(FEDERAL_SAMPLE_PLAN);
 });
 
 document.getElementById('own-numbers-btn').addEventListener('click', () => {
@@ -1240,6 +1534,12 @@ document.querySelector('[name=ss_annual]').addEventListener('input', () => {
 document.querySelector('[name=life_expectancy]').addEventListener('input', updateSsOptimizer);
 updateSsBreakeven();
 updateSsOptimizer();
+
+const initialParams = new URLSearchParams(location.search);
+if (initialParams.get('federal') === '1') {
+  setPlannerMode('federal');
+  applyPlanValues(FEDERAL_SAMPLE_PLAN);
+}
 
 // Show/hide spouse SS + pension rows
 document.querySelector('[name=spouse_age]').addEventListener('input', e => {
