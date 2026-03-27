@@ -55,6 +55,29 @@
   .card { background: #1e1f29; border-radius: 12px; padding: 24px; margin-bottom: 16px; }
   .card h2 { font-size: 0.85rem; font-weight: 600; color: #4ade80; text-transform: uppercase;
               letter-spacing: 0.08em; margin-bottom: 16px; }
+  .promise-card { background: linear-gradient(145deg, #132033, #181b28); border: 1px solid #2a364d; }
+  .promise-line { display: flex; flex-wrap: wrap; gap: 8px 16px; color: #cbd5e1; font-size: 0.8rem; margin-bottom: 18px; }
+  .promise-line span { padding: 6px 10px; border: 1px solid #334155; border-radius: 999px; background: rgba(15,17,23,0.55); }
+  .entry-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .entry-actions button { margin-top: 0; }
+  .ghost-btn { background: transparent; color: #e2e8f0; border: 1px solid #334155; }
+  .ghost-btn:hover { border-color: #4ade80; color: #4ade80; }
+  .quick-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .quick-grid .full { grid-column: 1 / -1; }
+  .quick-note { font-size: 0.78rem; color: #94a3b8; margin-top: 10px; line-height: 1.6; }
+  .preview-card { background: #111827; border: 1px solid #253044; }
+  .preview-kicker { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: #4ade80; margin-bottom: 10px; }
+  .preview-headline { font-size: 1.1rem; font-weight: 700; color: #e2e8f0; margin-bottom: 8px; }
+  .preview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .preview-stat { background: #0f1117; border: 1px solid #253044; border-radius: 10px; padding: 12px; }
+  .preview-stat-label { color: #64748b; font-size: 0.72rem; margin-bottom: 4px; }
+  .preview-stat-value { color: #e2e8f0; font-size: 0.95rem; font-weight: 600; line-height: 1.4; }
+  .advanced-wrap { background: #171922; border: 1px solid #2d3748; border-radius: 12px; margin-bottom: 16px; }
+  .advanced-wrap summary { cursor: pointer; list-style: none; padding: 18px 20px; font-size: 0.86rem; color: #cbd5e1; font-weight: 600; }
+  .advanced-wrap summary::-webkit-details-marker { display: none; }
+  .advanced-wrap summary::after { content: 'Show advanced inputs'; color: #4ade80; float: right; font-size: 0.78rem; font-weight: 500; }
+  .advanced-wrap[open] summary::after { content: 'Hide advanced inputs'; }
+  .advanced-body { padding: 0 16px 8px; }
   .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
   .row.full { grid-template-columns: 1fr; }
   label { display: block; font-size: 0.78rem; color: #94a3b8; margin-bottom: 4px; }
@@ -149,6 +172,17 @@
   .result-actions button:hover { border-color: #4ade80; color: #4ade80; opacity: 1; }
   .result-actions button:disabled { opacity: 1; cursor: pointer; } /* override disabled style */
   .btn-copied { border-color: #4ade80 !important; color: #4ade80 !important; }
+  .aha-card { background: linear-gradient(145deg, #122235, #171924); border: 1px solid #2f455f; border-radius: 14px; padding: 20px; margin-bottom: 16px; }
+  .aha-kicker { color: #4ade80; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+  .aha-headline { font-size: 1.2rem; line-height: 1.35; color: #f8fafc; margin-bottom: 14px; }
+  .aha-facts { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 16px; }
+  .aha-fact { background: rgba(15,17,23,0.65); border: 1px solid #2d3748; border-radius: 10px; padding: 12px; }
+  .aha-fact-label { color: #64748b; font-size: 0.72rem; margin-bottom: 4px; }
+  .aha-fact-value { color: #e2e8f0; font-size: 0.92rem; font-weight: 600; line-height: 1.4; }
+  .aha-action { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .aha-action-copy { color: #94a3b8; font-size: 0.82rem; flex: 1 1 220px; line-height: 1.5; }
+  .aha-action a, .aha-action button { width: auto; margin-top: 0; padding: 10px 14px; font-size: 0.82rem; border-radius: 10px; text-decoration: none; }
+  .aha-action a { background: #4ade80; color: #0f1117; font-weight: 700; }
   .alloc-total-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
   .alloc-pill { font-size:0.72rem; color:#94a3b8; background:#0f1117; border:1px solid #2d3748;
                 border-radius:999px; padding:4px 10px; }
@@ -198,7 +232,12 @@
   }
   .contact-section button:disabled { opacity: 0.5; cursor: not-allowed; }
   #contact-status { margin-top: 10px; font-size: 0.82rem; min-height: 1.2em; }
-  @media (max-width: 520px) { .contact-section .row { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) {
+    .contact-section .row,
+    .entry-actions,
+    .quick-grid,
+    .preview-grid { grid-template-columns: 1fr; }
+  }
   /* Email capture modal */
   .email-modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.78);
     z-index:1000; align-items:center; justify-content:center; padding:16px; }
@@ -245,6 +284,78 @@
   <p class="subtitle">Free retirement projection — no account required</p>
 
   <form id="form">
+    <div class="card promise-card">
+      <h2>Start Fast</h2>
+      <div class="promise-line">
+        <span>Takes about 30 seconds</span>
+        <span>No sign-up required</span>
+        <span>See your projected income and account trajectory instantly</span>
+      </div>
+      <p style="color:#cbd5e1;font-size:0.92rem;line-height:1.7">
+        Start with a sample plan if you want the payoff first, or enter a few numbers and watch the preview update as you go.
+      </p>
+      <div class="entry-actions">
+        <button type="button" id="sample-plan-btn">Use Sample Plan</button>
+        <button type="button" id="own-numbers-btn" class="ghost-btn">Enter My Own Numbers</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Quick Start</h2>
+      <div class="quick-grid">
+        <div>
+          <label>Current Age</label>
+          <input type="number" id="quick-age" value="55" min="18" max="100">
+        </div>
+        <div>
+          <label>Retirement Age</label>
+          <input type="number" id="quick-retirement-age" value="65" min="50" max="80">
+        </div>
+        <div>
+          <label>Total Savings / Investments</label>
+          <input type="number" id="quick-portfolio-total" value="580000" min="0" step="any">
+        </div>
+        <div>
+          <label>Annual Spending</label>
+          <input type="number" id="quick-annual-spending" value="72000" min="0" step="any">
+        </div>
+        <div class="full">
+          <label>Social Security Estimate (annual)</label>
+          <input type="number" id="quick-ss-annual" value="24000" min="0" step="any">
+        </div>
+      </div>
+      <p class="quick-note">Need spouse income, taxes, pensions, custom account types, or allocation details? Open the advanced inputs below.</p>
+    </div>
+
+    <div class="card preview-card" id="live-preview-card">
+      <div class="preview-kicker">Live Preview</div>
+      <div class="preview-headline" id="preview-headline">Your plan looks roughly on track through age 90.</div>
+      <p id="preview-copy" style="color:#94a3b8;font-size:0.84rem;line-height:1.6">
+        Enter a few numbers to see the likely pressure points before you run the full projection.
+      </p>
+      <div class="preview-grid">
+        <div class="preview-stat">
+          <div class="preview-stat-label">Retirement start</div>
+          <div class="preview-stat-value" id="preview-retirement-start">Age 65</div>
+        </div>
+        <div class="preview-stat">
+          <div class="preview-stat-label">Estimated plan longevity</div>
+          <div class="preview-stat-value" id="preview-longevity">Through age 90</div>
+        </div>
+        <div class="preview-stat">
+          <div class="preview-stat-label">Income gap / surplus</div>
+          <div class="preview-stat-value" id="preview-gap">$0 estimated gap</div>
+        </div>
+        <div class="preview-stat">
+          <div class="preview-stat-label">Tax-sensitive warning</div>
+          <div class="preview-stat-value" id="preview-warning">Traditional balances can raise later tax pressure.</div>
+        </div>
+      </div>
+    </div>
+
+    <details class="advanced-wrap" id="advanced-fields">
+      <summary>Customize assumptions, taxes, spouse income, and account details</summary>
+      <div class="advanced-body">
     <div class="card">
       <h2>About You</h2>
       <div class="row">
@@ -565,11 +676,37 @@
       </div>
     </div>
 
+      </div>
+    </details>
+
     <button type="submit" id="submit-btn">Run Projection</button>
     <p class="error" id="error-msg"></p>
   </form>
 
   <div id="results">
+    <div class="aha-card" id="aha-card" style="display:none">
+      <div class="aha-kicker">What Stands Out</div>
+      <div class="aha-headline" id="aha-headline"></div>
+      <div class="aha-facts">
+        <div class="aha-fact">
+          <div class="aha-fact-label">Projected plan longevity</div>
+          <div class="aha-fact-value" id="aha-fact-1"></div>
+        </div>
+        <div class="aha-fact">
+          <div class="aha-fact-label">First shortfall year</div>
+          <div class="aha-fact-value" id="aha-fact-2"></div>
+        </div>
+        <div class="aha-fact">
+          <div class="aha-fact-label">Largest tax pressure period</div>
+          <div class="aha-fact-value" id="aha-fact-3"></div>
+        </div>
+      </div>
+      <div class="aha-action">
+        <div class="aha-action-copy" id="aha-action-copy"></div>
+        <button type="button" class="ghost-btn" id="aha-real-numbers-btn">Continue with your real numbers</button>
+        <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" target="_blank" id="aha-upgrade-link">Open the full planner</a>
+      </div>
+    </div>
     <!-- Deterministic summary -->
     <div class="summary-box" id="summary-box"></div>
 
@@ -673,15 +810,13 @@
     </div>
 
     <div class="desktop-cta">
-      <p>This tool uses a simplified GBM model. Fatboy Pro includes 7 Monte Carlo return models
-      (Market Regime, Crash Scenario, Historical), up to 10,000 paths, Roth conversion
-      optimization, and full per-year tax analysis.</p>
-      <p style="font-size:0.8rem;color:#cbd5e1;margin-bottom:10px;">Buy once for unlimited scenarios, exports, desktop access, and the full planning toolkit.</p>
+      <p>Free demo gives you a quick projection, a sample scenario, and limited assumptions. The full planner adds saved plans, scenario comparison, tax-aware planning, Social Security timing, and Roth conversion testing.</p>
+      <p style="font-size:0.8rem;color:#cbd5e1;margin-bottom:10px;">If this result is useful, the next move is keeping it and testing alternatives without starting over.</p>
       <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" target="_blank" onclick="ga('app_buy_now_click')"
          style="display:inline-flex;align-items:center;justify-content:center;background:#4ade80;color:#0f1117;font-weight:700;font-size:0.84rem;padding:10px 16px;border-radius:10px;text-decoration:none;margin-bottom:12px;">
-        Buy Fatboy Pro - $149
+        Open the full planner
       </a>
-      <p style="font-size:0.8rem;color:#64748b;margin-bottom:0;">We'll email you the download link:</p>
+      <p style="font-size:0.8rem;color:#64748b;margin-bottom:0;">Email me my results and desktop link:</p>
       <div class="cta-email-row">
         <input id="cta-email" type="email" placeholder="your@email.com" autocomplete="email"
                onkeydown="if(event.key==='Enter') submitEmailCapture('cta')">
@@ -877,6 +1012,35 @@ const form = document.getElementById('form');
 const btn  = document.getElementById('submit-btn');
 const err  = document.getElementById('error-msg');
 let lastMcRows = null, lastData = null;
+const SAMPLE_PLAN = {
+  age: 58,
+  retirement_age: 64,
+  spouse_age: 56,
+  life_expectancy: 92,
+  filing_status: 'married',
+  state_code: 'NC',
+  annual_savings: 18000,
+  trad_balance: 620000,
+  roth_balance: 180000,
+  taxable_balance: 110000,
+  cash_balance: 40000,
+  annual_spending: 86000,
+  healthcare_annual: 9000,
+  ss_annual: 34000,
+  ss_claiming_age: 67,
+  spouse_ss_annual: 22000,
+  spouse_ss_claiming_age: 67,
+  pension_annual: 0,
+  spouse_pension_annual: 0,
+  other_income_annual: 12000,
+  other_income_start_age: 64,
+  other_income_end_age: 68,
+  expected_return: 0.07,
+  inflation: 0.03,
+  monte_carlo: true,
+  mc_volatility: 0.15,
+  num_simulations: 500
+};
 
 // ---------------------------------------------------------------------------
 // Load form state from URL params (supports shareable links)
@@ -923,6 +1087,188 @@ let lastMcRows = null, lastData = null;
   updateAllocationTotals();
 })();
 
+if (new URLSearchParams(location.search).get('sample') === '1') {
+  applyPlanValues(SAMPLE_PLAN);
+  setTimeout(() => form.requestSubmit(), 0);
+}
+
+function getBalanceFields() {
+  return ['trad_balance', 'roth_balance', 'taxable_balance', 'cash_balance'];
+}
+
+function getTotalPortfolio() {
+  return getBalanceFields().reduce((sum, name) => sum + (parseFloat(document.querySelector(`[name="${name}"]`)?.value) || 0), 0);
+}
+
+function setPortfolioTotal(total) {
+  const target = Math.max(0, Number(total) || 0);
+  const fields = getBalanceFields().map(name => ({
+    name,
+    el: document.querySelector(`[name="${name}"]`),
+    value: parseFloat(document.querySelector(`[name="${name}"]`)?.value) || 0,
+  }));
+  const currentTotal = fields.reduce((sum, field) => sum + field.value, 0);
+  const fallback = {
+    trad_balance: 0.7,
+    roth_balance: 0.2,
+    taxable_balance: 0.07,
+    cash_balance: 0.03,
+  };
+  fields.forEach(field => {
+    const ratio = currentTotal > 0 ? field.value / currentTotal : fallback[field.name];
+    if (field.el) field.el.value = Math.round(target * ratio);
+  });
+}
+
+function syncQuickInputsFromForm() {
+  const age = document.querySelector('[name=age]')?.value || '';
+  const retirementAge = document.querySelector('[name=retirement_age]')?.value || '';
+  const spending = document.querySelector('[name=annual_spending]')?.value || '';
+  const ssAnnual = document.querySelector('[name=ss_annual]')?.value || '';
+  document.getElementById('quick-age').value = age;
+  document.getElementById('quick-retirement-age').value = retirementAge;
+  document.getElementById('quick-annual-spending').value = spending;
+  document.getElementById('quick-ss-annual').value = ssAnnual;
+  document.getElementById('quick-portfolio-total').value = Math.round(getTotalPortfolio());
+}
+
+function syncFormFromQuickInputs(changedField) {
+  const map = {
+    'quick-age': 'age',
+    'quick-retirement-age': 'retirement_age',
+    'quick-annual-spending': 'annual_spending',
+    'quick-ss-annual': 'ss_annual',
+  };
+  Object.entries(map).forEach(([quickId, fieldName]) => {
+    const source = document.getElementById(quickId);
+    const target = document.querySelector(`[name="${fieldName}"]`);
+    if (source && target) target.value = source.value;
+  });
+  if (changedField === 'quick-portfolio-total') {
+    setPortfolioTotal(document.getElementById('quick-portfolio-total').value);
+  }
+  syncRetiredState();
+  updateSsBreakeven();
+  updateSsOptimizer();
+  updateAllocationTotals();
+  updateLivePreview();
+}
+
+function updateLivePreview() {
+  const age = parseInt(document.getElementById('quick-age').value) || parseInt(document.querySelector('[name=age]').value) || 0;
+  const retirementAge = parseInt(document.getElementById('quick-retirement-age').value) || parseInt(document.querySelector('[name=retirement_age]').value) || 65;
+  const lifeExpectancy = parseInt(document.querySelector('[name=life_expectancy]').value) || 90;
+  const totalPortfolio = parseFloat(document.getElementById('quick-portfolio-total').value) || getTotalPortfolio();
+  const annualSpending = parseFloat(document.getElementById('quick-annual-spending').value) || parseFloat(document.querySelector('[name=annual_spending]').value) || 0;
+  const ssAnnual = parseFloat(document.getElementById('quick-ss-annual').value) || parseFloat(document.querySelector('[name=ss_annual]').value) || 0;
+  const bridgeYears = Math.max(0, (parseInt(document.querySelector('[name=ss_claiming_age]').value) || 67) - retirementAge);
+  const tradBalance = parseFloat(document.querySelector('[name=trad_balance]').value) || 0;
+  const safeIncome = totalPortfolio * 0.04 + ssAnnual;
+  const gap = safeIncome - annualSpending;
+  const annualNeedFromPortfolio = Math.max(0, annualSpending - ssAnnual);
+  let endAge = lifeExpectancy;
+  if (annualNeedFromPortfolio > 0) {
+    endAge = Math.min(100, retirementAge + Math.round(totalPortfolio / annualNeedFromPortfolio));
+  }
+
+  let headline = `Your plan looks roughly on track through age ${Math.max(retirementAge, endAge)}.`;
+  let copy = 'Enter a few numbers to see the likely pressure points before you run the full projection.';
+  if (gap < -10000) {
+    headline = `Your current inputs suggest a funding gap after retirement.`;
+    copy = bridgeYears > 0
+      ? `The biggest early pressure point is the ${bridgeYears}-year gap between retirement and Social Security.`
+      : 'Spending may be outrunning what the portfolio and Social Security can support.';
+  } else if (bridgeYears >= 3) {
+    headline = `Your bridge years need extra attention.`;
+    copy = `Retiring at ${retirementAge} means covering about ${bridgeYears} years before Social Security reaches full force.`;
+  }
+
+  let warning = 'Traditional balances can raise later tax pressure.';
+  if (tradBalance > totalPortfolio * 0.65) {
+    warning = 'Traditional account concentration may increase future RMD pressure.';
+  } else if (bridgeYears >= 3) {
+    warning = 'Early retirement timing is the first place to stress-test.';
+  } else if (gap >= 0) {
+    warning = 'This quick preview looks stable, but taxes and withdrawal order still matter.';
+  }
+
+  document.getElementById('preview-headline').textContent = headline;
+  document.getElementById('preview-copy').textContent = copy;
+  document.getElementById('preview-retirement-start').textContent = `Age ${retirementAge}`;
+  document.getElementById('preview-longevity').textContent = endAge >= lifeExpectancy ? `Through age ${lifeExpectancy}` : `Around age ${Math.max(retirementAge, endAge)}`;
+  document.getElementById('preview-gap').textContent = gap >= 0
+    ? `$${Math.round(gap).toLocaleString()} estimated surplus`
+    : `$${Math.abs(Math.round(gap)).toLocaleString()} estimated gap`;
+  document.getElementById('preview-warning').textContent = warning;
+}
+
+function applyPlanValues(values) {
+  Object.entries(values).forEach(([name, value]) => {
+    const el = document.querySelector(`[name="${name}"]`);
+    if (!el) return;
+    if (el.type === 'checkbox') {
+      el.checked = Boolean(value);
+    } else {
+      el.value = value;
+    }
+  });
+  document.getElementById('mc-check').checked = Boolean(values.monte_carlo);
+  document.getElementById('mc-options').classList.toggle('visible', Boolean(values.monte_carlo));
+  document.getElementById('spouse-ss-row').style.display = values.spouse_age ? '' : 'none';
+  document.getElementById('spouse-pension-row').style.display = values.spouse_age ? '' : 'none';
+  document.getElementById('other-income-ages').style.display = (Number(values.other_income_annual) || 0) > 0 ? '' : 'none';
+  document.getElementById('ss-age-label').textContent = document.querySelector('[name=ss_claiming_age]').value || '67';
+  syncQuickInputsFromForm();
+  syncRetiredState();
+  updateSsBreakeven();
+  updateSsOptimizer();
+  updateAllocationTotals();
+  updateLivePreview();
+}
+
+function renderAha(data, payload) {
+  const years = Array.isArray(data.years) ? data.years : [];
+  const finalAge = years.length ? years[years.length - 1].age : null;
+  const taxPeak = years.reduce((best, row) => !best || row.fed_tax > best.fed_tax ? row : best, null);
+  const bridgeYears = Math.max(0, (parseInt(payload.ss_claiming_age) || 67) - (parseInt(payload.retirement_age) || 65));
+  const tradBalance = parseFloat(payload.trad_balance) || 0;
+  const ahaCard = document.getElementById('aha-card');
+
+  let headline = '';
+  let actionCopy = '';
+  if (!data.success) {
+    headline = `Your projected withdrawals may become unsustainable around age ${data.depletion_year || '?'}.`;
+    actionCopy = bridgeYears >= 2
+      ? `The bridge years before Social Security look like the first pressure point. Test later retirement timing or different withdrawal assumptions next.`
+      : `The current spending path is doing most of the damage. A full plan helps compare timing, taxes, and withdrawal changes side by side.`;
+  } else if (data.success_rate != null && data.success_rate < 70) {
+    headline = `Your base case works, but down-market scenarios start to weaken the plan.`;
+    actionCopy = `This is the point where testing alternatives matters. Save this plan and compare safer spending, later retirement, or different account drawdowns.`;
+  } else if (tradBalance > (parseFloat(payload.roth_balance) || 0) + (parseFloat(payload.taxable_balance) || 0)) {
+    headline = `Roth conversion planning could reduce later tax drag in this plan.`;
+    actionCopy = `Traditional account concentration is building future RMD pressure. The full planner is the next step if you want to test conversion timing.`;
+  } else {
+    headline = `Your current plan looks durable through age ${finalAge || '?'}.`;
+    actionCopy = `Now the useful next move is testing alternatives, not re-entering data. Save this plan and compare retirement dates, spending, or conversion scenarios.`;
+  }
+
+  document.getElementById('aha-headline').textContent = headline;
+  document.getElementById('aha-fact-1').textContent = data.success
+    ? `Through age ${finalAge || '?'} in the base projection`
+    : `Runs short around age ${data.depletion_year || '?'}`;
+  document.getElementById('aha-fact-2').textContent = data.success
+    ? 'No shortfall in the base projection'
+    : `Age ${data.depletion_year || '?'}`;
+  document.getElementById('aha-fact-3').textContent = taxPeak
+    ? `Age ${taxPeak.age} at about ${fmt(taxPeak.fed_tax)}`
+    : 'Tax peak not available';
+  document.getElementById('aha-action-copy').textContent = actionCopy;
+  document.getElementById('aha-upgrade-link').textContent = tradBalance > 0
+    ? 'Unlock Roth conversion and scenario analysis'
+    : 'Save this plan and test alternatives';
+  ahaCard.style.display = '';
+}
+
 // ---------------------------------------------------------------------------
 // Share — encode current form as URL params and copy to clipboard
 // ---------------------------------------------------------------------------
@@ -958,6 +1304,51 @@ function syncRetiredState() {
 document.querySelector('[name=age]').addEventListener('input', syncRetiredState);
 document.querySelector('[name=retirement_age]').addEventListener('input', syncRetiredState);
 syncRetiredState();
+syncQuickInputsFromForm();
+updateLivePreview();
+
+['quick-age', 'quick-retirement-age', 'quick-portfolio-total', 'quick-annual-spending', 'quick-ss-annual'].forEach(id => {
+  document.getElementById(id).addEventListener('input', () => syncFormFromQuickInputs(id));
+});
+
+[
+  '[name=age]',
+  '[name=retirement_age]',
+  '[name=annual_spending]',
+  '[name=ss_annual]',
+  '[name=trad_balance]',
+  '[name=roth_balance]',
+  '[name=taxable_balance]',
+  '[name=cash_balance]',
+  '[name=life_expectancy]',
+  '[name=ss_claiming_age]'
+].forEach(selector => {
+  const el = document.querySelector(selector);
+  if (el) el.addEventListener('input', () => {
+    syncQuickInputsFromForm();
+    updateLivePreview();
+  });
+  if (el && el.tagName === 'SELECT') el.addEventListener('change', () => {
+    syncQuickInputsFromForm();
+    updateLivePreview();
+  });
+});
+
+document.getElementById('sample-plan-btn').addEventListener('click', () => {
+  applyPlanValues(SAMPLE_PLAN);
+  ga('sample_plan_selected');
+  form.requestSubmit();
+});
+
+document.getElementById('own-numbers-btn').addEventListener('click', () => {
+  document.getElementById('quick-age').focus();
+  document.getElementById('advanced-fields').open = false;
+});
+
+document.getElementById('aha-real-numbers-btn').addEventListener('click', () => {
+  document.getElementById('advanced-fields').open = true;
+  form.scrollIntoView({ behavior: 'smooth' });
+});
 
 // Part-time income: show age range fields when amount > 0
 document.getElementById('other-income-annual').addEventListener('input', function() {
@@ -1218,6 +1609,7 @@ form.addEventListener('submit', async e => {
   btn.textContent = isMC ? 'Running 500 simulations…' : 'Running…';
   err.textContent = '';
   document.getElementById('results').style.display = 'none';
+  document.getElementById('aha-card').style.display = 'none';
   const validationError = validateRequiredProjectionFields();
   if (validationError) {
     err.textContent = validationError;
@@ -1361,6 +1753,7 @@ form.addEventListener('submit', async e => {
       rothTeaser.style.display = 'none';
     }
 
+    renderAha(data, payload);
     document.getElementById('results').style.display = 'block';
     document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
     triggerEmailCapture();

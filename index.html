@@ -158,6 +158,31 @@ permalink: /
     gap: 12px;
   }
 
+  .hero-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 0 28px;
+    padding: 0;
+    max-width: 560px;
+  }
+
+  .hero-bullets li {
+    color: var(--mid);
+    font-size: 0.98rem;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .hero-bullets li::before {
+    content: '•';
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -250,6 +275,41 @@ permalink: /
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 6px;
+  }
+
+  .hero-visual {
+    padding: 20px;
+  }
+
+  .hero-visual img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(26, 26, 24, 0.08);
+    display: block;
+    margin-bottom: 18px;
+    background: #fff;
+  }
+
+  .hero-insight {
+    background: rgba(184, 134, 11, 0.08);
+    border: 1px solid rgba(184, 134, 11, 0.22);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+
+  .hero-insight strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+
+  .hero-insight span,
+  .hero-visual-note {
+    color: var(--mid);
+    font-size: 0.84rem;
+    line-height: 1.55;
   }
 
   .hero-card .price {
@@ -770,15 +830,15 @@ permalink: /
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">
-    <div class="hero-eyebrow">Retirement Planning Software</div>
-    <h1>One price.<br><em>Desktop + Web.</em><br>Yours forever.</h1>
+    <div class="hero-eyebrow">Retirement Income Planner</div>
+    <h1>Model retirement income, taxes, Social Security, and Roth conversions in one planner.</h1>
     <p class="hero-sub">
       Model Roth conversions, IRMAA thresholds, Monte Carlo outcomes, and estate strategy — 
       with the depth of a professional tool and the privacy of software you actually own.
       $149 unlocks both the desktop app and the full web app. No subscriptions. No cloud.
     </p>
     <div class="hero-actions">
-      <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" class="btn-primary">
+      <a href="https://app.fatboysoftware.com" class="btn-primary" onclick="gtag('event','homepage_hero_demo_click')">
         Buy Pro — Founding Member <span class="price-badge">$149</span>
       </a>
       <a href="https://planner.fatboysoftware.com" class="btn-secondary">
@@ -1114,6 +1174,60 @@ permalink: /
   </div>
 </footer>
 
+<script>
+  (function refreshHeroForDemoClicks() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    const heroSub = hero.querySelector('.hero-sub');
+    if (heroSub) {
+      heroSub.textContent = 'See how long your retirement plan lasts, where income gaps show up, and when taxes start creating pressure before you retire.';
+      const bullets = document.createElement('ul');
+      bullets.className = 'hero-bullets';
+      bullets.innerHTML = `
+        <li>Models taxes, Social Security, withdrawals, and account types together</li>
+        <li>Test Roth conversions, asset sales, and retirement timing</li>
+        <li>Built for real retirement decisions, not generic calculators</li>
+      `;
+      heroSub.insertAdjacentElement('afterend', bullets);
+    }
+
+    const primary = hero.querySelector('.btn-primary');
+    if (primary) {
+      primary.href = 'https://app.fatboysoftware.com';
+      primary.removeAttribute('data-founding-btn');
+      primary.textContent = 'Try Interactive Demo';
+      primary.onclick = function() { gtag('event', 'homepage_hero_demo_click'); };
+    }
+
+    const secondary = hero.querySelector('.btn-secondary');
+    if (secondary) {
+      secondary.href = 'https://app.fatboysoftware.com/?sample=1';
+      secondary.textContent = 'See Sample Plan';
+      secondary.onclick = function() { gtag('event', 'homepage_hero_sample_click'); };
+    }
+
+    const note = hero.querySelector('.hero-note');
+    if (note) {
+      note.textContent = 'No sign-up required. Start with sample data or enter your own numbers.';
+      note.removeAttribute('data-founding-label');
+    }
+
+    const visual = hero.querySelector('.hero-card');
+    if (visual) {
+      visual.classList.add('hero-visual');
+      visual.innerHTML = `
+        <div class="hero-card-label">See The Output First</div>
+        <img src="/assets/images/optimized/projection_center-800w.webp" alt="Retirement projection chart with account balance and income results">
+        <div class="hero-insight">
+          <strong>Sample insight: income gap appears in ages 78-82</strong>
+          <span>The planner surfaces when withdrawals, taxes, and benefit timing stop working well together so you can adjust before you retire.</span>
+        </div>
+        <p class="hero-visual-note">Start with the sample plan to see the diagnosis screen first, then switch to your own numbers when you want to test your situation.</p>
+      `;
+    }
+  })();
+</script>
 <script src="/assets/js/founding-count.js"></script>
 </body>
 </html>
