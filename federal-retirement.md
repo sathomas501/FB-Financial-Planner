@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Federal Retirement Planner for FERS and CSRS
-description: Retirement planning software for federal employees. Model FERS supplement, CSRS-style pension changes, TSP withdrawals, Social Security, taxes, and year-by-year cash flow.
+title: FERS Retirement Calculator for Pension, Supplement, and TSP
+description: See how your FERS pension, temporary supplement, TSP withdrawals, Social Security, and taxes work together year by year.
 keywords: federal retirement planner, FERS retirement calculator, CSRS retirement calculator, federal employee retirement planning, FERS supplement calculator, federal pension planner, TSP retirement planning
 image: /assets/images/federal-advanced.png
 canonical: https://fatboysoftware.com/federal-retirement
 permalink: /federal-retirement/
 ---
 
-# Federal Retirement Planner for FERS and CSRS
-## Model pension timing, FERS supplement income, TSP withdrawals, Social Security, and taxes in one plan.
+# FERS Retirement Calculator for Pension, Supplement, and TSP
+## See how your FERS pension, temporary supplement, TSP withdrawals, Social Security, and taxes work together year by year.
 
 Federal retirement planning is not just a generic retirement calculator with the word "pension" stapled on. You need to see how a government pension, a temporary FERS annuity supplement, TSP withdrawals, Social Security timing, taxes, and spouse income work together across the full plan.
 
@@ -125,11 +125,11 @@ If you just want a one-number retirement guess, this is overkill. If you want to
 
 ## Get Started
 
-You can start with the web calculator or go straight to the full product details.
+You can start with a free estimate or open a sample federal plan right away.
 
 <div class="download-buttons">
-  <a href="https://planner.fatboysoftware.com" class="btn-download" data-federal-cta="planner">Try Federal Retirement Planner</a>
-  <a href="/pricing" class="btn-download" data-federal-cta="pricing">See Pricing</a>
+  <a href="https://planner.fatboysoftware.com" class="btn-download" data-federal-cta="planner">Run a Free Federal Retirement Estimate</a>
+  <a href="/pricing" class="btn-download" data-federal-cta="pricing">Use Sample Federal Plan</a>
 </div>
 
 <a href="/screenshots" data-federal-cta="screenshots">See all screenshots and feature examples</a>
