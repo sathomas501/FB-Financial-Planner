@@ -300,7 +300,7 @@ Description: Unlimited scenarios, breakpoint analysis, professional reports.
 8. Built for Federal Households
 9. Free Federal Example Available
 10. $149 One-Time, No Subscription
-11. Beyond a Generic Pension Input
+11. Federal Income Inside Full Plan
 12. Compare Retirement Dates
 13. See the Age-62 Income Shift
 14. Full Web App + Desktop Access
@@ -310,7 +310,7 @@ Description: Unlimited scenarios, breakpoint analysis, professional reports.
 
 1. Federal retirement planning with pension, FERS supplement, TSP withdrawals, Social Security, and taxes working together year by year. Start with a free federal example.
 
-2. Many planners let you enter pension income. Fatboy goes further by modeling federal-style income timing inside the actual plan cash flow. Compare retirement dates and bridge years.
+2. Beyond a generic pension input. Model federal retirement income timing year by year. Compare retirement dates and bridge years.
 
 3. See how pension COLA, temporary supplement income, TSP withdrawals, and taxes change your plan over time. One-time purchase, no subscription required.
 
@@ -355,7 +355,7 @@ Description: Full federal editing, unlimited scenarios, lifetime updates.
 - Year-by-Year Cash Flow
 
 **Why It Stands Out:**
-- Beyond Generic Pension Inputs
+- Beyond a Generic Pension Input
 - Full Plan Cash Flow
 - Compare Retirement Dates
 - One-Time Purchase

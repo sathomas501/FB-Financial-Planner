@@ -31,6 +31,8 @@ Starting now, Fatboy models those scenarios much more cleanly.
 
 If you want the focused overview for this use case, see the [FERS retirement calculator page](/federal-retirement/).
 
+If you want the clearest explanation of the competitive difference, read [Federal Retirement Planning Beyond a Generic Pension Input](/blog/2026/03/28/federal-retirement-planning-beyond-generic-pension-input/).
+
 ---
 
 ## What Changed
@@ -235,5 +237,7 @@ This release gets us much closer.
 If your retirement has a bridge period, a temporary supplement, a pension offset, or a 457(b) alongside pension income, Fatboy now has a much better chance of reflecting the real shape of your plan instead of flattening it into something easier to code but less useful to trust.
 
 Want the direct version for FERS and related federal scenarios? Visit the [FERS retirement calculator page](/federal-retirement/).
+
+And if you want the shorter positioning version, see [Federal Retirement Planning Beyond a Generic Pension Input](/blog/2026/03/28/federal-retirement-planning-beyond-generic-pension-input/).
 
 

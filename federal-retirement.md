@@ -29,9 +29,9 @@ Federal retirement planning is not just a generic retirement calculator with the
 
 Most retirement tools flatten everything into one income number.
 
-Some broader retirement planners do let you include federal income as a pension line item. The gap is that they often treat it like generic income. This page is about the cases where federal retirement planning needs more than that.
+Several planners can incorporate federal retirement income. Fatboy's differentiator is modeling federal-style income timing inside the full retirement plan year by year.
 
-That misses the parts federal workers actually care about:
+That includes the parts federal workers actually care about:
 - **FERS supplement timing** before age 62
 - **Pension COLA** assumptions over time
 - **Age-based pension changes** like offset or step-down behavior
@@ -53,11 +53,17 @@ If your income changes at age 62, if your supplement ends before Social Security
 ### FERS Supplement and Bridge Income
 - Model temporary monthly or annual income streams
 - Show exactly what happens when the supplement ends
+- Show bridge-income gaps separately inside the year-by-year plan
 - Use the same engine for other bridge-income periods, not just federal cases
 
 ### Age-Based Pension Changes
 - Add a later pension change event at a specific age or year
 - Useful for offset-style scenarios, step-down income, or pension coordination cases
+
+### Where The Differentiator Actually Is
+- Not just entering a pension amount
+- Seeing federal-style income sources behave separately inside the plan
+- Watching pension, supplement, Social Security, taxes, and withdrawals interact year by year
 
 ### TSP, Social Security, and Taxes
 - See pension income alongside TSP withdrawals and Social Security

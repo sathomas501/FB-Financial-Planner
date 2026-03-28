@@ -32,6 +32,9 @@ nul
 # Build files
 Gemfile.lock
 package-lock.json
+vendor/bundle/
+.bundle/
+.bundle-user/
 
 .vercel
 .env*.local

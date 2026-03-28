@@ -4,6 +4,10 @@
   "description": "Image optimization tools for Fatboy Financial Planner website",
   "private": true,
   "scripts": {
+    "content:check": "node scripts/content-check.mjs",
+    "content:build": "node scripts/content-build.mjs",
+    "content:test": "node scripts/content-test.mjs",
+    "content:test:full": "npm run content:check && npm run content:build",
     "optimize-images": "node optimize-images.js",
     "optimize": "npm run optimize-images"
   },
