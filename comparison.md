@@ -72,6 +72,8 @@ Yes | Basic | No | Subscription update
 
 **Fatboy Pro note:** Advanced pension / bridge-income modeling includes pension COLA, FERS supplement modeling, temporary bridge income, governmental 457(b) support, and later pension offsets / step-downs.
 
+**Federal retirement note:** Several competitors can incorporate federal retirement income in the broad sense because they support pension and Social Security inputs. Fatboy's differentiator is narrower and more specific: it carries federal-style income timing through the planning engine itself, including FERS supplement periods, bridge-income gaps, pension COLA, and later pension change events inside year-by-year cash flow.
+
 If you are specifically comparing tools for a federal household, start with the [FERS retirement calculator page](/federal-retirement/).
 
 For packaging clarity: the free web app is the place to start with a federal sample plan and light federal inputs, while Fatboy Pro is where the full federal editing and advanced controls live.

@@ -274,6 +274,96 @@ Description: Unlimited scenarios, breakpoint analysis, professional reports.
 
 ---
 
+## Campaign 4: Federal Retirement / FERS Planning
+**Landing Page:** https://fatboysoftware.com/federal-retirement
+
+### Target Keywords:
+- FERS retirement calculator
+- federal retirement planner
+- federal employee retirement planning
+- FERS supplement calculator
+- TSP pension Social Security calculator
+- federal pension planner
+
+### Responsive Search Ad Headlines (15 max)
+
+**Pin to Position 1:**
+1. FERS Retirement Calculator
+
+**Headlines 2-15:**
+2. Model Pension + TSP Together
+3. FERS Supplement Timing Matters
+4. Federal Retirement Planner
+5. See Retirement Cash Flow by Year
+6. Pension COLA + Change Events
+7. TSP, Taxes, and Social Security
+8. Built for Federal Households
+9. Free Federal Example Available
+10. $149 One-Time, No Subscription
+11. Beyond a Generic Pension Input
+12. Compare Retirement Dates
+13. See the Age-62 Income Shift
+14. Full Web App + Desktop Access
+15. Model Bridge Income Gaps
+
+### Descriptions (4 max)
+
+1. Federal retirement planning with pension, FERS supplement, TSP withdrawals, Social Security, and taxes working together year by year. Start with a free federal example.
+
+2. Many planners let you enter pension income. Fatboy goes further by modeling federal-style income timing inside the actual plan cash flow. Compare retirement dates and bridge years.
+
+3. See how pension COLA, temporary supplement income, TSP withdrawals, and taxes change your plan over time. One-time purchase, no subscription required.
+
+4. FERS retirement calculator for households that want more than a generic pension estimate. Model supplement timing, bridge-income gaps, and later pension changes in one plan.
+
+### Callout Extensions
+- FERS Supplement Timing
+- Pension COLA Modeling
+- TSP + Social Security Planning
+- Bridge Income Gaps
+- Year-by-Year Cash Flow
+- Free Federal Example
+- One-Time Purchase
+- No Subscription
+
+### Sitelink Extensions
+
+**Open Federal Example**
+URL: /federal-retirement
+Description: See pension, supplement, taxes, and withdrawals together.
+
+**See Federal Screenshots**
+URL: /screenshots
+Description: View federal cash-flow and retirement-income examples.
+
+**Compare Versions**
+URL: /comparison
+Description: See what the free app includes vs full federal workflow.
+
+**Buy Pro - $149 Once**
+URL: /pricing
+Description: Full federal editing, unlimited scenarios, lifetime updates.
+
+### Structured Snippets
+
+**Federal Planning Features:**
+- FERS Supplement
+- Pension COLA
+- Bridge Income
+- TSP Withdrawals
+- Social Security Timing
+- Year-by-Year Cash Flow
+
+**Why It Stands Out:**
+- Beyond Generic Pension Inputs
+- Full Plan Cash Flow
+- Compare Retirement Dates
+- One-Time Purchase
+- Free Example Plan
+- Privacy Focused
+
+---
+
 ## Shared Ad Extensions (Use Across All Campaigns)
 
 ### Price Extensions

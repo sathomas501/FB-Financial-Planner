@@ -29,6 +29,8 @@ Federal retirement planning is not just a generic retirement calculator with the
 
 Most retirement tools flatten everything into one income number.
 
+Some broader retirement planners do let you include federal income as a pension line item. The gap is that they often treat it like generic income. This page is about the cases where federal retirement planning needs more than that.
+
 That misses the parts federal workers actually care about:
 - **FERS supplement timing** before age 62
 - **Pension COLA** assumptions over time
