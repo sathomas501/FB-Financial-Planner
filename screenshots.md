@@ -55,7 +55,13 @@ Explore the features and capabilities of Fatboy Financial Planner through these 
 For the federal-specific overview and messaging, visit the [FERS retirement calculator page](/federal-retirement/).
 
 <picture>
-  <img src="/assets/images/federal-advanced.png"
+  <source srcset="/assets/images/optimized/federal-advanced-400w.webp 400w, /assets/images/optimized/federal-advanced-800w.webp 800w, /assets/images/optimized/federal-advanced-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/federal-advanced-400w.png 400w, /assets/images/optimized/federal-advanced-800w.png 800w, /assets/images/optimized/federal-advanced-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
+  <img src="/assets/images/optimized/federal-advanced-800w.png"
        alt="Government retirement controls for pension COLA, age-based pension changes, and FERS annuity supplement"
        loading="lazy"
        style="max-width: 100%; height: auto;">
@@ -64,7 +70,13 @@ For the federal-specific overview and messaging, visit the [FERS retirement calc
 
 ### Federal Retirement Cash Flow
 <picture>
-  <img src="/assets/images/Federal_sankey.png"
+  <source srcset="/assets/images/optimized/Federal_sankey-400w.webp 400w, /assets/images/optimized/Federal_sankey-800w.webp 800w, /assets/images/optimized/Federal_sankey-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/Federal_sankey-400w.png 400w, /assets/images/optimized/Federal_sankey-800w.png 800w, /assets/images/optimized/Federal_sankey-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
+  <img src="/assets/images/optimized/Federal_sankey-800w.png"
        alt="Federal retirement cash flow Sankey diagram"
        loading="lazy"
        style="max-width: 100%; height: auto;">
@@ -325,7 +337,18 @@ For the federal-specific overview and messaging, visit the [FERS retirement calc
 
 ### Estate Tax & Exemption Modeling
 
-*(Screenshot coming soon)*
+<picture>
+  <source srcset="/assets/images/optimized/Beneficiary_Taxes-400w.webp 400w, /assets/images/optimized/Beneficiary_Taxes-800w.webp 800w, /assets/images/optimized/Beneficiary_Taxes-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/Beneficiary_Taxes-400w.png 400w, /assets/images/optimized/Beneficiary_Taxes-800w.png 800w, /assets/images/optimized/Beneficiary_Taxes-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
+  <img src="/assets/images/optimized/Beneficiary_Taxes-800w.png"
+       alt="Estate tax and exemption modeling"
+       loading="lazy"
+       style="max-width: 100%; height: auto;">
+</picture>
 
 *Track your estate against federal exemption thresholds and model TCJA exemption sunset scenarios. Know your estate tax exposure before it's a problem for your heirs.*
 

@@ -160,7 +160,12 @@ You don't need someone to pick your investments. You need software that can mode
 ## See Professional-Grade Analysis in Action
 
 <picture>
-  <source srcset="/assets/images/optimized/MC_dashboard-800w.webp" type="image/webp">
+  <source srcset="/assets/images/optimized/MC_dashboard-400w.webp 400w, /assets/images/optimized/MC_dashboard-800w.webp 800w, /assets/images/optimized/MC_dashboard-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/MC_dashboard-400w.png 400w, /assets/images/optimized/MC_dashboard-800w.png 800w, /assets/images/optimized/MC_dashboard-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
   <img src="/assets/images/optimized/MC_dashboard-800w.png"
        alt="Monte Carlo simulation dashboard"
        loading="lazy"
@@ -169,7 +174,12 @@ You don't need someone to pick your investments. You need software that can mode
 *Monte Carlo simulation showing distribution of outcomes - the same analysis advisors show you (and charge $10k/year for)*
 
 <picture>
-  <source srcset="/assets/images/optimized/gas_guage_chart-800w.webp" type="image/webp">
+  <source srcset="/assets/images/optimized/gas_guage_chart-400w.webp 400w, /assets/images/optimized/gas_guage_chart-800w.webp 800w, /assets/images/optimized/gas_guage_chart-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/gas_guage_chart-400w.png 400w, /assets/images/optimized/gas_guage_chart-800w.png 800w, /assets/images/optimized/gas_guage_chart-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
   <img src="/assets/images/optimized/gas_guage_chart-800w.png"
        alt="Plan success probability with risk zones"
        loading="lazy"

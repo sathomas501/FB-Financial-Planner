@@ -39,12 +39,16 @@ const SCREENSHOTS = [
   'plan_wizard.png',
   'goal_solver.png',
   'sankey_cashflow.png',
+  'federal-advanced.png',
+  'Federal_sankey.png',
+  'Federal-retirement-planning-fers-457b-bridge-income.png',
   'assets_accounts.png',
   'debt_entry.png',
   'allocations.png',
   'allocation_analyzer.png',
   'gas_guage_chart.png',
   'Estate_Legacy_Analysis.png',
+  'Beneficiary_Taxes.png',
   'Beneficiary_Quick_Guide.png',
   'stress_test.png',
   'sensitivity_analysis.png',
@@ -54,6 +58,7 @@ const SCREENSHOTS = [
 ];
 
 const LOGO = 'Fatboy Software Logo.png';
+const IGNORE_PNGS = ['favicon_64.png'];
 
 /**
  * Ensure output directory exists
@@ -72,6 +77,27 @@ async function ensureDir(dir) {
 async function getFileSize(filePath) {
   const stats = await fs.stat(filePath);
   return (stats.size / 1024).toFixed(2);
+}
+
+/**
+ * Warn when source PNGs exist that are not listed for optimization
+ */
+async function warnAboutUnlistedPngs() {
+  const entries = await fs.readdir(IMAGES_DIR, { withFileTypes: true });
+  const pngFiles = entries
+    .filter(entry => entry.isFile() && path.extname(entry.name).toLowerCase() === '.png')
+    .map(entry => entry.name);
+
+  const optimizedSet = new Set([...SCREENSHOTS, LOGO, ...IGNORE_PNGS]);
+  const unlisted = pngFiles
+    .filter(name => !optimizedSet.has(name))
+    .sort((a, b) => a.localeCompare(b));
+
+  if (unlisted.length > 0) {
+    console.log('\n⚠ Unlisted PNG files found in assets/images/:');
+    unlisted.forEach(name => console.log(`  - ${name}`));
+    console.log('  Add them to SCREENSHOTS if they should get responsive optimized outputs.');
+  }
 }
 
 /**
@@ -231,6 +257,7 @@ async function main() {
 
   // Ensure output directory exists
   await ensureDir(OPTIMIZED_DIR);
+  await warnAboutUnlistedPngs();
 
   // Optimize logo
   const logoResult = await optimizeLogo();

@@ -1045,7 +1045,7 @@ permalink: /
       Fatboy is $149 once — desktop app, web app, all future updates. 
       By year two you've paid less than one month of a competing subscription.</p>
     </div>
-    <a href="https://fatboysoftware.com/comparison" class="btn-gold">See Full Comparison →</a>
+    <a href="https://www.fatboysoftware.com/comparison" class="btn-gold">See Full Comparison →</a>
   </div>
 </div>
 
@@ -1246,7 +1246,15 @@ permalink: /
       visual.classList.add('hero-visual');
       visual.innerHTML = `
         <div class="hero-card-label">See The Output First</div>
-        <img src="/assets/images/optimized/projection_center-800w.webp" alt="Retirement projection chart with account balance and income results">
+        <picture>
+          <source srcset="/assets/images/optimized/projection_center-400w.webp 400w, /assets/images/optimized/projection_center-800w.webp 800w, /assets/images/optimized/projection_center-1200w.webp 1200w"
+                  sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+                  type="image/webp">
+          <source srcset="/assets/images/optimized/projection_center-400w.png 400w, /assets/images/optimized/projection_center-800w.png 800w, /assets/images/optimized/projection_center-1200w.png 1200w"
+                  sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+                  type="image/png">
+          <img src="/assets/images/optimized/projection_center-800w.png" alt="Retirement projection chart with account balance and income results">
+        </picture>
         <div class="hero-insight">
           <strong>Sample insight: income gap appears in ages 78-82</strong>
           <span>The planner surfaces when withdrawals, taxes, and benefit timing stop working well together so you can adjust before you retire.</span>

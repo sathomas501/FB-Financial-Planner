@@ -66,7 +66,7 @@ const handler = async (req, res) => {
       });
 
       // Get the download URL - point to thank you page with auto-download
-      const downloadUrl = 'https://fatboysoftware.com/thank-you';
+      const downloadUrl = 'https://www.fatboysoftware.com/thank-you';
 
       // Send license email to customer
       await sendLicenseEmail({
@@ -159,7 +159,7 @@ const handler = async (req, res) => {
       });
 
       // Get download URL - point to thank you page with auto-download
-      const downloadUrl = 'https://fatboysoftware.com/thank-you';
+      const downloadUrl = 'https://www.fatboysoftware.com/thank-you';
 
       // Send license email to customer
       await sendLicenseEmail({

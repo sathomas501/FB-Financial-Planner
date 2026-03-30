@@ -4,7 +4,7 @@ title: FERS Retirement Calculator for Pension, Supplement, and TSP
 description: See how your FERS pension, temporary supplement, TSP withdrawals, Social Security, and taxes work together year by year.
 keywords: federal retirement planner, FERS retirement calculator, CSRS retirement calculator, federal employee retirement planning, FERS supplement calculator, federal pension planner, TSP retirement planning
 image: /assets/images/federal-advanced.png
-canonical: https://fatboysoftware.com/federal-retirement
+canonical: https://www.fatboysoftware.com/federal-retirement
 permalink: /federal-retirement/
 ---
 
@@ -16,7 +16,13 @@ Federal retirement planning is not just a generic retirement calculator with the
 **That is what this page is for.**
 
 <picture>
-  <img src="/assets/images/federal-advanced.png"
+  <source srcset="/assets/images/optimized/federal-advanced-400w.webp 400w, /assets/images/optimized/federal-advanced-800w.webp 800w, /assets/images/optimized/federal-advanced-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/federal-advanced-400w.png 400w, /assets/images/optimized/federal-advanced-800w.png 800w, /assets/images/optimized/federal-advanced-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
+  <img src="/assets/images/optimized/federal-advanced-800w.png"
        alt="Government retirement planning controls showing pension COLA, age-62 pension changes, and FERS annuity supplement settings"
        loading="eager"
        style="max-width: 100%; height: auto; border: 1px solid #c8c0b0; border-radius: 6px; box-shadow: 0 16px 34px rgba(0,0,0,0.08);">
@@ -75,7 +81,13 @@ If your income changes at age 62, if your supplement ends before Social Security
 ## See Federal Retirement Cash Flow Year by Year
 
 <picture>
-  <img src="/assets/images/Federal_sankey.png"
+  <source srcset="/assets/images/optimized/Federal_sankey-400w.webp 400w, /assets/images/optimized/Federal_sankey-800w.webp 800w, /assets/images/optimized/Federal_sankey-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/Federal_sankey-400w.png 400w, /assets/images/optimized/Federal_sankey-800w.png 800w, /assets/images/optimized/Federal_sankey-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
+  <img src="/assets/images/optimized/Federal_sankey-800w.png"
        alt="Federal retirement Sankey diagram showing salary, pension, taxes, healthcare, living expenses, and withdrawals by plan year"
        loading="lazy"
        style="max-width: 100%; height: auto; border: 1px solid #c8c0b0; border-radius: 6px; box-shadow: 0 16px 34px rgba(0,0,0,0.08);">

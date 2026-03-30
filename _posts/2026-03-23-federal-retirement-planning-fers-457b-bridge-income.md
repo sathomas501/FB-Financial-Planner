@@ -29,6 +29,20 @@ Those details are not edge-case trivia. They change withdrawal timing, tax expos
 
 Starting now, Fatboy models those scenarios much more cleanly.
 
+<picture>
+  <source srcset="/assets/images/optimized/Federal-retirement-planning-fers-457b-bridge-income-400w.webp 400w, /assets/images/optimized/Federal-retirement-planning-fers-457b-bridge-income-800w.webp 800w, /assets/images/optimized/Federal-retirement-planning-fers-457b-bridge-income-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/Federal-retirement-planning-fers-457b-bridge-income-400w.png 400w, /assets/images/optimized/Federal-retirement-planning-fers-457b-bridge-income-800w.png 800w, /assets/images/optimized/Federal-retirement-planning-fers-457b-bridge-income-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
+  <img src="/assets/images/optimized/Federal-retirement-planning-fers-457b-bridge-income-800w.png"
+       alt="Federal retirement planning controls for FERS, 457(b), bridge income, and pension offsets"
+       loading="eager"
+       style="max-width: 100%; height: auto; border: 1px solid #c8c0b0; border-radius: 6px; box-shadow: 0 16px 34px rgba(0,0,0,0.08);">
+</picture>
+<em>Federal-style retirement modeling with dedicated controls for temporary bridge income, pension timing changes, and public-sector account structures.</em>
+
 If you want the focused overview for this use case, see the [FERS retirement calculator page](/federal-retirement/).
 
 If you want the clearest explanation of the competitive difference, read [Federal Retirement Planning Beyond a Generic Pension Input](/blog/2026/03/28/federal-retirement-planning-beyond-generic-pension-input/).

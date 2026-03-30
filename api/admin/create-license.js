@@ -96,7 +96,7 @@ const handler = async (req, res) => {
           to: email,
           customerName: customerName || email,
           licenseKey: license.license_key,
-          downloadUrl: 'https://fatboysoftware.com/thank-you',
+          downloadUrl: 'https://www.fatboysoftware.com/thank-you',
           orderId: manualSessionId
         });
         emailSent = true;

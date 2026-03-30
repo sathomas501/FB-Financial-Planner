@@ -107,7 +107,12 @@ Monte Carlo simulations show how conversions perform across thousands of market 
 ## See Roth Conversion Analysis in Action
 
 <picture>
-  <source srcset="/assets/images/optimized/assets_over_time-800w.webp" type="image/webp">
+  <source srcset="/assets/images/optimized/assets_over_time-400w.webp 400w, /assets/images/optimized/assets_over_time-800w.webp 800w, /assets/images/optimized/assets_over_time-1200w.webp 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/webp">
+  <source srcset="/assets/images/optimized/assets_over_time-400w.png 400w, /assets/images/optimized/assets_over_time-800w.png 800w, /assets/images/optimized/assets_over_time-1200w.png 1200w"
+          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+          type="image/png">
   <img src="/assets/images/optimized/assets_over_time-800w.png"
        alt="Roth conversion impact on long-term wealth"
        loading="lazy"

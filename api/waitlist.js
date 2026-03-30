@@ -43,7 +43,7 @@ module.exports = async function handler(req, res) {
         "Thanks for signing up. We'll email you when the Fatboy Financial Planner web version is ready.",
         "",
         "In the meantime, the full desktop app is available for Windows and Linux:",
-        "https://fatboysoftware.com",
+        "https://www.fatboysoftware.com",
         "",
         "— The Fatboy Software Team"
       ].join('\n'),
@@ -52,7 +52,7 @@ module.exports = async function handler(req, res) {
           <h1 style="margin-top:0;color:#16a34a;font-size:1.5rem;">You're on the list!</h1>
           <p>Thanks for signing up. We'll email you when the Fatboy Financial Planner web version is ready.</p>
           <p>In the meantime, the full desktop app is available for Windows and Linux:</p>
-          <p><a href="https://fatboysoftware.com" style="color:#16a34a;font-weight:600;">fatboysoftware.com</a></p>
+          <p><a href="https://www.fatboysoftware.com" style="color:#16a34a;font-weight:600;">fatboysoftware.com</a></p>
           <hr style="border:none;border-top:1px solid #e5e7eb;margin:1.5rem 0;">
           <p style="color:#6b7280;font-size:0.875rem;margin:0;">
             You signed up at fatboysoftware.com/landing. Reply to this email if you have questions.
