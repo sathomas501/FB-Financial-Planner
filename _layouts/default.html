@@ -68,12 +68,22 @@
     }
 
     .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       font-family: 'Playfair Display', serif;
       font-weight: 900;
       font-size: 1.15rem;
       letter-spacing: -0.02em;
       color: var(--ink);
       text-decoration: none;
+    }
+
+    .nav-logo-mark {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      opacity: 0.88;
     }
 
     .nav-logo span { color: var(--gold); }
@@ -346,7 +356,10 @@
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">Fatboy <span>Software</span></a>
+    <a href="/" class="nav-logo">
+      <img src="/assets/images/optimized/Fatboy_Software_Logo.webp" alt="Fatboy Software logo" class="nav-logo-mark">
+      <span>Fatboy <span>Software</span></span>
+    </a>
   <ul class="nav-links">
     <li><a href="https://app.fatboysoftware.com" target="_blank">Free Calculator</a></li>
     <li><a href="/pricing" {% if page.url contains 'pricing' %}class="active"{% endif %}>Pricing</a></li>

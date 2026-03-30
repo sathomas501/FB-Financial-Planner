@@ -10,7 +10,7 @@ permalink: /pricing/
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing - Fatboy Financial Planner</title>
-<meta name="description" content="$149 one-time. Get the full desktop app plus the full web app. No subscription. No annual fees. Yours forever.">
+<meta name="description" content="Start free in the web app, including a federal retirement sample for FERS-style planning. Upgrade to the full planner and desktop app for saved scenarios, exports, and deeper analysis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -51,12 +51,22 @@ permalink: /pricing/
   }
 
   .nav-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     font-family: 'Playfair Display', serif;
     font-weight: 900;
     font-size: 1.15rem;
     letter-spacing: -0.02em;
     color: var(--ink);
     text-decoration: none;
+  }
+
+  .nav-logo-mark {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    opacity: 0.88;
   }
 
   .nav-logo span { color: var(--gold); }
@@ -128,6 +138,41 @@ permalink: /pricing/
     line-height: 1.7;
     max-width: 560px;
     margin: 0 auto;
+  }
+
+  .trial-path {
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    padding: 0 40px;
+  }
+
+  .trial-path-inner {
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 26px 28px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .trial-path-copy strong {
+    display: block;
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+
+  .trial-path-copy p {
+    font-size: 0.92rem;
+    color: var(--mid);
+    margin: 0;
+  }
+
+  .trial-path-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   /* PRICING CARDS */
@@ -504,7 +549,8 @@ permalink: /pricing/
     nav { padding: 0 20px; }
     .nav-links { display: none; }
     .page-header { padding: 60px 20px 40px; }
-    .pricing-section, .comparison-section, .vs-section, .faq-section { padding-left: 20px; padding-right: 20px; }
+    .trial-path, .pricing-section, .comparison-section, .vs-section, .faq-section { padding-left: 20px; padding-right: 20px; }
+    .trial-path-inner { grid-template-columns: 1fr; }
     .pricing-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 16px; text-align: center; }
     .cta-buttons { flex-direction: column; align-items: center; }
@@ -521,7 +567,10 @@ permalink: /pricing/
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">Fatboy <span>Software</span></a>
+  <a href="/" class="nav-logo">
+    <img src="/assets/images/optimized/Fatboy_Software_Logo.webp" alt="Fatboy Software logo" class="nav-logo-mark">
+    <span>Fatboy <span>Software</span></span>
+  </a>
   <ul class="nav-links">
     <li><a href="/pricing">Pricing</a></li>
     <li><a href="/screenshots">Screenshots</a></li>
@@ -536,7 +585,20 @@ permalink: /pricing/
 <div class="page-header">
   <div class="eyebrow">Pricing</div>
   <h1>One price.<br><em>Two products.</em></h1>
-  <p>Lock in $149 before the price rises to $249 — one-time payment gets you the full desktop app and the full web app, no subscription, no annual fee, no version that expires.</p>
+  <p>Start with the free web app if you want proof first, including the federal retirement sample for FERS-style planning. Buy Pro when you want the full planner, saved scenarios, exports, and desktop access in one one-time purchase.</p>
+</div>
+
+<div class="trial-path">
+  <div class="trial-path-inner">
+    <div class="trial-path-copy">
+      <strong>The easiest path is still: try the free web app first.</strong>
+      <p>You do not need to make a pricing decision before seeing the planner work. Open the free web app, test the workflow, or start with the federal sample plan, then come back here if you want the complete planner and desktop bundle.</p>
+    </div>
+    <div class="trial-path-actions">
+      <a href="https://app.fatboysoftware.com" class="btn-secondary">Start Free In The Web App →</a>
+      <a href="https://planner.fatboysoftware.com" class="btn-secondary">Open The Full Planner →</a>
+    </div>
+  </div>
 </div>
 
 <!-- PRICING CARDS -->
@@ -568,7 +630,7 @@ permalink: /pricing/
         <li><span class="dash">—</span> <span class="lim">No full federal editing for COLA / later pension change events</span></li>
         <li><span class="dash">—</span> <span class="lim">Desktop app not included</span></li>
       </ul>
-      <a href="https://planner.fatboysoftware.com" class="btn-secondary">Try Web App Free →</a>
+      <a href="https://app.fatboysoftware.com" class="btn-secondary">Start Free In The Web App →</a>
     </div>
 
     <!-- PRO -->
@@ -830,10 +892,10 @@ permalink: /pricing/
 <div class="final-cta">
   <h2>$149 now. $249 after 200 users.</h2>
   <p class="final-note">Best for people who want unlimited scenarios, exports, saved plans, and a tool they can keep using year after year.</p>
-  <p>Try the free web trial, or lock in Founding Member pricing — desktop app, web app, all future updates, one-time.</p>
+  <p>Start free in the web app first, or lock in Founding Member pricing for the complete planner, desktop app, and all future updates in one one-time purchase.</p>
   <div class="cta-buttons">
     <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" class="btn-gold">Buy Now — $149 Founding Member</a>
-    <a href="https://planner.fatboysoftware.com" class="btn-ghost">Try free first →</a>
+    <a href="https://app.fatboysoftware.com" class="btn-ghost">Start Free In The Web App →</a>
   </div>
   <p class="final-note" data-founding-label>Founding Member price · Increases to $249 at 200 users · Desktop + Web included · All future updates free</p>
 </div>
@@ -849,6 +911,28 @@ permalink: /pricing/
   </div>
 </footer>
 
+<script>
+  (function appendPricingAttribution() {
+    const query = new URLSearchParams(window.location.search || '');
+    const links = document.querySelectorAll('a[href^="https://app.fatboysoftware.com"], a[href^="https://planner.fatboysoftware.com"]');
+
+    links.forEach(function (link) {
+      if (!link.href) return;
+      const nextUrl = new URL(link.href);
+      ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function (key) {
+        const value = query.get(key);
+        if (value && !nextUrl.searchParams.get(key)) {
+          nextUrl.searchParams.set(key, value);
+        }
+      });
+      if (!nextUrl.searchParams.get('utm_source')) nextUrl.searchParams.set('utm_source', 'website');
+      if (!nextUrl.searchParams.get('utm_medium')) nextUrl.searchParams.set('utm_medium', 'pricing_page');
+      if (!nextUrl.searchParams.get('utm_campaign')) nextUrl.searchParams.set('utm_campaign', 'core_site');
+      if (!nextUrl.searchParams.get('utm_content')) nextUrl.searchParams.set('utm_content', 'pricing_cta');
+      link.href = nextUrl.toString();
+    });
+  })();
+</script>
 <script src="/assets/js/founding-count.js"></script>
 </body>
 </html>

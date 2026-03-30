@@ -8,12 +8,121 @@ canonical: https://www.fatboysoftware.com/federal-retirement
 permalink: /federal-retirement/
 ---
 
+<style>
+  .federal-cta-hero {
+    margin: 1.5rem 0 2rem;
+    padding: 1.25rem;
+    background: linear-gradient(145deg, #f8fbff, #eef5ff);
+    border: 1px solid #cfe0fb;
+    border-radius: 12px;
+    box-shadow: 0 14px 30px rgba(0, 62, 136, 0.08);
+  }
+
+  .federal-cta-hero h3,
+  .federal-quick-start h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+
+  .federal-cta-hero p,
+  .federal-quick-start p {
+    margin: 0.35rem 0;
+  }
+
+  .federal-cta-grid,
+  .federal-quick-points {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+    margin-top: 1rem;
+  }
+
+  .federal-cta-card {
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #d8e4f5;
+    border-radius: 10px;
+  }
+
+  .federal-cta-card strong {
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .federal-cta-card p {
+    margin-bottom: 0.8rem;
+    color: #43536b;
+  }
+
+  .btn-download.btn-secondary {
+    background: #fff;
+    color: #0052a3;
+    border: 1px solid #b8d1f5;
+  }
+
+  .btn-download.btn-secondary:hover {
+    background: #f5f9ff;
+    color: #003d78;
+  }
+
+  .federal-cta-note,
+  .federal-quick-note {
+    font-size: 0.95rem;
+    color: #55657e;
+  }
+
+  .federal-quick-start {
+    margin: 1.5rem 0;
+    padding: 1.15rem 1.25rem;
+    background: #f9fafb;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+  }
+
+  .federal-quick-point {
+    padding: 0.9rem 1rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+  }
+
+  .federal-quick-point strong {
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  @media (max-width: 720px) {
+    .federal-cta-grid,
+    .federal-quick-points {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
 # FERS Retirement Calculator for Pension, Supplement, and TSP
 ## See how your FERS pension, temporary supplement, TSP withdrawals, Social Security, and taxes work together year by year.
 
 Federal retirement planning is not just a generic retirement calculator with the word "pension" stapled on. You need to see how a government pension, a temporary FERS annuity supplement, TSP withdrawals, Social Security timing, taxes, and spouse income work together across the full plan.
 
 **That is what this page is for.**
+
+<section class="federal-cta-hero">
+  <h3>Start with the free federal web app</h3>
+  <p>Ad traffic should not have to hunt for the product. The fastest path is to open the free web app with the federal scenario already loaded.</p>
+  <div class="federal-cta-grid">
+    <div class="federal-cta-card">
+      <strong>Free web app</strong>
+      <p>Loads a federal example instantly so you can see pension income, a supplement ending at 62, and the year-by-year spending gap.</p>
+      <a href="https://app.fatboysoftware.com/?federal=1" class="btn-download" data-federal-cta="hero_free_app">Open Free Federal Web App</a>
+    </div>
+    <div class="federal-cta-card">
+      <strong>Full federal planner</strong>
+      <p>Use this when you want deeper editing, more advanced controls, and the complete planner workflow instead of the lighter preview.</p>
+      <a href="https://planner.fatboysoftware.com" class="btn-download btn-secondary" data-federal-cta="hero_full_planner">Open Full Federal Planner</a>
+    </div>
+  </div>
+  <p class="federal-cta-note">No signup wall for the free preview. If the sample looks like your situation, move into the full planner when you want deeper edits.</p>
+</section>
 
 <picture>
   <source srcset="/assets/images/optimized/federal-advanced-400w.webp 400w, /assets/images/optimized/federal-advanced-800w.webp 800w, /assets/images/optimized/federal-advanced-1200w.webp 1200w"
@@ -133,6 +242,38 @@ The packaging is simple: the free web app gives you a federal sample plan plus l
 
 ---
 
+## Start In About 30 Seconds
+
+<section class="federal-quick-start">
+  <h3>What to do first</h3>
+  <p>If you clicked an ad because you wanted to try the planner, start here instead of reading the whole page first.</p>
+  <div class="federal-quick-points">
+    <div class="federal-quick-point">
+      <strong>1. Open the free federal preview</strong>
+      <p>Launch the web app with the federal example preloaded so you can see the planning flow immediately.</p>
+    </div>
+    <div class="federal-quick-point">
+      <strong>2. Check the handoff year</strong>
+      <p>Look at the years when salary stops, pension starts, and the supplement ends before Social Security.</p>
+    </div>
+    <div class="federal-quick-point">
+      <strong>3. Decide if you need deeper editing</strong>
+      <p>If the preview proves the concept, move to the full planner for the complete federal workflow.</p>
+    </div>
+    <div class="federal-quick-point">
+      <strong>4. Keep moving</strong>
+      <p>The point of this page is not just to explain features. It is to get you into the planner quickly.</p>
+    </div>
+  </div>
+  <div class="download-buttons">
+    <a href="https://app.fatboysoftware.com/?federal=1" class="btn-download" data-federal-cta="quickstart_free_app">Try The Free Federal Web App</a>
+    <a href="https://planner.fatboysoftware.com" class="btn-download btn-secondary" data-federal-cta="quickstart_full_planner">Go To The Full Planner</a>
+  </div>
+  <p class="federal-quick-note">The free app is the easiest first click. The full planner is the better second click once you know you want deeper control.</p>
+</section>
+
+---
+
 ## Who This Is For
 
 This page is a fit if you are:
@@ -150,8 +291,8 @@ If you just want a one-number retirement guess, this is overkill. If you want to
 You can start with a federal preview in the free web app, then move into the full planner when you want the deeper editing experience.
 
 <div class="download-buttons">
-  <a href="https://app.fatboysoftware.com/?federal=1" class="btn-download" data-federal-cta="planner">Load Federal Example</a>
-  <a href="https://planner.fatboysoftware.com" class="btn-download" data-federal-cta="pricing">Open Full Federal Planner</a>
+  <a href="https://app.fatboysoftware.com/?federal=1" class="btn-download" data-federal-cta="planner">Start Free In The Web App</a>
+  <a href="https://planner.fatboysoftware.com" class="btn-download btn-secondary" data-federal-cta="pricing">Open The Full Federal Planner</a>
 </div>
 
 <a href="/screenshots" data-federal-cta="screenshots">See all screenshots and feature examples</a>
@@ -189,7 +330,6 @@ A: No. The underlying retirement-income engine is broader than federal use cases
     var pageUrl = window.location.href;
     var pageTitle = document.title;
     var query = new URLSearchParams(window.location.search || '');
-    var plannerLink = document.querySelector('[data-federal-cta="planner"]');
     var ctaLinks = document.querySelectorAll('[data-federal-cta]');
 
     function track(eventName, params) {
@@ -215,12 +355,12 @@ A: No. The underlying retirement-income engine is broader than federal use cases
       if (!nextUrl.searchParams.get('utm_source')) nextUrl.searchParams.set('utm_source', 'website');
       if (!nextUrl.searchParams.get('utm_medium')) nextUrl.searchParams.set('utm_medium', 'landing_page');
       if (!nextUrl.searchParams.get('utm_campaign')) nextUrl.searchParams.set('utm_campaign', 'federal_retirement');
-      if (!nextUrl.searchParams.get('utm_content')) nextUrl.searchParams.set('utm_content', 'primary_cta');
+      if (!nextUrl.searchParams.get('utm_content')) {
+        nextUrl.searchParams.set('utm_content', link.getAttribute('data-federal-cta') || 'primary_cta');
+      }
 
       link.href = nextUrl.toString();
     }
-
-    appendAttributionParams(plannerLink);
 
     track('view_federal_retirement_page', {
       page_location: pageUrl,
@@ -231,6 +371,10 @@ A: No. The underlying retirement-income engine is broader than federal use cases
     });
 
     Array.prototype.forEach.call(ctaLinks, function (link) {
+      if (/app\.fatboysoftware\.com|planner\.fatboysoftware\.com/.test(link.href || '')) {
+        appendAttributionParams(link);
+      }
+
       link.addEventListener('click', function () {
         var ctaName = link.getAttribute('data-federal-cta') || 'unknown';
         var destination = link.href || link.getAttribute('href') || '';

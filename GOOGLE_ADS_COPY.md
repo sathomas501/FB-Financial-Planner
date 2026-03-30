@@ -310,7 +310,7 @@ Description: Unlimited scenarios, breakpoint analysis, professional reports.
 
 1. Federal retirement planning with pension, FERS supplement, TSP withdrawals, Social Security, and taxes working together year by year. Start with a free federal example.
 
-2. Beyond a generic pension input. Model federal retirement income timing year by year. Compare retirement dates and bridge years.
+2. Beyond a generic pension input. Start free with a federal sample plan, then model retirement income timing year by year. Compare retirement dates and bridge years.
 
 3. See how pension COLA, temporary supplement income, TSP withdrawals, and taxes change your plan over time. One-time purchase, no subscription required.
 
@@ -328,9 +328,9 @@ Description: Unlimited scenarios, breakpoint analysis, professional reports.
 
 ### Sitelink Extensions
 
-**Open Federal Example**
+**Start Free Federal Example**
 URL: /federal-retirement
-Description: See pension, supplement, taxes, and withdrawals together.
+Description: Start free with pension, supplement, taxes, and withdrawals together.
 
 **See Federal Screenshots**
 URL: /screenshots
