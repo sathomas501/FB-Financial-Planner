@@ -20,10 +20,12 @@ const OPTIMIZED_DIR = path.join(IMAGES_DIR, 'optimized');
 // Configuration
 const SCREENSHOT_WIDTHS = [400, 800, 1200]; // Responsive sizes
 const LOGO_MAX_WIDTH = 320; // 2x for retina displays (160px display size)
+const FAVICON_SIZES = [16, 32, 48];
 const QUALITY = {
   png: 85,
   webp: 85,
-  logo: 90 // Higher quality for logo
+  logo: 90, // Higher quality for logo
+  favicon: 100
 };
 
 // Files to process
@@ -58,7 +60,8 @@ const SCREENSHOTS = [
 ];
 
 const LOGO = 'Fatboy Software Logo.png';
-const IGNORE_PNGS = ['favicon_64.png'];
+const FAVICON = 'Favicon_64.png';
+const IGNORE_PNGS = [FAVICON];
 
 /**
  * Ensure output directory exists
@@ -137,6 +140,72 @@ async function optimizeLogo() {
     console.error(`  ✗ Error optimizing logo: ${error.message}`);
     return null;
   }
+}
+
+/**
+ * Build a multi-size ICO file from PNG buffers.
+ * ICO files can embed PNG payloads directly, which keeps this dependency-free.
+ */
+function createIco(pngImages) {
+  const header = Buffer.alloc(6);
+  header.writeUInt16LE(0, 0); // Reserved
+  header.writeUInt16LE(1, 2); // ICO type
+  header.writeUInt16LE(pngImages.length, 4);
+
+  const directory = Buffer.alloc(pngImages.length * 16);
+  let offset = header.length + directory.length;
+
+  pngImages.forEach(({ size, buffer }, index) => {
+    const entryOffset = index * 16;
+    directory.writeUInt8(size >= 256 ? 0 : size, entryOffset);
+    directory.writeUInt8(size >= 256 ? 0 : size, entryOffset + 1);
+    directory.writeUInt8(0, entryOffset + 2); // Palette colors
+    directory.writeUInt8(0, entryOffset + 3); // Reserved
+    directory.writeUInt16LE(1, entryOffset + 4); // Color planes
+    directory.writeUInt16LE(32, entryOffset + 6); // Bits per pixel
+    directory.writeUInt32LE(buffer.length, entryOffset + 8);
+    directory.writeUInt32LE(offset, entryOffset + 12);
+    offset += buffer.length;
+  });
+
+  return Buffer.concat([header, directory, ...pngImages.map(image => image.buffer)]);
+}
+
+/**
+ * Generate favicon PNGs and a multi-size ICO file from the simplified favicon art.
+ */
+async function generateFavicons() {
+  console.log('\nGenerating Favicons...');
+  const inputPath = path.join(IMAGES_DIR, FAVICON);
+  const originalSize = await getFileSize(inputPath);
+  const pngImages = [];
+
+  for (const size of FAVICON_SIZES) {
+    const outputPath = path.join(IMAGES_DIR, `favicon-${size}.png`);
+    const buffer = await sharp(inputPath)
+      .resize(size, size, { fit: 'contain', withoutEnlargement: true })
+      .png({ quality: QUALITY.favicon, compressionLevel: 9 })
+      .toBuffer();
+
+    await fs.writeFile(outputPath, buffer);
+    pngImages.push({ size, buffer });
+
+    const outputSize = await getFileSize(outputPath);
+    console.log(`  - favicon-${size}.png (${outputSize}KB)`);
+  }
+
+  const icoOutputPath = path.join(IMAGES_DIR, 'favicon.ico');
+  await fs.writeFile(icoOutputPath, createIco(pngImages));
+  const icoSize = await getFileSize(icoOutputPath);
+
+  console.log(`  - favicon.ico (${icoSize}KB)`);
+  console.log(`    Source: ${FAVICON} (${originalSize}KB)`);
+
+  return {
+    source: FAVICON,
+    pngs: FAVICON_SIZES.map(size => `favicon-${size}.png`),
+    ico: 'favicon.ico'
+  };
 }
 
 /**
@@ -262,6 +331,9 @@ async function main() {
   // Optimize logo
   const logoResult = await optimizeLogo();
 
+  // Generate favicons from the simplified icon artwork
+  const faviconResult = await generateFavicons();
+
   // Optimize screenshots
   console.log('\n📸 Optimizing Screenshots...');
   const screenshotResults = [];
@@ -279,6 +351,7 @@ async function main() {
 
   console.log('\n✅ Optimization Complete!');
   console.log(`\nTotal savings: ${totalOriginal.toFixed(2)}KB → ${totalOptimized.toFixed(2)}KB (${savings}% reduction)`);
+  console.log(`\nFavicons generated: ${faviconResult.pngs.join(', ')}, ${faviconResult.ico}`);
 
   // Generate HTML snippets
   const htmlSnippets = generateHtmlSnippets(screenshotResults, logoResult);
@@ -288,9 +361,10 @@ async function main() {
   console.log(`\n📝 HTML snippets saved to: IMAGE_SNIPPETS.html`);
   console.log('\nNext steps:');
   console.log('1. Review optimized images in assets/images/optimized/');
-  console.log('2. Check IMAGE_SNIPPETS.html for responsive image code');
-  console.log('3. Update your markdown files with the new image references');
-  console.log('4. Test on mobile devices');
+  console.log('2. Review favicon files in assets/images/');
+  console.log('3. Check IMAGE_SNIPPETS.html for responsive image code');
+  console.log('4. Update your markdown files and layout favicon links if needed');
+  console.log('5. Test on mobile devices');
 }
 
 // Run the script
