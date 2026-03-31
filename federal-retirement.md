@@ -1,328 +1,532 @@
 ---
 layout: default
-title: FERS Retirement Calculator for Pension, Supplement, and TSP
-description: See how your FERS pension, temporary supplement, TSP withdrawals, Social Security, and taxes work together year by year.
-keywords: federal retirement planner, FERS retirement calculator, CSRS retirement calculator, federal employee retirement planning, FERS supplement calculator, federal pension planner, TSP retirement planning
+title: Federal Retirement Planner for FERS, Supplement, TSP, and Pension Timing
+description: See your FERS pension, supplement, TSP withdrawals, Social Security, and taxes line up year by year.
+keywords: federal retirement planner, FERS retirement calculator, FERS supplement calculator, TSP retirement planning, federal pension planner, federal employee retirement planning, CSRS retirement calculator
 image: /assets/images/federal-advanced.png
 canonical: https://www.fatboysoftware.com/federal-retirement
 permalink: /federal-retirement/
 ---
 
 <style>
-  .federal-cta-hero {
-    margin: 1.5rem 0 2rem;
-    padding: 1.25rem;
-    background: linear-gradient(145deg, #f8fbff, #eef5ff);
-    border: 1px solid #cfe0fb;
-    border-radius: 12px;
-    box-shadow: 0 14px 30px rgba(0, 62, 136, 0.08);
+  .federal-page {
+    --federal-ink: #161616;
+    --federal-subtle: #5c6470;
+    --federal-line: #d7dde6;
+    --federal-bg: #f7f9fc;
+    --federal-card: #ffffff;
+    --federal-blue: #184c8c;
+    --federal-blue-dark: #113863;
+    --federal-gold: #b98a2e;
+    --federal-shadow: 0 16px 40px rgba(16, 34, 58, 0.08);
+    margin-top: 0.5rem;
   }
 
-  .federal-cta-hero h3,
-  .federal-quick-start h3 {
-    margin: 0 0 0.5rem;
+  .federal-kicker {
+    display: inline-block;
+    margin-bottom: 0.9rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    background: #eef4fb;
+    color: var(--federal-blue);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .federal-subhead {
     font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--federal-subtle);
+    max-width: 48rem;
+    margin: 0 0 1.15rem;
   }
 
-  .federal-cta-hero p,
-  .federal-quick-start p {
-    margin: 0.35rem 0;
+  .federal-hero {
+    margin: 1.4rem 0 1.5rem;
+    padding: 1.35rem;
+    background: linear-gradient(145deg, #f8fbff, #eef4fb);
+    border: 1px solid #d7e4f7;
+    border-radius: 16px;
+    box-shadow: var(--federal-shadow);
   }
 
-  .federal-cta-grid,
-  .federal-quick-points {
+  .federal-hero-copy {
+    margin: 0 0 0.9rem;
+    color: var(--federal-subtle);
+  }
+
+  .federal-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin: 1rem 0 1.1rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .federal-trust li {
+    margin: 0;
+    padding: 0.45rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #d8e4f5;
+    color: var(--federal-ink);
+    font-size: 0.95rem;
+  }
+
+  .federal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1rem 0 0.7rem;
+  }
+
+  .federal-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.82rem 1.15rem;
+    border-radius: 10px;
+    text-decoration: none !important;
+    font-weight: 700;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+
+  .federal-btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .federal-btn-primary {
+    background: var(--federal-blue);
+    color: #fff !important;
+    box-shadow: 0 10px 24px rgba(24, 76, 140, 0.18);
+  }
+
+  .federal-btn-primary:hover {
+    background: var(--federal-blue-dark);
+  }
+
+  .federal-btn-secondary {
+    background: #fff;
+    color: var(--federal-blue) !important;
+    border: 1px solid #c8d7ec;
+  }
+
+  .federal-note {
+    margin: 0.55rem 0 0;
+    color: var(--federal-subtle);
+    font-size: 0.96rem;
+  }
+
+  .federal-proof {
     display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin: 1.2rem 0 1.4rem;
+  }
+
+  .federal-proof-card,
+  .federal-card,
+  .federal-step,
+  .federal-scenario {
+    background: var(--federal-card);
+    border: 1px solid var(--federal-line);
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(16, 34, 58, 0.04);
+  }
+
+  .federal-proof-card {
+    padding: 1rem;
+  }
+
+  .federal-proof-card strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--federal-ink);
+  }
+
+  .federal-proof-card p {
+    margin: 0;
+    color: var(--federal-subtle);
+  }
+
+  .federal-media {
+    margin: 1.4rem 0 0.6rem;
+  }
+
+  .federal-media img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #d2d9e3;
+    border-radius: 12px;
+    box-shadow: var(--federal-shadow);
+  }
+
+  .federal-caption {
+    margin-top: 0.55rem;
+    color: var(--federal-subtle);
+    font-size: 0.95rem;
+  }
+
+  .federal-section-lead {
+    color: var(--federal-subtle);
+    margin-bottom: 1rem;
+  }
+
+  .federal-grid-2,
+  .federal-grid-3,
+  .federal-steps,
+  .federal-scenarios,
+  .federal-faq {
+    display: grid;
+    gap: 0.95rem;
+  }
+
+  .federal-grid-2,
+  .federal-steps,
+  .federal-faq {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.85rem;
+  }
+
+  .federal-grid-3,
+  .federal-scenarios {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .federal-card,
+  .federal-step,
+  .federal-scenario {
+    padding: 1rem 1rem 0.95rem;
+  }
+
+  .federal-card h3,
+  .federal-step h3,
+  .federal-scenario h3,
+  .federal-faq-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.45rem;
+    font-size: 1.05rem;
+  }
+
+  .federal-card p,
+  .federal-step p,
+  .federal-scenario p,
+  .federal-faq-item p {
+    margin-bottom: 0;
+    color: var(--federal-subtle);
+  }
+
+  .federal-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    margin-bottom: 0.65rem;
+    border-radius: 999px;
+    background: #eef4fb;
+    color: var(--federal-blue);
+    font-weight: 700;
+  }
+
+  .federal-cta-band {
+    margin: 1.5rem 0;
+    padding: 1.15rem 1.2rem;
+    background: #fbfcfe;
+    border: 1px solid var(--federal-line);
+    border-radius: 14px;
+  }
+
+  .federal-faq-item {
+    padding: 1rem;
+    background: var(--federal-card);
+    border: 1px solid var(--federal-line);
+    border-radius: 14px;
+  }
+
+  .federal-footer-links {
     margin-top: 1rem;
   }
 
-  .federal-cta-card {
-    padding: 1rem;
-    background: #fff;
-    border: 1px solid #d8e4f5;
-    border-radius: 10px;
+  .federal-footer-links a {
+    margin-right: 1rem;
+    white-space: nowrap;
   }
 
-  .federal-cta-card strong {
-    display: block;
-    margin-bottom: 0.35rem;
+  .federal-mobile-bar {
+    display: none;
   }
 
-  .federal-cta-card p {
-    margin-bottom: 0.8rem;
-    color: #43536b;
-  }
+  @media (max-width: 900px) {
+    .federal-proof,
+    .federal-grid-3,
+    .federal-scenarios {
+      grid-template-columns: 1fr;
+    }
 
-  .btn-download.btn-secondary {
-    background: #fff;
-    color: #0052a3;
-    border: 1px solid #b8d1f5;
-  }
-
-  .btn-download.btn-secondary:hover {
-    background: #f5f9ff;
-    color: #003d78;
-  }
-
-  .federal-cta-note,
-  .federal-quick-note {
-    font-size: 0.95rem;
-    color: #55657e;
-  }
-
-  .federal-quick-start {
-    margin: 1.5rem 0;
-    padding: 1.15rem 1.25rem;
-    background: #f9fafb;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-  }
-
-  .federal-quick-point {
-    padding: 0.9rem 1rem;
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-  }
-
-  .federal-quick-point strong {
-    display: block;
-    margin-bottom: 0.35rem;
+    .federal-grid-2,
+    .federal-steps,
+    .federal-faq {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 720px) {
-    .federal-cta-grid,
-    .federal-quick-points {
-      grid-template-columns: 1fr;
+    .federal-actions {
+      flex-direction: column;
+    }
+
+    .federal-btn {
+      width: 100%;
+    }
+
+    .federal-mobile-bar {
+      display: block;
+      position: sticky;
+      bottom: 0;
+      z-index: 20;
+      margin: 1rem -0.4rem 0;
+      padding: 0.8rem;
+      background: rgba(255,255,255,0.96);
+      border-top: 1px solid #d9e0ea;
+      backdrop-filter: blur(6px);
     }
   }
 </style>
 
-# FERS Retirement Calculator for Pension, Supplement, and TSP
-## See how your FERS pension, temporary supplement, TSP withdrawals, Social Security, and taxes work together year by year.
+<div class="federal-page">
 
-Federal retirement planning is not just a generic retirement calculator with the word "pension" stapled on. You need to see how a government pension, a temporary FERS annuity supplement, TSP withdrawals, Social Security timing, taxes, and spouse income work together across the full plan.
+<span class="federal-kicker">Built for federal employees and pension households</span>
 
-**That is what this page is for.**
+# See when your FERS pension, supplement, TSP, and Social Security actually line up
 
-<section class="federal-cta-hero">
-  <h3>Start with the free federal web app</h3>
-  <p>Ad traffic should not have to hunt for the product. The fastest path is to open the free web app with the federal scenario already loaded.</p>
-  <div class="federal-cta-grid">
-    <div class="federal-cta-card">
-      <strong>Free web app</strong>
-      <p>Loads a federal example instantly so you can see pension income, a supplement ending at 62, and the year-by-year spending gap.</p>
-      <a href="https://app.fatboysoftware.com/?federal=1" class="btn-download" data-federal-cta="hero_free_app">Open Free Federal Web App</a>
-    </div>
-    <div class="federal-cta-card">
-      <strong>Full federal planner</strong>
-      <p>Use this when you want deeper editing, more advanced controls, and the complete planner workflow instead of the lighter preview.</p>
-      <a href="https://planner.fatboysoftware.com" class="btn-download btn-secondary" data-federal-cta="hero_full_planner">Open Full Federal Planner</a>
-    </div>
+<p class="federal-subhead">Generic retirement calculators usually flatten everything into one number. This one shows when salary stops, when pension starts, when the FERS supplement ends, what taxes do to spending, and where withdrawals have to fill the gap.</p>
+
+<section class="federal-hero">
+  <p class="federal-hero-copy"><strong>Try the federal example first.</strong> The fastest way to judge the planner is to open the free version with a federal scenario already loaded.</p>
+
+  <ul class="federal-trust">
+    <li>FERS supplement timing</li>
+    <li>Pension COLA and step-downs</li>
+    <li>TSP withdrawals and taxes</li>
+    <li>Spouse timing and income gaps</li>
+  </ul>
+
+  <div class="federal-actions">
+    <a href="https://app.fatboysoftware.com/?federal=1" class="federal-btn federal-btn-primary" data-federal-cta="hero_free_app">Try Free Federal Example</a>
+    <a href="https://planner.fatboysoftware.com" class="federal-btn federal-btn-secondary" data-federal-cta="hero_full_planner">Open Full Federal Planner</a>
   </div>
-  <p class="federal-cta-note">No signup wall for the free preview. If the sample looks like your situation, move into the full planner when you want deeper edits.</p>
+
+  <p class="federal-note">No signup wall for the free preview. Start there, then move into the full planner if you want deeper editing.</p>
 </section>
 
-<picture>
-  <source srcset="/assets/images/optimized/federal-advanced-400w.webp 400w, /assets/images/optimized/federal-advanced-800w.webp 800w, /assets/images/optimized/federal-advanced-1200w.webp 1200w"
-          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-          type="image/webp">
-  <source srcset="/assets/images/optimized/federal-advanced-400w.png 400w, /assets/images/optimized/federal-advanced-800w.png 800w, /assets/images/optimized/federal-advanced-1200w.png 1200w"
-          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-          type="image/png">
-  <img src="/assets/images/optimized/federal-advanced-800w.png"
-       alt="Government retirement planning controls showing pension COLA, age-62 pension changes, and FERS annuity supplement settings"
-       loading="eager"
-       style="max-width: 100%; height: auto; border: 1px solid #c8c0b0; border-radius: 6px; box-shadow: 0 16px 34px rgba(0,0,0,0.08);">
-</picture>
-<em>Built for federal-style retirement income details: pension COLA, age-based pension change events, spouse pension handling, and temporary FERS supplement income.</em>
-
----
-
-## Why Generic Retirement Calculators Miss Federal Retirement
-
-Most retirement tools flatten everything into one income number.
-
-Several planners can incorporate federal retirement income. Fatboy's differentiator is modeling federal-style income timing inside the full retirement plan year by year.
-
-That includes the parts federal workers actually care about:
-- **FERS supplement timing** before age 62
-- **Pension COLA** assumptions over time
-- **Age-based pension changes** like offset or step-down behavior
-- **TSP withdrawals** interacting with pension and Social Security
-- **Spouse pension coordination**
-- **Federal and state taxes** changing the actual spending gap
-
-If your income changes at age 62, if your supplement ends before Social Security starts, or if one spouse retires years earlier than the other, a generic tool can give you the wrong answer while still looking polished.
-
----
-
-## What Fatboy Models for Federal Workers
-
-### Pension Timing and COLA
-- Model annual pension income by owner
-- Add pension COLA assumptions
-- Show year-by-year pension cash flow inside the full retirement plan
-
-### FERS Supplement and Bridge Income
-- Model temporary monthly or annual income streams
-- Show exactly what happens when the supplement ends
-- Show bridge-income gaps separately inside the year-by-year plan
-- Use the same engine for other bridge-income periods, not just federal cases
-
-### Age-Based Pension Changes
-- Add a later pension change event at a specific age or year
-- Useful for offset-style scenarios, step-down income, or pension coordination cases
-
-### Where The Differentiator Actually Is
-- Not just entering a pension amount
-- Seeing federal-style income sources behave separately inside the plan
-- Watching pension, supplement, Social Security, taxes, and withdrawals interact year by year
-
-### TSP, Social Security, and Taxes
-- See pension income alongside TSP withdrawals and Social Security
-- Show the effect on federal tax, state tax, healthcare, and spending gaps
-- Compare how your plan changes if you retire earlier, later, or phase income differently
-
----
-
-## See Federal Retirement Cash Flow Year by Year
-
-<picture>
-  <source srcset="/assets/images/optimized/Federal_sankey-400w.webp 400w, /assets/images/optimized/Federal_sankey-800w.webp 800w, /assets/images/optimized/Federal_sankey-1200w.webp 1200w"
-          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-          type="image/webp">
-  <source srcset="/assets/images/optimized/Federal_sankey-400w.png 400w, /assets/images/optimized/Federal_sankey-800w.png 800w, /assets/images/optimized/Federal_sankey-1200w.png 1200w"
-          sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-          type="image/png">
-  <img src="/assets/images/optimized/Federal_sankey-800w.png"
-       alt="Federal retirement Sankey diagram showing salary, pension, taxes, healthcare, living expenses, and withdrawals by plan year"
-       loading="lazy"
-       style="max-width: 100%; height: auto; border: 1px solid #c8c0b0; border-radius: 6px; box-shadow: 0 16px 34px rgba(0,0,0,0.08);">
-</picture>
-<em>Year-by-year cash flow view showing how federal salary, pension income, taxes, healthcare, living expenses, and withdrawals fit together inside the plan.</em>
-
-This is where the planning actually gets useful. A federal worker does not just need a "success probability" number. You need to see:
-- when salary stops
-- when pension starts
-- when the FERS supplement ends
-- what taxes do to take-home spending
-- whether you need portfolio withdrawals in the gap years
-
----
-
-## Real Federal Scenarios This Handles
-
-**Scenario 1: FERS supplement from retirement until age 62**  
-Retire before Social Security starts, use pension plus temporary supplement income, then see the spending gap when the supplement ends.
-
-**Scenario 2: Pension with COLA and later reduction**  
-Start with one pension amount, apply COLA, then model a later reduction or offset event at a specific age.
-
-**Scenario 3: TSP + pension + spouse timing mismatch**  
-One spouse retires first, one keeps earning, then later both transition to pension and Social Security income.
-
-**Scenario 4: Federal worker comparing retirement dates**  
-Retire at 57, 60, or 62 and see how salary, pension timing, supplement years, taxes, and withdrawals change the plan.
-
----
-
-## Web App and Desktop Support
-
-These federal retirement features are now supported across the planning workflow:
-- **Free web app preview** with a federal sample plan, visible pension/supplement inputs, and year-by-year projection output
-- **Full planner editing** for deeper federal workflows, including advanced controls beyond the lightweight web preview
-- **Cloud sync** so federal plans can move between environments when you are using the full planner
-- **Timeline and cash flow views** that surface the federal-specific income changes
-
-This matters because a federal landing page should not promise features that only exist on paper. The federal retirement controls now flow through the actual projection engine, not just the UI.
-
-The packaging is simple: the free web app gives you a federal sample plan plus light federal inputs, while the complete planner is where the deeper federal editing and advanced controls live.
-
----
-
-## Start In About 30 Seconds
-
-<section class="federal-quick-start">
-  <h3>What to do first</h3>
-  <p>If you clicked an ad because you wanted to try the planner, start here instead of reading the whole page first.</p>
-  <div class="federal-quick-points">
-    <div class="federal-quick-point">
-      <strong>1. Open the free federal preview</strong>
-      <p>Launch the web app with the federal example preloaded so you can see the planning flow immediately.</p>
-    </div>
-    <div class="federal-quick-point">
-      <strong>2. Check the handoff year</strong>
-      <p>Look at the years when salary stops, pension starts, and the supplement ends before Social Security.</p>
-    </div>
-    <div class="federal-quick-point">
-      <strong>3. Decide if you need deeper editing</strong>
-      <p>If the preview proves the concept, move to the full planner for the complete federal workflow.</p>
-    </div>
-    <div class="federal-quick-point">
-      <strong>4. Keep moving</strong>
-      <p>The point of this page is not just to explain features. It is to get you into the planner quickly.</p>
-    </div>
+<div class="federal-proof">
+  <div class="federal-proof-card">
+    <strong>See the handoff years</strong>
+    <p>Watch the exact years where salary stops, pension begins, and the supplement drops before Social Security starts.</p>
   </div>
-  <div class="download-buttons">
-    <a href="https://app.fatboysoftware.com/?federal=1" class="btn-download" data-federal-cta="quickstart_free_app">Try The Free Federal Web App</a>
-    <a href="https://planner.fatboysoftware.com" class="btn-download btn-secondary" data-federal-cta="quickstart_full_planner">Go To The Full Planner</a>
+  <div class="federal-proof-card">
+    <strong>See the spending gap</strong>
+    <p>Taxes, healthcare, and withdrawals stay visible so you can see the actual pressure on the plan.</p>
   </div>
-  <p class="federal-quick-note">The free app is the easiest first click. The full planner is the better second click once you know you want deeper control.</p>
-</section>
-
----
-
-## Who This Is For
-
-This page is a fit if you are:
-- a **FERS employee** planning around the annuity supplement
-- a **CSRS or offset-style pension household** with pension timing changes
-- a **federal worker with TSP plus pension**
-- a **DIY planner** who wants to model taxes and spending instead of relying on rules of thumb
-
-If you just want a one-number retirement guess, this is overkill. If you want to understand how your federal retirement actually behaves year by year, it is the right kind of overkill.
-
----
-
-## Get Started
-
-You can start with a federal preview in the free web app, then move into the full planner when you want the deeper editing experience.
-
-<div class="download-buttons">
-  <a href="https://app.fatboysoftware.com/?federal=1" class="btn-download" data-federal-cta="planner">Start Free In The Web App</a>
-  <a href="https://planner.fatboysoftware.com" class="btn-download btn-secondary" data-federal-cta="pricing">Open The Full Federal Planner</a>
+  <div class="federal-proof-card">
+    <strong>See whether timing changes help</strong>
+    <p>Compare retiring at 57, 60, or 62 instead of guessing from a single summary number.</p>
+  </div>
 </div>
 
-<a href="/screenshots" data-federal-cta="screenshots">See all screenshots and feature examples</a>
+<div class="federal-media">
+  <picture>
+    <source srcset="/assets/images/optimized/federal-advanced-400w.webp 400w, /assets/images/optimized/federal-advanced-800w.webp 800w, /assets/images/optimized/federal-advanced-1200w.webp 1200w"
+            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+            type="image/webp">
+    <source srcset="/assets/images/optimized/federal-advanced-400w.png 400w, /assets/images/optimized/federal-advanced-800w.png 800w, /assets/images/optimized/federal-advanced-1200w.png 1200w"
+            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+            type="image/png">
+    <img src="/assets/images/optimized/federal-advanced-800w.png"
+         alt="Federal retirement planning controls showing pension COLA, age-62 pension changes, and FERS annuity supplement settings"
+         loading="eager">
+  </picture>
+  <p class="federal-caption">Federal-style controls for pension timing, supplement years, spouse coordination, and later pension changes.</p>
+</div>
 
 ---
 
-## Frequently Asked Questions
+## Start in about 30 seconds
 
-**Q: Does this handle the FERS annuity supplement?**  
-A: Yes. You can model temporary federal-style supplement income with start and end timing, then see the effect on yearly cash flow when it drops off.
+<p class="federal-section-lead">You do not need to read the whole page before getting value. This is the fastest path.</p>
 
-**Q: Can I model pension COLA and an age-62 change event?**  
-A: Yes. The government-retirement controls support pension COLA and a later pension change by age or year.
+<div class="federal-steps">
+  <section class="federal-step">
+    <span class="federal-number">1</span>
+    <h3>Open the free federal example</h3>
+    <p>Launch the web app with a federal case already loaded so you can see the planning flow immediately.</p>
+  </section>
+  <section class="federal-step">
+    <span class="federal-number">2</span>
+    <h3>Check the handoff year</h3>
+    <p>Look at the years when salary ends, pension starts, and the supplement ends before Social Security begins.</p>
+  </section>
+  <section class="federal-step">
+    <span class="federal-number">3</span>
+    <h3>Run the projection</h3>
+    <p>See whether taxes and withdrawals create a gap that a generic calculator would hide.</p>
+  </section>
+  <section class="federal-step">
+    <span class="federal-number">4</span>
+    <h3>Move deeper only if you need it</h3>
+    <p>If the preview proves the concept, use the full planner for more control and deeper editing.</p>
+  </section>
+</div>
 
-**Q: Can I use this with TSP, Social Security, and spouse income?**  
-A: Yes. The planner treats pension income as one part of the full retirement-income system, alongside TSP withdrawals, Social Security, taxes, and other income.
-
-**Q: Is this only for federal workers?**  
-A: No. The underlying retirement-income engine is broader than federal use cases. But this page is specifically about the federal scenarios it now supports well.
+<section class="federal-cta-band">
+  <div class="federal-actions">
+    <a href="https://app.fatboysoftware.com/?federal=1" class="federal-btn federal-btn-primary" data-federal-cta="quickstart_free_app">Start Free In The Web App</a>
+    <a href="https://planner.fatboysoftware.com" class="federal-btn federal-btn-secondary" data-federal-cta="quickstart_full_planner">Go To The Full Planner</a>
+  </div>
+  <p class="federal-note">The free app is the best first click. The full planner is the better second click.</p>
+</section>
 
 ---
 
-**Questions? Email: [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)**
+## What this planner handles that generic calculators usually miss
 
-<nav class="page-nav">
-  <a href="/screenshots" data-federal-cta="nav_screenshots">See All Features</a>
-  <a href="/pricing" data-federal-cta="nav_pricing">Pricing Details</a>
-  <a href="/comparison" data-federal-cta="nav_comparison">Compare Versions</a>
-  <a href="/blog" data-federal-cta="nav_blog">Blog</a>
-</nav>
+<div class="federal-grid-2">
+  <section class="federal-card">
+    <h3>FERS supplement timing</h3>
+    <p>Model the temporary supplement before age 62 and see exactly what happens when it ends.</p>
+  </section>
+  <section class="federal-card">
+    <h3>Pension COLA and later changes</h3>
+    <p>Add COLA assumptions and later pension changes for offset-style or step-down scenarios.</p>
+  </section>
+  <section class="federal-card">
+    <h3>TSP withdrawals inside the full plan</h3>
+    <p>See pension, TSP, Social Security, and taxes interacting year by year instead of in isolation.</p>
+  </section>
+  <section class="federal-card">
+    <h3>Spouse timing</h3>
+    <p>Handle households where one spouse retires earlier, keeps working longer, or has a different income mix.</p>
+  </section>
+</div>
+
+---
+
+## See federal retirement cash flow year by year
+
+<p class="federal-section-lead">The point is not just to get a success score. The point is to see where the plan is smooth and where it is under pressure.</p>
+
+<div class="federal-media">
+  <picture>
+    <source srcset="/assets/images/optimized/Federal_sankey-400w.webp 400w, /assets/images/optimized/Federal_sankey-800w.webp 800w, /assets/images/optimized/Federal_sankey-1200w.webp 1200w"
+            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+            type="image/webp">
+    <source srcset="/assets/images/optimized/Federal_sankey-400w.png 400w, /assets/images/optimized/Federal_sankey-800w.png 800w, /assets/images/optimized/Federal_sankey-1200w.png 1200w"
+            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
+            type="image/png">
+    <img src="/assets/images/optimized/Federal_sankey-800w.png"
+         alt="Federal retirement cash flow diagram showing salary, pension, taxes, healthcare, expenses, and withdrawals by year"
+         loading="lazy">
+  </picture>
+  <p class="federal-caption">See how salary, pension, supplement income, taxes, healthcare, living expenses, and withdrawals fit together inside the plan.</p>
+</div>
+
+<div class="federal-grid-2">
+  <section class="federal-card">
+    <h3>When salary stops</h3>
+    <p>See the transition from working years to pension years without losing the timing details.</p>
+  </section>
+  <section class="federal-card">
+    <h3>When the supplement ends</h3>
+    <p>Spot the drop-off years that often create the real spending gap before Social Security starts.</p>
+  </section>
+  <section class="federal-card">
+    <h3>What taxes do to spending</h3>
+    <p>Look at the take-home impact, not just gross income numbers that make the plan look cleaner than it is.</p>
+  </section>
+  <section class="federal-card">
+    <h3>Whether withdrawals have to bridge the gap</h3>
+    <p>See when the portfolio needs to step in and how much pressure that creates year by year.</p>
+  </section>
+</div>
+
+---
+
+## Common federal scenarios this handles
+
+<div class="federal-scenarios">
+  <section class="federal-scenario">
+    <h3>Retire before 62 with the supplement</h3>
+    <p>See pension plus temporary supplement income, then watch the gap when the supplement ends.</p>
+  </section>
+  <section class="federal-scenario">
+    <h3>Pension with COLA and a later reduction</h3>
+    <p>Start with one pension amount, apply COLA, then model a later offset or step-down event.</p>
+  </section>
+  <section class="federal-scenario">
+    <h3>TSP plus spouse timing mismatch</h3>
+    <p>One spouse retires first, one keeps earning, then both move into pension and Social Security later.</p>
+  </section>
+</div>
+
+---
+
+## Who this is for
+
+- **FERS employees** planning around the annuity supplement
+- **Federal households with TSP plus pension income**
+- **CSRS or offset-style pension cases** with timing changes
+- **DIY planners** who want to see taxes and spending gaps, not just a rule-of-thumb result
+
+If you only want a one-number guess, this is probably more tool than you need. If you want to see how federal retirement actually behaves year by year, that is the point.
+
+---
+
+## Frequently asked questions
+
+<div class="federal-faq">
+  <section class="federal-faq-item">
+    <h3>Does this handle the FERS annuity supplement?</h3>
+    <p>Yes. You can model temporary supplement income with start and end timing, then see the drop-off year in the cash flow.</p>
+  </section>
+  <section class="federal-faq-item">
+    <h3>Can I model pension COLA and a later age-based change?</h3>
+    <p>Yes. The planner supports pension COLA and later pension changes by year or age.</p>
+  </section>
+  <section class="federal-faq-item">
+    <h3>Can I use it with TSP, Social Security, and spouse income?</h3>
+    <p>Yes. Pension income is modeled as part of the full retirement-income system, not as a standalone number.</p>
+  </section>
+  <section class="federal-faq-item">
+    <h3>Should I start in the free app or the full planner?</h3>
+    <p>Start in the free app first. If the federal example matches the kind of problem you are solving, move to the full planner for deeper edits.</p>
+  </section>
+</div>
+
+---
+
+## Get started
+
+<section class="federal-cta-band">
+  <div class="federal-actions">
+    <a href="https://app.fatboysoftware.com/?federal=1" class="federal-btn federal-btn-primary" data-federal-cta="bottom_free_app">Try Free Federal Example</a>
+    <a href="https://planner.fatboysoftware.com" class="federal-btn federal-btn-secondary" data-federal-cta="bottom_full_planner">Open Full Federal Planner</a>
+  </div>
+  <p class="federal-note">Questions? <a href="mailto:fbfinancialplanner@gmail.com" data-federal-cta="email_question">fbfinancialplanner@gmail.com</a></p>
+  <div class="federal-footer-links">
+    <a href="/screenshots" data-federal-cta="nav_screenshots">Screenshots</a>
+    <a href="/pricing" data-federal-cta="nav_pricing">Pricing</a>
+    <a href="/comparison" data-federal-cta="nav_comparison">Compare</a>
+  </div>
+</section>
+
+<div class="federal-mobile-bar">
+  <a href="https://app.fatboysoftware.com/?federal=1" class="federal-btn federal-btn-primary" data-federal-cta="mobile_sticky_free_app">Try Free Federal Example</a>
+</div>
+
+</div>
 
 <script>
   (function () {
@@ -331,6 +535,7 @@ A: No. The underlying retirement-income engine is broader than federal use cases
     var pageTitle = document.title;
     var query = new URLSearchParams(window.location.search || '');
     var ctaLinks = document.querySelectorAll('[data-federal-cta]');
+    var landingVariant = 'federal_markdown_v1';
 
     function track(eventName, params) {
       if (typeof window.gtag !== 'function') {
@@ -367,7 +572,8 @@ A: No. The underlying retirement-income engine is broader than federal use cases
       page_path: pagePath,
       page_title: pageTitle,
       plan_type: 'federal',
-      content_group: 'landing_page'
+      content_group: 'landing_page',
+      landing_variant: landingVariant
     });
 
     Array.prototype.forEach.call(ctaLinks, function (link) {
@@ -385,7 +591,8 @@ A: No. The underlying retirement-income engine is broader than federal use cases
           page_title: pageTitle,
           cta_name: ctaName,
           destination_url: destination,
-          plan_type: 'federal'
+          plan_type: 'federal',
+          landing_variant: landingVariant
         });
 
         track('select_promotion', {
@@ -395,13 +602,14 @@ A: No. The underlying retirement-income engine is broader than federal use cases
           location_id: pagePath
         });
 
-        if (ctaName === 'planner') {
+        if (/free_app/.test(ctaName)) {
           track('start_federal_plan', {
             page_location: pageUrl,
             page_path: pagePath,
             cta_name: ctaName,
             destination_url: destination,
-            plan_type: 'federal'
+            plan_type: 'federal',
+            landing_variant: landingVariant
           });
         }
       });
