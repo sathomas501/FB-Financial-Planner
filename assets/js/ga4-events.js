@@ -2,6 +2,10 @@
     'use strict';
 
     const GA_MEASUREMENT_ID = window.GA_MEASUREMENT_ID || null;
+    const MICROSOFT_COMMERCE_EVENTS = {
+        begin_checkout: true,
+        purchase: true
+    };
     let ga4ReadyPromise = null;
     const locationOrigin = window.location.origin || (window.location.protocol + '//' + window.location.hostname);
     const locationPath = window.location.pathname;
@@ -63,6 +67,10 @@
     }
 
     function trackEvent(eventName, params) {
+        if (MICROSOFT_COMMERCE_EVENTS[eventName] && typeof window.trackMicrosoftUetEvent === 'function') {
+            window.trackMicrosoftUetEvent(eventName, params || {});
+        }
+
         ensureGA4Ready().then(function (ready) {
             if (!ready) {
                 console.warn('GA4 event skipped (gtag unavailable):', eventName);

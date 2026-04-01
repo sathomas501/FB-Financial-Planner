@@ -10,25 +10,32 @@ permalink: /thank-you/
 window.addEventListener('load', function () {
   var params = new URLSearchParams(window.location.search);
   var sessionId = params.get('session_id');
+  var purchasePayload = {
+    transaction_id: sessionId || 'ffp-' + Date.now(),
+    value: 149.00,
+    currency: 'USD',
+    tax: 0,
+    shipping: 0,
+    items: [{
+      item_id: 'ffp-pro-founding-member',
+      item_name: 'Fatboy Financial Planner Pro - Founding Member',
+      item_brand: 'Fatboy Software',
+      item_category: 'Software',
+      item_category2: 'Financial Planning',
+      item_variant: 'One-time Purchase',
+      price: 149.00,
+      quantity: 1
+    }]
+  };
+
   if (typeof gtag !== 'undefined') {
-    gtag('event', 'purchase', {
-      transaction_id: sessionId || 'ffp-' + Date.now(),
-      value: 149.00,
-      currency: 'USD',
-      tax: 0,
-      shipping: 0,
-      items: [{
-        item_id: 'ffp-pro-founding-member',
-        item_name: 'Fatboy Financial Planner Pro - Founding Member',
-        item_brand: 'Fatboy Software',
-        item_category: 'Software',
-        item_category2: 'Financial Planning',
-        item_variant: 'One-time Purchase',
-        price: 149.00,
-        quantity: 1
-      }]
-    });
+    gtag('event', 'purchase', purchasePayload);
     console.log('GA4 purchase tracked:', sessionId || 'no session_id');
+  }
+
+  if (typeof window.trackMicrosoftUetEvent === 'function') {
+    window.trackMicrosoftUetEvent('purchase', purchasePayload);
+    console.log('Microsoft UET purchase tracked:', sessionId || 'no session_id');
   }
 });
 </script>

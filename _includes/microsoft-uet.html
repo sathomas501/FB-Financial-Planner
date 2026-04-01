@@ -1,0 +1,49 @@
+{% assign uet_tag_id = site.microsoft_uet_tag_id | default: "" | strip %}
+{% if uet_tag_id != "" %}
+<script>
+  window.uetq = window.uetq || [];
+  window.trackMicrosoftUetEvent = function(eventName, params) {
+    if (!eventName) {
+      return false;
+    }
+
+    var eventParams = {};
+    if (params && typeof params === "object") {
+      for (var key in params) {
+        if (Object.prototype.hasOwnProperty.call(params, key)) {
+          eventParams[key] = params[key];
+        }
+      }
+    }
+
+    if (!eventParams.event_action) {
+      eventParams.event_action = eventName;
+    }
+
+    window.uetq.push("event", eventName, eventParams);
+    return true;
+  };
+
+  (function(w, d, t, r, u) {
+    var f, n, i;
+    f = function() {
+      var o = { ti: "{{ uet_tag_id }}" };
+      o.q = w[u];
+      w[u] = new UET(o);
+      w[u].push("pageLoad");
+    };
+    n = d.createElement(t);
+    n.src = r;
+    n.async = 1;
+    n.onload = n.onreadystatechange = function() {
+      var s = this.readyState;
+      if (!s || s === "loaded" || s === "complete") {
+        f();
+        n.onload = n.onreadystatechange = null;
+      }
+    };
+    i = d.getElementsByTagName(t)[0];
+    i.parentNode.insertBefore(n, i);
+  })(window, document, "script", "//bat.bing.com/bat.js", "uetq");
+</script>
+{% endif %}
