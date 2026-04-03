@@ -93,15 +93,11 @@ permalink: /
 
   .nav-links a:hover { color: var(--ink); }
 
-  .nav-cta {
-    background: var(--ink);
-    color: var(--paper) !important;
-    padding: 8px 20px;
-    border-radius: 2px;
-    font-weight: 500 !important;
+  .nav-desktop-link {
+    color: var(--ink) !important;
   }
 
-  .nav-cta:hover { background: var(--gold) !important; color: var(--ink) !important; }
+  .nav-desktop-link:hover { color: var(--gold) !important; }
 
   /* HERO */
   .hero {
@@ -161,6 +157,7 @@ permalink: /
     display: flex;
     flex-direction: column;
     gap: 12px;
+    align-items: flex-start;
   }
 
   .hero-bullets {
@@ -247,10 +244,7 @@ permalink: /
   }
 
   .hero-choice {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 14px;
+    display: none;
   }
 
   .hero-choice-card {
@@ -310,7 +304,8 @@ permalink: /
   }
 
   .hero-visual {
-    padding: 20px;
+    position: relative;
+    padding: 18px;
   }
 
   .hero-visual img {
@@ -318,30 +313,61 @@ permalink: /
     border-radius: 8px;
     border: 1px solid rgba(26, 26, 24, 0.08);
     display: block;
-    margin-bottom: 18px;
     background: #fff;
   }
 
-  .hero-insight {
-    background: rgba(184, 134, 11, 0.08);
-    border: 1px solid rgba(184, 134, 11, 0.22);
+  .hero-result-card {
+    position: absolute;
+    top: 36px;
+    left: 36px;
+    max-width: 260px;
+    background: rgba(245, 240, 232, 0.95);
+    border: 1px solid rgba(26, 26, 24, 0.12);
     border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 18px 36px rgba(26, 26, 24, 0.12);
+    backdrop-filter: blur(6px);
   }
 
-  .hero-insight strong {
+  .hero-result-card strong {
     display: block;
-    font-size: 1rem;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--ink);
   }
 
-  .hero-insight span,
-  .hero-visual-note {
+  .hero-result-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero-result-list li {
     color: var(--mid);
     font-size: 0.84rem;
     line-height: 1.55;
+  }
+
+  .hero-card-footer {
+    margin-top: 16px;
+    color: var(--mid);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .hero-card-footer a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(26, 26, 24, 0.18);
+  }
+
+  .hero-card-footer a:hover {
+    border-bottom-color: var(--ink);
   }
 
   .hero-card .price {
@@ -826,6 +852,12 @@ permalink: /
     footer { flex-direction: column; gap: 16px; text-align: center; }
     .cta-buttons { flex-direction: column; align-items: center; }
     .hero-choice { grid-template-columns: 1fr; }
+    .hero-result-card {
+      position: static;
+      max-width: none;
+      margin-bottom: 16px;
+      box-shadow: none;
+    }
   }
 
   @media (max-width: 600px) {
@@ -857,9 +889,7 @@ permalink: /
     <li><a href="/pricing">Pricing</a></li>
     <li><a href="/screenshots">Screenshots</a></li>
     <li><a href="/comparison">Compare</a></li>
-    <li><a href="/blog">Blog</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" class="nav-cta">Buy Pro — $149</a></li>
+    <li><a href="https://planner.fatboysoftware.com" class="nav-desktop-link">Desktop Pro</a></li>
   </ul>
 </nav>
 
@@ -867,20 +897,21 @@ permalink: /
 <div class="hero">
   <div class="hero-content">
     <div class="hero-eyebrow">Free Retirement Planner</div>
-    <h1>Model retirement income, taxes, Social Security, and Roth conversions in one planner.</h1>
-    <p class="hero-sub">
-      Model Roth conversions, IRMAA thresholds, Monte Carlo outcomes, and estate strategy — 
-      with the depth of a professional tool and the privacy of software you actually own.
-      Start free in the web app, including a federal retirement sample for FERS-style planning. $149 unlocks the full planner and desktop app. No subscriptions. No cloud.
-    </p>
+    <h1>See whether your retirement plan actually works before you retire.</h1>
+    <p class="hero-sub">Model income, taxes, Social Security, withdrawals, Roth conversions, and retirement timing in one planner.</p>
+    <ul class="hero-bullets">
+      <li>See when income gaps show up</li>
+      <li>Test taxes, withdrawals, and Roth conversions</li>
+      <li>Compare retirement timing before you commit</li>
+    </ul>
     <div class="hero-actions">
       <a href="https://app.fatboysoftware.com" class="btn-primary" onclick="gtag('event','homepage_hero_demo_click')">
         Start Free In The Web App
       </a>
-      <a href="https://planner.fatboysoftware.com" class="btn-secondary">
-        Open The Full Planner →
+      <a href="https://app.fatboysoftware.com/?sample=1" class="btn-secondary" onclick="gtag('event','homepage_hero_sample_click')">
+        Use Sample Plan
       </a>
-      <p class="hero-note">No sign-up required. Start with sample data, your own numbers, or the federal sample path.</p>
+      <p class="hero-note">Free to try | No signup to explore | Built for real retirement decisions</p>
       <div class="hero-choice">
         <div class="hero-choice-card">
           <strong>Free web app first</strong>
@@ -1261,13 +1292,15 @@ permalink: /
 
     const heroSub = hero.querySelector('.hero-sub');
     if (heroSub) {
-      heroSub.textContent = 'See how long your retirement plan lasts, where income gaps show up, and when taxes start creating pressure before you retire.';
+      const existingBullets = hero.querySelector('.hero-bullets');
+      if (existingBullets) existingBullets.remove();
+      heroSub.textContent = 'Model income, taxes, Social Security, withdrawals, Roth conversions, and retirement timing in one planner.';
       const bullets = document.createElement('ul');
       bullets.className = 'hero-bullets';
       bullets.innerHTML = `
-        <li>Models taxes, Social Security, withdrawals, and account types together</li>
-        <li>Test Roth conversions, asset sales, and retirement timing</li>
-        <li>Built for real retirement decisions, not generic calculators</li>
+        <li>See when income gaps show up</li>
+        <li>Test taxes, withdrawals, and Roth conversions</li>
+        <li>Compare retirement timing before you commit</li>
       `;
       heroSub.insertAdjacentElement('afterend', bullets);
     }
@@ -1282,22 +1315,35 @@ permalink: /
 
     const secondary = hero.querySelector('.btn-secondary');
     if (secondary) {
-      secondary.href = 'https://planner.fatboysoftware.com';
-      secondary.textContent = 'Open The Full Planner';
-      secondary.onclick = function() { gtag('event', 'homepage_hero_full_app_click'); };
+      secondary.href = 'https://app.fatboysoftware.com/?sample=1';
+      secondary.textContent = 'Use Sample Plan';
+      secondary.onclick = function() { gtag('event', 'homepage_hero_sample_click'); };
     }
 
     const note = hero.querySelector('.hero-note');
     if (note) {
-      note.textContent = 'No sign-up required. Start with sample data or enter your own numbers.';
+      note.textContent = 'Free to try | No signup to explore | Built for real retirement decisions';
       note.removeAttribute('data-founding-label');
+    }
+
+    const choice = hero.querySelector('.hero-choice');
+    if (choice) {
+      choice.remove();
     }
 
     const visual = hero.querySelector('.hero-card');
     if (visual) {
       visual.classList.add('hero-visual');
       visual.innerHTML = `
-        <div class="hero-card-label">See The Output First</div>
+        <div class="hero-card-label">Sample Result</div>
+        <div class="hero-result-card">
+          <strong>Sample Result</strong>
+          <ul class="hero-result-list">
+            <li>Income gap appears at age 79</li>
+            <li>Taxes rise after RMDs begin</li>
+            <li>Roth conversion window ends in 7 years</li>
+          </ul>
+        </div>
         <picture>
           <source srcset="/assets/images/optimized/projection_center-400w.webp 400w, /assets/images/optimized/projection_center-800w.webp 800w, /assets/images/optimized/projection_center-1200w.webp 1200w"
                   sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
@@ -1305,13 +1351,9 @@ permalink: /
           <source srcset="/assets/images/optimized/projection_center-400w.png 400w, /assets/images/optimized/projection_center-800w.png 800w, /assets/images/optimized/projection_center-1200w.png 1200w"
                   sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
                   type="image/png">
-          <img src="/assets/images/optimized/projection_center-800w.png" alt="Retirement projection chart with account balance and income results">
+          <img src="/assets/images/optimized/projection_center-800w.png" alt="Retirement planner results showing balances, income, and cash flow projections">
         </picture>
-        <div class="hero-insight">
-          <strong>Sample insight: income gap appears in ages 78-82</strong>
-          <span>The planner surfaces when withdrawals, taxes, and benefit timing stop working well together so you can adjust before you retire.</span>
-        </div>
-        <p class="hero-visual-note">Start with the free web app to see the diagnosis first, then open the full planner when you want the complete planning workflow.</p>
+        <p class="hero-card-footer">Need saved scenarios, exports, or offline use later? <a href="https://planner.fatboysoftware.com">See Desktop Pro</a>.</p>
       `;
     }
   })();
