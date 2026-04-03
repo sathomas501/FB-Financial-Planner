@@ -103,10 +103,10 @@ permalink: /
   .hero {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 100px 40px 80px;
+    padding: 64px 40px 48px;
     display: grid;
     grid-template-columns: 1fr 420px;
-    gap: 80px;
+    gap: 56px;
     align-items: center;
   }
 
@@ -132,12 +132,12 @@ permalink: /
 
   h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-size: clamp(2.15rem, 3.6vw, 3.2rem);
     font-weight: 900;
     line-height: 1.1;
     letter-spacing: -0.03em;
     color: var(--ink);
-    margin-bottom: 28px;
+    margin-bottom: 20px;
   }
 
   h1 em {
@@ -146,33 +146,33 @@ permalink: /
   }
 
   .hero-sub {
-    font-size: 1.1rem;
+    font-size: 1.02rem;
     color: var(--mid);
-    line-height: 1.7;
-    margin-bottom: 44px;
-    max-width: 520px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 540px;
   }
 
   .hero-actions {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px 14px;
+    align-items: center;
   }
 
   .hero-bullets {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin: 0 0 28px;
+    gap: 8px;
+    margin: 18px 0 0;
     padding: 0;
     max-width: 560px;
   }
 
   .hero-bullets li {
     color: var(--mid);
-    font-size: 0.98rem;
+    font-size: 0.94rem;
     display: flex;
     gap: 10px;
     align-items: flex-start;
@@ -239,8 +239,9 @@ permalink: /
   .hero-note {
     font-size: 0.8rem;
     color: var(--mid);
-    margin-top: 8px;
+    margin-top: 0;
     letter-spacing: 0.01em;
+    flex-basis: 100%;
   }
 
   .hero-choice {
@@ -899,11 +900,6 @@ permalink: /
     <div class="hero-eyebrow">Free Retirement Planner</div>
     <h1>See whether your retirement plan actually works before you retire.</h1>
     <p class="hero-sub">Model income, taxes, Social Security, withdrawals, Roth conversions, and retirement timing in one planner.</p>
-    <ul class="hero-bullets">
-      <li>See when income gaps show up</li>
-      <li>Test taxes, withdrawals, and Roth conversions</li>
-      <li>Compare retirement timing before you commit</li>
-    </ul>
     <div class="hero-actions">
       <a href="https://app.fatboysoftware.com" class="btn-primary" onclick="gtag('event','homepage_hero_demo_click')">
         Start Free In The Web App
@@ -923,6 +919,11 @@ permalink: /
         </div>
       </div>
     </div>
+    <ul class="hero-bullets">
+      <li>See when income gaps show up</li>
+      <li>Test taxes, withdrawals, and Roth conversions</li>
+      <li>Compare retirement timing before you commit</li>
+    </ul>
   </div>
 
   <div class="hero-card">
@@ -1302,7 +1303,12 @@ permalink: /
         <li>Test taxes, withdrawals, and Roth conversions</li>
         <li>Compare retirement timing before you commit</li>
       `;
-      heroSub.insertAdjacentElement('afterend', bullets);
+      const actions = hero.querySelector('.hero-actions');
+      if (actions) {
+        actions.insertAdjacentElement('afterend', bullets);
+      } else {
+        heroSub.insertAdjacentElement('afterend', bullets);
+      }
     }
 
     const primary = hero.querySelector('.btn-primary');
