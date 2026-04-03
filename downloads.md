@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Desktop Downloads - Fatboy Financial Planner
-description: Download the Windows desktop app or Linux AppImage for Fatboy Financial Planner. Pro license required for desktop activation.
+description: Download the Windows desktop app or Linux AppImage for Fatboy Financial Planner. Start with free desktop functionality, then unlock Pro features when you need them.
 permalink: /downloads/
 ---
 
@@ -124,7 +124,7 @@ permalink: /downloads/
   <section class="downloads-hero">
     <div class="downloads-eyebrow">Desktop Downloads</div>
     <h1>Download Fatboy Financial Planner for desktop.</h1>
-    <p>Choose the Windows installer or Linux AppImage. Desktop use requires a Pro license key, but this page is the right place to get the app itself.</p>
+    <p>Choose the Windows installer or Linux AppImage. The desktop app includes free functionality similar to the web version, with Pro unlocking the deeper desktop features.</p>
   </section>
 
   <div class="downloads-grid">
@@ -143,18 +143,19 @@ permalink: /downloads/
 
     <section class="download-note">
       <h2>Before you install</h2>
-      <p>The desktop app is part of Pro. If you already bought Pro, use the license key from your email to activate it in the app.</p>
+      <p>You can use the desktop app without Pro for the core free functionality. If you already bought Pro, use the license key from your email to unlock the full desktop experience.</p>
       <ul>
         <li>Windows 10/11 desktop installer</li>
         <li>Linux AppImage desktop build</li>
+        <li>Free desktop functionality similar to the web version</li>
         <li>Offline desktop workflow after install</li>
       </ul>
     </section>
   </div>
 
   <section class="download-note">
-    <h2>Need access first?</h2>
-    <p>If you have not purchased Pro yet, start free in the web app or view pricing before downloading the desktop version.</p>
+    <h2>Want the full version?</h2>
+    <p>Start with the free web app, or view pricing if you want to unlock Pro features across desktop and web.</p>
     <div class="download-actions">
       <a href="/pricing" class="download-link" onclick="gtag('event','downloads_page_pricing_click')">View Pricing</a>
       <a href="https://app.fatboysoftware.com" class="download-link" onclick="gtag('event','downloads_page_free_app_click')">Start Free in the Web App</a>
