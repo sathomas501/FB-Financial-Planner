@@ -426,7 +426,7 @@ window.addEventListener('load', function () {
     <span class="sp-card-label">What Happens Next</span>
     <ul class="sp-steps">
 
-      <li class="sp-step">
+      <li class="sp-step" id="downloads">
         <div class="sp-num">1</div>
         <div class="sp-step-body">
           <h3>Check your email</h3>
