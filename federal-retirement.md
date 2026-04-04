@@ -170,9 +170,86 @@ permalink: /federal-retirement/
     font-size: 0.95rem;
   }
 
+  .federal-media-note {
+    margin-top: 0.9rem;
+    padding: 0.95rem 1rem;
+    background: linear-gradient(145deg, #fbfcfe, #f4f7fb);
+    border: 1px solid var(--federal-line);
+    border-radius: 14px;
+  }
+
+  .federal-media-note strong {
+    color: var(--federal-ink);
+  }
+
+  .federal-media-note p {
+    margin: 0 0 0.8rem;
+    max-width: 44rem;
+    color: var(--federal-subtle);
+    font-size: 0.97rem;
+    line-height: 1.68;
+  }
+
+  .federal-media-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .federal-media-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 0.92rem;
+    border: 1px solid #c8d7ec;
+    background: #fff;
+    color: var(--federal-blue) !important;
+  }
+
+  .federal-media-link:hover {
+    background: #eef4fb;
+  }
+
   .federal-section-lead {
     color: var(--federal-subtle);
     margin-bottom: 1rem;
+  }
+
+  .federal-section-intro {
+    margin: 2.2rem 0 1.1rem;
+  }
+
+  .federal-section-kicker {
+    display: inline-block;
+    margin-bottom: 0.55rem;
+    color: var(--federal-blue);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .federal-section-title {
+    margin: 0 0 0.45rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: var(--federal-ink);
+  }
+
+  .federal-section-copy {
+    margin: 0;
+    max-width: 42rem;
+    color: var(--federal-subtle);
+    font-size: 1.02rem;
+    line-height: 1.72;
   }
 
   .federal-grid-2,
@@ -201,6 +278,32 @@ permalink: /federal-retirement/
     padding: 1rem 1rem 0.95rem;
   }
 
+  .federal-scenario {
+    position: relative;
+    padding: 1.2rem 1.15rem 1.1rem;
+    overflow: hidden;
+  }
+
+  .federal-scenario::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #d9a441, #c58b2b);
+  }
+
+  .federal-scenario-label {
+    display: inline-block;
+    margin-bottom: 0.55rem;
+    color: #8b6b2d;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+  }
+
   .federal-card h3,
   .federal-step h3,
   .federal-scenario h3,
@@ -216,6 +319,54 @@ permalink: /federal-retirement/
   .federal-faq-item p {
     margin-bottom: 0;
     color: var(--federal-subtle);
+  }
+
+  .federal-scenario h3 {
+    font-size: 1.24rem;
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+  }
+
+  .federal-scenario p {
+    font-size: 0.98rem;
+    line-height: 1.72;
+    max-width: 22rem;
+  }
+
+  .federal-audience {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin: 1rem 0 1.05rem;
+  }
+
+  .federal-audience-item {
+    padding: 0.95rem 1rem;
+    background: #fff;
+    border: 1px solid var(--federal-line);
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(16, 34, 58, 0.04);
+    color: var(--federal-subtle);
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .federal-audience-item strong {
+    color: var(--federal-ink);
+    font-weight: 700;
+  }
+
+  .federal-audience-note {
+    max-width: 44rem;
+    margin: 0;
+    color: var(--federal-subtle);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .federal-audience-note strong {
+    color: var(--federal-ink);
   }
 
   .federal-number {
@@ -269,6 +420,10 @@ permalink: /federal-retirement/
     .federal-grid-2,
     .federal-steps,
     .federal-faq {
+      grid-template-columns: 1fr;
+    }
+
+    .federal-audience {
       grid-template-columns: 1fr;
     }
   }
@@ -349,7 +504,15 @@ permalink: /federal-retirement/
          alt="Federal retirement planning controls showing pension COLA, age-62 pension changes, and FERS annuity supplement settings"
          loading="eager">
   </picture>
-  <p class="federal-caption">Federal-style controls for pension timing, supplement years, spouse coordination, and later pension changes.</p>
+  <p class="federal-caption">Shown here: the full planner desktop app with federal-style controls for pension timing, supplement years, spouse coordination, and later pension changes.</p>
+  <div class="federal-media-note">
+    <p><strong>Important context:</strong> the screenshots on this page are from the full planner desktop app. Start in the free web example to test the workflow quickly, then move to the desktop app or full planner if you want deeper federal editing and saved scenarios.</p>
+    <div class="federal-media-links">
+      <a href="https://app.fatboysoftware.com/?federal=1" class="federal-media-link" data-federal-cta="media_free_web_app">Open Free Web Example</a>
+      <a href="/pricing" class="federal-media-link" data-federal-cta="media_desktop_pricing">See Desktop App Pricing</a>
+      <a href="/screenshots" class="federal-media-link" data-federal-cta="media_screenshots">View More Screenshots</a>
+    </div>
+  </div>
 </div>
 
 ---
@@ -454,18 +617,25 @@ permalink: /federal-retirement/
 
 ---
 
-## Common federal scenarios this handles
+<section class="federal-section-intro">
+  <span class="federal-section-kicker">Scenario Fit</span>
+  <h2 class="federal-section-title">Common federal scenarios this handles</h2>
+  <p class="federal-section-copy">These are the kinds of plans where a generic pension line usually stops being enough and timing starts to matter.</p>
+</section>
 
 <div class="federal-scenarios">
   <section class="federal-scenario">
+    <span class="federal-scenario-label">Bridge Years</span>
     <h3>Retire before 62 with the supplement</h3>
     <p>See pension plus temporary supplement income, then watch the gap when the supplement ends.</p>
   </section>
   <section class="federal-scenario">
+    <span class="federal-scenario-label">Pension Changes</span>
     <h3>Pension with COLA and a later reduction</h3>
     <p>Start with one pension amount, apply COLA, then model a later offset or step-down event.</p>
   </section>
   <section class="federal-scenario">
+    <span class="federal-scenario-label">Household Timing</span>
     <h3>TSP plus spouse timing mismatch</h3>
     <p>One spouse retires first, one keeps earning, then both move into pension and Social Security later.</p>
   </section>
@@ -473,14 +643,20 @@ permalink: /federal-retirement/
 
 ---
 
-## Who this is for
+<section class="federal-section-intro">
+  <span class="federal-section-kicker">Best Fit</span>
+  <h2 class="federal-section-title">Who this is for</h2>
+  <p class="federal-section-copy">The planner is built for people who want to understand the moving parts, not just get one retirement score.</p>
+</section>
 
-- **FERS employees** planning around the annuity supplement
-- **Federal households with TSP plus pension income**
-- **CSRS or offset-style pension cases** with timing changes
-- **DIY planners** who want to see taxes and spending gaps, not just a rule-of-thumb result
+<div class="federal-audience">
+  <div class="federal-audience-item"><strong>FERS employees</strong> planning around the annuity supplement and the years before Social Security starts.</div>
+  <div class="federal-audience-item"><strong>Federal households with TSP plus pension income</strong> that need the whole cash-flow picture in one place.</div>
+  <div class="federal-audience-item"><strong>CSRS or offset-style pension cases</strong> with timing changes, COLA assumptions, or later step-down events.</div>
+  <div class="federal-audience-item"><strong>DIY planners</strong> who want to see taxes and spending gaps, not just a rule-of-thumb result.</div>
+</div>
 
-If you only want a one-number guess, this is probably more tool than you need. If you want to see how federal retirement actually behaves year by year, that is the point.
+<p class="federal-audience-note">If you only want a one-number guess, this is probably more tool than you need. If you want to see how federal retirement <strong>actually behaves year by year</strong>, that is the point.</p>
 
 ---
 
