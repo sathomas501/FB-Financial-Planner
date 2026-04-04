@@ -95,6 +95,11 @@
   .preview-stat { background: #0f1117; border: 1px solid #253044; border-radius: 10px; padding: 12px; }
   .preview-stat-label { color: #64748b; font-size: 0.72rem; margin-bottom: 4px; }
   .preview-stat-value { color: #e2e8f0; font-size: 0.95rem; font-weight: 600; line-height: 1.4; }
+  .arrival-focus-target { scroll-margin-top: 20px; }
+  .arrival-focus-target.arrival-focus {
+    box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.45), 0 0 0 10px rgba(74, 222, 128, 0.08);
+    transition: box-shadow 0.35s ease;
+  }
   .advanced-wrap { background: #171922; border: 1px solid #2d3748; border-radius: 12px; margin-bottom: 16px; }
   .advanced-wrap summary { cursor: pointer; list-style: none; padding: 18px 20px; font-size: 0.86rem; color: #cbd5e1; font-weight: 600; }
   .advanced-wrap summary::-webkit-details-marker { display: none; }
@@ -288,7 +293,7 @@
       <p><strong>This free app shows the shape of a federal plan.</strong> The sample uses pension income plus a FERS-style temporary supplement that ends at age 62 before Social Security begins. For full federal editing, use the complete planner.</p>
     </div>
 
-    <div class="card">
+    <div class="card arrival-focus-target" id="quick-start-card">
       <h2>Quick Start</h2>
       <div class="quick-grid">
         <div>
@@ -1312,6 +1317,29 @@ function setPlannerMode(mode) {
   updateLivePreview();
 }
 
+function focusArrivalTarget(target) {
+  if (!target) return;
+  target.classList.add('arrival-focus');
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  window.setTimeout(() => target.classList.remove('arrival-focus'), 1800);
+}
+
+function focusFederalStartSurface() {
+  const federalSurfaceCard = document.getElementById('federal-surface-card');
+  const quickStartCard = document.getElementById('quick-start-card');
+  const target = plannerMode === 'federal' && federalSurfaceCard?.classList.contains('active')
+    ? federalSurfaceCard
+    : quickStartCard;
+
+  focusArrivalTarget(target);
+  const firstField = plannerMode === 'federal'
+    ? document.getElementById('federal-pension-annual')
+    : document.getElementById('quick-age');
+  if (firstField) {
+    window.setTimeout(() => firstField.focus({ preventScroll: true }), 220);
+  }
+}
+
 function renderAha(data, payload) {
   const years = Array.isArray(data.years) ? data.years : [];
   const finalAge = years.length ? years[years.length - 1].age : null;
@@ -1470,6 +1498,7 @@ document.getElementById('federal-sample-btn').addEventListener('click', () => {
   setPlannerMode('federal');
   applyPlanValues(FEDERAL_SAMPLE_PLAN);
   document.getElementById('advanced-fields').open = true;
+  focusFederalStartSurface();
   ga('federal_sample_plan_selected');
   form.requestSubmit();
 });
@@ -1539,6 +1568,8 @@ const initialParams = new URLSearchParams(location.search);
 if (initialParams.get('federal') === '1') {
   setPlannerMode('federal');
   applyPlanValues(FEDERAL_SAMPLE_PLAN);
+  document.getElementById('advanced-fields').open = true;
+  window.requestAnimationFrame(() => focusFederalStartSurface());
 }
 
 // Show/hide spouse SS + pension rows
