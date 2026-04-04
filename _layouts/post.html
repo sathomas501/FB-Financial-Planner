@@ -12,7 +12,34 @@ layout: default
     {% if page.tags and page.tags.size > 0 %}
       <p class="post-tags">
         {% for tag in page.tags %}
-          <span class="tag">{{ tag }}</span>
+          {% assign tag_href = nil %}
+          {% case tag %}
+            {% when 'inherited-IRA' %}
+              {% assign tag_href = site.baseurl | append: '/tags/inherited-ira/' %}
+            {% when 'IRMAA' %}
+              {% assign tag_href = site.baseurl | append: '/tags/irmaa/' %}
+            {% when 'RMD-planning' %}
+              {% assign tag_href = site.baseurl | append: '/tags/rmd-planning/' %}
+            {% when 'RMD' %}
+              {% assign tag_href = site.baseurl | append: '/tags/rmd-planning/' %}
+            {% when 'Roth-conversions' %}
+              {% assign tag_href = site.baseurl | append: '/tags/roth-conversions/' %}
+            {% when 'safe-withdrawal-rate' %}
+              {% assign tag_href = site.baseurl | append: '/tags/safe-withdrawal-rate/' %}
+            {% when 'sequence-of-returns' %}
+              {% assign tag_href = site.baseurl | append: '/tags/sequence-of-returns/' %}
+            {% when 'fers' %}
+              {% assign tag_href = site.baseurl | append: '/tags/fers/' %}
+            {% when 'pension' %}
+              {% assign tag_href = site.baseurl | append: '/tags/fers/' %}
+            {% when 'retirement-income' %}
+              {% assign tag_href = site.baseurl | append: '/tags/retirement-income/' %}
+          {% endcase %}
+          {% if tag_href %}
+            <a href="{{ tag_href }}" class="tag tag-link">{{ tag }}</a>
+          {% else %}
+            <span class="tag tag-label">{{ tag }}</span>
+          {% endif %}
         {% endfor %}
       </p>
     {% endif %}
@@ -69,13 +96,28 @@ layout: default
 }
 
 .post-tags .tag {
-  background: #e8f0fe;
-  color: #0066cc;
   padding: 3px 10px;
   border-radius: 999px;
   font-size: 0.8rem;
   font-weight: 500;
   display: inline-block;
+}
+
+.post-tags .tag-link {
+  background: #e8f0fe;
+  color: #0066cc;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.post-tags .tag-link:hover {
+  background: #dbe8ff;
+}
+
+.post-tags .tag-label {
+  background: #eef1f4;
+  color: #6b7280;
+  cursor: default;
 }
 
 /* ── Body ── */

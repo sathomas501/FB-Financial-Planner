@@ -1,0 +1,178 @@
+---
+layout: default
+---
+<section class="tag-page">
+  <p class="tag-eyebrow">Topic Archive</p>
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}
+    <p class="tag-intro">{{ page.description }}</p>
+  {% endif %}
+
+  {% assign posts_for_tag = site.tags[page.tag_key] | sort: "date" | reverse %}
+
+  <div class="tag-summary">
+    <div class="tag-summary-card">
+      <strong>{{ posts_for_tag | size }} article{% if posts_for_tag.size != 1 %}s{% endif %}</strong>
+      <span>Curated reading on {{ page.title | downcase }}.</span>
+    </div>
+    <div class="tag-summary-card">
+      <strong>Why this topic matters</strong>
+      <span>{{ page.summary_line }}</span>
+    </div>
+  </div>
+
+  <div class="tag-post-list">
+    {% for post in posts_for_tag %}
+      <article class="tag-post-card">
+        <p class="tag-post-meta">{{ post.date | date: "%B %d, %Y" }}</p>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        {% if post.excerpt %}
+          <p>{{ post.excerpt }}</p>
+        {% endif %}
+        <a href="{{ post.url | relative_url }}" class="tag-read-link">Read article</a>
+      </article>
+    {% endfor %}
+  </div>
+
+  {% if page.cta_title %}
+    <div class="tag-cta">
+      <h2>{{ page.cta_title }}</h2>
+      <p>{{ page.cta_copy }}</p>
+      <div class="tag-cta-actions">
+        <a href="https://app.fatboysoftware.com" class="tag-btn tag-btn-primary">Start Free In The Web App</a>
+        <a href="/pricing" class="tag-btn tag-btn-secondary">See Desktop Pro</a>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+<style>
+.tag-page {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.tag-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.tag-intro {
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+.tag-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 32px 0 44px;
+}
+
+.tag-summary-card {
+  background: white;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 20px 22px;
+}
+
+.tag-summary-card strong {
+  display: block;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.tag-summary-card span {
+  color: var(--mid);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.tag-post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tag-post-card {
+  background: white;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 24px 26px;
+}
+
+.tag-post-card h2 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  border: none;
+  font-size: 1.4rem;
+}
+
+.tag-post-card p {
+  max-width: none;
+}
+
+.tag-post-meta {
+  font-size: 0.82rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.tag-read-link {
+  font-weight: 500;
+}
+
+.tag-cta {
+  margin-top: 48px;
+  padding: 28px 30px;
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+
+.tag-cta h2 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  border: none;
+}
+
+.tag-cta-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.tag-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  padding: 12px 20px;
+  border-radius: 3px;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.tag-btn-primary {
+  background: var(--ink);
+  color: var(--paper) !important;
+}
+
+.tag-btn-secondary {
+  border: 1px solid var(--rule);
+  color: var(--ink) !important;
+  background: transparent;
+}
+
+@media (max-width: 700px) {
+  .tag-summary {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
