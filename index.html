@@ -153,6 +153,14 @@ permalink: /
     max-width: 540px;
   }
 
+  .desktop-only {
+    display: inline;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
@@ -245,7 +253,11 @@ permalink: /
   }
 
   .hero-choice {
-    display: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+    max-width: 560px;
   }
 
   .hero-choice-card {
@@ -266,6 +278,13 @@ permalink: /
     color: var(--mid);
     font-size: 0.8rem;
     line-height: 1.5;
+  }
+
+  .hero-mobile-desktop-note {
+    display: none;
+    margin-top: 12px;
+    font-size: 0.82rem;
+    color: var(--mid);
   }
 
   /* HERO CARD */
@@ -465,6 +484,41 @@ permalink: /
     grid-template-columns: 1fr 1fr;
     gap: 24px;
     margin-bottom: 40px;
+  }
+
+  .quick-compare-section {
+    padding-top: 52px;
+  }
+
+  .quick-compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .quick-compare-card {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 32px;
+    background: white;
+  }
+
+  .quick-compare-card.pro {
+    background: var(--cream);
+    border-color: var(--gold);
+  }
+
+  .quick-compare-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+  }
+
+  .quick-compare-card p {
+    font-size: 0.9rem;
+    color: var(--mid);
+    line-height: 1.6;
+    margin-bottom: 20px;
   }
 
   .product-card {
@@ -859,6 +913,11 @@ permalink: /
       margin-bottom: 16px;
       box-shadow: none;
     }
+    .desktop-only { display: none; }
+    .mobile-only { display: inline; }
+    .hero-choice { display: none; }
+    .hero-mobile-desktop-note { display: block; }
+    .quick-compare-grid { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 600px) {
@@ -897,27 +956,41 @@ permalink: /
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">
-    <div class="hero-eyebrow">Free Retirement Planner</div>
-    <h1>See whether your retirement plan actually works before you retire.</h1>
-    <p class="hero-sub">Model income, taxes, Social Security, withdrawals, Roth conversions, and retirement timing in one planner.</p>
+    <div class="hero-eyebrow">
+      <span class="desktop-only">Retirement Planner With A Real Upgrade Path</span>
+      <span class="mobile-only">Free Retirement Planner</span>
+    </div>
+    <h1>
+      <span class="desktop-only">See whether your retirement plan actually works before you retire.</span>
+      <span class="mobile-only">Test your retirement plan in minutes.</span>
+    </h1>
+    <p class="hero-sub">
+      <span class="desktop-only">Start free in the web app, then upgrade to the full desktop planner for deeper modeling, scenarios, taxes, and retirement decisions.</span>
+      <span class="mobile-only">Try the free web app on your phone, then continue on desktop when you want deeper planning.</span>
+    </p>
     <div class="hero-actions">
       <a href="https://app.fatboysoftware.com" class="btn-primary" onclick="gtag('event','homepage_hero_demo_click')">
         Start Free In The Web App
       </a>
-      <a href="https://app.fatboysoftware.com/?sample=1" class="btn-secondary" onclick="gtag('event','homepage_hero_sample_click')">
+      <a href="/downloads/" class="btn-secondary desktop-only" onclick="gtag('event','homepage_desktop_pro_hero_click')">
+        See What Desktop Pro Adds
+      </a>
+      <a href="https://app.fatboysoftware.com/?sample=1" class="btn-secondary mobile-only" onclick="gtag('event','homepage_hero_sample_click')">
         Use Sample Plan
       </a>
-      <p class="hero-note">Free to try | No signup to explore | Built for real retirement decisions</p>
+      <p class="hero-note desktop-only">Start with the free web app, then move to Desktop Pro when you want saved scenarios, exports, and a more serious planning workflow.</p>
+      <p class="hero-note mobile-only">Free to try | No signup to explore | Fastest way to see the planner work</p>
       <div class="hero-choice">
         <div class="hero-choice-card">
-          <strong>Free web app first</strong>
-          <span>Best first click if you want to see the planner work, including the federal sample path, before deciding anything.</span>
+          <strong>Web App</strong>
+          <span>quick start<br>sample plan<br>fast preview</span>
         </div>
         <div class="hero-choice-card">
-          <strong>Full planner second</strong>
-          <span>Use the full planner when you want deeper editing, saved scenarios, exports, and Pro features.</span>
+          <strong>Desktop Pro</strong>
+          <span>full modeling power<br>deeper scenario testing<br>richer retirement analysis<br>one-time purchase</span>
         </div>
       </div>
+      <p class="hero-mobile-desktop-note">Best full experience on desktop.</p>
     </div>
     <ul class="hero-bullets">
       <li>See when income gaps show up</li>
@@ -951,6 +1024,43 @@ permalink: /
     <p style="font-size:0.78rem;color:var(--mid);margin-top:8px;">One-time purchase. Direct support. No subscription lock-in.</p>
   </div>
 </div>
+
+<hr class="section-rule">
+
+<section class="quick-compare-section">
+  <div class="section-eyebrow">Start Free. Go Deeper On Desktop.</div>
+  <h2>Start free. Go deeper on desktop.</h2>
+  <p class="section-intro">
+    The web app is the fastest way to test a plan. Desktop Pro is the serious version when you want a fuller planning workflow and ongoing use.
+  </p>
+
+  <div class="quick-compare-grid">
+    <div class="quick-compare-card">
+      <span class="product-tag tag-web">Free Web App</span>
+      <h3>Fast first look</h3>
+      <p>Open it instantly in your browser and see whether the planner feels useful before you commit to anything.</p>
+      <ul class="feature-list">
+        <li><span class="yes">✓</span><span class="text">fast way to test a plan</span></li>
+        <li><span class="yes">✓</span><span class="text">good for sample scenarios</span></li>
+        <li><span class="yes">✓</span><span class="text">no signup to explore</span></li>
+      </ul>
+      <a href="https://app.fatboysoftware.com" class="btn-secondary" onclick="gtag('event','homepage_quick_compare_web_click')">Start Free In The Web App</a>
+    </div>
+
+    <div class="quick-compare-card pro">
+      <span class="product-tag tag-desktop">Desktop Pro</span>
+      <h3>Built for deeper planning</h3>
+      <p>Use the full desktop planner when you want more power, more comparison depth, and a tool you keep coming back to.</p>
+      <ul class="feature-list">
+        <li><span class="yes">✓</span><span class="text">more powerful planning workflow</span></li>
+        <li><span class="yes">✓</span><span class="text">deeper retirement modeling</span></li>
+        <li><span class="yes">✓</span><span class="text">built for serious ongoing use</span></li>
+        <li><span class="yes">✓</span><span class="text">one-time purchase</span></li>
+      </ul>
+      <a href="/downloads/" class="btn-primary" onclick="gtag('event','homepage_quick_compare_desktop_click')">See What Desktop Pro Adds</a>
+    </div>
+  </div>
+</section>
 
 <hr class="section-rule">
 
@@ -1290,52 +1400,6 @@ permalink: /
   (function refreshHeroForDemoClicks() {
     const hero = document.querySelector('.hero');
     if (!hero) return;
-
-    const heroSub = hero.querySelector('.hero-sub');
-    if (heroSub) {
-      const existingBullets = hero.querySelector('.hero-bullets');
-      if (existingBullets) existingBullets.remove();
-      heroSub.textContent = 'Model income, taxes, Social Security, withdrawals, Roth conversions, and retirement timing in one planner.';
-      const bullets = document.createElement('ul');
-      bullets.className = 'hero-bullets';
-      bullets.innerHTML = `
-        <li>See when income gaps show up</li>
-        <li>Test taxes, withdrawals, and Roth conversions</li>
-        <li>Compare retirement timing before you commit</li>
-      `;
-      const actions = hero.querySelector('.hero-actions');
-      if (actions) {
-        actions.insertAdjacentElement('afterend', bullets);
-      } else {
-        heroSub.insertAdjacentElement('afterend', bullets);
-      }
-    }
-
-    const primary = hero.querySelector('.btn-primary');
-    if (primary) {
-      primary.href = 'https://app.fatboysoftware.com';
-      primary.removeAttribute('data-founding-btn');
-      primary.textContent = 'Start Free In The Web App';
-      primary.onclick = function() { gtag('event', 'homepage_hero_demo_click'); };
-    }
-
-    const secondary = hero.querySelector('.btn-secondary');
-    if (secondary) {
-      secondary.href = 'https://app.fatboysoftware.com/?sample=1';
-      secondary.textContent = 'Use Sample Plan';
-      secondary.onclick = function() { gtag('event', 'homepage_hero_sample_click'); };
-    }
-
-    const note = hero.querySelector('.hero-note');
-    if (note) {
-      note.textContent = 'Free to try | No signup to explore | Built for real retirement decisions';
-      note.removeAttribute('data-founding-label');
-    }
-
-    const choice = hero.querySelector('.hero-choice');
-    if (choice) {
-      choice.remove();
-    }
 
     const visual = hero.querySelector('.hero-card');
     if (visual) {
