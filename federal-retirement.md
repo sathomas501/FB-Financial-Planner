@@ -455,7 +455,7 @@ permalink: /federal-retirement/
 
 <span class="federal-kicker">Built for federal employees and pension households</span>
 
-# See when your FERS pension, supplement, TSP, and Social Security actually line up
+<h1>See when your FERS pension, supplement, TSP, and Social Security actually line up</h1>
 
 <p class="federal-subhead">Generic retirement calculators usually flatten everything into one number. This one shows when salary stops, when pension starts, when the FERS supplement ends, what taxes do to spending, and where withdrawals have to fill the gap.</p>
 
@@ -515,9 +515,9 @@ permalink: /federal-retirement/
   </div>
 </div>
 
----
+<hr>
 
-## Start in about 30 seconds
+<h2>Start in about 30 seconds</h2>
 
 <p class="federal-section-lead">You do not need to read the whole page before getting value. This is the fastest path.</p>
 
@@ -552,9 +552,9 @@ permalink: /federal-retirement/
   <p class="federal-note">The free app is the best first click. The full planner is the better second click.</p>
 </section>
 
----
+<hr>
 
-## What this planner handles that generic calculators usually miss
+<h2>What this planner handles that generic calculators usually miss</h2>
 
 <div class="federal-grid-2">
   <section class="federal-card">
@@ -575,9 +575,9 @@ permalink: /federal-retirement/
   </section>
 </div>
 
----
+<hr>
 
-## See federal retirement cash flow year by year
+<h2>See federal retirement cash flow year by year</h2>
 
 <p class="federal-section-lead">The point is not just to get a success score. The point is to see where the plan is smooth and where it is under pressure.</p>
 
@@ -615,7 +615,7 @@ permalink: /federal-retirement/
   </section>
 </div>
 
----
+<hr>
 
 <section class="federal-section-intro">
   <span class="federal-section-kicker">Scenario Fit</span>
@@ -641,7 +641,7 @@ permalink: /federal-retirement/
   </section>
 </div>
 
----
+<hr>
 
 <section class="federal-section-intro">
   <span class="federal-section-kicker">Best Fit</span>
@@ -658,9 +658,9 @@ permalink: /federal-retirement/
 
 <p class="federal-audience-note">If you only want a one-number guess, this is probably more tool than you need. If you want to see how federal retirement <strong>actually behaves year by year</strong>, that is the point.</p>
 
----
+<hr>
 
-## Frequently asked questions
+<h2>Frequently asked questions</h2>
 
 <div class="federal-faq">
   <section class="federal-faq-item">
@@ -681,9 +681,9 @@ permalink: /federal-retirement/
   </section>
 </div>
 
----
+<hr>
 
-## Get started
+<h2>Get started</h2>
 
 <section class="federal-cta-band">
   <div class="federal-actions">
