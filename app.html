@@ -257,34 +257,34 @@
 <body>
 <div class="container">
   <h1>Model retirement income, taxes, Social Security, and Roth conversions in one planner.</h1>
-  <p class="subtitle">Takes about 30 seconds. No sign-up required. See your projected income and account trajectory instantly.</p>
+  <p class="subtitle">Start with a sample plan, change one number, and see whether the plan gets stronger or weaker. No sign-up required.</p>
 
   <form id="form">
     <div class="card promise-card">
       <h2>Start Fast</h2>
       <div class="promise-line">
-        <span>Takes about 30 seconds</span>
-        <span>No sign-up required</span>
-        <span>See your projected income and account trajectory instantly</span>
+        <span>Start with a sample plan</span>
+        <span>Change one number</span>
+        <span>See the retirement outcome move</span>
       </div>
       <p style="color:#cbd5e1;font-size:0.92rem;line-height:1.7">
-        Start with a sample plan if you want the payoff first, or enter a few numbers and watch the preview update as you go.
+        The goal here is a quick first insight, not a long setup. Open a sample plan if you want the payoff first, or enter a few numbers and watch the preview update as you go.
       </p>
       <div class="mode-grid" id="planner-mode-switch">
         <button type="button" class="mode-card active" id="general-mode-btn" data-planner-mode="general" aria-pressed="true">
           <div class="mode-card-title">General Retirement</div>
-          <div class="mode-card-copy">Use the standard quick-start flow for broad retirement income, savings, and Social Security planning.</div>
+          <div class="mode-card-copy">Test retire-at-62 versus 65, spending pressure, Social Security timing, and whether your savings can carry the plan.</div>
         </button>
         <button type="button" class="mode-card" id="federal-mode-btn" data-planner-mode="federal" aria-pressed="false">
           <div class="mode-card-title">Federal Retirement</div>
-          <div class="mode-card-copy">Start with a federal example built around pension income, a FERS-style supplement ending at 62, TSP-style balances, and Social Security timing.</div>
+          <div class="mode-card-copy">Start with a FERS-style example and see how pension income, the supplement bridge, TSP balances, and Social Security timing work together.</div>
         </button>
       </div>
-      <p class="mode-note" id="mode-note">Federal mode loads a guided preview scenario in the free app. Full federal editing lives in the full planner.</p>
+      <p class="mode-note" id="mode-note">Federal mode loads a guided preview scenario so you can see the bridge-to-Social-Security pattern quickly. Full federal editing lives in the full planner.</p>
       <div class="entry-actions">
-        <button type="button" id="sample-plan-btn">Use Sample Plan</button>
+        <button type="button" id="sample-plan-btn">See A Sample Result</button>
         <button type="button" id="federal-sample-btn" class="ghost-btn">Load Federal Example</button>
-        <button type="button" id="own-numbers-btn" class="ghost-btn">Enter My Own Numbers</button>
+        <button type="button" id="own-numbers-btn" class="ghost-btn">Use My Own Numbers</button>
       </div>
     </div>
 
@@ -317,7 +317,7 @@
           <input type="number" id="quick-ss-annual" value="24000" min="0" step="any">
         </div>
       </div>
-      <p class="quick-note" id="quick-start-note">Need spouse income, taxes, pensions, custom account types, or allocation details? Open the advanced inputs below.</p>
+      <p class="quick-note" id="quick-start-note">Start here if you want a fast answer first. Open advanced inputs below when you want spouse income, taxes, pensions, custom account types, or allocation detail.</p>
     </div>
 
     <div class="card federal-surface-card" id="federal-surface-card">
@@ -367,9 +367,9 @@
 
     <div class="card preview-card" id="live-preview-card">
       <div class="preview-kicker">Live Preview</div>
-      <div class="preview-headline" id="preview-headline">Your plan looks roughly on track through age 90.</div>
+      <div class="preview-headline" id="preview-headline">Start with the sample and watch how the plan changes when you adjust retirement age, spending, or Social Security.</div>
       <p id="preview-copy" style="color:#94a3b8;font-size:0.84rem;line-height:1.6">
-        Enter a few numbers to see the likely pressure points before you run the full projection.
+        This quick preview is meant to surface a first pressure point fast: retirement timing, income gap, or future tax drag.
       </p>
       <div class="preview-grid">
         <div class="preview-stat">
@@ -1347,15 +1347,15 @@ function setPlannerMode(mode) {
 
   if (quickNote) {
     quickNote.textContent = isFederal
-      ? 'Federal preview uses pension plus a temporary supplement that ends at 62. Open advanced inputs to inspect the pension, spouse, and timing assumptions.'
-      : 'Need spouse income, taxes, pensions, custom account types, or allocation details? Open the advanced inputs below.';
+      ? 'Federal preview uses pension plus a temporary supplement that ends at 62. Start with the visible bridge-income pattern here, then open advanced inputs to inspect pension, spouse, and timing assumptions.'
+      : 'Start here if you want a fast answer first. Open advanced inputs when you want spouse income, taxes, pensions, custom account types, or allocation details.';
   }
-  if (sampleBtn) sampleBtn.textContent = isFederal ? 'Use General Sample' : 'Use Sample Plan';
+  if (sampleBtn) sampleBtn.textContent = isFederal ? 'See General Sample' : 'See A Sample Result';
   if (federalSampleBtn) federalSampleBtn.textContent = isFederal ? 'Reload Federal Example' : 'Load Federal Example';
   if (modeNote) {
     modeNote.textContent = isFederal
-      ? 'Federal mode highlights a FERS-style supplement preview in the free app. Full federal editing lives in the full planner.'
-      : 'Federal mode loads a guided preview scenario in the free app. Full federal editing lives in the full planner.';
+      ? 'Federal mode highlights a FERS-style supplement preview so you can see the bridge-to-Social-Security pattern quickly. Full federal editing lives in the full planner.'
+      : 'Federal mode loads a guided preview scenario so you can reach a first result faster. Full federal editing lives in the full planner.';
   }
   const otherIncomeLabel = document.getElementById('other-income-label');
   const otherIncomeRangeLabel = document.getElementById('other-income-range-label');
