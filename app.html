@@ -820,7 +820,7 @@
     <div class="desktop-cta">
       <p>Free demo gives you a quick projection, a sample scenario, and limited assumptions. The full planner adds saved plans, scenario comparison, tax-aware planning, Social Security timing, and Roth conversion testing.</p>
       <p style="font-size:0.8rem;color:#cbd5e1;margin-bottom:10px;">If this result is useful, the next move is keeping it and testing alternatives without starting over.</p>
-      <a href="https://planner.fatboysoftware.com" target="_blank" onclick="ga('app_open_full_planner_click')"
+      <a href="https://planner.fatboysoftware.com" target="_blank" id="results-upgrade-link" onclick="ga('app_open_full_planner_click')"
          style="display:inline-flex;align-items:center;justify-content:center;background:#4ade80;color:#0f1117;font-weight:700;font-size:0.84rem;padding:10px 16px;border-radius:10px;text-decoration:none;margin-bottom:12px;">
         Open the full planner
       </a>
@@ -957,6 +957,69 @@ const form = document.getElementById('form');
 const btn  = document.getElementById('submit-btn');
 const err  = document.getElementById('error-msg');
 let lastMcRows = null, lastData = null;
+let projectionRunId = 0;
+let projectionContext = null;
+let resultObservers = [];
+
+function disconnectResultObservers() {
+  resultObservers.forEach(observer => observer.disconnect());
+  resultObservers = [];
+}
+
+function buildProjectionParams(extra) {
+  return Object.assign({
+    planner_mode: plannerMode,
+    projection_run_id: projectionRunId,
+  }, projectionContext || {}, extra || {});
+}
+
+function resetProjectionTracking() {
+  projectionRunId += 1;
+  projectionContext = { planner_mode: plannerMode };
+  disconnectResultObservers();
+}
+
+function trackElementViewed(element, eventName, params, threshold) {
+  if (!element) return;
+  const eventParams = Object.assign({}, params || {});
+
+  if (!('IntersectionObserver' in window)) {
+    ga(eventName, eventParams);
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= threshold)) return;
+    ga(eventName, eventParams);
+    observer.disconnect();
+    resultObservers = resultObservers.filter(item => item !== observer);
+  }, { threshold: [threshold] });
+
+  observer.observe(element);
+  resultObservers.push(observer);
+}
+
+function trackProjectionResultViews() {
+  trackElementViewed(
+    document.getElementById('results'),
+    'projection_results_viewed',
+    buildProjectionParams(),
+    0.2
+  );
+  trackElementViewed(
+    document.getElementById('aha-card'),
+    'demo_aha_viewed',
+    buildProjectionParams(),
+    0.6
+  );
+  trackElementViewed(
+    document.querySelector('.desktop-cta'),
+    'projection_result_cta_viewed',
+    buildProjectionParams(),
+    0.35
+  );
+}
+
 const SAMPLE_PLAN = {
   age: 58,
   retirement_age: 64,
@@ -1518,8 +1581,17 @@ document.getElementById('own-numbers-btn').addEventListener('click', () => {
 });
 
 document.getElementById('aha-real-numbers-btn').addEventListener('click', () => {
+  ga('demo_aha_continue_click', buildProjectionParams());
   document.getElementById('advanced-fields').open = true;
   form.scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('aha-upgrade-link').addEventListener('click', () => {
+  ga('demo_aha_upgrade_click', buildProjectionParams({ cta_location: 'aha_card' }));
+});
+
+document.getElementById('results-upgrade-link').addEventListener('click', () => {
+  ga('projection_result_upgrade_click', buildProjectionParams({ cta_location: 'results_cta' }));
 });
 
 // Keep the Pro import upsell available, but out of the initial quick-start path.
@@ -1795,6 +1867,7 @@ function drawMcChart(mcRows) {
 // ---------------------------------------------------------------------------
 form.addEventListener('submit', async e => {
   e.preventDefault();
+  resetProjectionTracking();
   btn.disabled = true;
   const isMC = document.getElementById('mc-check').checked;
   btn.textContent = isMC ? 'Running 500 simulations…' : 'Running…';
@@ -1827,6 +1900,10 @@ form.addEventListener('submit', async e => {
   if (!payload.monte_carlo) payload.monte_carlo = false;
   if (!payload.spouse_age)  delete payload.spouse_age;
   if (!payload.state_code)  delete payload.state_code;
+  projectionContext = Object.assign({}, projectionContext, {
+    monte_carlo: !!payload.monte_carlo,
+  });
+  ga('projection_started', buildProjectionParams());
 
   try {
     const res = await fetch(apiUrl('/api/project'), {
@@ -1915,9 +1992,17 @@ form.addEventListener('submit', async e => {
       ga('projection_depleted', { depletion_year: data.depletion_year });
     }
 
+    projectionContext = Object.assign({}, projectionContext, {
+      plan_success: data.success,
+      success_rate: data.success_rate != null ? Math.round(data.success_rate) : undefined,
+      depletion_year: data.depletion_year || undefined,
+    });
+    ga('projection_completed', buildProjectionParams());
+
     renderAha(data, payload);
     document.getElementById('results').style.display = 'block';
-    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('aha-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    trackProjectionResultViews();
   } catch (ex) {
     err.textContent = 'Error: ' + ex.message;
   } finally {
