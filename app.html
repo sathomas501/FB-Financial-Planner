@@ -95,6 +95,18 @@
   .preview-stat { background: #0f1117; border: 1px solid #253044; border-radius: 10px; padding: 12px; }
   .preview-stat-label { color: #64748b; font-size: 0.72rem; margin-bottom: 4px; }
   .preview-stat-value { color: #e2e8f0; font-size: 0.95rem; font-weight: 600; line-height: 1.4; }
+  .preview-bars { margin-top: 14px; padding: 12px; background: #0f1117; border: 1px solid #253044; border-radius: 10px; }
+  .preview-bars-title { color: #94a3b8; font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+  .preview-bar-row + .preview-bar-row { margin-top: 12px; }
+  .preview-bar-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 5px; }
+  .preview-bar-label { color: #cbd5e1; font-size: 0.8rem; }
+  .preview-bar-value { color: #94a3b8; font-size: 0.78rem; }
+  .preview-bar-track { height: 10px; background: #172033; border-radius: 999px; overflow: hidden; }
+  .preview-bar-fill { height: 100%; width: 0; border-radius: 999px; transition: width 0.18s ease; }
+  .preview-bar-fill.spending { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+  .preview-bar-fill.guaranteed { background: linear-gradient(90deg, #2563eb, #60a5fa); }
+  .preview-bar-fill.portfolio { background: linear-gradient(90deg, #16a34a, #4ade80); }
+  .preview-bars-note { margin-top: 10px; color: #64748b; font-size: 0.75rem; line-height: 1.5; }
   .arrival-focus-target { scroll-margin-top: 20px; }
   .arrival-focus-target.arrival-focus {
     box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.45), 0 0 0 10px rgba(74, 222, 128, 0.08);
@@ -388,6 +400,37 @@
           <div class="preview-stat-label">Tax-sensitive warning</div>
           <div class="preview-stat-value" id="preview-warning">Traditional balances can raise later tax pressure.</div>
         </div>
+      </div>
+      <div class="preview-bars" id="preview-bars">
+        <div class="preview-bars-title">Quick Visual</div>
+        <div class="preview-bar-row">
+          <div class="preview-bar-meta">
+            <span class="preview-bar-label">Annual spending target</span>
+            <span class="preview-bar-value" id="preview-spending-value">$72,000</span>
+          </div>
+          <div class="preview-bar-track">
+            <div class="preview-bar-fill spending" id="preview-spending-bar"></div>
+          </div>
+        </div>
+        <div class="preview-bar-row">
+          <div class="preview-bar-meta">
+            <span class="preview-bar-label">Guaranteed income</span>
+            <span class="preview-bar-value" id="preview-guaranteed-value">$24,000</span>
+          </div>
+          <div class="preview-bar-track">
+            <div class="preview-bar-fill guaranteed" id="preview-guaranteed-bar"></div>
+          </div>
+        </div>
+        <div class="preview-bar-row">
+          <div class="preview-bar-meta">
+            <span class="preview-bar-label">Portfolio support estimate</span>
+            <span class="preview-bar-value" id="preview-portfolio-value">$23,200</span>
+          </div>
+          <div class="preview-bar-track">
+            <div class="preview-bar-fill portfolio" id="preview-portfolio-bar"></div>
+          </div>
+        </div>
+        <p class="preview-bars-note" id="preview-bars-note">This is a fast visual check, not the full projection. Use it to spot whether spending is outrunning your income sources.</p>
       </div>
     </div>
 
@@ -1236,6 +1279,7 @@ function syncFormFromFederalSurface(changedId) {
 }
 
 function updateLivePreview() {
+  const formatCurrency = value => `$${Math.round(Math.max(0, value)).toLocaleString()}`;
   const age = parseInt(document.getElementById('quick-age').value) || parseInt(document.querySelector('[name=age]').value) || 0;
   const retirementAge = parseInt(document.getElementById('quick-retirement-age').value) || parseInt(document.querySelector('[name=retirement_age]').value) || 65;
   const lifeExpectancy = parseInt(document.querySelector('[name=life_expectancy]').value) || 90;
@@ -1247,7 +1291,9 @@ function updateLivePreview() {
   const pensionAnnual = parseFloat(document.querySelector('[name=pension_annual]')?.value) || 0;
   const bridgeIncome = parseFloat(document.querySelector('[name=other_income_annual]')?.value) || 0;
   const bridgeEndAge = parseInt(document.querySelector('[name=other_income_end_age]')?.value) || null;
-  const safeIncome = totalPortfolio * 0.04 + ssAnnual;
+  const guaranteedIncome = ssAnnual + pensionAnnual + bridgeIncome;
+  const portfolioSupport = totalPortfolio * 0.04;
+  const safeIncome = portfolioSupport + ssAnnual;
   const gap = safeIncome - annualSpending;
   const annualNeedFromPortfolio = Math.max(0, annualSpending - ssAnnual);
   let endAge = lifeExpectancy;
@@ -1299,6 +1345,27 @@ function updateLivePreview() {
     ? `$${Math.round(gap).toLocaleString()} estimated surplus`
     : `$${Math.abs(Math.round(gap)).toLocaleString()} estimated gap`;
   document.getElementById('preview-warning').textContent = warning;
+
+  const barMax = Math.max(annualSpending, guaranteedIncome, portfolioSupport, 1);
+  const spendingBar = document.getElementById('preview-spending-bar');
+  const guaranteedBar = document.getElementById('preview-guaranteed-bar');
+  const portfolioBar = document.getElementById('preview-portfolio-bar');
+  const spendingValue = document.getElementById('preview-spending-value');
+  const guaranteedValue = document.getElementById('preview-guaranteed-value');
+  const portfolioValue = document.getElementById('preview-portfolio-value');
+  const barsNote = document.getElementById('preview-bars-note');
+
+  if (spendingBar) spendingBar.style.width = `${Math.max(6, (annualSpending / barMax) * 100)}%`;
+  if (guaranteedBar) guaranteedBar.style.width = `${Math.max(6, (guaranteedIncome / barMax) * 100)}%`;
+  if (portfolioBar) portfolioBar.style.width = `${Math.max(6, (portfolioSupport / barMax) * 100)}%`;
+  if (spendingValue) spendingValue.textContent = formatCurrency(annualSpending);
+  if (guaranteedValue) guaranteedValue.textContent = formatCurrency(guaranteedIncome);
+  if (portfolioValue) portfolioValue.textContent = formatCurrency(portfolioSupport);
+  if (barsNote) {
+    barsNote.textContent = plannerMode === 'federal'
+      ? 'Federal preview highlights how pension, supplement income, and Social Security stack up against spending before you run the full projection.'
+      : 'This is a fast visual check, not the full projection. Use it to spot whether spending is outrunning your income sources.';
+  }
 }
 
 function applyPlanValues(values) {
