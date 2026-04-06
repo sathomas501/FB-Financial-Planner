@@ -171,10 +171,45 @@ permalink: /pricing/
     margin: 0;
   }
 
+  .trial-path-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .trial-path-summary div {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+
+  .trial-path-summary strong {
+    display: block;
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 6px;
+  }
+
+  .trial-path-summary span {
+    font-size: 0.9rem;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+
   .trial-path-actions {
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .trial-path-note {
+    font-size: 0.78rem;
+    color: var(--mid);
+    text-align: center;
   }
 
   /* PRICING CARDS */
@@ -553,6 +588,7 @@ permalink: /pricing/
     .page-header { padding: 60px 20px 40px; }
     .trial-path, .pricing-section, .comparison-section, .vs-section, .faq-section { padding-left: 20px; padding-right: 20px; }
     .trial-path-inner { grid-template-columns: 1fr; }
+    .trial-path-summary { grid-template-columns: 1fr; }
     .pricing-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 16px; text-align: center; }
     .cta-buttons { flex-direction: column; align-items: center; }
@@ -586,19 +622,30 @@ permalink: /pricing/
 <!-- HEADER -->
 <div class="page-header">
   <div class="eyebrow">Pricing</div>
-  <h1>One price.<br><em>Two products.</em></h1>
-  <p>Start with the free web app if you want proof first, including the federal retirement sample for FERS-style planning. Buy Pro when you want the full planner, saved scenarios, exports, and desktop access in one one-time purchase.</p>
+  <h1>Start free.<br><em>Buy Pro when you need more.</em></h1>
+  <p>The free web app is the fastest way to test the planner. Fatboy Pro is a one-time $149 purchase for unlimited scenarios, saved plans, exports, and desktop access.</p>
 </div>
 
 <div class="trial-path">
   <div class="trial-path-inner">
     <div class="trial-path-copy">
-      <strong>The easiest path is still: try the free web app first.</strong>
-      <p>You do not need to make a pricing decision before seeing the planner work. Open the free web app, test the workflow, or start with the federal sample plan, then come back here if you want the complete planner and desktop bundle.</p>
+      <strong>Do not make a pricing decision blind.</strong>
+      <p>Try the free web app first if you want proof. Buy Pro if you already know you want the full planner, saved scenarios, exports, and desktop use in one bundle.</p>
+      <div class="trial-path-summary">
+        <div>
+          <strong>Free Web App</strong>
+          <span>1 scenario, no signup, no save/load, fast way to test the workflow.</span>
+        </div>
+        <div>
+          <strong>Pro - $149 One-Time</strong>
+          <span>Unlimited scenarios, saved plans, exports, desktop app, and all future updates.</span>
+        </div>
+      </div>
     </div>
     <div class="trial-path-actions">
-      <a href="https://app.fatboysoftware.com" class="btn-secondary">Start Free In The Web App →</a>
-      <a href="https://planner.fatboysoftware.com" class="btn-secondary">Open The Full Planner →</a>
+      <a href="https://app.fatboysoftware.com" class="btn-secondary">Start Free In The Web App</a>
+      <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" class="btn-primary">Buy Pro - $149</a>
+      <p class="trial-path-note">No subscription. No account required to try the free version.</p>
     </div>
   </div>
 </div>
