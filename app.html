@@ -1473,6 +1473,7 @@ function focusFederalStartSurface() {
 function renderAha(data, payload) {
   const years = Array.isArray(data.years) ? data.years : [];
   const finalAge = years.length ? years[years.length - 1].age : null;
+  const requestedLifeExpectancy = parseInt(payload.life_expectancy) || finalAge || null;
   const taxPeak = years.reduce((best, row) => !best || row.fed_tax > best.fed_tax ? row : best, null);
   const bridgeYears = Math.max(0, (parseInt(payload.ss_claiming_age) || 67) - (parseInt(payload.retirement_age) || 65));
   const supplementEndAge = parseInt(payload.other_income_end_age) || null;
@@ -1494,7 +1495,7 @@ function renderAha(data, payload) {
     headline = `Roth conversion planning could reduce later tax drag in this plan.`;
     actionCopy = `Traditional account concentration is building future RMD pressure. The full planner is the next step if you want to test conversion timing.`;
   } else {
-    headline = `Your current plan looks durable through age ${finalAge || '?'}.`;
+    headline = `Your current plan looks durable through age ${requestedLifeExpectancy || '?'}.`;
     actionCopy = `Now the useful next move is testing alternatives, not re-entering data. Save this plan and compare retirement dates, spending, or conversion scenarios.`;
   }
 
@@ -1507,7 +1508,7 @@ function renderAha(data, payload) {
     } else {
       headline = supplementEndAge
         ? `Your federal sample stays on track, but income changes when the supplement ends at age ${supplementEndAge}.`
-        : `Your federal sample looks durable through age ${finalAge || '?'}.`;
+        : `Your federal sample looks durable through age ${requestedLifeExpectancy || '?'}.`;
       actionCopy = supplementEndAge
         ? `The key federal stress point is the handoff from pension plus supplement to pension plus TSP withdrawals before Social Security begins.`
         : `The next useful move is comparing retirement timing and later Social Security decisions.`;
@@ -1516,7 +1517,7 @@ function renderAha(data, payload) {
 
   document.getElementById('aha-headline').textContent = headline;
   document.getElementById('aha-fact-1').textContent = data.success
-    ? `Through age ${finalAge || '?'} in the base projection`
+    ? `Through age ${requestedLifeExpectancy || '?'} in the base projection`
     : `Runs short around age ${data.depletion_year || '?'}`;
   document.getElementById('aha-fact-2').textContent = data.success
     ? 'No shortfall in the base projection'
@@ -1989,7 +1990,14 @@ form.addEventListener('submit', async e => {
       throw new Error(parseApiErrorDetail(detail));
     }
     const data = await res.json();
-    lastData = data;
+    const requestedLifeExpectancy = parseInt(payload.life_expectancy) || null;
+    const filteredYears = requestedLifeExpectancy && Array.isArray(data.years)
+      ? data.years.filter(row => (parseInt(row.age, 10) || 0) <= requestedLifeExpectancy)
+      : data.years;
+    const displayData = Object.assign({}, data, {
+      years: Array.isArray(filteredYears) && filteredYears.length ? filteredYears : data.years
+    });
+    lastData = displayData;
 
     // Summary
     const sb = document.getElementById('summary-box');
@@ -1999,7 +2007,7 @@ form.addEventListener('submit', async e => {
     // Deterministic table
     const tbody = document.getElementById('results-body');
     tbody.innerHTML = '';
-    for (const row of data.years) {
+    for (const row of displayData.years) {
       const depleted = row.portfolio === 0 && !data.success;
       const hasRmd   = row.rmd > 0;
       const tr = document.createElement('tr');
@@ -2066,7 +2074,7 @@ form.addEventListener('submit', async e => {
     });
     ga('projection_completed', buildProjectionParams());
 
-    renderAha(data, payload);
+    renderAha(displayData, payload);
     document.getElementById('results').style.display = 'block';
     document.getElementById('aha-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
     trackProjectionResultViews();
