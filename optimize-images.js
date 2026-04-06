@@ -52,6 +52,7 @@ const SCREENSHOTS = [
   'Estate_Legacy_Analysis.png',
   'Beneficiary_Taxes.png',
   'Beneficiary_Quick_Guide.png',
+  'Sample_Result.png',
   'stress_test.png',
   'sensitivity_analysis.png',
   'comprehensive_stress_test.png',
