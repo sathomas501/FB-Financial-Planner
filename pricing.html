@@ -212,6 +212,59 @@ permalink: /pricing/
     text-align: center;
   }
 
+  .trial-steps {
+    list-style: none;
+    margin: 2px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  .trial-steps li {
+    font-size: 0.82rem;
+    color: var(--mid);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .trial-steps strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .trial-preview {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 6px;
+  }
+
+  .trial-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .trial-preview-copy {
+    padding: 12px 14px 14px;
+  }
+
+  .trial-preview-copy strong {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .trial-preview-copy p {
+    font-size: 0.8rem;
+    color: var(--mid);
+    line-height: 1.45;
+    margin: 0;
+  }
+
   /* PRICING CARDS */
   .pricing-section {
     max-width: 1000px;
@@ -589,6 +642,7 @@ permalink: /pricing/
     .trial-path, .pricing-section, .comparison-section, .vs-section, .faq-section { padding-left: 20px; padding-right: 20px; }
     .trial-path-inner { grid-template-columns: 1fr; }
     .trial-path-summary { grid-template-columns: 1fr; }
+    .trial-preview-copy { padding: 12px; }
     .pricing-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 16px; text-align: center; }
     .cta-buttons { flex-direction: column; align-items: center; }
@@ -615,37 +669,49 @@ permalink: /pricing/
     <li><a href="/comparison">Compare</a></li>
     <li><a href="/blog">Blog</a></li>
     <li><a href="/about">About</a></li>
-    <li><a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" class="nav-cta">Buy Pro — $149</a></li>
+    <li><a href="https://app.fatboysoftware.com" class="nav-cta">Start Free</a></li>
   </ul>
 </nav>
 
 <!-- HEADER -->
 <div class="page-header">
-  <div class="eyebrow">Pricing</div>
-  <h1>Start free.<br><em>Buy Pro when you need more.</em></h1>
-  <p>The free web app is the fastest way to test the planner. Fatboy Pro is a one-time $149 purchase for unlimited scenarios, saved plans, exports, and desktop access.</p>
+  <div class="eyebrow">Choose Your Path</div>
+  <h1>Try the planner free.<br><em>Buy Pro only if you want more depth.</em></h1>
+  <p>Open the free web app instantly with no signup and no credit card. If you want saved scenarios, exports, advanced controls, and desktop access later, Fatboy Pro is a one-time $149 upgrade.</p>
 </div>
 
 <div class="trial-path">
   <div class="trial-path-inner">
     <div class="trial-path-copy">
-      <strong>Do not make a pricing decision blind.</strong>
-      <p>Try the free web app first if you want proof. Buy Pro if you already know you want the full planner, saved scenarios, exports, and desktop use in one bundle.</p>
+      <strong>See the workflow before you pay anything.</strong>
+      <p>Most visitors should start in the free web app. It opens a real planner in the browser so you can test the inputs, the outputs, and the feel of the workflow before making a purchase decision.</p>
       <div class="trial-path-summary">
         <div>
           <strong>Free Web App</strong>
-          <span>1 scenario, no signup, no save/load, fast way to test the workflow.</span>
+          <span>Best for first-time visitors who want proof fast. Open a sample plan, change a few assumptions, and see how the planner thinks.</span>
         </div>
         <div>
           <strong>Pro - $149 One-Time</strong>
-          <span>Unlimited scenarios, saved plans, exports, desktop app, and all future updates.</span>
+          <span>Best once you want to save work, compare scenarios, export results, and use the full desktop workflow.</span>
         </div>
       </div>
     </div>
     <div class="trial-path-actions">
-      <a href="https://app.fatboysoftware.com" class="btn-secondary">Start Free In The Web App</a>
-      <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" class="btn-primary">Buy Pro - $149</a>
-      <p class="trial-path-note">No subscription. No account required to try the free version.</p>
+      <a href="https://app.fatboysoftware.com" class="btn-primary">Start Free In The Web App</a>
+      <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" class="btn-secondary">Buy Pro - $149</a>
+      <p class="trial-path-note">No subscription. No account required. No credit card to try it.</p>
+      <ul class="trial-steps">
+        <li><span class="chk">✓</span><span><strong>Open instantly:</strong> runs in your browser with no install.</span></li>
+        <li><span class="chk">✓</span><span><strong>Test a real plan:</strong> use the sample and adjust retirement timing, taxes, and withdrawals.</span></li>
+        <li><span class="chk">✓</span><span><strong>Upgrade later if needed:</strong> saved scenarios, exports, and desktop access are in Pro.</span></li>
+      </ul>
+      <div class="trial-preview">
+        <img src="/assets/images/Sample_Result.png" alt="Fatboy planner sample result showing projected savings balance over time">
+        <div class="trial-preview-copy">
+          <strong>What opens when you click</strong>
+          <p>A sample result with projected savings over time, so you can immediately see how retirement age, growth, and contributions change the outcome.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -656,17 +722,17 @@ permalink: /pricing/
 
     <!-- FREE TRIAL -->
     <div class="pricing-card">
-      <span class="card-badge badge-trial">Free Trial</span>
-      <h2>Try it first.</h2>
+      <span class="card-badge badge-trial">Start Here</span>
+      <h2>See it work before you pay.</h2>
       <div class="price-display">
         <span class="price-amount">Free</span>
       </div>
       <p class="price-subtext">No account required · No credit card</p>
       <p class="card-desc">
         The web app runs Python in your browser via Pyodide — no server, no data sent anywhere.
-        Try all the modules with one scenario before you decide.
+        Start with a sample plan, change your assumptions, and decide after you have seen the planner think through a real scenario.
       </p>
-      <p style="font-size:0.84rem;color:var(--mid);margin:-6px 0 18px 0;">Federal retirement fit: start with a federal sample plan and light pension / supplement inputs in the web app before deciding if you want the full workflow.</p>
+      <p style="font-size:0.84rem;color:var(--mid);margin:-6px 0 18px 0;">Federal retirement fit: start with a federal sample plan and light pension / supplement inputs before deciding if you need the full workflow.</p>
       <ul class="feature-list">
         <li><span class="chk">✓</span> All planning modules — Roth, IRMAA, goals, estate</li>
         <li><span class="chk">✓</span> Works in any browser, any device</li>
@@ -675,11 +741,9 @@ permalink: /pricing/
         <li><span class="dash">—</span> <span class="lim">1 scenario only</span></li>
         <li><span class="dash">—</span> <span class="lim">No save / load between sessions</span></li>
         <li><span class="dash">—</span> <span class="lim">No PDF or Excel export</span></li>
-        <li><span class="dash">—</span> <span class="lim">Monte Carlo limited (500 simulations)</span></li>
-        <li><span class="dash">—</span> <span class="lim">No full federal editing for COLA / later pension change events</span></li>
-        <li><span class="dash">—</span> <span class="lim">Desktop app not included</span></li>
+        <li><span class="dash">—</span> <span class="lim">Desktop app and advanced save/export workflow are Pro</span></li>
       </ul>
-      <a href="https://app.fatboysoftware.com" class="btn-secondary">Start Free In The Web App →</a>
+      <a href="https://app.fatboysoftware.com" class="btn-primary">Start Free In The Web App →</a>
     </div>
 
     <!-- PRO -->
