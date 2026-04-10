@@ -28,14 +28,9 @@ window.addEventListener('load', function () {
     }]
   };
 
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'purchase', purchasePayload);
-    console.log('GA4 purchase tracked:', sessionId || 'no session_id');
-  }
-
-  if (typeof window.trackMicrosoftUetEvent === 'function') {
-    window.trackMicrosoftUetEvent('purchase', purchasePayload);
-    console.log('Microsoft UET purchase tracked:', sessionId || 'no session_id');
+  if (window.FatboyAnalytics && typeof window.FatboyAnalytics.trackPurchaseComplete === 'function') {
+    window.FatboyAnalytics.trackPurchaseComplete(purchasePayload);
+    console.log('Purchase completion tracked:', sessionId || 'no session_id');
   }
 });
 </script>

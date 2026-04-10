@@ -6,16 +6,116 @@
         begin_checkout: true,
         purchase: true
     };
+    const ATTRIBUTION_KEYS = [
+        'msclkid',
+        'gclid',
+        'gbraid',
+        'wbraid',
+        'utm_source',
+        'utm_medium',
+        'utm_campaign',
+        'utm_term',
+        'utm_content'
+    ];
+    const ATTRIBUTION_STORAGE_KEY = 'fatboy_attribution_v1';
+    const CHECKOUT_DEDUPE_KEY = 'fatboy_checkout_start_v1';
+    const PURCHASE_DEDUPE_KEY = 'fatboy_purchase_complete_v1';
+    const APP_HOST_PATTERN = /(app|planner)\.fatboysoftware\.com/i;
+    const STRIPE_HOST_PATTERN = /(^|\.)buy\.stripe\.com$|(^|\.)stripe\.com$/i;
     let ga4ReadyPromise = null;
     const locationOrigin = window.location.origin || (window.location.protocol + '//' + window.location.hostname);
-    const locationPath = window.location.pathname;
+    const locationPath = window.location.pathname || '/';
     const locationSearch = window.location.search || '';
+    const currentUrl = new URL(window.location.href);
+    const currentHost = window.location.hostname || '';
 
     function isGA4Ready() {
         return typeof window.gtag === 'function';
     }
 
-    // Wait for gtag.js to load before flushing events
+    function safeJsonParse(value) {
+        if (!value) {
+            return null;
+        }
+
+        try {
+            return JSON.parse(value);
+        } catch (error) {
+            return null;
+        }
+    }
+
+    function getCookieDomain() {
+        if (!currentHost || currentHost === 'localhost' || /^\d+\.\d+\.\d+\.\d+$/.test(currentHost)) {
+            return '';
+        }
+
+        if (currentHost === 'fatboysoftware.com' || currentHost.endsWith('.fatboysoftware.com')) {
+            return '.fatboysoftware.com';
+        }
+
+        const segments = currentHost.split('.');
+        if (segments.length >= 2) {
+            return '.' + segments.slice(-2).join('.');
+        }
+
+        return '';
+    }
+
+    function setCookie(name, value, maxAgeSeconds) {
+        const parts = [
+            name + '=' + encodeURIComponent(value),
+            'path=/',
+            'SameSite=Lax'
+        ];
+        const domain = getCookieDomain();
+
+        if (maxAgeSeconds) {
+            parts.push('max-age=' + maxAgeSeconds);
+        }
+        if (domain) {
+            parts.push('domain=' + domain);
+        }
+        if (window.location.protocol === 'https:') {
+            parts.push('secure');
+        }
+
+        document.cookie = parts.join('; ');
+    }
+
+    function getCookie(name) {
+        const prefix = name + '=';
+        const cookies = (document.cookie || '').split(';');
+
+        for (let index = 0; index < cookies.length; index += 1) {
+            const entry = cookies[index].trim();
+            if (entry.indexOf(prefix) === 0) {
+                return decodeURIComponent(entry.substring(prefix.length));
+            }
+        }
+
+        return '';
+    }
+
+    function sanitizeObject(input) {
+        const output = {};
+        if (!input || typeof input !== 'object') {
+            return output;
+        }
+
+        Object.keys(input).forEach(function (key) {
+            const value = input[key];
+            if (value === undefined || value === null || value === '') {
+                return;
+            }
+
+            output[key] = value;
+        });
+
+        return output;
+    }
+
+    // Wait for gtag.js to load before flushing events.
     function ensureGA4Ready() {
         if (ga4ReadyPromise) {
             return ga4ReadyPromise;
@@ -48,16 +148,46 @@
         return ga4ReadyPromise;
     }
 
-    function buildEventParams(params) {
-        const eventParams = {};
+    function getStoredAttribution() {
+        const storedJson = window.localStorage ? window.localStorage.getItem(ATTRIBUTION_STORAGE_KEY) : '';
+        const stored = safeJsonParse(storedJson) || safeJsonParse(getCookie(ATTRIBUTION_STORAGE_KEY)) || {};
+        return sanitizeObject(stored);
+    }
 
-        if (params && typeof params === 'object') {
-            for (let key in params) {
-                if (Object.prototype.hasOwnProperty.call(params, key)) {
-                    eventParams[key] = params[key];
-                }
-            }
+    function persistAttribution(attribution) {
+        const sanitized = sanitizeObject(attribution);
+        if (!Object.keys(sanitized).length) {
+            return {};
         }
+
+        if (window.localStorage) {
+            window.localStorage.setItem(ATTRIBUTION_STORAGE_KEY, JSON.stringify(sanitized));
+        }
+        setCookie(ATTRIBUTION_STORAGE_KEY, JSON.stringify(sanitized), 60 * 60 * 24 * 90);
+        return sanitized;
+    }
+
+    function captureCurrentAttribution() {
+        const stored = getStoredAttribution();
+        const current = {};
+
+        ATTRIBUTION_KEYS.forEach(function (key) {
+            const value = currentUrl.searchParams.get(key);
+            if (value) {
+                current[key] = value;
+            }
+        });
+
+        const merged = Object.assign({}, stored, current);
+        return persistAttribution(merged);
+    }
+
+    function getAttributionData() {
+        return captureCurrentAttribution();
+    }
+
+    function buildEventParams(params) {
+        const eventParams = Object.assign({}, getAttributionData(), sanitizeObject(params));
 
         if (GA_MEASUREMENT_ID) {
             eventParams.send_to = GA_MEASUREMENT_ID;
@@ -88,6 +218,248 @@
             }
 
             window.gtag('set', 'user_properties', properties);
+        });
+    }
+
+    function appendStoredAttribution(urlString, defaults) {
+        const mergedDefaults = sanitizeObject(defaults);
+        const targetUrl = new URL(urlString, window.location.href);
+        const attribution = getAttributionData();
+
+        ATTRIBUTION_KEYS.forEach(function (key) {
+            if (attribution[key] && !targetUrl.searchParams.get(key)) {
+                targetUrl.searchParams.set(key, attribution[key]);
+            }
+        });
+
+        Object.keys(mergedDefaults).forEach(function (key) {
+            if (!targetUrl.searchParams.get(key)) {
+                targetUrl.searchParams.set(key, mergedDefaults[key]);
+            }
+        });
+
+        return targetUrl.toString();
+    }
+
+    function getDefaultPlannerAttribution(link) {
+        if (locationPath === '/' || locationPath === '/index.html') {
+            return {
+                utm_source: 'website',
+                utm_medium: 'homepage',
+                utm_campaign: 'core_site',
+                utm_content: (link && link.getAttribute('data-analytics-location')) || 'homepage_cta'
+            };
+        }
+
+        if (locationPath.indexOf('/pricing') === 0) {
+            return {
+                utm_source: 'website',
+                utm_medium: 'pricing_page',
+                utm_campaign: 'core_site',
+                utm_content: (link && link.getAttribute('data-analytics-location')) || 'pricing_cta'
+            };
+        }
+
+        if (locationPath.indexOf('/federal-retirement') === 0) {
+            return {
+                utm_source: 'website',
+                utm_medium: 'landing_page',
+                utm_campaign: 'federal_retirement',
+                utm_content: (link && link.getAttribute('data-federal-cta')) || (link && link.getAttribute('data-analytics-location')) || 'primary_cta'
+            };
+        }
+
+        if (currentHost.indexOf('app.') === 0 || currentHost.indexOf('planner.') === 0) {
+            return {
+                utm_source: 'web_app',
+                utm_medium: 'in_app',
+                utm_campaign: 'planner_upgrade',
+                utm_content: (link && link.getAttribute('data-analytics-location')) || 'in_app_cta'
+            };
+        }
+
+        return {
+            utm_source: 'website',
+            utm_medium: 'site',
+            utm_campaign: 'core_site',
+            utm_content: (link && link.getAttribute('data-analytics-location')) || 'site_cta'
+        };
+    }
+
+    function getDefaultCheckoutAttribution(link) {
+        if (locationPath.indexOf('/pricing') === 0) {
+            return {
+                utm_source: 'website',
+                utm_medium: 'pricing_page',
+                utm_campaign: 'core_site',
+                utm_content: (link && link.getAttribute('data-analytics-location')) || 'pricing_buy'
+            };
+        }
+
+        if (currentHost.indexOf('app.') === 0 || currentHost.indexOf('planner.') === 0) {
+            return {
+                utm_source: 'web_app',
+                utm_medium: 'in_app',
+                utm_campaign: 'planner_upgrade',
+                utm_content: (link && link.getAttribute('data-analytics-location')) || 'in_app_buy'
+            };
+        }
+
+        return {
+            utm_source: 'website',
+            utm_medium: locationPath === '/' || locationPath === '/index.html' ? 'homepage' : 'site',
+            utm_campaign: 'core_site',
+            utm_content: (link && link.getAttribute('data-analytics-location')) || 'buy_cta'
+        };
+    }
+
+    function isPlannerDestination(urlString) {
+        if (!urlString) {
+            return false;
+        }
+
+        try {
+            return APP_HOST_PATTERN.test(new URL(urlString, window.location.href).hostname || '');
+        } catch (error) {
+            return false;
+        }
+    }
+
+    function isStripeDestination(urlString) {
+        if (!urlString) {
+            return false;
+        }
+
+        try {
+            return STRIPE_HOST_PATTERN.test(new URL(urlString, window.location.href).hostname || '');
+        } catch (error) {
+            return false;
+        }
+    }
+
+    function inferPlannerIntent(link, urlString) {
+        if ((link && link.getAttribute('data-planner-intent')) || '') {
+            return link.getAttribute('data-planner-intent');
+        }
+
+        const href = urlString || (link && (link.getAttribute('href') || link.href)) || '';
+        if (href.indexOf('sample=1') !== -1) {
+            return 'sample_plan';
+        }
+        if (href.indexOf('federal=1') !== -1) {
+            return 'federal_sample';
+        }
+        if (/planner\.fatboysoftware\.com/i.test(href)) {
+            return 'full_planner';
+        }
+        return 'planner';
+    }
+
+    function decorateCrossDomainLinks() {
+        const links = document.querySelectorAll('a[href]');
+
+        Array.prototype.forEach.call(links, function (link) {
+            const href = link.getAttribute('href') || '';
+            if (!href) {
+                return;
+            }
+
+            if (isPlannerDestination(href)) {
+                link.href = appendStoredAttribution(href, getDefaultPlannerAttribution(link));
+                return;
+            }
+
+            if (isStripeDestination(href)) {
+                link.href = appendStoredAttribution(href, getDefaultCheckoutAttribution(link));
+            }
+        });
+    }
+
+    function trackPlannerEntry(params) {
+        const eventParams = Object.assign({
+            page_location: window.location.href,
+            page_path: locationPath,
+            planner_host: currentHost
+        }, sanitizeObject(params));
+
+        trackEvent('planner_entry', eventParams);
+    }
+
+    function trackPlannerCtaClick(params) {
+        trackEvent('planner_cta_click', sanitizeObject(params));
+    }
+
+    function trackCheckoutStart(params) {
+        const eventParams = sanitizeObject(params);
+        const dedupeValue = eventParams.destination_url || eventParams.checkout_path || eventParams.source_page || locationPath;
+
+        if (window.sessionStorage && dedupeValue) {
+            const existing = safeJsonParse(window.sessionStorage.getItem(CHECKOUT_DEDUPE_KEY)) || {};
+            if (existing.value === dedupeValue && Date.now() - existing.timestamp < 1500) {
+                return;
+            }
+
+            window.sessionStorage.setItem(CHECKOUT_DEDUPE_KEY, JSON.stringify({
+                value: dedupeValue,
+                timestamp: Date.now()
+            }));
+        }
+
+        trackEvent('checkout_start', eventParams);
+        trackEvent('begin_checkout', Object.assign({
+            currency: 'USD',
+            value: 149,
+            items: [{
+                item_id: 'fatboy-pro',
+                item_name: 'Fatboy Financial Planner Pro',
+                item_category: 'Software',
+                price: 149,
+                quantity: 1
+            }]
+        }, eventParams));
+    }
+
+    function trackPurchaseComplete(params) {
+        const eventParams = sanitizeObject(params);
+        const transactionId = eventParams.transaction_id || currentUrl.searchParams.get('session_id') || currentUrl.searchParams.get('tx');
+
+        if (!transactionId) {
+            console.warn('Purchase tracking skipped: missing transaction_id');
+            return;
+        }
+
+        if (window.sessionStorage) {
+            const purchases = safeJsonParse(window.sessionStorage.getItem(PURCHASE_DEDUPE_KEY)) || {};
+            if (purchases[transactionId]) {
+                return;
+            }
+
+            purchases[transactionId] = Date.now();
+            window.sessionStorage.setItem(PURCHASE_DEDUPE_KEY, JSON.stringify(purchases));
+        }
+
+        const commerceParams = Object.assign({
+            transaction_id: transactionId,
+            currency: 'USD',
+            value: 149,
+            tax: 0,
+            shipping: 0,
+            affiliation: 'Fatboy Software',
+            items: [{
+                item_id: 'fatboy-pro',
+                item_name: 'Fatboy Financial Planner Pro',
+                item_category: 'Software',
+                price: 149,
+                quantity: 1
+            }]
+        }, eventParams);
+
+        trackEvent('purchase_complete', commerceParams);
+        trackEvent('purchase', commerceParams);
+
+        setUserProperties({
+            is_customer: 'true',
+            product_owned: 'pro'
         });
     }
 
@@ -258,6 +630,10 @@
                 return;
             }
 
+            if (isPlannerDestination(href) || isStripeDestination(href)) {
+                return;
+            }
+
             trackEvent('click', {
                 event_category: 'outbound',
                 event_label: href,
@@ -268,56 +644,49 @@
         });
     }
 
-    function trackPurchaseClicks() {
+    function trackPlannerCtaLinks() {
         document.addEventListener('click', function (event) {
-            const link = event.target.closest('a');
+            const link = event.target.closest('a[href]');
             if (!link) {
                 return;
             }
 
-            const href = link.getAttribute('href') || '';
-            if (!href) {
+            const href = link.getAttribute('href') || link.href || '';
+            if (!isPlannerDestination(href)) {
                 return;
             }
 
-            if (href.includes('stripe.com') || href.includes('buy.stripe.com')) {
-                trackEvent('begin_checkout', {
-                    currency: 'USD',
-                    value: 149,
-                    items: [{
-                        item_id: 'fatboy-pro',
-                        item_name: 'Fatboy Financial Planner Pro',
-                        item_category: 'Software',
-                        price: 149,
-                        quantity: 1
-                    }],
-                    source_page: locationPath
-                });
-            }
+            trackPlannerCtaClick({
+                cta_location: link.getAttribute('data-analytics-location') || link.getAttribute('data-federal-cta') || link.id || 'planner_link',
+                cta_text: (link.textContent || '').trim().substring(0, 120),
+                destination_url: link.href || href,
+                destination_host: (new URL(link.href || href, window.location.href)).hostname,
+                planner_intent: inferPlannerIntent(link, href),
+                source_page: locationPath
+            });
         });
     }
 
-    function trackPurchaseComplete() {
-        if (locationPath.includes('/purchase-success') || locationSearch.includes('purchase=success')) {
-            trackEvent('purchase', {
-                currency: 'USD',
-                value: 149,
-                transaction_id: new URLSearchParams(window.location.search).get('tx') || Date.now().toString(),
-                items: [{
-                    item_id: 'fatboy-pro',
-                    item_name: 'Fatboy Financial Planner Pro',
-                    item_category: 'Software',
-                    price: 149,
-                    quantity: 1
-                }],
-                affiliation: 'Fatboy Software'
-            });
+    function trackPurchaseClicks() {
+        document.addEventListener('click', function (event) {
+            const link = event.target.closest('a[href]');
+            if (!link) {
+                return;
+            }
 
-            setUserProperties({
-                is_customer: 'true',
-                product_owned: 'pro'
+            const href = link.getAttribute('href') || link.href || '';
+            if (!isStripeDestination(href)) {
+                return;
+            }
+
+            trackCheckoutStart({
+                checkout_path: 'stripe_payment_link',
+                destination_url: link.href || href,
+                source_page: locationPath,
+                cta_location: link.getAttribute('data-analytics-location') || link.id || 'buy_link',
+                cta_text: (link.textContent || '').trim().substring(0, 120)
             });
-        }
+        });
     }
 
     function trackEmailLinks() {
@@ -432,19 +801,33 @@
         });
     }
 
+    window.FatboyAnalytics = Object.assign(window.FatboyAnalytics || {}, {
+        appendStoredAttribution: appendStoredAttribution,
+        getAttributionData: getAttributionData,
+        persistCurrentAttribution: captureCurrentAttribution,
+        setUserProperties: setUserProperties,
+        trackCheckoutStart: trackCheckoutStart,
+        trackEvent: trackEvent,
+        trackPlannerCtaClick: trackPlannerCtaClick,
+        trackPlannerEntry: trackPlannerEntry,
+        trackPurchaseComplete: trackPurchaseComplete
+    });
+
     function init() {
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', init);
             return;
         }
 
+        captureCurrentAttribution();
+        decorateCrossDomainLinks();
         trackScrollDepth();
         trackReadTime();
         trackBlogNavigation();
         trackChecklistEvents();
         trackOutboundClicks();
+        trackPlannerCtaLinks();
         trackPurchaseClicks();
-        trackPurchaseComplete();
         trackEmailLinks();
         trackComparisonPage();
         trackPricingPage();
@@ -474,5 +857,4 @@
     };
 
     init();
-
 })();

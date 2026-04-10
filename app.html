@@ -41,11 +41,13 @@
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-68L4Z2S1P5"></script>
 <script>
+  window.GA_MEASUREMENT_ID = 'G-68L4Z2S1P5';
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-68L4Z2S1P5');
 </script>
+<script defer src="/assets/js/ga4-events.js"></script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: system-ui, sans-serif; background: #0f1117; color: #e2e8f0; min-height: 100vh; }
@@ -785,7 +787,7 @@
       <div class="aha-action">
         <div class="aha-action-copy" id="aha-action-copy"></div>
         <button type="button" class="ghost-btn" id="aha-real-numbers-btn">Continue with your real numbers</button>
-        <a href="https://planner.fatboysoftware.com" target="_blank" id="aha-upgrade-link">Open the full planner</a>
+        <a href="https://planner.fatboysoftware.com" target="_blank" id="aha-upgrade-link" data-analytics-location="aha_card" data-planner-intent="full_planner">Open the full planner</a>
       </div>
     </div>
     <!-- Deterministic summary -->
@@ -863,7 +865,7 @@
     <div class="desktop-cta">
       <p>Free demo gives you a quick projection, a sample scenario, and limited assumptions. The full planner adds saved plans, scenario comparison, tax-aware planning, Social Security timing, and Roth conversion testing.</p>
       <p style="font-size:0.8rem;color:#cbd5e1;margin-bottom:10px;">If this result is useful, the next move is keeping it and testing alternatives without starting over.</p>
-      <a href="https://planner.fatboysoftware.com" target="_blank" id="results-upgrade-link" onclick="ga('app_open_full_planner_click')"
+      <a href="https://planner.fatboysoftware.com" target="_blank" id="results-upgrade-link" data-analytics-location="results_cta" data-planner-intent="full_planner"
          style="display:inline-flex;align-items:center;justify-content:center;background:#4ade80;color:#0f1117;font-weight:700;font-size:0.84rem;padding:10px 16px;border-radius:10px;text-decoration:none;margin-bottom:12px;">
         Open the full planner
       </a>
@@ -888,6 +890,10 @@ fetch(apiUrl('/health')).catch(() => {});
 
 // GA4 helper — safe no-op if gtag hasn't loaded yet
 function ga(event, params) {
+  if (window.FatboyAnalytics && typeof window.FatboyAnalytics.trackEvent === 'function') {
+    window.FatboyAnalytics.trackEvent(event, params || {});
+    return;
+  }
   if (typeof gtag === 'function') gtag('event', event, params || {});
 }
 
@@ -1621,6 +1627,13 @@ updateLivePreview();
 document.getElementById('sample-plan-btn').addEventListener('click', () => {
   setPlannerMode('general');
   applyPlanValues(SAMPLE_PLAN);
+  if (window.FatboyAnalytics && typeof window.FatboyAnalytics.trackPlannerEntry === 'function') {
+    window.FatboyAnalytics.trackPlannerEntry({
+      planner_mode: 'general',
+      entry_variant: 'sample_plan',
+      entry_source: 'in_app_selector'
+    });
+  }
   ga('sample_plan_selected');
   form.requestSubmit();
 });
@@ -1630,6 +1643,13 @@ document.getElementById('federal-sample-btn').addEventListener('click', () => {
   applyPlanValues(FEDERAL_SAMPLE_PLAN);
   document.getElementById('advanced-fields').open = true;
   focusFederalStartSurface();
+  if (window.FatboyAnalytics && typeof window.FatboyAnalytics.trackPlannerEntry === 'function') {
+    window.FatboyAnalytics.trackPlannerEntry({
+      planner_mode: 'federal',
+      entry_variant: 'federal_sample',
+      entry_source: 'in_app_selector'
+    });
+  }
   ga('federal_sample_plan_selected');
   form.requestSubmit();
 });
@@ -1655,10 +1675,28 @@ document.getElementById('aha-real-numbers-btn').addEventListener('click', () => 
 });
 
 document.getElementById('aha-upgrade-link').addEventListener('click', () => {
+  if (window.FatboyAnalytics && typeof window.FatboyAnalytics.appendStoredAttribution === 'function') {
+    const link = document.getElementById('aha-upgrade-link');
+    link.href = window.FatboyAnalytics.appendStoredAttribution(link.href, {
+      utm_source: 'web_app',
+      utm_medium: 'in_app',
+      utm_campaign: 'planner_upgrade',
+      utm_content: 'aha_card'
+    });
+  }
   ga('demo_aha_upgrade_click', buildProjectionParams({ cta_location: 'aha_card' }));
 });
 
 document.getElementById('results-upgrade-link').addEventListener('click', () => {
+  if (window.FatboyAnalytics && typeof window.FatboyAnalytics.appendStoredAttribution === 'function') {
+    const link = document.getElementById('results-upgrade-link');
+    link.href = window.FatboyAnalytics.appendStoredAttribution(link.href, {
+      utm_source: 'web_app',
+      utm_medium: 'in_app',
+      utm_campaign: 'planner_upgrade',
+      utm_content: 'results_cta'
+    });
+  }
   ga('projection_result_upgrade_click', buildProjectionParams({ cta_location: 'results_cta' }));
 });
 
@@ -1711,6 +1749,46 @@ if (initialParams.get('federal') === '1') {
   document.getElementById('advanced-fields').open = true;
   window.requestAnimationFrame(() => focusFederalStartSurface());
 }
+
+window.addEventListener('load', () => {
+  const analytics = window.FatboyAnalytics;
+  if (!analytics || typeof analytics.trackPlannerEntry !== 'function') return;
+
+  const hasSharedPlan = [
+    'age',
+    'retirement_age',
+    'annual_spending',
+    'ss_annual',
+    'trad_balance',
+    'roth_balance',
+    'taxable_balance',
+    'cash_balance'
+  ].some(key => initialParams.get(key) !== null);
+
+  let entryVariant = 'blank';
+  if (initialParams.get('sample') === '1') {
+    entryVariant = 'sample_plan';
+  } else if (initialParams.get('federal') === '1') {
+    entryVariant = 'federal_sample';
+  } else if (hasSharedPlan) {
+    entryVariant = 'shared_plan';
+  }
+
+  let referrerHost = '';
+  if (document.referrer) {
+    try {
+      referrerHost = new URL(document.referrer).hostname;
+    } catch (error) {
+      referrerHost = '';
+    }
+  }
+
+  analytics.trackPlannerEntry({
+    planner_mode: plannerMode,
+    entry_variant: entryVariant,
+    referrer_host: referrerHost
+  });
+});
 
 // Show/hide spouse SS + pension rows
 document.querySelector('[name=spouse_age]').addEventListener('input', e => {

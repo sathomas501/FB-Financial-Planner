@@ -969,10 +969,10 @@ permalink: /
       <span class="mobile-only">Use the free web planner to test your numbers in a few minutes, or open a sample plan first to see how it works.</span>
     </p>
     <div class="hero-actions">
-      <a href="https://app.fatboysoftware.com" class="btn-primary" onclick="gtag('event','homepage_hero_demo_click')">
+      <a href="https://app.fatboysoftware.com" class="btn-primary" data-analytics-location="hero_primary" data-planner-intent="planner">
         Try the Free Web Planner
       </a>
-      <a href="https://app.fatboysoftware.com/?sample=1" class="btn-secondary" onclick="gtag('event','homepage_hero_sample_click')">
+      <a href="https://app.fatboysoftware.com/?sample=1" class="btn-secondary" data-analytics-location="hero_sample" data-planner-intent="sample_plan">
         Open Sample Plan
       </a>
       <p class="hero-note desktop-only">No signup required. Fastest path is to try your own numbers, or open a sample plan and test retire-at-62 vs 65. Need saved scenarios, exports, or offline use later? <a href="/downloads/" onclick="gtag('event','homepage_desktop_pro_hero_click')">See What Desktop Pro Adds</a>.</p>
@@ -1041,7 +1041,7 @@ permalink: /
         <li><span class="yes">✓</span><span class="text">good for sample scenarios</span></li>
         <li><span class="yes">✓</span><span class="text">no signup to explore</span></li>
       </ul>
-      <a href="https://app.fatboysoftware.com" class="btn-secondary" onclick="gtag('event','homepage_quick_compare_web_click')">Start Free In The Web App</a>
+      <a href="https://app.fatboysoftware.com" class="btn-secondary" data-analytics-location="quick_compare_web" data-planner-intent="planner">Start Free In The Web App</a>
     </div>
 
     <div class="quick-compare-card pro">
@@ -1086,14 +1086,16 @@ permalink: /
     <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; flex-shrink: 0;">
       <a href="https://app.fatboysoftware.com"
          target="_blank"
-         onclick="gtag('event','homepage_calculator_cta_click')"
+         data-analytics-location="calculator_primary"
+         data-planner-intent="planner"
          style="display: inline-block; background: var(--ink); color: var(--paper); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 32px; border-radius: 2px; text-decoration: none; transition: background 0.2s; white-space: nowrap;">
         Start Free In The Web App →
       </a>
       <span style="font-size: 0.75rem; color: var(--mid);">No account · No install · Opens instantly</span>
       <a href="https://planner.fatboysoftware.com"
          target="_blank"
-         onclick="gtag('event','homepage_full_planner_cta_click')"
+         data-analytics-location="calculator_full_planner"
+         data-planner-intent="full_planner"
          style="font-size: 0.78rem; color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;"
          onmouseover="this.style.borderBottomColor='var(--gold)'"
          onmouseout="this.style.borderBottomColor='transparent'">
@@ -1160,7 +1162,7 @@ permalink: /
         <li><span class="yes">✓</span><span class="text">Desktop app — full native performance, offline</span></li>
         <li><span class="yes">✓</span><span class="text">All future updates included</span></li>
       </ul>
-      <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" class="btn-primary" data-founding-btn>Buy Now — $149</a>
+      <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" class="btn-primary" data-founding-btn data-analytics-location="homepage_buy_now">Buy Now — $149</a>
       <p style="font-size:0.78rem;color:var(--mid);margin-top:10px;text-align:center;" data-founding-remaining>Price increases to $249 after 200 Founding Members</p>
       <p style="font-size:0.78rem;text-align:center;margin-top:8px;line-height:2;">
         <span style="color:var(--mid);">Already purchased? Download: </span>
