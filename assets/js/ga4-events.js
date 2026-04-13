@@ -365,7 +365,12 @@
             }
 
             if (isPlannerDestination(href)) {
-                link.href = appendStoredAttribution(href, getDefaultPlannerAttribution(link));
+                const plannerUrl = new URL(appendStoredAttribution(href, getDefaultPlannerAttribution(link)), window.location.href);
+                const experimentVariant = link.getAttribute('data-experiment-variant') || '';
+                if (experimentVariant && !plannerUrl.searchParams.get('ffp_experiment_variant')) {
+                    plannerUrl.searchParams.set('ffp_experiment_variant', experimentVariant);
+                }
+                link.href = plannerUrl.toString();
                 return;
             }
 
@@ -662,6 +667,7 @@
                 destination_url: link.href || href,
                 destination_host: (new URL(link.href || href, window.location.href)).hostname,
                 planner_intent: inferPlannerIntent(link, href),
+                experiment_variant: link.getAttribute('data-experiment-variant') || undefined,
                 source_page: locationPath
             });
         });

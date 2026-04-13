@@ -516,7 +516,7 @@ window.addEventListener('load', function () {
         What is the refund policy?
         <span class="sp-faq-ico">+</span>
       </button>
-      <p class="sp-faq-a">If you&rsquo;re not satisfied, email us within 30 days and we&rsquo;ll make it right. We stand behind our software.</p>
+      <p class="sp-faq-a">If you&rsquo;re not satisfied, email us within 10 days and we&rsquo;ll make it right. We stand behind our software.</p>
     </div>
 
     <div class="sp-faq">

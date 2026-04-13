@@ -1786,6 +1786,7 @@ window.addEventListener('load', () => {
   analytics.trackPlannerEntry({
     planner_mode: plannerMode,
     entry_variant: entryVariant,
+    experiment_variant: initialParams.get('ffp_experiment_variant') || undefined,
     referrer_host: referrerHost
   });
 });
