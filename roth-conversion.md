@@ -1,8 +1,37 @@
 ---
 layout: default
 title: Roth Conversion Planning Software - Model Tax Impact Year by Year
-description: Professional Roth conversion planning software. Model multi-year conversion strategies with full tax impact analysis. See IRMAA brackets, RMD impacts, and optimal conversion amounts. Desktop software you own - no subscriptions.
-keywords: Roth conversion calculator, Roth conversion planning, Roth ladder strategy, IRMAA Roth conversion, tax optimization software, Roth IRA conversion planning
+description: Roth conversion planning software for modeling year-by-year tax impact, IRMAA exposure, RMD reduction, and optimal conversion amounts. Compare Roth conversion scenarios with desktop software you own.
+keywords: Roth conversion calculator, Roth conversion planning, Roth conversion software, Roth ladder strategy, IRMAA Roth conversion, Roth IRA conversion planning, RMD Roth conversion
+faq_schema:
+  "@context": "https://schema.org"
+  "@type": "FAQPage"
+  mainEntity:
+    - "@type": "Question"
+      name: "Does Fatboy show Roth conversion tax impact year by year?"
+      acceptedAnswer:
+        "@type": "Answer"
+        text: "Yes. Fatboy models Roth conversion scenarios year by year so you can compare current taxes, future IRMAA exposure, RMD impact, and long-term account balances."
+    - "@type": "Question"
+      name: "Does Fatboy model IRMAA for Roth conversions?"
+      acceptedAnswer:
+        "@type": "Answer"
+        text: "Yes. Fatboy shows how Roth conversion income affects IRMAA brackets and Medicare premium surcharges."
+    - "@type": "Question"
+      name: "Can Fatboy compare multiple Roth conversion strategies?"
+      acceptedAnswer:
+        "@type": "Answer"
+        text: "Yes. You can compare different Roth conversion amounts, timing choices, and multi-year strategies side by side."
+    - "@type": "Question"
+      name: "Can Fatboy model RMD reduction from Roth conversions?"
+      acceptedAnswer:
+        "@type": "Answer"
+        text: "Yes. Fatboy shows how Roth conversions can reduce future pre-tax balances and change projected RMD pressure later in retirement."
+    - "@type": "Question"
+      name: "Is Fatboy Roth conversion planning software a subscription?"
+      acceptedAnswer:
+        "@type": "Answer"
+        text: "No. Fatboy offers a one-time purchase for the desktop Pro version rather than a recurring subscription."
 ---
 
 # Roth Conversion Planning Software
@@ -14,14 +43,20 @@ You know a Roth conversion ladder makes sense for your situation. You understand
 
 ---
 
-## Why Roth Conversions Matter (And Why Most Calculators Miss the Boat)
+## Why Roth Conversions Matter in 2026 (And Why Most Calculators Miss the Boat)
 
-The 2026 TCJA expiration creates a **3-year window** (2024-2026) where Roth conversions are significantly more valuable:
-- Lower tax brackets expire December 31, 2025
-- Standard deduction gets cut nearly in half
-- OBBBA senior deduction (2026-2028) creates additional planning complexity
+Roth conversion planning is still one of the most valuable tax strategies in retirement, but the rules people are planning around have changed.
 
-**If you're planning conversions for 2025-2028, your calculator needs to handle both TCJA expiration AND OBBBA.** Most don't.
+Today the real challenge is not a generic "should I convert?" question. It is coordinating:
+- current tax brackets
+- OBBBA-era deduction rules
+- IRMAA thresholds
+- Social Security timing
+- future RMD pressure
+
+**If you're planning conversions in 2026 and beyond, your calculator needs to handle all of those together.** Most don't.
+
+If you want the full decision framework first, read [Roth Conversions 2026: Who Should Convert, How Much to Convert, and When to Stop]({{ site.baseurl }}{% post_url 2026-04-14-roth-conversions-2026-who-should-convert %}).
 
 ---
 
@@ -41,13 +76,13 @@ Medicare premiums jump at specific income thresholds (IRMAA brackets). A poorly 
 **Fatboy shows IRMAA impacts for every conversion scenario** - so you can stay under thresholds or deliberately breach them when it makes sense.
 
 ### Tax Law Flexibility You Control
-TCJA expires. OBBBA phases in. Tax laws will change again in 2027-2028.
+Tax rules change. OBBBA created temporary planning opportunities. Congress will change the rules again eventually.
 
 **You can edit tax brackets yourself.** When Congress changes the rules, you update the parameters in 10 minutes and keep planning. No waiting 6-18 months for vendor updates.
 
 ### Compare Strategies Side-by-Side
 - Convert $40k/year for 5 years vs $100k in one big year
-- Front-load conversions before TCJA expires vs spread evenly
+- Front-load conversions during favorable tax years vs spread evenly
 - Roth conversions vs paying off mortgage early
 - Different conversion amounts by tax bracket
 
@@ -57,8 +92,8 @@ See the tradeoffs. Understand the risks. Make informed decisions.
 
 ## Real Roth Conversion Scenarios Fatboy Handles
 
-**Scenario 1: The TCJA Window (2024-2026)**
-*Convert while brackets are low, before expiration drives your rate from 22% to 25%*
+**Scenario 1: The 2026 Decision Year**
+*Decide how much to convert this year based on bracket room, IRMAA exposure, and future RMD pressure*
 
 **Scenario 2: The Early Retirement Conversion Ladder**
 *Retire at 55, live on taxable accounts, convert $50k/year at 12% bracket until Social Security starts*
@@ -166,6 +201,15 @@ Desktop application. Your financial data stays on your computer. No cloud sync. 
 [Buy Pro Version - $149 (One-Time)](https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00)
 
 Try the free version. Model a few Roth conversion scenarios. See if the tax impact makes sense for your situation. Upgrade to Pro when you want unlimited scenarios and advanced features.
+
+---
+
+## Learn the strategy before you model it
+
+- [Roth Conversions 2026: Who Should Convert, How Much to Convert, and When to Stop]({{ site.baseurl }}{% post_url 2026-04-14-roth-conversions-2026-who-should-convert %})
+- [Roth Conversion Ladder Strategy: Pay Less Tax Over Your Lifetime]({{ site.baseurl }}{% post_url 2025-01-15-roth-conversion-ladder-strategy %})
+- [IRMAA Planning: The Medicare Surcharge That Can Cost You $150,000+ in Retirement]({{ site.baseurl }}{% post_url 2025-01-17-IRMAA-Tax %})
+- [RMD Planning 2026: How to Avoid the Tax Spike Most Retirees Sleepwalk Into]({{ site.baseurl }}{% post_url 2026-04-04-rmd-planning-tax-spike %})
 
 ---
 

@@ -178,16 +178,16 @@ Why these specific years?
 - Less room in lower brackets
 - Conversions still possible but less advantageous
 
-**The 2025-2026 Super Window:**
+**The current planning window:**
 
-Remember TCJA expiration? The 12% and 22% brackets exist only through 2025. Post-TCJA, they become 15% and 25%.
+This article was originally written during the TCJA expiration scare. That specific cliff did not happen. OBBBA changed the tax landscape, but the core conversion logic still matters.
 
-**This makes 2025 the BEST conversion year for many people:**
-- Convert at 12% instead of future 15% (saves 3%)
-- Convert at 22% instead of future 25% (saves 3%)
-- On $100k conversion: save $3,000 in taxes
+The strategic point still holds:
+- low-income years before RMDs remain valuable
+- Roth conversions still work best when you can control the marginal tax cost
+- IRMAA and future withdrawal flexibility still matter
 
-If you're in the sweet spot age range RIGHT NOW, 2025 is a gift.
+For the current decision framework, read [Roth Conversions 2026: Who Should Convert, How Much to Convert, and When to Stop]({{ site.baseurl }}{% post_url 2026-04-14-roth-conversions-2026-who-should-convert %}).
 
 ## How to Build Your Roth Conversion Ladder
 
@@ -568,7 +568,7 @@ Roth conversions are one of the most powerful tax optimization strategies availa
 - Software to model the strategy
 - Discipline to execute over multiple years
 
-**The 2025 opportunity is real and limited.** TCJA rates expire in 351 days. If you're in the sweet spot (ages 55-72, have traditional IRA balances, and can manage the tax bill), this is your year.
+**The opportunity is still real, but the reason is different now.** The value usually comes from low-income conversion windows, future RMD reduction, IRMAA-aware planning, and building more tax flexibility before retirement income stacks up.
 
 **Ready to build your Roth conversion ladder?** [Download Fatboy Financial Planner]({{ site.url }}{{ site.baseurl }}/) and model your conversion strategy. See exactly how much to convert each year, what you'll pay in taxes, and how much you'll save over your lifetime.
 
@@ -579,6 +579,8 @@ Because the IRS doesn't care about your retirement plans. But you should.
 *Questions about Roth conversion strategies? Email: [fbfinancialplanner@gmail.com](mailto:fbfinancialplanner@gmail.com)*
 
 *Related reading:*
-- [TCJA Expiration 2026: The Tax Bomb Nobody's Modeling]({{ site.baseurl }}{% post_url 2025-01-14-TCJA-Tax-Expiration %})
+- [Roth Conversions 2026: Who Should Convert, How Much to Convert, and When to Stop]({{ site.baseurl }}{% post_url 2026-04-14-roth-conversions-2026-who-should-convert %})
+- [IRMAA Planning: The Medicare Surcharge That Can Cost You $150,000+ in Retirement]({{ site.baseurl }}{% post_url 2025-01-17-IRMAA-Tax %})
+- [RMD Planning 2026: How to Avoid the Tax Spike Most Retirees Sleepwalk Into]({{ site.baseurl }}{% post_url 2026-04-04-rmd-planning-tax-spike %})
 - [The Retirement Red Zone: Why the 5 Years Before and After Retirement Are Make or Break]({{ site.baseurl }}{% post_url 2025-01-13-the-retirement-red-zone %})
 - [Sequence of Returns Risk: Why Your Retirement Date Matters More Than Average Returns]({{ site.baseurl }}{% post_url 2025-01-12-sequence-of-returns-risk-retirement %})

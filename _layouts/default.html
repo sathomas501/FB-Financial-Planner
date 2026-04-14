@@ -31,6 +31,11 @@
   {% include clarity.html %}
   {% include microsoft-uet.html %}
   <script defer src="/assets/js/ga4-events.js"></script>
+  {% if page.faq_schema %}
+  <script type="application/ld+json">
+  {{ page.faq_schema | jsonify }}
+  </script>
+  {% endif %}
 
   <style>
     :root {
