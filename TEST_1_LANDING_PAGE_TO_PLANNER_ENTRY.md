@@ -18,8 +18,8 @@ By making planner entry the clearest first action and reducing above-the-fold pr
 Implemented in [index.html](./index.html):
 
 - Tightened the hero support copy around instant entry and fast time-to-value
-- Kept `Try the Free Web Planner` as the dominant primary CTA
-- Kept `Open Sample Plan` as the lower-friction secondary CTA
+- Consolidated the hero to one planner CTA: `Open the Free Web Planner`
+- Added explicit copy that the web planner opens with sample numbers first
 - Removed the hero comparison cards that split attention between web app and Desktop Pro
 - Demoted the Desktop Pro mention into lighter supporting copy instead of a competing top-of-page choice
 - Updated hero bullets to focus on immediate outcomes rather than broader product breadth
