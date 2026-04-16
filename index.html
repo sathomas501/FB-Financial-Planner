@@ -482,6 +482,32 @@ permalink: /
     overflow: hidden;
   }
 
+  .hero-sample-tuning {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-sample-tuning-head {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hero-sample-tuning-kicker {
+    color: #17324d;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-sample-tuning-copy {
+    color: #607182;
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
   .hero-sample-projection-copy {
     display: grid;
     grid-template-columns: 110px 1fr;
@@ -1738,27 +1764,10 @@ permalink: /
               </div>
               <div class="hero-sample-banner-value">$405,000</div>
             </div>
-            <div class="hero-sample-controls">
-              <div class="hero-sample-control">
-                <div class="hero-sample-control-label">Where should pre-retirement savings go?</div>
-                <div class="hero-sample-select">Smart recommendation</div>
-              </div>
-              <div class="hero-sample-control">
-                <div class="hero-sample-control-label">If retirement accounts, which type?</div>
-                <div class="hero-sample-select">Smart recommendation</div>
-              </div>
-              <div class="hero-sample-control wide">
-                <div class="hero-sample-control-label">Where should leftover income surplus sweep?</div>
-                <div class="hero-sample-select">Smart recommendation</div>
-              </div>
-            </div>
-            <div class="hero-sample-pill">Optional: improve tax accuracy with account breakdown</div>
-            <div class="hero-sample-pill">Optional married-only account split for RMD accuracy</div>
-            <div class="hero-sample-pill">Advanced portfolio mix by account</div>
             <div class="hero-sample-projection">
               <div class="hero-sample-projection-copy">
-                <div class="hero-sample-projection-title">Smooth Path Savings Balance</div>
-                <div class="hero-sample-projection-text">A tighter mock of the current app surface: snapshot banner first, recommendation inputs in the middle, then the projection card and chart below.</div>
+                <div class="hero-sample-projection-title">Does This Path Hold Up?</div>
+                <div class="hero-sample-projection-text">Your current inputs, shown as one quick answer path.</div>
               </div>
               <div class="hero-sample-stats">
                 <div class="hero-sample-stat">
@@ -1833,6 +1842,29 @@ permalink: /
                 <span><i class="hero-sample-dot retirement"></i>Retirement accounts</span>
                 <span><i class="hero-sample-dot taxable"></i>Taxable + cash</span>
               </div>
+            </div>
+            <div class="hero-sample-tuning">
+              <div class="hero-sample-tuning-head">
+                <div class="hero-sample-tuning-kicker">Fine-Tune This Result</div>
+                <div class="hero-sample-tuning-copy">Adjust saving destination and account detail after you see the first answer path.</div>
+              </div>
+              <div class="hero-sample-controls">
+                <div class="hero-sample-control">
+                  <div class="hero-sample-control-label">Where should pre-retirement savings go?</div>
+                  <div class="hero-sample-select">Smart recommendation</div>
+                </div>
+                <div class="hero-sample-control">
+                  <div class="hero-sample-control-label">If retirement accounts, which type?</div>
+                  <div class="hero-sample-select">Smart recommendation</div>
+                </div>
+                <div class="hero-sample-control wide">
+                  <div class="hero-sample-control-label">Where should leftover income surplus sweep?</div>
+                  <div class="hero-sample-select">Smart recommendation</div>
+                </div>
+              </div>
+              <div class="hero-sample-pill">Optional: improve tax accuracy with account breakdown</div>
+              <div class="hero-sample-pill">Optional married-only account split for RMD accuracy</div>
+              <div class="hero-sample-pill">Advanced portfolio mix by account</div>
             </div>
           </div>
           <p class="hero-sample-hint">Click the sample to open it in the planner.</p>
