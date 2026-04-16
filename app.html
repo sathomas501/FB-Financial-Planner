@@ -67,13 +67,24 @@
   .mode-card-title { color: #e2e8f0; font-size: 0.9rem; font-weight: 700; margin-bottom: 6px; }
   .mode-card-copy { color: #94a3b8; font-size: 0.78rem; line-height: 1.5; }
   .mode-note { color: #94a3b8; font-size: 0.76rem; line-height: 1.6; margin-top: 12px; }
-  .entry-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+  .entry-helper-copy { color: #cbd5e1; font-size: 0.83rem; line-height: 1.6; margin-top: 14px; }
+  .entry-recommended-badge { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding: 6px 10px; border-radius: 999px; background: rgba(74, 222, 128, 0.12); border: 1px solid rgba(74, 222, 128, 0.28); color: #86efac; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+  .entry-actions { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 14px; }
   .entry-actions button { margin-top: 0; }
+  .entry-primary-btn { box-shadow: 0 14px 28px rgba(74, 222, 128, 0.16); }
+  .entry-secondary-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .entry-secondary-actions button { padding: 12px 14px; font-size: 0.88rem; }
+  .entry-secondary-note { color: #94a3b8; font-size: 0.74rem; line-height: 1.55; }
   .ghost-btn { background: transparent; color: #e2e8f0; border: 1px solid #334155; }
   .ghost-btn:hover { border-color: #4ade80; color: #4ade80; }
   .quick-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .quick-grid .full { grid-column: 1 / -1; }
   .quick-note { font-size: 0.78rem; color: #94a3b8; margin-top: 10px; line-height: 1.6; }
+  .quick-start-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+  .quick-start-actions button { width: auto; margin-top: 0; }
+  .quick-run-btn { box-shadow: 0 14px 28px rgba(74, 222, 128, 0.16); }
+  .quick-customize-btn { background: transparent; color: #e2e8f0; border: 1px solid #334155; }
+  .quick-customize-btn:hover { border-color: #4ade80; color: #4ade80; }
   .federal-preview-banner { display: none; background: #132033; border: 1px solid #2a364d; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
   .federal-preview-banner.active { display: block; }
   .federal-preview-banner h2 { margin-bottom: 8px; }
@@ -255,9 +266,11 @@
   @media (max-width: 520px) {
     .mode-grid,
     .entry-actions,
+    .entry-secondary-actions,
     .federal-surface-grid,
     .federal-feature-list,
     .quick-grid,
+    .quick-start-actions,
     .preview-grid { grid-template-columns: 1fr; }
   }
   .em-status { font-size:0.82rem; min-height:1.1em; margin-top:8px; }
@@ -284,6 +297,8 @@
       <p style="color:#cbd5e1;font-size:0.92rem;line-height:1.7">
         The goal here is a quick first insight, not a long setup. Open a sample plan if you want the payoff first, or enter a few numbers and watch the preview update as you go.
       </p>
+      <div class="entry-recommended-badge">Recommended first path</div>
+      <p class="entry-helper-copy">Most first-time visitors should start with the sample result, see how the planner thinks, and only then switch to their own numbers.</p>
       <div class="mode-grid" id="planner-mode-switch">
         <button type="button" class="mode-card active" id="general-mode-btn" data-planner-mode="general" aria-pressed="true">
           <div class="mode-card-title">General Retirement</div>
@@ -296,9 +311,12 @@
       </div>
       <p class="mode-note" id="mode-note">Federal mode loads a guided preview scenario so you can see the bridge-to-Social-Security pattern quickly. Full federal editing lives in the full planner.</p>
       <div class="entry-actions">
-        <button type="button" id="sample-plan-btn">See A Sample Result</button>
-        <button type="button" id="federal-sample-btn" class="ghost-btn">Load Federal Example</button>
-        <button type="button" id="own-numbers-btn" class="ghost-btn">Use My Own Numbers</button>
+        <button type="button" id="sample-plan-btn" class="entry-primary-btn">See A Sample Result</button>
+        <div class="entry-secondary-actions">
+          <button type="button" id="federal-sample-btn" class="ghost-btn">Load Federal Example</button>
+          <button type="button" id="own-numbers-btn" class="ghost-btn">Use My Own Numbers</button>
+        </div>
+        <p class="entry-secondary-note">Use the federal example if pension plus supplement timing is your main question. Use your own numbers if you already know the assumptions you want to test.</p>
       </div>
     </div>
 
@@ -332,6 +350,10 @@
         </div>
       </div>
       <p class="quick-note" id="quick-start-note">Start here if you want a fast answer first. Open advanced inputs below when you want spouse income, taxes, pensions, custom account types, or allocation detail.</p>
+      <div class="quick-start-actions">
+        <button type="button" id="quick-run-btn" class="quick-run-btn">Run Projection With These Numbers</button>
+        <button type="button" id="quick-customize-btn" class="quick-customize-btn">Open Advanced Inputs</button>
+      </div>
     </div>
 
     <div class="card federal-surface-card" id="federal-surface-card">
@@ -1664,8 +1686,29 @@ document.getElementById('federal-mode-btn').addEventListener('click', () => {
 });
 
 document.getElementById('own-numbers-btn').addEventListener('click', () => {
+  if (window.FatboyAnalytics && typeof window.FatboyAnalytics.trackPlannerEntry === 'function') {
+    window.FatboyAnalytics.trackPlannerEntry({
+      planner_mode: plannerMode,
+      entry_variant: 'own_numbers',
+      entry_source: 'in_app_selector'
+    });
+  }
+  ga('own_numbers_selected', buildProjectionParams({ entry_source: 'in_app_selector' }));
   document.getElementById('quick-age').focus();
   document.getElementById('advanced-fields').open = false;
+  focusArrivalTarget(document.getElementById('quick-start-card'));
+});
+
+document.getElementById('quick-run-btn').addEventListener('click', () => {
+  syncFormFromQuickInputs('quick-portfolio-total');
+  ga('quick_start_run_click', buildProjectionParams({ entry_source: 'quick_start_card' }));
+  form.requestSubmit();
+});
+
+document.getElementById('quick-customize-btn').addEventListener('click', () => {
+  document.getElementById('advanced-fields').open = true;
+  ga('advanced_inputs_opened', buildProjectionParams({ entry_source: 'quick_start_card' }));
+  focusArrivalTarget(document.getElementById('advanced-fields'));
 });
 
 document.getElementById('aha-real-numbers-btn').addEventListener('click', () => {
@@ -1783,12 +1826,19 @@ window.addEventListener('load', () => {
     }
   }
 
-  analytics.trackPlannerEntry({
+  const entryParams = {
     planner_mode: plannerMode,
     entry_variant: entryVariant,
     experiment_variant: initialParams.get('ffp_experiment_variant') || undefined,
     referrer_host: referrerHost
-  });
+  };
+
+  if (entryVariant === 'blank') {
+    ga('planner_landing_viewed', entryParams);
+    return;
+  }
+
+  analytics.trackPlannerEntry(entryParams);
 });
 
 // Show/hide spouse SS + pension rows
@@ -1834,6 +1884,10 @@ function getFriendlyFieldName(field) {
   return names[field] || field;
 }
 
+function trackProjectionValidationFailure(details) {
+  ga('projection_validation_failed', Object.assign({}, buildProjectionParams(), details || {}));
+}
+
 function validateRequiredProjectionFields() {
   const requiredNumericFields = [
     { name: 'ss_annual', label: 'Your Social Security' },
@@ -1845,7 +1899,12 @@ function validateRequiredProjectionFields() {
     if (!input) continue;
     if (String(input.value || '').trim() === '') {
       input.focus();
-      return `${field.label} can't be blank.`;
+      return {
+        message: `${field.label} can't be blank.`,
+        validation_type: 'required_field',
+        field_name: field.name,
+        field_label: field.label,
+      };
     }
   }
 
@@ -1868,16 +1927,36 @@ function validateAllocationBlocks() {
       const n = Number(raw === '' ? '0' : raw);
       if (!Number.isFinite(n)) {
         el.focus();
-        return `${block.label}: enter a valid number for ${bucket}.`;
+        return {
+          message: `${block.label}: enter a valid number for ${bucket}.`,
+          validation_type: 'allocation_invalid_number',
+          allocation_block: block.prefix,
+          allocation_bucket: bucket,
+          field_name: `${block.prefix}_${bucket}_allocation`,
+        };
       }
       if (n < 0 || n > 100) {
         el.focus();
-        return `${block.label}: ${bucket} must be between 0 and 100.`;
+        return {
+          message: `${block.label}: ${bucket} must be between 0 and 100.`,
+          validation_type: 'allocation_out_of_range',
+          allocation_block: block.prefix,
+          allocation_bucket: bucket,
+          field_name: `${block.prefix}_${bucket}_allocation`,
+        };
       }
       total += n;
     }
     if (Math.abs(total - 100) > 1.0) {
-      return `${block.label} must total 100% (currently ${total.toFixed(1)}%).`;
+      const first = form.querySelector(`[name="${block.prefix}_stocks_allocation"]`);
+      if (first) first.focus();
+      return {
+        message: `${block.label} must total 100% (currently ${total.toFixed(1)}%).`,
+        validation_type: 'allocation_total_mismatch',
+        allocation_block: block.prefix,
+        field_name: `${block.prefix}_stocks_allocation`,
+        allocation_total: Number(total.toFixed(1)),
+      };
     }
   }
   return null;
@@ -2023,14 +2102,16 @@ form.addEventListener('submit', async e => {
   document.getElementById('aha-card').style.display = 'none';
   const validationError = validateRequiredProjectionFields();
   if (validationError) {
-    err.textContent = validationError;
+    err.textContent = validationError.message;
+    trackProjectionValidationFailure(validationError);
     btn.disabled = false;
     btn.textContent = 'Run Projection';
     return;
   }
   const allocationError = validateAllocationBlocks();
   if (allocationError) {
-    err.textContent = allocationError;
+    err.textContent = allocationError.message;
+    trackProjectionValidationFailure(allocationError);
     btn.disabled = false;
     btn.textContent = 'Run Projection';
     return;
