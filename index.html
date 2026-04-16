@@ -334,19 +334,15 @@ permalink: /
     text-decoration: none;
   }
 
-  .hero-sample-link img {
-    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-  }
-
-  .hero-sample-link:hover img,
-  .hero-sample-link:focus-visible img {
-    transform: translateY(-1px);
-    border-color: rgba(184, 134, 11, 0.45);
-    box-shadow: 0 18px 34px rgba(26, 26, 24, 0.12);
-  }
-
   .hero-sample-link:focus-visible {
     outline: none;
+  }
+
+  .hero-sample-link:hover .hero-sample-app,
+  .hero-sample-link:focus-visible .hero-sample-app {
+    transform: translateY(-1px);
+    border-color: rgba(184, 134, 11, 0.4);
+    box-shadow: 0 20px 38px rgba(26, 26, 24, 0.13);
   }
 
   .hero-sample-hint {
@@ -356,12 +352,312 @@ permalink: /
     letter-spacing: 0.02em;
   }
 
-  .hero-visual img {
-    width: 100%;
-    border-radius: 8px;
+  .hero-sample-app {
+    background: linear-gradient(180deg, #f9fbfd, #f2f7fb);
     border: 1px solid rgba(26, 26, 24, 0.08);
-    display: block;
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+
+  .hero-sample-app-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color: #1c6a6d;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-sample-app-toggle {
+    color: #6d7d91;
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  .hero-sample-banner {
+    background: linear-gradient(135deg, #17425d, #183759);
+    color: #fff;
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .hero-sample-banner-kicker {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    opacity: 0.92;
+  }
+
+  .hero-sample-banner-copy {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.86);
+    max-width: 240px;
+  }
+
+  .hero-sample-banner-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .hero-sample-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .hero-sample-control.wide {
+    grid-column: 1 / -1;
+  }
+
+  .hero-sample-control-label {
+    color: #4c647c;
+    font-size: 0.74rem;
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+
+  .hero-sample-select {
     background: #fff;
+    border: 1px solid #d7e1ea;
+    border-radius: 12px;
+    padding: 10px 12px;
+    color: #17324d;
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .hero-sample-select::after {
+    content: '⌄';
+    color: #6d7d91;
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  .hero-sample-pill {
+    background: #f8fbfe;
+    border: 1px solid #d7e1ea;
+    border-radius: 14px;
+    padding: 12px 14px;
+    color: #17324d;
+    font-size: 0.82rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .hero-sample-pill::after {
+    content: '−';
+    color: #6d7d91;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .hero-sample-projection {
+    background: #fff;
+    border: 1px solid #d7e1ea;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .hero-sample-projection-copy {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 14px;
+    padding: 14px 16px 12px;
+    border-bottom: 1px solid #e6edf3;
+  }
+
+  .hero-sample-projection-title {
+    color: #17324d;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-sample-projection-text {
+    color: #5b6d81;
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
+  .hero-sample-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 14px 16px 10px;
+  }
+
+  .hero-sample-stat {
+    background: #fbfdff;
+    border: 1px solid #dfe8ef;
+    border-radius: 12px;
+    padding: 11px 12px;
+  }
+
+  .hero-sample-stat-label {
+    color: #5f7387;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .hero-sample-stat-value {
+    color: #17324d;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .hero-sample-chart {
+    padding: 0 16px 16px;
+  }
+
+  .hero-sample-chart-labels {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    color: #17324d;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .hero-sample-chart-stage {
+    position: relative;
+    height: 160px;
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    padding: 0 10px 8px;
+    border-top: 1px solid #e5edf4;
+    background:
+      linear-gradient(to top, transparent 24%, rgba(221, 230, 238, 0.8) 24%, rgba(221, 230, 238, 0.8) 25%, transparent 25%),
+      linear-gradient(to top, transparent 49%, rgba(221, 230, 238, 0.8) 49%, rgba(221, 230, 238, 0.8) 50%, transparent 50%),
+      linear-gradient(to top, transparent 74%, rgba(221, 230, 238, 0.8) 74%, rgba(221, 230, 238, 0.8) 75%, transparent 75%);
+  }
+
+  .hero-sample-chart-marker {
+    position: absolute;
+    left: 52%;
+    top: 6px;
+    bottom: 8px;
+    width: 2px;
+    background: #2f8d84;
+  }
+
+  .hero-sample-chart-chip {
+    position: absolute;
+    left: 52%;
+    top: 12px;
+    transform: translateX(-50%);
+    background: #eef6f4;
+    border: 1px solid #a7d0c8;
+    border-radius: 999px;
+    padding: 4px 10px;
+    color: #236f68;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .hero-sample-bar-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .hero-sample-bars {
+    width: 100%;
+    height: 118px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .hero-sample-bar {
+    width: 20px;
+    border-radius: 3px 3px 0 0;
+  }
+
+  .hero-sample-bar.retirement {
+    background: #fb9b78;
+  }
+
+  .hero-sample-bar.taxable {
+    background: #1f5f73;
+  }
+
+  .hero-sample-year {
+    color: #597086;
+    font-size: 0.68rem;
+    font-weight: 600;
+  }
+
+  .hero-sample-legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 10px 16px 14px;
+    color: #51687d;
+    font-size: 0.72rem;
+  }
+
+  .hero-sample-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hero-sample-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero-sample-dot.retirement {
+    background: #fb9b78;
+  }
+
+  .hero-sample-dot.taxable {
+    background: #1f5f73;
   }
 
   .hero-result-card {
@@ -941,6 +1237,11 @@ permalink: /
       margin-bottom: 16px;
       box-shadow: none;
     }
+    .hero-sample-controls,
+    .hero-sample-stats,
+    .hero-sample-projection-copy {
+      grid-template-columns: 1fr;
+    }
     .desktop-only { display: none; }
     .mobile-only { display: inline; }
     .hero-choice { display: none; }
@@ -1425,15 +1726,115 @@ permalink: /
            data-planner-intent="planner"
            aria-label="Open this sample result in the free web planner">
           <div class="hero-card-label">Sample Result</div>
-          <picture>
-            <source srcset="/assets/images/optimized/Sample_Result-400w.webp 400w, /assets/images/optimized/Sample_Result-800w.webp 800w, /assets/images/optimized/Sample_Result-1200w.webp 1200w"
-                    sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-                    type="image/webp">
-            <source srcset="/assets/images/optimized/Sample_Result-400w.png 400w, /assets/images/optimized/Sample_Result-800w.png 800w, /assets/images/optimized/Sample_Result-1200w.png 1200w"
-                    sizes="(max-width: 600px) 100vw, (max-width: 1024px) 80vw, 1200px"
-                    type="image/png">
-            <img src="/assets/images/optimized/Sample_Result-800w.png" alt="Sample retirement planner result showing balances, income, and plan pressure points">
-          </picture>
+          <div class="hero-sample-app" aria-hidden="true">
+            <div class="hero-sample-app-head">
+              <span>Your Snapshot</span>
+              <span class="hero-sample-app-toggle">−</span>
+            </div>
+            <div class="hero-sample-banner">
+              <div>
+                <div class="hero-sample-banner-kicker">Current Snapshot</div>
+                <div class="hero-sample-banner-copy">$383,000 invested and $22,000 in cash today.</div>
+              </div>
+              <div class="hero-sample-banner-value">$405,000</div>
+            </div>
+            <div class="hero-sample-controls">
+              <div class="hero-sample-control">
+                <div class="hero-sample-control-label">Where should pre-retirement savings go?</div>
+                <div class="hero-sample-select">Smart recommendation</div>
+              </div>
+              <div class="hero-sample-control">
+                <div class="hero-sample-control-label">If retirement accounts, which type?</div>
+                <div class="hero-sample-select">Smart recommendation</div>
+              </div>
+              <div class="hero-sample-control wide">
+                <div class="hero-sample-control-label">Where should leftover income surplus sweep?</div>
+                <div class="hero-sample-select">Smart recommendation</div>
+              </div>
+            </div>
+            <div class="hero-sample-pill">Optional: improve tax accuracy with account breakdown</div>
+            <div class="hero-sample-pill">Optional married-only account split for RMD accuracy</div>
+            <div class="hero-sample-pill">Advanced portfolio mix by account</div>
+            <div class="hero-sample-projection">
+              <div class="hero-sample-projection-copy">
+                <div class="hero-sample-projection-title">Smooth Path Savings Balance</div>
+                <div class="hero-sample-projection-text">A tighter mock of the current app surface: snapshot banner first, recommendation inputs in the middle, then the projection card and chart below.</div>
+              </div>
+              <div class="hero-sample-stats">
+                <div class="hero-sample-stat">
+                  <div class="hero-sample-stat-label">At Retirement</div>
+                  <div class="hero-sample-stat-value">$1.2M</div>
+                </div>
+                <div class="hero-sample-stat">
+                  <div class="hero-sample-stat-label">Growth Added</div>
+                  <div class="hero-sample-stat-value">-$587k</div>
+                </div>
+                <div class="hero-sample-stat">
+                  <div class="hero-sample-stat-label">New Contributions</div>
+                  <div class="hero-sample-stat-value">$182k</div>
+                </div>
+              </div>
+              <div class="hero-sample-chart">
+                <div class="hero-sample-chart-labels">
+                  <span>$405k</span>
+                  <span>$822k</span>
+                  <span>$1.1M</span>
+                  <span>$831k</span>
+                  <span>$0</span>
+                </div>
+                <div class="hero-sample-chart-stage">
+                  <div class="hero-sample-chart-marker"></div>
+                  <div class="hero-sample-chart-chip">Retirement Age 65</div>
+                  <div class="hero-sample-bar-group">
+                    <div class="hero-sample-bars">
+                      <span class="hero-sample-bar retirement" style="height:18%"></span>
+                      <span class="hero-sample-bar taxable" style="height:4%"></span>
+                    </div>
+                    <span class="hero-sample-year">2026</span>
+                  </div>
+                  <div class="hero-sample-bar-group">
+                    <div class="hero-sample-bars">
+                      <span class="hero-sample-bar retirement" style="height:46%"></span>
+                      <span class="hero-sample-bar taxable" style="height:6%"></span>
+                    </div>
+                    <span class="hero-sample-year">2039</span>
+                  </div>
+                  <div class="hero-sample-bar-group">
+                    <div class="hero-sample-bars">
+                      <span class="hero-sample-bar retirement" style="height:46%"></span>
+                      <span class="hero-sample-bar taxable" style="height:5%"></span>
+                    </div>
+                    <span class="hero-sample-year">2047</span>
+                  </div>
+                  <div class="hero-sample-bar-group">
+                    <div class="hero-sample-bars">
+                      <span class="hero-sample-bar retirement" style="height:12%"></span>
+                      <span class="hero-sample-bar taxable" style="height:3%"></span>
+                    </div>
+                    <span class="hero-sample-year">2056</span>
+                  </div>
+                  <div class="hero-sample-bar-group">
+                    <div class="hero-sample-bars">
+                      <span class="hero-sample-bar retirement" style="height:65%"></span>
+                      <span class="hero-sample-bar taxable" style="height:3%"></span>
+                    </div>
+                    <span class="hero-sample-year">2060</span>
+                  </div>
+                  <div class="hero-sample-bar-group">
+                    <div class="hero-sample-bars">
+                      <span class="hero-sample-bar retirement" style="height:92%"></span>
+                      <span class="hero-sample-bar taxable" style="height:2%"></span>
+                    </div>
+                    <span class="hero-sample-year">2064</span>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-sample-legend">
+                <span><i class="hero-sample-dot retirement"></i>Retirement accounts</span>
+                <span><i class="hero-sample-dot taxable"></i>Taxable + cash</span>
+              </div>
+            </div>
+          </div>
           <p class="hero-sample-hint">Click the sample to open it in the planner.</p>
         </a>
         <p class="hero-card-footer">Need saved scenarios, exports, or offline use later? <a href="/downloads/" onclick="gtag('event','homepage_desktop_pro_footer_click')">See Desktop Pro</a>.</p>
