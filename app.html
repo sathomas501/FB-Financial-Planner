@@ -790,7 +790,7 @@
 
   <div id="results">
     <div class="aha-card" id="aha-card" style="display:none">
-      <div class="aha-kicker">What Stands Out</div>
+      <div class="aha-kicker">Your Retirement Answer</div>
       <div class="aha-headline" id="aha-headline"></div>
       <div class="aha-facts">
         <div class="aha-fact">
@@ -885,11 +885,11 @@
     </div>
 
     <div class="desktop-cta">
-      <p>Free demo gives you a quick projection, a sample scenario, and limited assumptions. The full planner adds saved plans, scenario comparison, tax-aware planning, Social Security timing, and Roth conversion testing.</p>
-      <p style="font-size:0.8rem;color:#cbd5e1;margin-bottom:10px;">If this result is useful, the next move is keeping it and testing alternatives without starting over.</p>
+      <p>This quick answer is useful, but it is not the whole decision. The full planner shows how fragile this result is, where the plan gets into trouble, and which changes actually improve retirement safety.</p>
+      <p style="font-size:0.8rem;color:#cbd5e1;margin-bottom:10px;">If this answer matters, the next step is testing whether it stays safe when timing, spending, or market conditions shift.</p>
       <a href="https://planner.fatboysoftware.com" target="_blank" id="results-upgrade-link" data-analytics-location="results_cta" data-planner-intent="full_planner"
          style="display:inline-flex;align-items:center;justify-content:center;background:#4ade80;color:#0f1117;font-weight:700;font-size:0.84rem;padding:10px 16px;border-radius:10px;text-decoration:none;margin-bottom:12px;">
-        Open the full planner
+        See How Fragile This Answer Is
       </a>
       <p style="font-size:0.8rem;color:#64748b;margin-bottom:0;">Email me my results and desktop link:</p>
       <div class="cta-email-row">
@@ -1512,31 +1512,31 @@ function renderAha(data, payload) {
   let headline = '';
   let actionCopy = '';
   if (!data.success) {
-    headline = `Your projected withdrawals may become unsustainable around age ${data.depletion_year || '?'}.`;
+    headline = `This version of the plan runs short around age ${data.depletion_year || '?'}.`;
     actionCopy = bridgeYears >= 2
-      ? `The bridge years before Social Security look like the first pressure point. Test later retirement timing or different withdrawal assumptions next.`
-      : `The current spending path is doing most of the damage. A full plan helps compare timing, taxes, and withdrawal changes side by side.`;
+      ? `The bridge years before Social Security look like the first pressure point. The next useful move is finding which change fixes the gap with the least sacrifice.`
+      : `The plan is not just failing on paper. The next useful move is seeing which timing, spending, or withdrawal change actually buys safety.`;
   } else if (data.success_rate != null && data.success_rate < 70) {
-    headline = `Your base case works, but down-market scenarios start to weaken the plan.`;
-    actionCopy = `This is the point where testing alternatives matters. Save this plan and compare safer spending, later retirement, or different account drawdowns.`;
+    headline = `The base case works, but the safety margin looks thinner than it first appears.`;
+    actionCopy = `A plan that works in one path can still be fragile. The next step is testing whether weaker returns or higher spending change the answer too easily.`;
   } else if (tradBalance > (parseFloat(payload.roth_balance) || 0) + (parseFloat(payload.taxable_balance) || 0)) {
-    headline = `Roth conversion planning could reduce later tax drag in this plan.`;
-    actionCopy = `Traditional account concentration is building future RMD pressure. The full planner is the next step if you want to test conversion timing.`;
+    headline = `This plan works, but future tax drag could quietly reduce your margin.`;
+    actionCopy = `Traditional account concentration builds later RMD pressure. The next useful move is testing whether conversion timing makes this result sturdier.`;
   } else {
-    headline = `Your current plan looks durable through age ${requestedLifeExpectancy || '?'}.`;
-    actionCopy = `Now the useful next move is testing alternatives, not re-entering data. Save this plan and compare retirement dates, spending, or conversion scenarios.`;
+    headline = `Your plan passes the first test through age ${requestedLifeExpectancy || '?'}.`;
+    actionCopy = `Now the real question is whether this answer is sturdy or just barely holding together. Test spending, timing, and downside scenarios before you trust it.`;
   }
 
   if (plannerMode === 'federal') {
     if (!data.success) {
-      headline = `The federal plan starts to strain after the supplement ends${supplementEndAge ? ` at age ${supplementEndAge}` : ''}.`;
+      headline = `This federal version runs into trouble after the supplement window${supplementEndAge ? ` ends at age ${supplementEndAge}` : ''}.`;
       actionCopy = supplementEndAge
         ? `The first thing to test is the gap that opens after the temporary supplement ends at ${supplementEndAge} and before Social Security takes over.`
         : 'The first thing to test is the gap between retirement income and later Social Security.';
     } else {
       headline = supplementEndAge
-        ? `Your federal sample stays on track, but income changes when the supplement ends at age ${supplementEndAge}.`
-        : `Your federal sample looks durable through age ${requestedLifeExpectancy || '?'}.`;
+        ? `The federal base case works, but the answer may change when the supplement ends at age ${supplementEndAge}.`
+        : `Your federal base case passes the first test through age ${requestedLifeExpectancy || '?'}.`;
       actionCopy = supplementEndAge
         ? `The key federal stress point is the handoff from pension plus supplement to pension plus TSP withdrawals before Social Security begins.`
         : `The next useful move is comparing retirement timing and later Social Security decisions.`;
@@ -1567,8 +1567,8 @@ function renderAha(data, payload) {
   }
   document.getElementById('aha-action-copy').textContent = actionCopy;
   document.getElementById('aha-upgrade-link').textContent = tradBalance > 0
-    ? 'Unlock Roth conversion and scenario analysis'
-    : 'Save this plan and test alternatives';
+    ? 'See Whether Tax Strategy Improves This Plan'
+    : 'Test Whether This Plan Is Actually Safe';
   ahaCard.style.display = '';
 }
 
