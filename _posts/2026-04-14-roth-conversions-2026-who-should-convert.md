@@ -336,6 +336,8 @@ In practice, that can happen when:
 - the remaining pre-tax balance is already small enough that future RMD pressure is no longer a serious issue
 - your future low-income windows still give you better opportunities later
 
+If you want the clearest explanation of why that effective rate can jump so sharply, read [The Social Security Tax Torpedo: Why One Extra Dollar of Retirement Income Can Raise Your Real Tax Rate]({{ site.baseurl }}{% post_url 2026-04-22-social-security-tax-torpedo-retirement %}).
+
 This is why a Roth conversion strategy should not be run on autopilot.
 
 The right amount can change every year.

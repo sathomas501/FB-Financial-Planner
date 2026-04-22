@@ -466,16 +466,18 @@ This strategy allowed one spouse to file for benefits, then immediately suspend,
 
 ## How Taxes Change Your Optimal Claiming Age
 
-**Social Security is taxed on a strange "provisional income" system:**
+**Social Security is taxed under a provisional income system:**
 
-Provisional Income = AGI + ½ of Social Security + tax-exempt interest
+Provisional income = AGI excluding Social Security + tax-exempt interest + 1/2 of Social Security benefits
 
 **Taxation thresholds (Married Filing Jointly):**
-- Provisional income ≤ $32,000: 0% of SS taxable
-- $32,000 - $44,000: Up to 50% of SS taxable
-- > $44,000: Up to 85% of SS taxable
+- Provisional income <= $32,000: 0% of benefits taxable
+- $32,000 - $44,000: Up to 50% of benefits taxable
+- > $44,000: Up to 85% of benefits taxable
 
-**For most retirees with other income, 85% of SS is taxable.**
+More precisely, provisional income is your AGI excluding Social Security, plus tax-exempt interest, plus 1/2 of your Social Security benefits. And the 50% / 85% figures refer to how much of the benefit becomes taxable income, not the tax rate applied to it.
+
+If you want the dedicated tax-planning explanation of why extra income can make Social Security more expensive than the bracket alone suggests, read [The Social Security Tax Torpedo: Why One Extra Dollar of Retirement Income Can Raise Your Real Tax Rate]({{ site.baseurl }}{% post_url 2026-04-22-social-security-tax-torpedo-retirement %}).
 
 ### Tax Optimization Strategy: Coordinate SS with Roth Conversions
 
@@ -697,4 +699,5 @@ Because the right claiming decision could be worth $100,000+ over your retiremen
 *Related reading:*
 - [IRMAA Planning: The Medicare Surcharge That Can Cost You $150,000+ in Retirement]({{ site.baseurl }}{% post_url 2025-01-17-IRMAA-Tax %})
 - [Roth Conversion Ladder Strategy: Pay Less Tax Over Your Lifetime]({{ site.baseurl }}{% post_url 2025-01-15-roth-conversion-ladder-strategy %})
+- [The Social Security Tax Torpedo: Why One Extra Dollar of Retirement Income Can Raise Your Real Tax Rate]({{ site.baseurl }}{% post_url 2026-04-22-social-security-tax-torpedo-retirement %})
 - [The 4% Rule Is Broken: Why Dynamic Withdrawal Strategies Beat Fixed Percentages]({{ site.baseurl }}{% post_url 2025-01-16-4%-Rule %})
