@@ -471,10 +471,10 @@ permalink: /federal-retirement/
 
   <div class="federal-actions">
     <a href="https://planner.fatboysoftware.com" class="federal-btn federal-btn-primary" data-federal-cta="hero_full_planner">Open Guided Federal Planner</a>
-    <a href="https://app.fatboysoftware.com/?federal=1" class="federal-btn federal-btn-secondary" data-federal-cta="hero_free_app">Use Quick Federal Example</a>
+    <a href="https://app.fatboysoftware.com/?federal=1" class="federal-btn federal-btn-secondary" data-federal-cta="hero_free_app">Open Federal Example</a>
   </div>
 
-  <p class="federal-note">No signup wall either way. Use the guided planner by default, or choose the quick example when you only want the fast answer version.</p>
+  <p class="federal-note">No signup wall either way. Use the guided planner by default, or open the federal example when you want a preloaded scenario.</p>
 </section>
 
 <div class="federal-proof">
@@ -506,7 +506,7 @@ permalink: /federal-retirement/
   </picture>
   <p class="federal-caption">Shown here: the full planner desktop app with federal-style controls for pension timing, supplement years, spouse coordination, and later pension changes.</p>
   <div class="federal-media-note">
-    <p><strong>Important context:</strong> the screenshots on this page are from the full planner desktop app. Open the guided web planner if you want the main experience, or use the quick federal example if you just want a fast preview first.</p>
+    <p><strong>Important context:</strong> the screenshots on this page are from the full planner desktop app. Open the guided web planner if you want the main experience, or open the federal example if you want a preloaded scenario first.</p>
     <div class="federal-media-links">
       <a href="https://app.fatboysoftware.com/?federal=1" class="federal-media-link" data-federal-cta="media_free_web_app">Open Free Web Example</a>
       <a href="/pricing" class="federal-media-link" data-federal-cta="media_desktop_pricing">See Desktop App Pricing</a>
@@ -525,7 +525,7 @@ permalink: /federal-retirement/
   <section class="federal-step">
     <span class="federal-number">1</span>
     <h3>Open the guided federal planner</h3>
-    <p>Start in the main web app when you want the real planning workflow instead of the teaser-first path.</p>
+    <p>Start in the main web app when you want the real planning workflow instead of a preloaded example.</p>
   </section>
   <section class="federal-step">
     <span class="federal-number">2</span>
@@ -539,17 +539,17 @@ permalink: /federal-retirement/
   </section>
   <section class="federal-step">
     <span class="federal-number">4</span>
-    <h3>Use the quick example only if you want speed</h3>
-    <p>If you just want the fastest preview, open the federal example with a case already loaded.</p>
+    <h3>Use the federal example if you want a preloaded case</h3>
+    <p>If you want to preview the workflow with federal inputs already loaded, open the federal example.</p>
   </section>
 </div>
 
 <section class="federal-cta-band">
   <div class="federal-actions">
     <a href="https://planner.fatboysoftware.com" class="federal-btn federal-btn-primary" data-federal-cta="quickstart_full_planner">Open Guided Federal Planner</a>
-    <a href="https://app.fatboysoftware.com/?federal=1" class="federal-btn federal-btn-secondary" data-federal-cta="quickstart_free_app">Use Quick Federal Example</a>
+    <a href="https://app.fatboysoftware.com/?federal=1" class="federal-btn federal-btn-secondary" data-federal-cta="quickstart_free_app">Open Federal Example</a>
   </div>
-  <p class="federal-note">The guided planner is the better default. The quick example is there when you only want the teaser path.</p>
+  <p class="federal-note">The guided planner is the better default. The federal example is there when you want a preloaded scenario.</p>
 </section>
 
 <hr>
@@ -676,8 +676,8 @@ permalink: /federal-retirement/
     <p>Yes. Pension income is modeled as part of the full retirement-income system, not as a standalone number.</p>
   </section>
   <section class="federal-faq-item">
-    <h3>Should I start in the quick example or the guided planner?</h3>
-    <p>Start in the guided planner by default. Use the quick federal example only when you want the fastest preview or a teaser-style first result.</p>
+    <h3>Should I start in the federal example or the guided planner?</h3>
+    <p>Start in the guided planner by default. Open the federal example when you want a preloaded scenario to preview the workflow faster.</p>
   </section>
 </div>
 
@@ -688,7 +688,7 @@ permalink: /federal-retirement/
 <section class="federal-cta-band">
   <div class="federal-actions">
     <a href="https://planner.fatboysoftware.com" class="federal-btn federal-btn-primary" data-federal-cta="bottom_full_planner">Open Guided Federal Planner</a>
-    <a href="https://app.fatboysoftware.com/?federal=1" class="federal-btn federal-btn-secondary" data-federal-cta="bottom_free_app">Use Quick Federal Example</a>
+    <a href="https://app.fatboysoftware.com/?federal=1" class="federal-btn federal-btn-secondary" data-federal-cta="bottom_free_app">Open Federal Example</a>
   </div>
   <p class="federal-note">Questions? <a href="mailto:fbfinancialplanner@gmail.com" data-federal-cta="email_question">fbfinancialplanner@gmail.com</a></p>
   <div class="federal-footer-links">
