@@ -158,7 +158,7 @@ permalink: /downloads/
     <p>Start with the guided web app, or view pricing if you want to unlock Pro features across desktop and web.</p>
     <div class="download-actions">
       <a href="/pricing" class="download-link" onclick="gtag('event','downloads_page_pricing_click')">View Pricing</a>
-      <a href="https://planner.fatboysoftware.com" class="download-link" onclick="gtag('event','downloads_page_free_app_click')">Open the Guided Web App</a>
+      <a href="https://planner.fatboysoftware.com/?arrival=assumptions" class="download-link" onclick="gtag('event','downloads_page_free_app_click')">Open the Guided Web App</a>
     </div>
   </section>
 </div>
