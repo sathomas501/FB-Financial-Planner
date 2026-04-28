@@ -470,7 +470,7 @@ permalink: /federal-retirement/
   </ul>
 
   <div class="federal-actions">
-    <a href="https://planner.fatboysoftware.com/?arrival=assumptions" class="federal-btn federal-btn-primary" data-federal-cta="hero_full_planner">Open Guided Federal Planner</a>
+    <a href="https://planner.fatboysoftware.com/?guided=1&guided_source=marketing-site&plan=federal&arrival=assumptions" class="federal-btn federal-btn-primary" data-federal-cta="hero_full_planner">Open Guided Federal Planner</a>
     <a href="https://app.fatboysoftware.com/?federal=1" class="federal-btn federal-btn-secondary" data-federal-cta="hero_free_app">Open Federal Example</a>
   </div>
 
@@ -546,7 +546,7 @@ permalink: /federal-retirement/
 
 <section class="federal-cta-band">
   <div class="federal-actions">
-    <a href="https://planner.fatboysoftware.com/?arrival=assumptions" class="federal-btn federal-btn-primary" data-federal-cta="quickstart_full_planner">Open Guided Federal Planner</a>
+    <a href="https://planner.fatboysoftware.com/?guided=1&guided_source=marketing-site&plan=federal&arrival=assumptions" class="federal-btn federal-btn-primary" data-federal-cta="quickstart_full_planner">Open Guided Federal Planner</a>
     <a href="https://app.fatboysoftware.com/?federal=1" class="federal-btn federal-btn-secondary" data-federal-cta="quickstart_free_app">Open Federal Example</a>
   </div>
   <p class="federal-note">The guided planner is the better default. The federal example is there when you want a preloaded scenario.</p>
@@ -687,7 +687,7 @@ permalink: /federal-retirement/
 
 <section class="federal-cta-band">
   <div class="federal-actions">
-    <a href="https://planner.fatboysoftware.com/?arrival=assumptions" class="federal-btn federal-btn-primary" data-federal-cta="bottom_full_planner">Open Guided Federal Planner</a>
+    <a href="https://planner.fatboysoftware.com/?guided=1&guided_source=marketing-site&plan=federal&arrival=assumptions" class="federal-btn federal-btn-primary" data-federal-cta="bottom_full_planner">Open Guided Federal Planner</a>
     <a href="https://app.fatboysoftware.com/?federal=1" class="federal-btn federal-btn-secondary" data-federal-cta="bottom_free_app">Open Federal Example</a>
   </div>
   <p class="federal-note">Questions? <a href="mailto:fbfinancialplanner@gmail.com" data-federal-cta="email_question">fbfinancialplanner@gmail.com</a></p>
@@ -699,7 +699,7 @@ permalink: /federal-retirement/
 </section>
 
 <div class="federal-mobile-bar">
-  <a href="https://planner.fatboysoftware.com/?arrival=assumptions" class="federal-btn federal-btn-primary" data-federal-cta="mobile_sticky_full_planner">Open Guided Federal Planner</a>
+  <a href="https://planner.fatboysoftware.com/?guided=1&guided_source=marketing-site&plan=federal&arrival=assumptions" class="federal-btn federal-btn-primary" data-federal-cta="mobile_sticky_full_planner">Open Guided Federal Planner</a>
 </div>
 
 </div>
