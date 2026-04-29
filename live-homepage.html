@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-68L4Z2S1P5"></script>
+<script>
+  window.GA_MEASUREMENT_ID = 'G-68L4Z2S1P5';
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-68L4Z2S1P5');
+</script>
+
+
+  
+
+<script>
+  window.uetq = window.uetq || [];
+  window.trackMicrosoftUetEvent = function(eventName, params) {
+    if (!eventName) {
+      return false;
+    }
+
+    var eventParams = {};
+    if (params && typeof params === "object") {
+      for (var key in params) {
+        if (Object.prototype.hasOwnProperty.call(params, key)) {
+          eventParams[key] = params[key];
+        }
+      }
+    }
+
+    if (!eventParams.event_action) {
+      eventParams.event_action = eventName;
+    }
+
+    window.uetq.push("event", eventName, eventParams);
+    return true;
+  };
+
+  (function(w, d, t, r, u) {
+    var f, n, i;
+    f = function() {
+      var o = { ti: "343241983" };
+      o.q = w[u];
+      w[u] = new UET(o);
+      w[u].push("pageLoad");
+    };
+    n = d.createElement(t);
+    n.src = r;
+    n.async = 1;
+    n.onload = n.onreadystatechange = function() {
+      var s = this.readyState;
+      if (!s || s === "loaded" || s === "complete") {
+        f();
+        n.onload = n.onreadystatechange = null;
+      }
+    };
+    i = d.getElementsByTagName(t)[0];
+    i.parentNode.insertBefore(n, i);
+  })(window, document, "script", "//bat.bing.com/bat.js", "uetq");
+</script>
+
+
+  <script defer src="/assets/js/ga4-events.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatboy Financial Planner - Serious Retirement Planning. One Price. Desktop + Web.</title>
+<meta name="description" content="See if you can retire without running out of money. Start free in the web app, test your timeline, and see how much margin your plan really has.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18;
+    --paper: #f5f0e8;
+    --cream: #ede8dc;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --rust: #8b3a2a;
+    --sage: #4a5e4a;
+    --mid: #6b6b60;
+    --rule: #c8c0b0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  /* NAV */
+  nav {
+    border-bottom: 1px solid var(--rule);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    background: var(--paper);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-logo-mark {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    opacity: 0.88;
+  }
+
+  .nav-logo span { color: var(--gold); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  .nav-desktop-link {
+    color: var(--ink) !important;
+  }
+
+  .nav-desktop-link:hover { color: var(--gold) !important; }
+
+  /* HERO */
+  .hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 40px 48px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.15rem, 3.6vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 1.02rem;
+    color: var(--mid);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 540px;
+  }
+
+  .desktop-only {
+    display: inline;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 14px;
+    align-items: center;
+  }
+
+  .hero-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 18px 0 0;
+    padding: 0;
+    max-width: 560px;
+  }
+
+  .hero-bullets li {
+    color: var(--mid);
+    font-size: 0.94rem;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .hero-bullets li::before {
+    content: '•';
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 16px 32px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold);
+    color: var(--ink);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary .price-badge {
+    font-size: 0.85rem;
+    background: rgba(255,255,255,0.15);
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1.5px solid var(--rule);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 14px 32px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--ink);
+    background: var(--cream);
+  }
+
+  .hero-note {
+    font-size: 0.8rem;
+    color: var(--mid);
+    margin-top: 0;
+    letter-spacing: 0.01em;
+    flex-basis: 100%;
+  }
+
+  .hero-choice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+    max-width: 560px;
+  }
+
+  .hero-choice-card {
+    border: 1px solid var(--rule);
+    background: rgba(255, 255, 255, 0.45);
+    padding: 14px 16px;
+    border-radius: 4px;
+  }
+
+  .hero-choice-card strong {
+    display: block;
+    font-size: 0.88rem;
+    margin-bottom: 6px;
+  }
+
+  .hero-choice-card span {
+    display: block;
+    color: var(--mid);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .hero-mobile-desktop-note {
+    display: none;
+    margin-top: 12px;
+    font-size: 0.82rem;
+    color: var(--mid);
+  }
+
+  /* HERO CARD */
+  .hero-card {
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  }
+
+  .hero-card-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 20px;
+  }
+
+  .hero-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .hero-visual {
+    position: relative;
+    padding: 18px;
+  }
+
+  .hero-sample-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .hero-sample-link:focus-visible {
+    outline: none;
+  }
+
+  .hero-sample-link:hover .hero-sample-app,
+  .hero-sample-link:focus-visible .hero-sample-app {
+    transform: translateY(-1px);
+    border-color: rgba(184, 134, 11, 0.4);
+    box-shadow: 0 20px 38px rgba(26, 26, 24, 0.13);
+  }
+
+  .hero-sample-hint {
+    margin-top: 12px;
+    color: var(--mid);
+    font-size: 0.76rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-sample-app {
+    background: linear-gradient(180deg, #f9fbfd, #f2f7fb);
+    border: 1px solid rgba(26, 26, 24, 0.08);
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+
+  .hero-sample-app-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    color: #1c6a6d;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-sample-app-toggle {
+    color: #6d7d91;
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  .hero-sample-banner {
+    background: linear-gradient(135deg, #17425d, #183759);
+    color: #fff;
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .hero-sample-banner-kicker {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    opacity: 0.92;
+  }
+
+  .hero-sample-banner-copy {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.86);
+    max-width: 240px;
+  }
+
+  .hero-sample-banner-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .hero-sample-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .hero-sample-control.wide {
+    grid-column: 1 / -1;
+  }
+
+  .hero-sample-control-label {
+    color: #4c647c;
+    font-size: 0.74rem;
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+
+  .hero-sample-select {
+    background: #fff;
+    border: 1px solid #d7e1ea;
+    border-radius: 12px;
+    padding: 10px 12px;
+    color: #17324d;
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .hero-sample-select::after {
+    content: '?';
+    color: #6d7d91;
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  .hero-sample-pill {
+    background: #f8fbfe;
+    border: 1px solid #d7e1ea;
+    border-radius: 14px;
+    padding: 12px 14px;
+    color: #17324d;
+    font-size: 0.82rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .hero-sample-pill::after {
+    content: '-';
+    color: #6d7d91;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .hero-sample-projection {
+    background: #fff;
+    border: 1px solid #d7e1ea;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .hero-sample-tuning {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-sample-tuning-head {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hero-sample-tuning-kicker {
+    color: #17324d;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-sample-tuning-copy {
+    color: #607182;
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
+  .hero-sample-projection-copy {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 14px;
+    padding: 14px 16px 12px;
+    border-bottom: 1px solid #e6edf3;
+  }
+
+  .hero-sample-projection-title {
+    color: #17324d;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-sample-projection-text {
+    color: #5b6d81;
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
+  .hero-sample-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 14px 16px 10px;
+  }
+
+  .hero-sample-stat {
+    background: #fbfdff;
+    border: 1px solid #dfe8ef;
+    border-radius: 12px;
+    padding: 11px 12px;
+  }
+
+  .hero-sample-stat-label {
+    color: #5f7387;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .hero-sample-stat-value {
+    color: #17324d;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .hero-sample-chart {
+    padding: 0 16px 16px;
+  }
+
+  .hero-sample-chart-labels {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    color: #17324d;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .hero-sample-chart-stage {
+    position: relative;
+    height: 160px;
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    padding: 0 10px 8px;
+    border-top: 1px solid #e5edf4;
+    background:
+      linear-gradient(to top, transparent 24%, rgba(221, 230, 238, 0.8) 24%, rgba(221, 230, 238, 0.8) 25%, transparent 25%),
+      linear-gradient(to top, transparent 49%, rgba(221, 230, 238, 0.8) 49%, rgba(221, 230, 238, 0.8) 50%, transparent 50%),
+      linear-gradient(to top, transparent 74%, rgba(221, 230, 238, 0.8) 74%, rgba(221, 230, 238, 0.8) 75%, transparent 75%);
+  }
+
+  .hero-sample-chart-marker {
+    position: absolute;
+    left: 52%;
+    top: 6px;
+    bottom: 8px;
+    width: 2px;
+    background: #2f8d84;
+  }
+
+  .hero-sample-chart-chip {
+    position: absolute;
+    left: 52%;
+    top: 12px;
+    transform: translateX(-50%);
+    background: #eef6f4;
+    border: 1px solid #a7d0c8;
+    border-radius: 999px;
+    padding: 4px 10px;
+    color: #236f68;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .hero-sample-bar-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .hero-sample-bars {
+    width: 100%;
+    height: 118px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .hero-sample-bar {
+    width: 20px;
+    border-radius: 3px 3px 0 0;
+  }
+
+  .hero-sample-bar.retirement {
+    background: #fb9b78;
+  }
+
+  .hero-sample-bar.taxable {
+    background: #1f5f73;
+  }
+
+  .hero-sample-year {
+    color: #597086;
+    font-size: 0.68rem;
+    font-weight: 600;
+  }
+
+  .hero-sample-legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 10px 16px 14px;
+    color: #51687d;
+    font-size: 0.72rem;
+  }
+
+  .hero-sample-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hero-sample-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero-sample-dot.retirement {
+    background: #fb9b78;
+  }
+
+  .hero-sample-dot.taxable {
+    background: #1f5f73;
+  }
+
+  .hero-result-card {
+    position: absolute;
+    top: 36px;
+    left: 36px;
+    max-width: 260px;
+    background: rgba(245, 240, 232, 0.95);
+    border: 1px solid rgba(26, 26, 24, 0.12);
+    border-radius: 8px;
+    padding: 16px 18px;
+    box-shadow: 0 18px 36px rgba(26, 26, 24, 0.12);
+    backdrop-filter: blur(6px);
+  }
+
+  .hero-result-card strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .hero-result-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero-result-list li {
+    color: var(--mid);
+    font-size: 0.84rem;
+    line-height: 1.55;
+  }
+
+  .hero-card-footer {
+    margin-top: 16px;
+    color: var(--mid);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .hero-card-footer a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(26, 26, 24, 0.18);
+  }
+
+  .hero-card-footer a:hover {
+    border-bottom-color: var(--ink);
+  }
+
+  .hero-card .price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .hero-card .price-note {
+    font-size: 0.82rem;
+    color: var(--mid);
+    margin-bottom: 24px;
+  }
+
+  .includes-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .includes-list li {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--ink);
+  }
+
+  .includes-list li::before {
+    content: '?';
+    color: var(--sage);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .includes-list li strong { font-weight: 500; }
+
+  .divider-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 20px 0;
+  }
+
+  /* SECTION STRUCTURE */
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .section-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .section-intro {
+    font-size: 1.05rem;
+    color: var(--mid);
+    max-width: 600px;
+    margin-bottom: 56px;
+    line-height: 1.7;
+  }
+
+  /* PRODUCT COMPARISON */
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .quick-compare-section {
+    padding-top: 52px;
+  }
+
+  .quick-compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .quick-compare-card {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 32px;
+    background: white;
+  }
+
+  .quick-compare-card.pro {
+    background: var(--cream);
+    border-color: var(--gold);
+  }
+
+  .quick-compare-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+  }
+
+  .quick-compare-card p {
+    font-size: 0.9rem;
+    color: var(--mid);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .product-card {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 40px;
+    background: white;
+    position: relative;
+  }
+
+  .product-card.featured {
+    border-color: var(--gold);
+    background: var(--cream);
+  }
+
+  .product-card.featured::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 4px 4px 0 0;
+  }
+
+  .product-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  .tag-web { background: #e8f0e8; color: var(--sage); }
+  .tag-desktop { background: var(--ink); color: var(--paper); }
+
+  .product-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .product-card .product-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+
+  .product-card .product-price-note {
+    font-size: 0.82rem;
+    color: var(--mid);
+    margin-bottom: 28px;
+  }
+
+  .product-card .product-desc {
+    font-size: 0.92rem;
+    color: var(--mid);
+    line-height: 1.65;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 32px;
+  }
+
+  .feature-list li {
+    font-size: 0.88rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.45;
+  }
+
+  .feature-list .yes { color: var(--sage); font-weight: 700; flex-shrink: 0; }
+  .feature-list .no { color: var(--rule); font-weight: 700; flex-shrink: 0; }
+  .feature-list .text { color: var(--ink); }
+  .feature-list .sub { color: var(--mid); font-size: 0.82rem; }
+
+  /* FEATURE SECTIONS */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .feature-block {
+    border-top: 2px solid var(--rule);
+    padding-top: 24px;
+  }
+
+  .feature-block.highlight { border-top-color: var(--gold); }
+
+  .feature-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--rule);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .feature-block h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .feature-block p {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  /* CALLOUT BAND */
+  .callout-band {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 40px;
+    margin: 0;
+  }
+
+  .callout-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .callout-band h2 {
+    color: var(--paper);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    margin-bottom: 10px;
+  }
+
+  .callout-band p {
+    color: rgba(245,240,232,0.7);
+    font-size: 0.95rem;
+    max-width: 560px;
+  }
+
+  .callout-band .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 14px 28px;
+    border-radius: 2px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .callout-band .btn-gold:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  /* WHO IT'S FOR */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .audience-card {
+    padding: 28px 32px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: white;
+  }
+
+  .audience-card.yes-card { border-left: 3px solid var(--sage); }
+  .audience-card.no-card { border-left: 3px solid var(--rule); opacity: 0.75; }
+
+  .audience-card h4 {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 16px;
+  }
+
+  .audience-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .audience-card ul li {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .yes-card ul li::before {
+    content: '?';
+    position: absolute;
+    left: 0;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  .no-card ul li::before {
+    content: '?';
+    position: absolute;
+    left: 0;
+    color: var(--rule);
+    font-weight: 700;
+  }
+
+  /* PRIVACY */
+  .privacy-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .privacy-split .privacy-text h2 { margin-bottom: 20px; }
+
+  .privacy-split .privacy-text p {
+    font-size: 0.95rem;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .privacy-points {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 36px;
+  }
+
+  .privacy-point {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .privacy-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .privacy-point h5 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+
+  .privacy-point p {
+    font-size: 0.82rem;
+    color: var(--mid);
+    line-height: 1.55;
+  }
+
+  /* FINAL CTA */
+  .final-cta {
+    text-align: center;
+    padding: 100px 40px;
+    background: var(--cream);
+    border-top: 1px solid var(--rule);
+  }
+
+  .final-cta h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 16px;
+  }
+
+  .final-cta p {
+    font-size: 1.05rem;
+    color: var(--mid);
+    max-width: 500px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .final-note {
+    font-size: 0.82rem;
+    color: var(--mid);
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  footer p { font-size: 0.82rem; color: var(--mid); }
+
+  footer a { color: var(--mid); text-decoration: none; font-size: 0.82rem; }
+  footer a:hover { color: var(--ink); }
+
+  .footer-links { display: flex; gap: 24px; }
+
+  /* COMPARISON TABLE */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin-top: 40px;
+  }
+
+  .comparison-table th {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 2px solid var(--ink);
+    background: var(--cream);
+  }
+
+  .comparison-table th:first-child { width: 40%; }
+
+  .comparison-table td {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  .comparison-table tr:last-child td { border-bottom: none; }
+
+  .comparison-table .check { color: var(--sage); font-weight: 700; }
+  .comparison-table .cross { color: var(--rule); }
+  .comparison-table .highlight-col { background: rgba(184,134,11,0.04); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 60px 20px; gap: 40px; }
+    section { padding: 60px 20px; }
+    .product-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr 1fr; }
+    .audience-grid { grid-template-columns: 1fr; }
+    .privacy-split { grid-template-columns: 1fr; gap: 40px; }
+    .callout-inner { grid-template-columns: 1fr; gap: 28px; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+    .cta-buttons { flex-direction: column; align-items: center; }
+    .hero-choice { grid-template-columns: 1fr; }
+    .hero-result-card {
+      position: static;
+      max-width: none;
+      margin-bottom: 16px;
+      box-shadow: none;
+    }
+    .hero-sample-controls,
+    .hero-sample-stats,
+    .hero-sample-projection-copy {
+      grid-template-columns: 1fr;
+    }
+    .desktop-only { display: none; }
+    .mobile-only { display: inline; }
+    .hero-choice { display: none; }
+    .hero-mobile-desktop-note { display: block; }
+    .quick-compare-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .features-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.5s ease both; }
+  h1 { animation: fadeUp 0.5s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.5s 0.2s ease both; }
+  .hero-actions { animation: fadeUp 0.5s 0.3s ease both; }
+  .hero-card { animation: fadeUp 0.6s 0.2s ease both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/assets/images/optimized/Fatboy_Software_Logo.webp" alt="Fatboy Software logo" class="nav-logo-mark">
+    <span>Fatboy <span>Software</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/screenshots">Screenshots</a></li>
+    <li><a href="/comparison">Compare</a></li>
+    <li><a href="/downloads/" class="nav-desktop-link" onclick="gtag('event','homepage_desktop_pro_nav_click')">Desktop Pro</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="desktop-only">Get A Retirement Answer Before You Commit To A Plan</span>
+      <span class="mobile-only">Get A Retirement Answer</span>
+    </div>
+    <h1>
+      <span class="desktop-only">Can you retire without running out of money?</span>
+      <span class="mobile-only">Can you retire safely?</span>
+    </h1>
+    <p class="hero-sub">
+      <span class="desktop-only">Open the guided web app first so you can work through the main planner flow instead of getting dropped into the teaser.</span>
+      <span class="mobile-only">Open the guided web app first so you can start in the main planner flow.</span>
+    </p>
+    <div class="hero-actions">
+      <a href="https://planner.fatboysoftware.com/?guided=1&guided_source=marketing-site&arrival=assumptions" class="btn-primary" data-analytics-location="hero_primary" data-planner-intent="full_planner" data-experiment-variant="test_1_hero_focus">
+        Open The Guided Web App
+      </a>
+      <a href="https://app.fatboysoftware.com" class="btn-secondary" data-analytics-location="hero_quick_answer" data-planner-intent="planner">
+        Open App / Quick Answer
+      </a>
+      <p class="hero-note desktop-only">No signup. Works on phone or desktop. Start in the guided planner instead of landing in the teaser first.</p>
+      <p class="hero-note mobile-only">No signup | Guided planner first | Opens instantly</p>
+      <p class="hero-mobile-desktop-note">Want saved scenarios, exports, or deeper analysis later? <a href="/downloads/" onclick="gtag('event','homepage_desktop_pro_hero_click')">See what Desktop Pro adds</a>.</p>
+    </div>
+    <ul class="hero-bullets">
+      <li>Get a first answer before you spend time filling out everything</li>
+      <li>See whether your retirement date, spending, and Social Security timing actually hold up</li>
+      <li>Change one assumption and watch how quickly the safety margin moves</li>
+    </ul>
+  </div>
+
+  <div class="hero-card">
+    <div class="hero-card-label">Pro License — What You Get</div>
+    <h3>One purchase.</h3>
+    <div class="price">$149 <span style="font-size:1.2rem;color:var(--mid);text-decoration:line-through;font-weight:400;">$249</span></div>
+    <p class="price-note">Founding Member price · Increases to $249 at 200 users</p>
+    <p style="font-size:0.8rem;color:var(--gold);margin-bottom:16px;font-weight:500;" data-founding-remaining>Price increases to $249 after 200 Founding Members</p>
+    <ul class="includes-list">
+      <li><strong>Windows desktop app</strong> — full install, runs offline</li>
+      <li><strong>Linux AppImage</strong> — same full app</li>
+      <li><strong>Full web app</strong> — browser-based, works on any device</li>
+      <li><strong>Unlimited scenarios</strong> — save, compare, revisit</li>
+      <li><strong>PDF &amp; Excel export</strong> — share with your CPA</li>
+      <li><strong>Full Monte Carlo depth</strong> — 7 market environments</li>
+      <li><strong>All future updates</strong> — no upgrade fees</li>
+    </ul>
+    <hr class="divider-rule">
+    <p style="font-size:0.8rem;color:var(--mid);margin-bottom:8px;">Founding Member spots</p>
+    <div style="background:var(--rule);border-radius:2px;height:6px;overflow:hidden;margin-bottom:6px;">
+      <div data-founding-bar style="height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));width:0%;transition:width 0.6s ease;" aria-valuemin="0" aria-valuemax="200"></div>
+    </div>
+    <p style="font-size:0.75rem;color:var(--mid);" data-founding-pct>Founding Member pricing</p>
+    <p style="font-size:0.78rem;color:var(--mid);margin-top:12px;">Best for people who want to compare strategies, save scenarios, export reports, and revisit decisions over time.</p>
+    <p style="font-size:0.78rem;color:var(--mid);margin-top:8px;">One-time purchase. Direct support. No subscription lock-in.</p>
+  </div>
+</div>
+
+<hr class="section-rule">
+
+<section class="quick-compare-section">
+  <div class="section-eyebrow">Start Free. Go Deeper On Desktop.</div>
+  <h2>Start free. Go deeper on desktop.</h2>
+  <p class="section-intro">
+    The guided web app is now the default way to start. Desktop Pro is the serious version when you want a fuller planning workflow and ongoing use.
+  </p>
+
+  <div class="quick-compare-grid">
+    <div class="quick-compare-card">
+      <span class="product-tag tag-web">Web App</span>
+      <h3>Guided first look</h3>
+      <p>Open the main web app in your browser and use the real planner flow instead of landing in the teaser by default.</p>
+      <ul class="feature-list">
+        <li><span class="yes">?</span><span class="text">fast way to test a plan</span></li>
+        <li><span class="yes">?</span><span class="text">good for sample scenarios</span></li>
+        <li><span class="yes">?</span><span class="text">no signup to explore</span></li>
+      </ul>
+      <a href="https://planner.fatboysoftware.com/?guided=1&guided_source=marketing-site&arrival=assumptions" class="btn-secondary" data-analytics-location="quick_compare_web" data-planner-intent="full_planner">Open The Guided Web App</a>
+    </div>
+
+    <div class="quick-compare-card pro">
+      <span class="product-tag tag-desktop">Desktop Pro</span>
+      <h3>Built for deeper planning</h3>
+      <p>Use the full desktop planner when you want more power, more comparison depth, and a tool you keep coming back to.</p>
+      <ul class="feature-list">
+        <li><span class="yes">?</span><span class="text">more powerful planning workflow</span></li>
+        <li><span class="yes">?</span><span class="text">deeper retirement modeling</span></li>
+        <li><span class="yes">?</span><span class="text">built for serious ongoing use</span></li>
+        <li><span class="yes">?</span><span class="text">one-time purchase</span></li>
+      </ul>
+      <a href="/downloads/" class="btn-primary" onclick="gtag('event','homepage_quick_compare_desktop_click')">See What Desktop Pro Adds</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- FREE CALCULATOR -->
+<section id="free-calculator" style="padding: 60px 0;">
+  <div class="section-eyebrow">Start Here — No Account Required</div>
+  <h2>Try the free<br>Monte Carlo calculator.</h2>
+  <p class="section-intro">
+    Not sure yet? Open the guided web app and run a real retirement projection.
+    Enter your savings, Social Security, and spending — get a year-by-year forecast with Monte Carlo simulation.
+    No sign-up. No install. Nothing to download.
+  </p>
+
+  <div style="background: var(--cream); border: 1px solid var(--rule); border-radius: 4px; padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-top: 32px;">
+    <div style="flex: 1; min-width: 260px;">
+      <div style="font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">What you get — free, instantly</div>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+        <li style="font-size: 0.92rem; color: var(--mid); display: flex; gap: 10px;"><span style="color: var(--sage); font-weight: 700;">?</span> Year-by-year portfolio projection to any retirement age</li>
+        <li style="font-size: 0.92rem; color: var(--mid); display: flex; gap: 10px;"><span style="color: var(--sage); font-weight: 700;">?</span> Monte Carlo simulation — see your plan's success rate</li>
+        <li style="font-size: 0.92rem; color: var(--mid); display: flex; gap: 10px;"><span style="color: var(--sage); font-weight: 700;">?</span> Social Security optimization — best claiming age</li>
+        <li style="font-size: 0.92rem; color: var(--mid); display: flex; gap: 10px;"><span style="color: var(--sage); font-weight: 700;">?</span> Federal tax estimates including RMDs</li>
+        <li style="font-size: 0.92rem; color: var(--mid); display: flex; gap: 10px;"><span style="color: var(--sage); font-weight: 700;">?</span> Federal retirement sample with pension + supplement timing preview</li>
+        <li style="font-size: 0.92rem; color: var(--mid); display: flex; gap: 10px;"><span style="color: var(--sage); font-weight: 700;">?</span> Works on any device — phone, tablet, desktop</li>
+      </ul>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; flex-shrink: 0;">
+      <a href="https://planner.fatboysoftware.com/?guided=1&guided_source=marketing-site&arrival=assumptions"
+         target="_blank"
+         data-analytics-location="calculator_primary"
+         data-planner-intent="full_planner"
+         style="display: inline-block; background: var(--ink); color: var(--paper); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 32px; border-radius: 2px; text-decoration: none; transition: background 0.2s; white-space: nowrap;">
+        Open The Guided Web App
+      </a>
+      <a href="https://app.fatboysoftware.com"
+         target="_blank"
+         data-analytics-location="calculator_quick_answer"
+         data-planner-intent="planner"
+         style="font-size: 0.78rem; color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;"
+         onmouseover="this.style.borderBottomColor='var(--gold)'"
+         onmouseout="this.style.borderBottomColor='transparent'">
+        Open App / Quick Answer ?
+      </a>
+      <span style="font-size: 0.75rem; color: var(--mid);">No account · No install · Opens instantly</span>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- TWO PRODUCTS -->
+<section id="products">
+  <div class="section-eyebrow">Two Ways to Plan</div>
+  <h2>The right tool<br>for where you are.</h2>
+  <p class="section-intro">
+    The free trial gives you a real taste. The Pro license unlocks everything — on your desktop and in your browser.
+  </p>
+
+  <div class="product-grid">
+    <!-- WEB APP -->
+    <div class="product-card">
+      <span class="product-tag tag-web">Web App — Free Trial</span>
+      <h3>Plan anywhere.<br>No install required.</h3>
+      <div class="product-price">Free</div>
+      <p class="product-price-note">Limited trial · No account required</p>
+      <p class="product-desc">
+        Runs entirely in your browser via Pyodide — Python in the browser, no server, your data never leaves your machine. 
+        Try the full interface with limited scenarios before you buy.
+      </p>
+      <ul class="feature-list">
+        <li><span class="yes">?</span><span class="text">All planning modules — Roth, IRMAA, estate, goals</span></li>
+        <li><span class="yes">?</span><span class="text">Works on any device — Mac, iPad, Windows, Linux</span></li>
+        <li><span class="yes">?</span><span class="text">Data stays in your browser — zero server calls</span></li>
+        <li><span class="no">—</span><span class="text sub">Limited to 1 scenario</span></li>
+        <li><span class="no">—</span><span class="text sub">No save / load between sessions</span></li>
+        <li><span class="no">—</span><span class="text sub">No PDF or Excel export</span></li>
+        <li><span class="no">—</span><span class="text sub">Monte Carlo limited to 500 simulations</span></li>
+      </ul>
+      <a href="https://planner.fatboysoftware.com/?guided=1&guided_source=marketing-site&arrival=assumptions" class="btn-secondary">Open The Guided Web App</a>
+    </div>
+
+    <!-- DESKTOP + WEB PRO -->
+    <div class="product-card featured">
+      <span class="product-tag tag-desktop">Pro License — Desktop + Web</span>
+      <h3>Everything unlocked.<br>On every platform.</h3>
+      <div class="product-price">$149 <span style="font-size:1rem;color:var(--mid);text-decoration:line-through;font-weight:400;">$249</span></div>
+      <p class="product-price-note">Founding Member · Price increases to $249 at 200 users</p>
+      <p class="product-desc">
+        One license key unlocks the Windows desktop app, the Linux AppImage, and the full web app. 
+        Use whichever fits the moment. Your data is always yours.
+      </p>
+      <ul class="feature-list">
+        <li><span class="yes">?</span><span class="text">Everything in the free trial</span></li>
+        <li><span class="yes">?</span><span class="text">Unlimited named scenarios — save and compare</span></li>
+        <li><span class="yes">?</span><span class="text">Save &amp; load plans between sessions</span></li>
+        <li><span class="yes">?</span><span class="text">Export &amp; import plan as JSON — portable across web and desktop</span></li>
+        <li><span class="yes">?</span><span class="text">Encrypted cloud sync — sync across devices, plan encrypted before it leaves your browser</span></li>
+        <li><span class="yes">?</span><span class="text">Full Monte Carlo — all 7 market environments</span></li>
+        <li><span class="yes">?</span><span class="text">PDF &amp; Excel export — share with your CPA</span></li>
+        <li><span class="yes">?</span><span class="text">Breakpoint &amp; stress test analysis</span></li>
+        <li><span class="yes">?</span><span class="text">Editable tax parameters — model future law changes</span></li>
+        <li><span class="yes">?</span><span class="text">Estate &amp; legacy forecasting</span></li>
+        <li><span class="yes">?</span><span class="text">Desktop app — full native performance, offline</span></li>
+        <li><span class="yes">?</span><span class="text">All future updates included</span></li>
+      </ul>
+      <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" class="btn-primary" data-founding-btn data-analytics-location="homepage_buy_now">Buy Now — $149</a>
+      <p style="font-size:0.78rem;color:var(--mid);margin-top:10px;text-align:center;" data-founding-remaining>Price increases to $249 after 200 Founding Members</p>
+      <p style="font-size:0.78rem;text-align:center;margin-top:8px;line-height:2;">
+        <span style="color:var(--mid);">Already purchased? Download: </span>
+        <a href="https://fatboy-license-server-oc13.vercel.app/api/download?platform=windows"
+           onclick="gtag('event','desktop_download_click',{platform:'windows'})"
+           style="color:var(--mid);text-decoration:none;border-bottom:1px solid var(--rule);transition:color 0.2s;margin:0 6px;"
+           onmouseover="this.style.color='var(--ink)'"
+           onmouseout="this.style.color='var(--mid)'">
+          Windows
+        </a>
+        <span style="color:var(--rule);">·</span>
+        <a href="https://fatboy-license-server-oc13.vercel.app/api/download?platform=linux"
+           onclick="gtag('event','desktop_download_click',{platform:'linux'})"
+           style="color:var(--mid);text-decoration:none;border-bottom:1px solid var(--rule);transition:color 0.2s;margin:0 6px;"
+           onmouseover="this.style.color='var(--ink)'"
+           onmouseout="this.style.color='var(--mid)'">
+          Linux AppImage
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- TAX PARAMETERS -->
+<section>
+  <div class="section-eyebrow">What Makes Fatboy Different</div>
+  <h2>Tax laws change.<br>Your software should too.</h2>
+  <p class="section-intro">
+    When OBBBA passed in July 2025, most retirement tools went stale. Fatboy users updated their 
+    tax parameters in 10 minutes and kept planning.
+  </p>
+
+  <div class="features-grid">
+    <div class="feature-block highlight">
+      <div class="feature-num">01</div>
+      <h4>Editable Tax Parameters</h4>
+      <p>Edit federal and state tax brackets yourself. Model TCJA expiration, OBBBA senior deductions, capital gains rate changes — without waiting 6 months for a vendor update.</p>
+    </div>
+    <div class="feature-block">
+      <div class="feature-num">02</div>
+      <h4>Roth Conversion Modeling</h4>
+      <p>See exactly how a $50k Roth conversion impacts your taxes this year, your IRMAA brackets at 65, and your RMDs at 75. Year-by-year, full tax effects.</p>
+    </div>
+    <div class="feature-block">
+      <div class="feature-num">03</div>
+      <h4>Seven Monte Carlo Environments</h4>
+      <p>From optimistic GBM baseline to conservative regime switching to a full century of historical data. A plan that holds up across all seven is a plan you can retire on.</p>
+    </div>
+    <div class="feature-block">
+      <div class="feature-num">04</div>
+      <h4>Breakpoint Analysis</h4>
+      <p>Find exactly where your plan starts to fail. Minimum required returns. Maximum safe withdrawal rate. Color-coded risk zones so you know what margin you actually have.</p>
+    </div>
+    <div class="feature-block">
+      <div class="feature-num">05</div>
+      <h4>Estate &amp; Legacy Forecasting</h4>
+      <p>Year-by-year estate projections, legacy goal tracking, inherited IRA RMD implications under the SECURE Act 10-year rule, and estate tax exposure against TCJA exemption thresholds.</p>
+    </div>
+    <div class="feature-block">
+      <div class="feature-num">06</div>
+      <h4>Professional PDF Reports</h4>
+      <p>Export polished, client-ready summaries of your analysis. Useful for reviewing with a spouse, sharing with a CPA, or documenting your strategy for annual review.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CALLOUT BAND -->
+<div class="callout-band">
+  <div class="callout-inner">
+    <div>
+      <h2>Compared to paying an advisor — or a subscription</h2>
+      <p>1% AUM on $1M is $10,000 a year. Boldin is $12/month. ProjectionLab is $109/year. 
+      Fatboy is $149 once — desktop app, web app, all future updates. 
+      By year two you've paid less than one month of a competing subscription.</p>
+    </div>
+    <a href="https://www.fatboysoftware.com/comparison" class="btn-gold">See Full Comparison ?</a>
+  </div>
+</div>
+
+<hr class="section-rule">
+
+<section>
+  <div class="section-eyebrow">Federal Retirement</div>
+  <h2>Planning around FERS,<br>supplement timing, and TSP?</h2>
+  <p class="section-intro">
+    Federal retirement is not just a pension input. Fatboy models how federal-style income sources start, stop, and interact inside the full retirement plan year by year.
+  </p>
+
+  <div style="background: var(--cream); border: 1px solid var(--rule); border-radius: 4px; padding: 36px 40px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-top: 32px;">
+    <div style="flex: 1; min-width: 280px;">
+      <div style="font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">Built for timing shifts</div>
+      <p style="font-size: 0.88rem; color: var(--mid); margin: 0 0 12px 0;">See pension, supplement, TSP, and Social Security work together year by year instead of flattening everything into one generic income line.</p>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+        <li style="font-size: 0.92rem; color: var(--mid); display: flex; gap: 10px;"><span style="color: var(--sage); font-weight: 700;">?</span> FERS-style temporary supplement preview in the free web app</li>
+        <li style="font-size: 0.92rem; color: var(--mid); display: flex; gap: 10px;"><span style="color: var(--sage); font-weight: 700;">?</span> Pension timing, TSP balances, and Social Security working together year by year</li>
+        <li style="font-size: 0.92rem; color: var(--mid); display: flex; gap: 10px;"><span style="color: var(--sage); font-weight: 700;">?</span> Full federal editing and deeper controls in the complete planner</li>
+      </ul>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; flex-shrink: 0;">
+      <a href="/federal-retirement/" style="display: inline-block; background: var(--ink); color: var(--paper); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 32px; border-radius: 2px; text-decoration: none; transition: background 0.2s; white-space: nowrap;">
+        See Federal Retirement Page
+      </a>
+      <a href="https://app.fatboysoftware.com/?federal=1"
+         target="_blank"
+         onclick="gtag('event','homepage_federal_example_click')"
+         style="font-size: 0.78rem; color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;"
+         onmouseover="this.style.borderBottomColor='var(--gold)'"
+         onmouseout="this.style.borderBottomColor='transparent'">
+        Or load the federal example ?
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- WHO IT'S FOR -->
+<section>
+  <div class="section-eyebrow">Right Fit</div>
+  <h2>Who Fatboy is for.<br>And who it isn't.</h2>
+  <p class="section-intro">
+    Fatboy is planning depth, not hand-holding. The people who get the most from it know what they want to model.
+  </p>
+
+  <div class="audience-grid">
+    <div class="audience-card yes-card">
+      <h4>Great fit</h4>
+      <ul>
+        <li>Engineers, executives, and professionals with 7-figure portfolios who understand their finances</li>
+        <li>DIY investors who want advisor-level tools without advisor fees</li>
+        <li>Pre-retirees modeling Roth conversions, IRMAA exposure, and TCJA impacts</li>
+        <li>Fee-only financial planners who need professional software without SaaS pricing</li>
+        <li>Anyone who wants their data on their own machine — not in someone else's cloud</li>
+        <li>Mac and iPad users who want serious browser-based planning (web app works on any device)</li>
+      </ul>
+    </div>
+    <div class="audience-card no-card">
+      <h4>Not a fit</h4>
+      <ul>
+        <li>People who need someone to tell them what to invest in</li>
+        <li>Anyone looking for portfolio management or investment advice</li>
+        <li>People who want their phone to make financial decisions for them</li>
+        <li>Users who want a simple one-number retirement readiness score</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- PRIVACY -->
+<section>
+  <div class="privacy-split">
+    <div class="privacy-text">
+      <div class="section-eyebrow">Privacy by Design</div>
+      <h2>Your financial data belongs to you.</h2>
+      <p>
+        Most retirement software sends your income, assets, and account details to a cloud 
+        server. That data is used for analytics, shared with marketing partners, and potentially 
+        used to train AI models.
+      </p>
+      <p>
+        Fatboy is built differently. The desktop app runs entirely on your machine — no account
+        creation, no data harvesting. The web app runs Python locally in your browser via Pyodide —
+        your calculations never touch a server.
+      </p>
+      <p>
+        Pro users can optionally sync an encrypted backup across devices. Your plan is encrypted
+        in your browser before it leaves — using your license key as the encryption key. We receive
+        ciphertext we cannot read. Your retirement plan is nobody else's business.
+      </p>
+    </div>
+    <div class="privacy-points">
+      <div class="privacy-point">
+        <div class="privacy-icon">??</div>
+        <div>
+          <h5>Desktop: fully local</h5>
+          <p>The Windows and Linux apps run entirely on your machine. No internet required for planning. Data lives only on your computer.</p>
+        </div>
+      </div>
+      <div class="privacy-point">
+        <div class="privacy-icon">??</div>
+        <div>
+          <h5>Web app: Pyodide in-browser</h5>
+          <p>The web app runs Python locally in your browser — not on a server. Your numbers stay on your device by default. No account required for the trial.</p>
+        </div>
+      </div>
+      <div class="privacy-point">
+        <div class="privacy-icon">??</div>
+        <div>
+          <h5>Encrypted cloud sync (optional)</h5>
+          <p>The only automatic server call is license key validation. Pro users can optionally sync plans across devices — but the data is encrypted in your browser before upload, using a key only you hold. We store ciphertext we cannot read. <a href="/blog/2026/03/14/desktop-browser-sync-encrypted/">How it works ?</a></p>
+        </div>
+      </div>
+      <div class="privacy-point">
+        <div class="privacy-icon">??</div>
+        <div>
+          <h5>No ads. No data harvesting.</h5>
+          <p>We don't sell data, run analytics on your plans, or share anything with third parties. There's no business model that requires it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2>Start planning seriously.</h2>
+  <p class="final-note">Built for serious DIY planners who want to compare strategies, save scenarios, export reports, and keep using the tool for years.</p>
+  <p>Open the guided web app by default, or lock in Founding Member pricing at $149 before the price rises to $249 at 200 users.</p>
+  <div class="cta-buttons">
+    <a href="https://planner.fatboysoftware.com/?guided=1&guided_source=marketing-site&arrival=assumptions" class="btn-primary">Open The Guided Web App</a>
+    <a href="https://app.fatboysoftware.com" class="btn-secondary">Open App / Quick Answer</a>
+  </div>
+  <p class="final-note">Guided planner first. Desktop Pro when you want saved scenarios, exports, and deeper analysis.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Fatboy Software · <a href="mailto:fbfinancialplanner@gmail.com">fbfinancialplanner@gmail.com</a></p>
+  <div class="footer-links">
+    <a href="/pricing">Pricing</a>
+    <a href="/screenshots">Screenshots</a>
+    <a href="/comparison">Compare</a>
+    <a href="/blog">Blog</a>
+    <a href="/about">About</a>
+    <a href="/research-methodology">Research</a>
+  </div>
+</footer>
+
+<script>
+  (function refreshHeroForDemoClicks() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    const visual = hero.querySelector('.hero-card');
+    if (visual) {
+      visual.classList.add('hero-visual');
+      visual.innerHTML = `
+        <a href="https://app.fatboysoftware.com/?arrival=snapshot#savings-card"
+           class="hero-sample-link"
+           data-analytics-location="hero_sample_result"
+           data-planner-intent="planner"
+           aria-label="Open this sample result in the free web planner">
+          <div class="hero-card-label">Sample Result</div>
+          <div class="hero-sample-app" aria-hidden="true">
+            <div class="hero-sample-app-head">
+              <span>Your Snapshot</span>
+              <span class="hero-sample-app-toggle">-</span>
+            </div>
+            <div class="hero-sample-banner">
+              <div>
+                <div class="hero-sample-banner-kicker">Current Snapshot</div>
+                <div class="hero-sample-banner-copy">$383,000 invested and $22,000 in cash today.</div>
+              </div>
+              <div class="hero-sample-banner-value">$405,000</div>
+            </div>
+            <div class="hero-sample-projection">
+              <div class="hero-sample-projection-copy">
+                <div class="hero-sample-projection-title">Does This Path Hold Up?</div>
+                <div class="hero-sample-projection-text">This first-pass path runs out around age 90. Savings are currently aimed at retirement accounts, leaning Roth, and extra surplus sweeps toward cash reserve.</div>
+              </div>
+              <div class="hero-sample-stats">
+                <div class="hero-sample-stat">
+                  <div class="hero-sample-stat-label">At Retirement</div>
+                  <div class="hero-sample-stat-value">$1.2M</div>
+                </div>
+                <div class="hero-sample-stat">
+                  <div class="hero-sample-stat-label">Growth Added</div>
+                  <div class="hero-sample-stat-value">-$587k</div>
+                </div>
+                <div class="hero-sample-stat">
+                  <div class="hero-sample-stat-label">New Contributions</div>
+                  <div class="hero-sample-stat-value">$182k</div>
+                </div>
+              </div>
+              <div class="hero-sample-chart">
+                <div class="hero-sample-chart-labels">
+                  <span>$405k</span>
+                  <span>$696k</span>
+                  <span>$1.2M</span>
+                  <span>$1.1M</span>
+                  <span>$799k</span>
+                  <span>$13k</span>
+                  <span>$0</span>
+                </div>
+                <div class="hero-sample-chart-stage">
+                  <div class="hero-sample-chart-marker"></div>
+                  <div class="hero-sample-chart-chip">Retirement Age 65</div>
+                  <div class="hero-sample-bar-group">
+                    <div class="hero-sample-bars">
+                      <span class="hero-sample-bar retirement" style="height:18%"></span>
+                      <span class="hero-sample-bar taxable" style="height:4%"></span>
+                    </div>
+                    <span class="hero-sample-year">2026</span>
+                  </div>
+                  <div class="hero-sample-bar-group">
+                    <div class="hero-sample-bars">
+                      <span class="hero-sample-bar retirement" style="height:36%"></span>
+                      <span class="hero-sample-bar taxable" style="height:4%"></span>
+                    </div>
+                    <span class="hero-sample-year">2032</span>
+                  </div>
+                  <div class="hero-sample-bar-group">
+                    <div class="hero-sample-bars">
+                      <span class="hero-sample-bar retirement" style="height:66%"></span>
+                      <span class="hero-sample-bar taxable" style="height:5%"></span>
+                    </div>
+                    <span class="hero-sample-year">2039</span>
+                  </div>
+                  <div class="hero-sample-bar-group">
+                    <div class="hero-sample-bars">
+                      <span class="hero-sample-bar retirement" style="height:62%"></span>
+                    </div>
+                    <span class="hero-sample-year">2045</span>
+                  </div>
+                  <div class="hero-sample-bar-group">
+                    <div class="hero-sample-bars">
+                      <span class="hero-sample-bar retirement" style="height:46%"></span>
+                    </div>
+                    <span class="hero-sample-year">2051</span>
+                  </div>
+                  <div class="hero-sample-bar-group">
+                    <div class="hero-sample-bars">
+                      <span class="hero-sample-bar retirement" style="height:1%"></span>
+                    </div>
+                    <span class="hero-sample-year">2058</span>
+                  </div>
+                  <div class="hero-sample-bar-group">
+                    <div class="hero-sample-bars"></div>
+                    <span class="hero-sample-year">2064</span>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-sample-legend">
+                <span><i class="hero-sample-dot retirement"></i>Retirement accounts</span>
+                <span><i class="hero-sample-dot taxable"></i>Taxable + cash</span>
+              </div>
+            </div>
+            <div class="hero-sample-tuning">
+              <div class="hero-sample-tuning-head">
+                <div class="hero-sample-tuning-kicker">Fine-Tune This Result</div>
+                <div class="hero-sample-tuning-copy">Refine savings destination, account type, and surplus sweep after you see the first answer path.</div>
+              </div>
+              <div class="hero-sample-controls">
+                <div class="hero-sample-control">
+                  <div class="hero-sample-control-label">Where should pre-retirement savings go?</div>
+                  <div class="hero-sample-select">Smart recommendation</div>
+                </div>
+                <div class="hero-sample-control">
+                  <div class="hero-sample-control-label">If retirement accounts, which type?</div>
+                  <div class="hero-sample-select">Smart recommendation</div>
+                </div>
+                <div class="hero-sample-control wide">
+                  <div class="hero-sample-control-label">Where should leftover income surplus sweep?</div>
+                  <div class="hero-sample-select">Smart recommendation</div>
+                </div>
+              </div>
+              <div class="hero-sample-pill">Optional: improve tax accuracy with account breakdown</div>
+              <div class="hero-sample-pill">Optional married-only account split for RMD accuracy</div>
+              <div class="hero-sample-pill">Advanced portfolio mix by account</div>
+            </div>
+          </div>
+          <p class="hero-sample-hint">Click the sample to open it in the planner.</p>
+        </a>
+        <p class="hero-card-footer">Need saved scenarios, exports, or offline use later? <a href="/downloads/" onclick="gtag('event','homepage_desktop_pro_footer_click')">See Desktop Pro</a>.</p>
+      `;
+    }
+  })();
+
+  (function appendHomepageAttribution() {
+    const query = new URLSearchParams(window.location.search || '');
+    const links = document.querySelectorAll('a[href^="https://app.fatboysoftware.com"], a[href^="https://planner.fatboysoftware.com"]');
+
+    links.forEach(function (link) {
+      if (!link.href) return;
+      const nextUrl = new URL(link.href);
+      ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(function (key) {
+        const value = query.get(key);
+        if (value && !nextUrl.searchParams.get(key)) {
+          nextUrl.searchParams.set(key, value);
+        }
+      });
+      if (!nextUrl.searchParams.get('utm_source')) nextUrl.searchParams.set('utm_source', 'website');
+      if (!nextUrl.searchParams.get('utm_medium')) nextUrl.searchParams.set('utm_medium', 'homepage');
+      if (!nextUrl.searchParams.get('utm_campaign')) nextUrl.searchParams.set('utm_campaign', 'core_site');
+      if (!nextUrl.searchParams.get('utm_content')) nextUrl.searchParams.set('utm_content', 'homepage_cta');
+      link.href = nextUrl.toString();
+    });
+  })();
+</script>
+<script src="/assets/js/founding-count.js"></script>
+</body>
+</html>
+
