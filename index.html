@@ -339,7 +339,9 @@ permalink: /
   }
 
   .hero-sample-link:hover .hero-sample-app,
-  .hero-sample-link:focus-visible .hero-sample-app {
+  .hero-sample-link:focus-visible .hero-sample-app,
+  .hero-sample-link:hover .hero-sample-shot,
+  .hero-sample-link:focus-visible .hero-sample-shot {
     transform: translateY(-1px);
     border-color: rgba(184, 134, 11, 0.4);
     box-shadow: 0 20px 38px rgba(26, 26, 24, 0.13);
@@ -350,6 +352,16 @@ permalink: /
     color: var(--mid);
     font-size: 0.76rem;
     letter-spacing: 0.02em;
+  }
+
+  .hero-sample-shot {
+    width: 100%;
+    display: block;
+    border-radius: 18px;
+    border: 1px solid rgba(26, 26, 24, 0.08);
+    box-shadow: 0 20px 38px rgba(26, 26, 24, 0.13);
+    background: #fff;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
   }
 
   .hero-sample-app {
@@ -1877,6 +1889,23 @@ permalink: /
         </a>
         <p class="hero-card-footer">Need saved scenarios, exports, or offline use later? <a href="/downloads/" onclick="gtag('event','homepage_desktop_pro_footer_click')">See Desktop Pro</a>.</p>
       `;
+
+      const oldMockup = visual.querySelector('.hero-sample-app');
+      if (oldMockup) {
+        oldMockup.outerHTML = `
+          <picture aria-hidden="true">
+            <source srcset="/assets/images/optimized/Sample_Result-400w.webp 400w, /assets/images/optimized/Sample_Result-800w.webp 800w, /assets/images/optimized/Sample_Result-1200w.webp 1200w"
+                    sizes="(max-width: 600px) 100vw, 420px"
+                    type="image/webp">
+            <source srcset="/assets/images/optimized/Sample_Result-400w.png 400w, /assets/images/optimized/Sample_Result-800w.png 800w, /assets/images/optimized/Sample_Result-1200w.png 1200w"
+                    sizes="(max-width: 600px) 100vw, 420px"
+                    type="image/png">
+            <img src="/assets/images/optimized/Sample_Result-800w.png"
+                 alt="Sample result showing the current snapshot and projected retirement path"
+                 class="hero-sample-shot">
+          </picture>
+        `;
+      }
     }
   })();
 
