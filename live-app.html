@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Can I Retire? Free Retirement Calculator &mdash; Fatboy Financial Planner</title>
+
+<!-- SEO -->
+<meta name="description" content="Choose a quick retirement answer or open the guided retirement planner. Model savings, Social Security, taxes, and retirement timing without starting from scratch.">
+<meta name="keywords" content="can I retire, when can I retire, retirement calculator, retirement planner, Monte Carlo retirement, Social Security calculator, free retirement tool">
+<link rel="canonical" href="https://app.fatboysoftware.com/">
+<link rel="icon" type="image/x-icon" href="/static/assets/fatboy-logo-16.ico?v=2026-03-29b">
+<link rel="apple-touch-icon" href="/static/assets/fatboy-logo.png?v=2026-03-29b">
+<meta name="google-site-verification" content="8yTvBOVhudmITb1chVWi8SPKl6dWN0GOJXv7Gq2uSpc" />
+
+<!-- Open Graph (Facebook, LinkedIn sharing) -->
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://app.fatboysoftware.com/">
+<meta property="og:title"       content="Can I Retire? Free Retirement Calculator &mdash; Fatboy Financial Planner">
+<meta property="og:description" content="Choose a quick retirement answer or open the guided planner to build a deeper retirement plan with your numbers carried in.">
+<meta property="og:site_name"   content="Fatboy Financial Planner">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card"        content="summary">
+<meta name="twitter:title"       content="Can I Retire? Free Retirement Calculator &mdash; Fatboy Financial Planner">
+<meta name="twitter:description" content="Choose a quick retirement answer or open the guided planner for deeper retirement planning. No sign-up required for the quick path.">
+
+<!-- Microsoft Advertising UET -->
+<script>
+  window.uetq = window.uetq || [];
+  window.trackMicrosoftUetEvent = function(eventName, params) {
+    if (!eventName) return false;
+    var eventParams = {};
+    if (params && typeof params === "object") {
+      for (var key in params) {
+        if (Object.prototype.hasOwnProperty.call(params, key)) {
+          eventParams[key] = params[key];
+        }
+      }
+    }
+    if (!eventParams.event_action) eventParams.event_action = eventName;
+    window.uetq.push("event", eventName, eventParams);
+    return true;
+  };
+  (function(w, d, t, r, u) {
+    var f, n, i;
+    f = function() {
+      var o = { ti: "343241983" };
+      o.q = w[u];
+      w[u] = new UET(o);
+      w[u].push("pageLoad");
+    };
+    n = d.createElement(t);
+    n.src = r;
+    n.async = 1;
+    n.onload = n.onreadystatechange = function() {
+      var s = this.readyState;
+      if (!s || s === "loaded" || s === "complete") {
+        f();
+        n.onload = n.onreadystatechange = null;
+      }
+    };
+    i = d.getElementsByTagName(t)[0];
+    i.parentNode.insertBefore(n, i);
+  })(window, document, "script", "//bat.bing.com/bat.js", "uetq");
+</script>
+
+<!-- Structured data: SoftwareApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Fatboy Financial Planner &mdash; Can I Retire? Free Retirement Calculator",
+  "url": "https://app.fatboysoftware.com/",
+  "description": "Free retirement estimate tool to help answer can I retire. Models savings, Social Security, pension, taxes, and pre-Medicare healthcare costs.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P646SLC5ZF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P646SLC5ZF');
+</script>
+  <link rel="stylesheet" href="/static/styles/app.css?v=3.22.61-handoff">
+</head>
+<body data-planner-page="general">
+<div class="container">
+  <div class="page-head">
+    <div>
+      <div class="hero-kicker">Fatboy Financial Planner</div>
+      <h1>Can I Retire?</h1>
+      <p class="subtitle" id="hero-subtitle">Choose the path you want: get a quick retirement answer here, or open the guided planner to build the full plan right away.</p>
+      <p class="hero-trust">The quick-answer teaser needs no sign-up. The guided planner carries your numbers forward when you want the deeper build.</p>
+    </div>
+    <a href="https://planner.fatboysoftware.com" class="page-head-cta"
+       target="_blank"
+       data-planner-cta="true"
+       data-cta-location="header"
+       data-handoff-arrival="about-you"
+       >Open Guided Planner &rarr;</a>
+  </div>
+  <div class="page-context">
+    <span class="page-context-copy">Use the teaser for a fast yes-or-no read. Use the guided planner when you want step-by-step setup, deeper testing, and a plan you can keep working.</span>
+    <a href="/federal" class="page-context-link">Need the federal planner instead? &rarr;</a>
+  </div>
+  <form id="form">
+    <section class="card quick-estimate-card" id="quick-estimate-card" aria-label="Quick estimate">
+      <div class="quick-estimate-head">
+        <div class="quick-estimate-kicker">Quick Answer Teaser</div>
+        <div class="quick-estimate-status-badge" id="quick-estimate-status-badge">Ready to test</div>
+      </div>
+      <h2 id="quick-estimate-title">Need the fast answer before the full build?</h2>
+      <p class="quick-estimate-copy" id="quick-estimate-copy">Use a few key numbers to get the first read on retirement viability. If the answer is close, shaky, or worth exploring, continue in the guided planner with your numbers carried over.</p>
+      <div class="quick-estimate-flow">
+        <div class="quick-estimate-panel">
+          <div class="quick-estimate-panel-head">
+            <div class="quick-estimate-panel-step">1</div>
+            <div>
+              <div class="quick-estimate-panel-title">Where You Stand Today</div>
+              <div class="quick-estimate-panel-copy">Start with the few numbers most people already know or can estimate quickly.</div>
+            </div>
+          </div>
+          <div class="quick-estimate-grid">
+        <div>
+          <label for="quick-age">Your Age</label>
+          <input id="quick-age" type="number" min="18" max="100" data-mirror-for="age">
+        </div>
+        <div>
+          <label for="quick-investments-total">How Much Do You Have Invested?</label>
+          <input id="quick-investments-total" type="text" inputmode="numeric" data-currency="true" data-investments-total="true">
+        </div>
+        <div>
+          <label for="quick-cash-balance">How Much Cash Do You Have?</label>
+          <input id="quick-cash-balance" type="text" inputmode="numeric" data-currency="true" data-mirror-for="cash_balance">
+        </div>
+        <div>
+          <label for="quick-earned-income">Current Household Income <span style="color:#64748b">(combined if married, defaulted if blank)</span></label>
+          <input id="quick-earned-income" type="text" inputmode="numeric" data-currency="true">
+        </div>
+      </div>
+        </div>
+        <div class="quick-estimate-panel">
+          <div class="quick-estimate-panel-head">
+            <div class="quick-estimate-panel-step">2</div>
+            <div>
+              <div class="quick-estimate-panel-title">Test The Decision</div>
+              <div class="quick-estimate-panel-copy">Move the sliders to see how retirement timing, savings, and spending change the answer.</div>
+            </div>
+          </div>
+      <div class="quick-slider-stack">
+        <div class="quick-slider-control">
+          <div class="quick-slider-head">
+            <label for="quick-retirement-age-slider">Retirement Age</label>
+            <span id="quick-retirement-age-display">65</span>
+          </div>
+          <input id="quick-retirement-age-slider" type="range" min="50" max="80" step="1" value="65"
+                 data-mirror-for="retirement_age"
+                 data-range-display="quick-retirement-age-display">
+        </div>
+        <div class="quick-slider-control">
+          <div class="quick-slider-head">
+            <label for="quick-annual-savings-slider">Planned Annual Contribution Before Retirement</label>
+            <span id="quick-annual-savings-display">$14,000</span>
+          </div>
+          <input id="quick-annual-savings-slider" type="range" min="0" max="100000" step="1000" value="14000"
+                 data-mirror-for="annual_savings"
+                 data-range-display="quick-annual-savings-display"
+                 data-range-format="currency">
+        </div>
+        <div class="quick-slider-control">
+          <div class="quick-slider-head">
+            <label for="quick-spending-slider">Pre/Post-Retirement Spending</label>
+            <span id="quick-spending-display">$76,000</span>
+          </div>
+          <input id="quick-spending-slider" type="range" min="10000" max="300000" step="1000" value="76000"
+                 data-mirror-for="annual_spending"
+                 data-range-display="quick-spending-display"
+                 data-range-format="currency">
+        </div>
+        </div>
+        </div>
+      </div>
+        <p class="quick-estimate-note" id="quick-estimate-note">These sample numbers are ready to test. Use this teaser for the first answer, then continue in the guided planner if you want to pressure-test the decision more seriously.</p>
+        <div class="quick-estimate-warning" id="quick-estimate-warning" style="display:none"></div>
+        <div class="quick-estimate-actions">
+          <button type="submit" id="submit-btn">Get My Quick Answer</button>
+          <p class="submit-nudge" id="submit-nudge">This teaser gives you the fast answer first. The guided planner is where you keep working the case if the result deserves a deeper look.</p>
+          <div class="mc-toggle mc-toggle-primary">
+            <input type="checkbox" id="mc-check" name="monte_carlo" value="true">
+            <label for="mc-check">Stress-test this plan in real markets <span class="tip" data-tip="Tests how often this plan still works when market returns arrive in different sequences. Free includes one stress test with up to 500 simulations.">?</span></label>
+          </div>
+          <div class="mc-limit-gate" id="mc-limit-gate" style="display:none">
+            <div class="mc-limit-gate-title">Your free stress test is used up.</div>
+            <div class="mc-limit-gate-copy">Continue in the guided planner to keep testing this result and explore the next move with more room.</div>
+            <div class="mc-limit-gate-actions">
+              <a href="https://planner.fatboysoftware.com"
+                 class="mc-limit-link"
+                 target="_blank"
+                 data-planner-cta="true"
+                 data-cta-location="mc_gate"
+                 data-handoff-arrival="assumptions">Continue In Guided Planner &rarr;</a>
+            </div>
+          </div>
+          <p class="error" id="error-msg"></p>
+        </div>
+      </section>
+
+      <div class="stacked-form-sections">
+    <details class="card form-section arrival-focus-target" id="about-you-card">
+      <summary><h2>Improve The Estimate</h2></summary>
+      <div class="form-section-body">
+      <input type="hidden" name="age" value="52">
+      <input type="hidden" name="retirement_age" value="65">
+      <div class="row">
+        <div>
+          <label for="quick-ss">Household Social Security <span style="color:#64748b">(combined if married)</span></label>
+          <input id="quick-ss" type="text" inputmode="numeric" data-currency="true">
+        </div>
+        <div>
+          <label for="quick-ss-claiming-age">Social Security Claiming Age</label>
+          <select id="quick-ss-claiming-age" data-mirror-for="ss_claiming_age">
+            <option value="62">62 (early)</option>
+            <option value="63">63</option>
+            <option value="64">64</option>
+            <option value="65">65</option>
+            <option value="66">66</option>
+            <option value="67" selected>67 (FRA)</option>
+            <option value="68">68</option>
+            <option value="69">69</option>
+            <option value="70">70 (max)</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div id="spouse-age-group">
+          <label>Spouse Age <span style="color:#64748b">(leave blank if single)</span></label>
+          <input type="number" name="spouse_age" value="50" min="18" max="100" placeholder="Leave blank if single">
+        </div>
+        <div>
+          <label>Life Expectancy <span class="tip" data-tip="The projection runs until this age. Use a conservative number &mdash; there's a 50% chance you'll outlive average life expectancy. In good health? Consider 90&ndash;95.">?</span></label>
+          <input type="number" name="life_expectancy" value="90" min="70" max="105" required>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>Filing Status</label>
+          <select name="filing_status">
+            <option value="married">Married</option>
+            <option value="single">Single</option>
+          </select>
+        </div>
+        <div>
+          <label>State Tax Assumptions <span class="tip" data-tip="Used for basic state-tax treatment in the projection. The free web results show a federal tax line, not a separate state-tax line.">?</span></label>
+          <select name="state_code">
+            <option value="">No state tax</option>
+            <option value="AL">Alabama</option><option value="AK">Alaska (no tax)</option>
+            <option value="AZ">Arizona</option><option value="AR">Arkansas</option>
+            <option value="CA">California</option><option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option><option value="DE">Delaware</option>
+            <option value="FL">Florida (no tax)</option><option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option><option value="ID">Idaho</option>
+            <option value="IL">Illinois</option><option value="IN">Indiana</option>
+            <option value="IA">Iowa</option><option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option><option value="LA">Louisiana</option>
+            <option value="ME">Maine</option><option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option><option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option><option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option><option value="MT">Montana</option>
+            <option value="NE">Nebraska</option><option value="NV">Nevada (no tax)</option>
+            <option value="NH">New Hampshire</option><option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option><option value="NY">New York</option>
+            <option value="NC">North Carolina</option><option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option><option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option><option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option><option value="SC">South Carolina</option>
+            <option value="SD">South Dakota (no tax)</option><option value="TN">Tennessee (no tax)</option>
+            <option value="TX">Texas (no tax)</option><option value="UT">Utah</option>
+            <option value="VT">Vermont</option><option value="VA">Virginia</option>
+            <option value="WA">Washington (no tax)</option><option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option><option value="WY">Wyoming (no tax)</option>
+          </select>
+        </div>
+      </div>
+      <p class="quick-estimate-note">Optional: add Social Security, filing status, and life expectancy if you want a better estimate before moving into the guided planner.</p>
+      <p class="quick-estimate-note">Changed these details? Run the quick answer again.</p>
+      </div>
+    </details>
+
+    <details class="card form-section" id="savings-card">
+      <summary><h2>Your Snapshot</h2></summary>
+      <div class="form-section-body">
+      <div class="savings-preview-card" id="savings-preview-card">
+        <div class="savings-preview-total">
+          <div>
+            <div class="savings-preview-kicker">Current Snapshot</div>
+            <div class="savings-preview-total-note" id="savings-preview-total-note">Across investments and cash</div>
+          </div>
+          <div class="savings-preview-total-value" id="savings-preview-total-value">$0</div>
+        </div>
+      </div>
+      <div class="savings-preview-chart-card">
+        <div class="savings-preview-chart-head">
+          <div class="savings-preview-chart-title">Does This Path Hold Up?</div>
+          <div class="savings-preview-chart-note" id="savings-preview-chart-note">Your current inputs, shown as one quick answer path.</div>
+        </div>
+        <div class="savings-preview-insights">
+          <div class="savings-preview-insight">
+            <div class="savings-preview-insight-label">At Retirement</div>
+            <div class="savings-preview-insight-value" id="savings-preview-retirement-total">$0</div>
+          </div>
+          <div class="savings-preview-insight">
+            <div class="savings-preview-insight-label">Growth Added</div>
+            <div class="savings-preview-insight-value" id="savings-preview-growth-added">$0</div>
+          </div>
+          <div class="savings-preview-insight">
+            <div class="savings-preview-insight-label">New Contributions</div>
+            <div class="savings-preview-insight-value" id="savings-preview-contributions-added">$0</div>
+          </div>
+        </div>
+        <div class="savings-preview-chart" id="savings-preview-chart"></div>
+        <div class="savings-preview-legend">
+          <span><span class="savings-preview-dot savings-preview-dot-trad"></span>Retirement accounts</span>
+          <span><span class="savings-preview-dot savings-preview-dot-taxable"></span>Taxable + cash</span>
+        </div>
+      </div>
+      <input type="hidden" id="investments-total" data-investments-total="true" value="383000">
+      <input type="hidden" name="cash_balance" value="22000">
+      <input type="hidden" name="annual_spending" value="76000">
+      <div id="investment-breakdown-details" hidden aria-hidden="true">
+        <input type="hidden" name="trad_balance" value="310000" data-currency="true" inputmode="numeric">
+        <input type="hidden" name="roth_balance" value="55000" data-currency="true" inputmode="numeric">
+        <input type="hidden" name="taxable_balance" value="18000" data-currency="true" inputmode="numeric">
+        <input type="hidden" name="trad_stocks_allocation" value="60">
+        <input type="hidden" name="trad_bonds_allocation" value="30">
+        <input type="hidden" name="trad_real_estate_allocation" value="5">
+        <input type="hidden" name="trad_cash_allocation" value="0">
+        <input type="hidden" name="trad_commodities_allocation" value="5">
+        <input type="hidden" name="trad_crypto_allocation" value="0">
+        <input type="hidden" name="roth_stocks_allocation" value="70">
+        <input type="hidden" name="roth_bonds_allocation" value="20">
+        <input type="hidden" name="roth_real_estate_allocation" value="5">
+        <input type="hidden" name="roth_cash_allocation" value="0">
+        <input type="hidden" name="roth_commodities_allocation" value="3">
+        <input type="hidden" name="roth_crypto_allocation" value="2">
+        <input type="hidden" name="taxable_stocks_allocation" value="60">
+        <input type="hidden" name="taxable_bonds_allocation" value="25">
+        <input type="hidden" name="taxable_real_estate_allocation" value="5">
+        <input type="hidden" name="taxable_cash_allocation" value="5">
+        <input type="hidden" name="taxable_commodities_allocation" value="3">
+        <input type="hidden" name="taxable_crypto_allocation" value="2">
+      </div>
+    </details>
+
+    <div class="card refine-upgrade-summary">
+      <div class="refine-upgrade-summary-kicker">Continue In Guided Planner</div>
+      <div class="refine-upgrade-summary-title">Finish the real setup there.</div>
+      <p class="refine-upgrade-summary-copy">Income timing, taxes, assumptions, account routing, and portfolio setup all work better together in the guided planner.</p>
+      <div class="refine-upgrade-pill-row">
+        <span class="refine-upgrade-pill">Income + spending timing</span>
+        <span class="refine-upgrade-pill">Assumptions + Monte Carlo controls</span>
+        <span class="refine-upgrade-pill">Savings destination rules</span>
+        <span class="refine-upgrade-pill">Tax + RMD accuracy</span>
+        <span class="refine-upgrade-pill">Portfolio mix by account</span>
+      </div>
+      <a href="https://planner.fatboysoftware.com" target="_blank" class="refine-upgrade-summary-link"
+         data-planner-cta="true"
+         data-cta-location="refine_summary_lock"
+         data-handoff-arrival="about-you"
+         >Continue With Guided Setup &rarr;</a>
+    </div>
+    <details class="card form-section" id="income-card" style="display:none" aria-hidden="true">
+      <summary><h2>Income &amp; Spending</h2></summary>
+      <div class="form-section-body">
+      <div class="live-preview-card" id="live-income-preview">
+        <div class="live-preview-head">
+          <div>
+            <div class="live-preview-kicker">Live Preview</div>
+            <div class="live-preview-title">First Retirement-Year Income Mix</div>
+          </div>
+          <div class="live-preview-total" id="income-preview-total">$0 covered</div>
+        </div>
+        <div class="live-preview-context" id="income-preview-context">Preview age: 65 (retirement age)</div>
+        <div class="live-preview-coverage">
+          <div class="live-preview-coverage-head">
+            <span id="income-preview-covered-label">$0 guaranteed / modeled income</span>
+            <span id="income-preview-need-label">$0 spending target</span>
+          </div>
+          <div class="live-preview-track" id="income-preview-track"></div>
+        </div>
+        <div class="live-preview-bars" id="income-preview-bars"></div>
+        <div class="live-preview-summary" id="income-preview-summary"></div>
+      </div>
+      <div class="row full">
+        <div>
+          <label>Pre-Medicare Healthcare Cost (annual, age &lt; 65) <span class="tip" data-tip="Annual cost of private insurance or out-of-pocket care before Medicare at 65. Added on top of annual spending. Typical range: $6,000&ndash;$20,000/yr. Drops to $0 automatically at age 65.">?</span></label>
+          <input type="text" name="healthcare_annual" value="0" data-currency="true" inputmode="numeric">
+          <span style="display:block;font-size:0.72rem;color:#475569;margin-top:4px">Added on top of spending above. Drops to $0 at age 65.</span>
+        </div>
+      </div>
+      <div class="row" id="earned-income-row">
+        <div>
+          <label>Your Current Salary / Earned Income (annual) <span class="tip" data-tip="Optional, but useful if you are still working. This lets the planner model earned income before retirement instead of assuming only contributions matter.">?</span></label>
+          <input type="text" name="earned_income_annual" value="0" data-currency="true" inputmode="numeric">
+          <span style="display:block;font-size:0.72rem;color:#475569;margin-top:4px">If entered, salary is modeled with a default 3% annual growth rate until retirement.</span>
+        </div>
+        <div id="spouse-earned-income-group">
+          <label>Spouse Current Salary / Earned Income (annual)</label>
+          <input type="text" name="spouse_earned_income_annual" value="0" data-currency="true" inputmode="numeric">
+          <span style="display:block;font-size:0.72rem;color:#475569;margin-top:4px">Uses the same default 3% annual growth assumption until retirement.</span>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>Employer Match (% of contribution)</label>
+          <input type="number" name="employer_match_percent" value="0" min="0" max="100" step="0.5">
+          <span style="display:block;font-size:0.72rem;color:#475569;margin-top:4px">Used by the savings recommendation rule. A nonzero match nudges the planner toward retirement-account saving.</span>
+        </div>
+        <div>
+          <label>Matchable Pay Cap (% of salary)</label>
+          <input type="number" name="employer_match_limit_percent" value="0" min="0" max="100" step="0.5">
+          <span style="display:block;font-size:0.72rem;color:#475569;margin-top:4px">Example: enter 6 if your employer matches contributions up to 6% of pay.</span>
+        </div>
+      </div>
+      <div class="inline-note">Social Security is set in Quick Snapshot above using one rough household benefit and one claiming age.</div>
+      <input type="hidden" name="ss_annual" value="26000" data-currency="true" inputmode="numeric">
+      <select name="ss_claiming_age" id="ss-claiming-age" hidden>
+        <option value="62">62 (early)</option>
+        <option value="63">63</option><option value="64">64</option>
+        <option value="65">65</option><option value="66">66</option>
+        <option value="67" selected>67 (FRA)</option>
+        <option value="68">68</option><option value="69">69</option>
+        <option value="70">70 (max)</option>
+      </select>
+      <input type="hidden" name="spouse_ss_annual" value="21000" data-currency="true" inputmode="numeric">
+      <select name="spouse_ss_claiming_age" hidden>
+        <option value="62">62</option><option value="63">63</option><option value="64">64</option>
+        <option value="65">65</option><option value="66">66</option>
+        <option value="67" selected>67</option>
+        <option value="68">68</option><option value="69">69</option><option value="70">70</option>
+      </select>
+      <p id="ss-breakeven" style="display:none;font-size:0.72rem;color:#64748b;margin-top:-6px;margin-bottom:8px;line-height:1.5"></p>
+      <!-- SS Lifetime Optimizer -->
+      <div id="ss-optimizer" style="display:none;background:#0d1f12;border:1px solid #1e3a28;border-radius:8px;padding:12px;margin-bottom:12px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+          <span style="font-size:0.72rem;color:#4ade80;font-weight:600;">Lifetime SS Optimizer</span>
+          <span style="font-size:0.68rem;color:#475569;">to age <span id="ss-opt-lifeexp">90</span></span>
+        </div>
+        <div id="ss-opt-bars" style="display:flex;gap:5px;align-items:flex-end;height:52px;margin-bottom:8px;"></div>
+        <div id="ss-opt-summary" style="font-size:0.72rem;color:#94a3b8;line-height:1.6"></div>
+      </div>
+
+      <!-- Pension / other guaranteed income -->
+      <div class="row">
+        <div>
+          <label>Your Pension / Annuity (annual, 0 if none)</label>
+          <input type="text" name="pension_annual" value="0" data-currency="true" inputmode="numeric">
+        </div>
+        <div>
+          <label>Pension Starts at Age</label>
+          <input type="number" name="pension_start_age" placeholder="default: retirement age" min="40" max="100" step="1">
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label>Additional Pension / Annuity (annual)</label>
+          <input type="text" name="secondary_pension_annual" value="0" data-currency="true" inputmode="numeric">
+        </div>
+        <div>
+          <label>Additional Pension Starts at Age</label>
+          <input type="number" name="secondary_pension_start_age" placeholder="default: retirement age" min="40" max="100" step="1">
+        </div>
+      </div>
+      <div class="row" id="spouse-pension-row">
+        <div>
+          <label>Spouse Pension / Annuity (annual)</label>
+          <input type="text" name="spouse_pension_annual" value="0" data-currency="true" inputmode="numeric">
+        </div>
+        <div>
+          <label>Spouse Pension Starts at Age</label>
+          <input type="number" name="spouse_pension_start_age" placeholder="default: spouse retirement age" min="40" max="100" step="1">
+        </div>
+      </div>
+
+      <!-- Part-time / other income -->
+      <div class="row">
+        <div>
+          <label id="other-income-label">Part-time / Other Income (annual) <span class="tip" data-tip="Consulting, rental, part-time work, or any other income that offsets expenses. Enter the annual amount and the ages it applies. The projection subtracts this from withdrawals needed each year.">?</span></label>
+          <input type="text" name="other_income_annual" value="0" data-currency="true" inputmode="numeric" id="other-income-annual">
+        </div>
+        <div id="other-income-ages" style="display:none">
+          <label id="other-income-range-label">From age / to age</label>
+          <div style="display:flex;gap:8px;align-items:center">
+            <input type="number" name="other_income_start_age" placeholder="start age" min="18" max="100" step="1" style="width:90px">
+            <span style="color:#475569;font-size:0.85rem">&ndash;</span>
+            <input type="number" name="other_income_end_age" placeholder="end age" min="18" max="100" step="1" style="width:90px">
+          </div>
+          <span style="display:block;font-size:0.72rem;color:#475569;margin-top:4px">Defaults: current age &rarr; retirement age</span>
+        </div>
+      </div>
+      </div>
+    </details>
+
+    <details class="card form-section" id="assumptions-card" style="display:none" aria-hidden="true">
+      <summary><h2>Assumptions</h2></summary>
+      <div class="form-section-body">
+      <div class="row">
+        <div>
+          <label>Expected Annual Return <span class="tip" data-tip="Nominal (before inflation) average annual return. A balanced 60/40 portfolio: historically ~7%. Stocks-heavy: 8&ndash;9%. Subtract inflation rate to get your real growth assumption.">?</span></label>
+          <input type="number" name="expected_return" value="0.07" min="0" max="0.20" step="0.005">
+        </div>
+        <div>
+          <label>Inflation Rate</label>
+          <input type="number" name="inflation" value="0.03" min="0" max="0.15" step="0.005">
+        </div>
+      </div>
+
+      <div id="mc-options" class="mc-options">
+        <div class="row">
+          <div>
+            <label>Simulation Count</label>
+            <input type="number" name="num_simulations" value="500" min="100" max="500" step="100">
+          </div>
+          <div>
+            <label>Market Volatility</label>
+            <input type="number" name="mc_volatility" value="0.15" min="0.05" max="0.25" step="0.01">
+          </div>
+        </div>
+        <span style="display:block;font-size:0.72rem;color:#475569;margin-top:4px">Free Monte Carlo gives one basic preview. The guided planner is where you compare deeper downside cases and the changes that actually make retirement feel safer.</span>
+      </div>
+      </div>
+    </details>
+    </div>
+
+    </form>
+
+  <div class="mobile-submit-bar is-hidden" id="mobile-submit-bar">
+    <button type="submit" form="form" id="mobile-submit-btn">Get My Quick Answer</button>
+  </div>
+
+  <div id="results">
+    <div class="results-stage results-stage-primary">
+    <div class="answer-card" id="answer-card">
+      <div class="answer-context" id="answer-context" hidden></div>
+      <div class="answer-score" id="answer-score" hidden>
+        <div class="answer-score-chip">
+          <span class="answer-score-label">Plan Score</span>
+          <span class="answer-score-value" id="answer-score-value"></span>
+        </div>
+        <div class="answer-score-copy" id="answer-score-copy"></div>
+      </div>
+      <div class="answer-headline" id="answer-headline"></div>
+      <div class="answer-copy" id="answer-copy"></div>
+      <div class="answer-actions">
+        <a href="https://planner.fatboysoftware.com" target="_blank" class="answer-primary-cta"
+           data-planner-cta="true"
+           data-cta-location="answer_card_primary"
+           data-handoff-arrival="about-you"
+           >Continue In Guided Planner &rarr;</a>
+        <a href="#free-detail-toggle" class="answer-jump-link" id="free-detail-link">Open the free summary table &rarr;</a>
+      </div>
+    </div>
+    <div class="federal-results-card" id="federal-results-card">
+      <div class="federal-results-kicker">Federal Planning Insight</div>
+      <div class="federal-results-headline" id="federal-results-headline"></div>
+      <div class="federal-results-copy" id="federal-results-copy"></div>
+      <div class="federal-results-facts">
+        <div class="federal-results-fact">
+          <div class="federal-results-fact-label">Supplement Timing</div>
+          <div class="federal-results-fact-value" id="federal-results-fact-1"></div>
+        </div>
+        <div class="federal-results-fact">
+          <div class="federal-results-fact-label">Social Security Timing</div>
+          <div class="federal-results-fact-value" id="federal-results-fact-2"></div>
+        </div>
+        <div class="federal-results-fact">
+          <div class="federal-results-fact-label">Bridge Years</div>
+          <div class="federal-results-fact-value" id="federal-results-fact-3"></div>
+        </div>
+        <div class="federal-results-fact">
+          <div class="federal-results-fact-label">Portfolio / TSP Pressure</div>
+          <div class="federal-results-fact-value" id="federal-results-fact-4"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MC success rate banner (hidden until MC runs) -->
+    <div id="success-rate-wrap" style="display:none">
+      <div class="success-rate" id="success-rate-box">
+        <div>
+          <div class="rate-number" id="rate-number"></div>
+          <div style="font-size:0.7rem;opacity:0.7">tested paths that stay funded</div>
+        </div>
+        <div class="rate-label" id="rate-label"></div>
+      </div>
+    </div>
+
+    <!-- Full planner CTA &mdash; shown after MC results -->
+    <div id="planner-nudge" style="display:none;margin-top:12px">
+      <div class="planner-cta-banner" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px">
+        <div class="planner-cta-text">
+          <span class="planner-cta-label" id="planner-cta-label">GUIDED PLANNER</span>
+          <span class="planner-cta-headline" id="planner-cta-headline">Continue in the guided planner to see downside risk, tax pressure, and what to adjust first.</span>
+          <span class="planner-cta-sub" id="planner-cta-sub">We will carry your numbers into the guided planner so you can test the next move without starting over.</span>
+        </div>
+        <a href="https://planner.fatboysoftware.com" target="_blank"
+           class="planner-cta-btn"
+           data-planner-cta="true"
+           data-cta-location="mc_results_nudge"
+           data-plan-type="fatboy_pro"
+           data-price="149"
+           data-billing-type="one_time"
+           data-handoff-arrival="assumptions"
+           >Continue In Guided Planner &rarr;</a>
+      </div>
+    </div>
+    </div>
+
+    <div class="results-stage results-stage-decision">
+      <div class="results-stage-head">
+        <div class="results-stage-kicker">What To Do Next</div>
+        <div class="results-stage-title">Use the quick answer to decide what to test next, what to worry about, and whether it is time to move into the guided planner.</div>
+      </div>
+    <div class="plan-next-card" id="plan-next-card">
+      <div class="plan-next-kicker">What To Test Next</div>
+      <div class="plan-next-takeaway" id="plan-next-takeaway"></div>
+      <div class="scenario-chip-card scenario-chip-card-inline" id="scenario-chip-card">
+        <div class="scenario-chip-kicker">Try Free What-Ifs</div>
+        <div class="scenario-chip-title">Test a few simple moves here first. For downside risk, bad market timing, and deeper stress-testing, open the guided planner.</div>
+        <div class="scenario-chip-row" id="scenario-chip-row"></div>
+        <div class="scenario-chip-note" id="scenario-chip-note">Use the free chips here to test timing, spending, savings, or claiming age. Downside stress tests live in the guided planner.</div>
+        <div class="scenario-chip-status" id="scenario-chip-status" aria-live="polite" aria-atomic="true"></div>
+      </div>
+      <div class="plan-next-grid">
+        <div class="plan-next-panel">
+          <div class="plan-next-title" id="plan-risk-title">What This Quick Answer Still Cannot Tell You</div>
+          <ul class="plan-next-list" id="plan-risk-list"></ul>
+        </div>
+        <div class="plan-next-panel plan-next-panel-pro">
+          <div class="plan-next-title" id="plan-pro-title">What To Test In Your Full Plan</div>
+          <ul class="plan-next-list" id="plan-pro-list"></ul>
+          <a href="https://planner.fatboysoftware.com" target="_blank" class="plan-next-link"
+             data-planner-cta="true"
+             data-cta-location="dynamic_risk_card"
+             data-handoff-arrival="income"
+             >Continue In Guided Planner &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="fragility-preview-card" id="fragility-preview-card" style="display:none">
+      <div class="fragility-preview-head">
+        <div>
+          <div class="fragility-preview-kicker">How Fragile Is This?</div>
+          <div class="fragility-preview-title">The quick view gives you an answer. Pro tells you whether that answer is sturdy enough to trust with your retirement.</div>
+        </div>
+        <div class="fragility-preview-lock">Pro Preview</div>
+      </div>
+      <p class="fragility-preview-copy" id="fragility-preview-copy"></p>
+      <div class="fragility-preview-grid">
+        <div class="fragility-preview-panel">
+          <div class="fragility-preview-label">Confidence Score</div>
+          <div class="fragility-preview-value" id="fragility-confidence-value"></div>
+          <div class="fragility-preview-note" id="fragility-confidence-note"></div>
+        </div>
+        <div class="fragility-preview-panel">
+          <div class="fragility-preview-label">Downside Scenario</div>
+          <div class="fragility-preview-value" id="fragility-downside-value"></div>
+          <div class="fragility-preview-note" id="fragility-downside-note"></div>
+        </div>
+        <div class="fragility-preview-panel">
+          <div class="fragility-preview-label">Biggest Risk</div>
+          <div class="fragility-preview-value" id="fragility-biggest-risk-value"></div>
+          <div class="fragility-preview-note" id="fragility-biggest-risk-note"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pro-teaser-card" id="pro-teaser-card" style="display:none">
+      <div class="pro-teaser-head">
+        <div>
+          <div class="pro-teaser-kicker">Pro Preview</div>
+          <div class="pro-teaser-title" id="pro-teaser-title">The part most calculators skip: what could go wrong, how bad it gets, and where taxes change the decision.</div>
+        </div>
+        <div class="pro-teaser-badge">Locked</div>
+      </div>
+      <p class="pro-teaser-copy" id="pro-teaser-copy">See whether this answer is truly sturdy, what a bad market start would do, and where taxes or RMDs could force a different decision.</p>
+      <div class="pro-teaser-blur-shell">
+        <div class="pro-teaser-blur-content" aria-hidden="true">
+          <div class="pro-teaser-metric-grid">
+            <div class="pro-teaser-metric">
+              <div class="pro-teaser-label">Confidence Score</div>
+              <div class="pro-teaser-value" id="pro-teaser-confidence">78%</div>
+              <div class="pro-teaser-note" id="pro-teaser-confidence-note">Likely to hold up across tested market paths</div>
+            </div>
+            <div class="pro-teaser-metric">
+              <div class="pro-teaser-label">Downside Case</div>
+              <div class="pro-teaser-value" id="pro-teaser-downside">Age 82</div>
+              <div class="pro-teaser-note" id="pro-teaser-downside-note">If retirement starts with a weak 3-year market</div>
+            </div>
+            <div class="pro-teaser-metric">
+              <div class="pro-teaser-label">Tax Pressure</div>
+              <div class="pro-teaser-value" id="pro-teaser-tax">Moderate</div>
+              <div class="pro-teaser-note" id="pro-teaser-tax-note">RMDs and Social Security may lift future tax drag</div>
+            </div>
+          </div>
+          <div class="pro-teaser-mini-table">
+            <div class="pro-teaser-mini-row">
+              <span>Best next move</span>
+              <span id="pro-teaser-best-move">Lower spending first</span>
+            </div>
+            <div class="pro-teaser-mini-row">
+              <span>Bad market start</span>
+              <span id="pro-teaser-market-row">Confidence drops materially</span>
+            </div>
+            <div class="pro-teaser-mini-row">
+              <span>Tax / RMD timing</span>
+              <span id="pro-teaser-tax-row">Worth testing before you commit</span>
+            </div>
+          </div>
+        </div>
+        <div class="pro-teaser-overlay">
+          <a href="https://planner.fatboysoftware.com" target="_blank" class="pro-teaser-cta"
+             data-planner-cta="true"
+             data-cta-location="blurred_pro_teaser"
+             data-handoff-arrival="assumptions"
+             >Open Guided Planner &rarr;</a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="results-stage results-stage-detail" style="display:none">
+      <div class="results-stage-head">
+        <div class="results-stage-kicker">Optional Free Detail</div>
+        <div class="results-stage-title">Most people should stop at the answer and next-step guidance above. Open this only if you want the limited free table view before moving into the free web planner or Pro.</div>
+      </div>
+      <details class="free-detail-toggle" id="free-detail-toggle">
+        <summary>
+          <span class="free-detail-toggle-label">Show the limited free detail view</span>
+          <span class="free-detail-toggle-copy">Open the year-by-year table and stress-test preview if you still want to inspect the free numbers.</span>
+        </summary>
+
+        <!-- Tab switcher: one-path vs tested-path views -->
+        <div id="tab-bar" style="display:none" class="tabs">
+          <div class="tab active" data-tab="det">One Straight-Line Path</div>
+          <div class="tab" data-tab="mc">Range Of Tested Paths</div>
+        </div>
+
+        <!-- One-path table -->
+        <div id="panel-det" class="tab-panel active">
+          <div class="card">
+            <h2>Your Money Year By Year</h2>
+            <p class="results-timing-note">This is one straight-line projection using your current assumptions. Portfolio balances are shown at year-end, after that year's growth, income, spending, and withdrawals.</p>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Year</th><th>Age</th><th>Portfolio</th>
+                    <th>SS Income</th><th>Expenses</th><th>Fed Tax</th>
+                    <th>RMD <span class="tip" data-tip="Required Minimum Distribution &mdash; the IRS-mandated annual withdrawal from Traditional IRA/401(k) starting at age 73. Included in taxable income." style="vertical-align:middle">?</span></th>
+                    <th>Planned Save</th><th>Employer Match</th><th>Surplus Sweep <span class="tip" data-tip="Extra income left after spending and planned saving. This column shows where that leftover cash is directed before retirement, such as cash reserve or taxable brokerage." style="vertical-align:middle">?</span></th><th>Shortfall</th>
+                  </tr>
+                </thead>
+                <tbody id="results-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stress-tested range chart + percentile table -->
+        <div id="panel-mc" class="tab-panel">
+          <div class="card">
+            <h2>How The Range Changes Under Different Market Paths</h2>
+            <div class="chart-wrap">
+              <canvas id="mc-chart" height="260"></canvas>
+            </div>
+            <div class="chart-legend">
+              <span><span class="legend-dot" style="background:#4ade80"></span>90th pct (best case)</span>
+              <span><span class="legend-dot" style="background:#60a5fa"></span>Median (p50)</span>
+              <span><span class="legend-dot" style="background:#f87171"></span>10th pct (worst case)</span>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Year</th><th>Age</th>
+                    <th>P10</th><th>P25</th><th>P50</th><th>P75</th><th>P90</th>
+                  </tr>
+                </thead>
+                <tbody id="mc-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- RMD note &mdash; shown when plan has RMD years -->
+        <div id="rmd-teaser" style="display:none;background:#1a1500;border:1px solid #78350f;border-radius:10px;padding:14px 18px;margin-top:16px;font-size:0.82rem;color:#fcd34d;line-height:1.6">
+          <strong style="color:#fbbf24">&#9888; RMDs detected (amber rows)</strong> &mdash; Starting at age 73, the IRS requires annual withdrawals from your Traditional IRA/401(k) whether you need the money or not. These are added to your taxable income alongside Social Security, potentially bumping your tax bracket and increasing Medicare premiums (IRMAA).
+          <span style="color:#94a3b8;display:block;margin-top:6px">
+            Roth conversions and future tax-bracket management are one of the places where a fuller planner can materially change the recommendation.
+          </span>
+        </div>
+
+        <!-- Share / print actions -->
+        <div class="result-actions">
+          <button type="button" onclick="printPdf()">Print Snapshot</button>
+          <button type="button" id="share-btn" onclick="shareUrl()">Copy Link To This Plan</button>
+        </div>
+      </details>
+    </div>
+
+    <div class="results-stage results-stage-upgrade" style="display:none">
+      <div class="results-stage-head">
+        <div class="results-stage-kicker">If You Need More Confidence</div>
+        <div class="results-stage-title">This is where the free web planner and Pro take over from the quick calculator.</div>
+      </div>
+    <div class="plan-next-card" id="trust-card">
+      <div class="plan-next-kicker">Why People Trust This Step</div>
+      <div class="plan-next-takeaway">Fatboy Pro is meant to help you pressure-test a retirement decision, not impress you with jargon.</div>
+      <div class="plan-next-grid">
+        <div class="plan-next-panel">
+          <div class="plan-next-title">What It Actually Models</div>
+          <ul class="plan-next-list">
+            <li>Savings, cash, Social Security, pensions, spending, and retirement timing</li>
+            <li>Taxes, RMD pressure, and Medicare-related income cliffs where relevant</li>
+            <li>Downside market paths so you can see whether a plan only works on paper</li>
+          </ul>
+        </div>
+        <div class="plan-next-panel plan-next-panel-pro">
+          <div class="plan-next-title">What It Helps You Decide</div>
+          <ul class="plan-next-list">
+            <li>Whether your current retirement date still looks safe</li>
+            <li>Whether spending, claiming age, or Roth moves matter more first</li>
+            <li>Whether your plan still holds up when real risks show up together</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="desktop-cta" id="pricing-card">
+      <p id="pricing-card-title" style="font-weight:700;color:#e2e8f0;font-size:0.95rem;margin-bottom:6px">
+        Do not make a retirement decision off one average-case answer.
+      </p>
+      <p id="pricing-card-copy">This calculator is for the first answer. <strong style="color:#a78bfa">Fatboy Pro</strong>
+      is for the real decision: stress-testing downside, finding tax landmines, comparing scenarios, and seeing what to change before you retire.</p>
+      <p class="pricing-followup-copy" style="margin-bottom:14px">Built for DIY retirees who want a clearer answer before making a costly one-way decision.</p>
+      <div class="plan-next-grid" style="margin-bottom:16px">
+        <div class="plan-next-panel">
+          <div class="plan-next-title">Best Fit If</div>
+          <ul class="plan-next-list">
+            <li>You are within sight of retirement and do not want to rely on a rough guess</li>
+            <li>You keep asking "what if I retire earlier, spend more, or claim later?"</li>
+            <li>You want a clearer plan before paying an advisor or going it alone</li>
+          </ul>
+        </div>
+        <div class="plan-next-panel plan-next-panel-pro">
+          <div class="plan-next-title">What You Get Right Away</div>
+          <ul class="plan-next-list">
+            <li>Instant access to the full web planner and desktop app</li>
+            <li>Deeper scenario testing, downside analysis, and tax-aware planning tools</li>
+            <li>A one-time purchase instead of another monthly subscription</li>
+          </ul>
+        </div>
+      </div>
+      <div class="plan-next-card" style="margin-bottom:16px">
+        <div class="plan-next-kicker">Why Buy Now</div>
+        <div class="plan-next-takeaway">The quick calculator is useful when the answer is obvious. Fatboy Pro is for the moment the answer stops feeling obvious.</div>
+      </div>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Free Web</th>
+            <th>Pro &mdash; $149</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Retirement projection</td><td>&#10003;</td><td>&#10003;</td></tr>
+          <tr><td>Monte Carlo simulation</td><td>1 model (basic)</td><td>Deeper downside testing</td></tr>
+          <tr><td>Roth conversion optimizer</td><td>&#8212;</td><td>Year-by-year strategy</td></tr>
+          <tr><td>Federal + state taxes</td><td>Estimate</td><td>Full per-year modeling</td></tr>
+          <tr><td>IRMAA / Medicare planning</td><td>&#8212;</td><td>Cliff avoidance built in</td></tr>
+          <tr><td>Scenario comparison</td><td>&#8212;</td><td>Compare the retirement moves that matter</td></tr>
+          <tr><td>Goal-based planner</td><td>&#8212;</td><td>Solve for savings or spending</td></tr>
+        </tbody>
+      </table>
+      <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00"
+         target="_blank" class="buy-btn"
+         data-planner-cta="true"
+         data-cta-location="buy_button"
+         data-plan-type="fatboy_pro"
+         data-price="149"
+         data-billing-type="one_time">
+        Get Fatboy Pro Before You Retire &mdash; $149 &rarr;
+      </a>
+      <p style="font-size:0.73rem;color:#475569;text-align:center;margin-bottom:14px">
+        One-time purchase &middot; Full web planner + desktop app &middot; License key emailed instantly
+      </p>
+      <p class="pricing-followup-copy">Buy when you are ready to move past the quick answer and pressure-test the retirement decision you are about to make in the guided planner.</p>
+      <p class="pricing-followup-copy" style="margin-top:8px">If the free answer made you pause, that is usually the moment the free web planner or Pro becomes worth opening next.</p>
+      <p class="pricing-followup-copy" style="margin-top:8px">Not financial advice, but a practical way to spot weak assumptions before you act on them.</p>
+      <a href="https://fatboysoftware.com/blog/2026/03/01/monte-carlo-stress-testing" target="_blank"
+         style="display:inline-block;margin-top:4px;font-size:0.78rem;color:#94a3b8;text-decoration:none"
+         onclick="trackEvent('mc_blog_click', { ...(typeof getPlannerPageContext === 'function' ? getPlannerPageContext() : {}), article: 'monte_carlo_stress_testing' })">What each of the 7 scenarios tells you about your plan &rarr;</a>
+    </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Contact form -->
+<div class="container">
+  <div class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Questions, bug reports, or feedback. Send a note and we will read it.</p>
+    <form id="contact-form" onsubmit="submitContact(event)">
+      <label for="c-email">Email <span style="color:#f87171">*</span></label>
+      <input id="c-email" type="email" placeholder="you@example.com" required autocomplete="email">
+      <label for="c-message" class="contact-label">Message</label>
+      <textarea id="c-message" placeholder="How can we help?" required></textarea>
+      <div>
+        <button type="submit" id="contact-btn">Send Message</button>
+        <div id="contact-status"></div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+  <script src="/static/scripts/core.js?v=3.22.61-handoff"></script>
+  <script src="/static/scripts/planner-ui.js?v=3.22.61-handoff"></script>
+  <script src="/static/scripts/projection.js?v=3.22.61-handoff"></script>
+  <script src="/static/scripts/contact.js?v=3.22.61-handoff"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"7f05c7fb67a745bebd0b3d35fa90496a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
+
