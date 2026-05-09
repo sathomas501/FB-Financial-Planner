@@ -3,9 +3,11 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
 <script>
   window.GA_MEASUREMENT_ID = '{{ site.google_analytics }}';
+  window.GOOGLE_ADS_ID = 'AW-17826090869';
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', '{{ site.google_analytics }}');
+  gtag('config', 'AW-17826090869');
 </script>
 {% endif %}
