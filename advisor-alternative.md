@@ -220,7 +220,7 @@ Full retirement planning. 3 scenarios. Monte Carlo simulations. Core features un
 | **Tax Optimization** | ✅ Yes | ✅ Yes |
 | **Professional Reports** | ✅ Yes | ✅ Yes (Pro) |
 | **Update Tax Laws Yourself** | ❌ No | ✅ Yes |
-| **Your Data Private** | ❌ No (they have it) | ✅ Yes — local by default; optional cloud sync is end-to-end encrypted |
+| **Your Data Private** | ❌ No (they have it) | ✅ Yes — local by default; optional cloud sync is client-side encrypted |
 | **Make Your Own Decisions** | ❌ No (they decide) | ✅ Yes |
 | **No Conflicts of Interest** | ❌ No (commission bias) | ✅ Yes |
 
@@ -248,7 +248,7 @@ Desktop application:
 - **Linux** (beta available)
 - **macOS** (coming soon)
 
-Your data never leaves your computer. No cloud sync. No vendor harvesting your financial information.
+Fatboy is local-first by default. Keep everything on your computer, or use optional client-side encrypted cloud sync when you want access across devices.
 
 ---
 

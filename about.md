@@ -49,7 +49,7 @@ Fatboy Financial Planner is named after a favorite cat, and built by developers 
 We're dedicated to creating retirement planning software that:
 
 - **You Own** - One-time purchase, no subscriptions - one and done!
-- **Respects Your Privacy** - Your data stays on your computer
+- **Respects Your Privacy** - Local-first by default, with optional encrypted cloud sync when you want it
 - **Actually Works** - Built by people who use it themselves
 - **Stays Affordable** - Especially for Founding Members
 

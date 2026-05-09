@@ -36,7 +36,7 @@ We built Fatboy Financial Planner for people who want serious planning tools wit
 - **Actually free to start** - Not a 30-day trial. Use the free version forever if it meets your needs.
 - **One-time upgrade** - Need more? $149 once for the Pro version (founding subscriber price). No recurring fees.
 - **No pressure** - Free version isn't crippled. It's legitimately useful.
-- **Your plan, your data** - Whether you're free or pro, your data stays yours.
+- **Your plan, your data** - Whether you're free or pro, your data stays yours with a local-first workflow and optional encrypted cloud sync.
 
 ## Feature Comparison
 
@@ -60,7 +60,7 @@ We built Fatboy Financial Planner for people who want serious planning tools wit
 | **Advanced Pension / Bridge-Income Modeling** | Basic | Yes | Basic | Basic | Basic |
 | **Data Import** | Yes - CSV/Manual | Yes - CSV/Manual | Yes - Link accounts | Basic - Manual | Basic - Manual |
 | **Export / Import Plan (JSON)** | Yes | Yes | No | No | No |
-| **Cloud Sync** | No | Yes - E2E encrypted | Yes - Unencrypted | Yes - Unencrypted | No |
+| **Cloud Sync** | No | Yes - Client-side encrypted | Yes - Unencrypted | Yes - Unencrypted | No |
 | **Data stays on your device** | Yes - By default | Yes - By default | No - Always cloud | No - Always cloud | Yes |
 | **Account Types Supported** | Yes - All major | Yes - All major | Yes - All major | Yes - All major | Yes - All major |
 | **Tax Assumptions** | Yes - Editable | Yes - Editable | Subscription update | Subscription update | Basic - Fixed |
@@ -76,7 +76,7 @@ Yes | Basic | No | Subscription update
 
 If you are specifically comparing tools for a federal household, start with the [FERS retirement calculator page](/federal-retirement/).
 
-For packaging clarity: the guided web app is now the default place to start. Fatboy Pro is where the full federal editing and advanced controls live.
+For packaging clarity: the guided web app is now the default place to start. Fatboy Pro is where the full federal editing, advanced controls, local-first desktop workflow, and optional encrypted sync live.
 
 ## Tax Assumptions: Planning Direction vs Tax-Filing Precision
 
@@ -148,7 +148,7 @@ For retirement planning, being able to model different tax scenarios is more val
 - You're comfortable managing your own money
 - You want **real planning tools** without paying advisor fees
 - You like playing with scenarios to see what happens
-- You prefer your financial data on **your computer, not ours**
+- You prefer a **local-first workflow** instead of mandatory cloud storage
 
 ### Probably not for you if:
 - You want automatic account syncing (we're manual/CSV import only)

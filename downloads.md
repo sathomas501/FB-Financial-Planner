@@ -124,7 +124,7 @@ permalink: /downloads/
   <section class="downloads-hero">
     <div class="downloads-eyebrow">Desktop Downloads</div>
     <h1>Download Fatboy Financial Planner for desktop.</h1>
-    <p>Choose the Windows installer or Linux AppImage. The desktop app includes free functionality similar to the web version, with Pro unlocking the deeper desktop features.</p>
+    <p>Choose the Windows installer or Linux AppImage. The desktop app includes free functionality similar to the web version, with Pro unlocking the deeper desktop features, a local-first workflow, and optional encrypted cloud sync.</p>
   </section>
 
   <div class="downloads-grid">
@@ -149,6 +149,7 @@ permalink: /downloads/
         <li>Linux AppImage desktop build</li>
         <li>Free desktop functionality similar to the web version</li>
         <li>Offline desktop workflow after install</li>
+        <li>Optional encrypted cloud sync when you want cross-device access</li>
       </ul>
     </section>
   </div>
