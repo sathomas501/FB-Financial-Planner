@@ -109,6 +109,8 @@ Fatboy works differently:
    - No being stuck with wrong numbers
    - No hoping the vendor eventually updates
 
+That same philosophy carries through the product itself. Many planning tools are built around accounts, subscriptions, and cloud storage first. Fatboy is built around control first: local-first workflow, optional encrypted cloud sync, and the ability to keep planning without making always-online storage the default.
+
 ## Real Example: OBBBA Senior Deduction
 
 **The OBBBA senior deduction is temporary (2026-2028 only).**
