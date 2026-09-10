@@ -438,8 +438,8 @@ window.addEventListener('load', function () {
             <a href="#" id="download-free-version" data-version="" class="sp-btn sp-btn-primary">
               &#11015;&nbsp; Windows (.exe)
             </a>
-            <a href="#" id="download-linux" data-version="" class="sp-btn sp-btn-ghost">
-              &#11015;&nbsp; Linux (.AppImage)
+            <a href="https://github.com/sathomas501/FB-Financial-Planner/releases/latest" id="download-linux" data-version="" class="sp-btn sp-btn-ghost">
+              &#11015;&nbsp; Linux (.tar.gz)
             </a>
           </div>
         </div>
@@ -561,3 +561,5 @@ function spFaq(btn) {
   ico.textContent = open ? '\u00d7' : '+';
 }
 </script>
+
+<script defer src="/assets/js/website_download_updater.js"></script>

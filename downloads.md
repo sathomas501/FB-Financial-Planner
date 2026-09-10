@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Desktop Downloads - Fatboy Financial Planner
-description: Download the Windows desktop app or Linux AppImage for Fatboy Financial Planner. Start with free desktop functionality, then unlock Pro features when you need them.
+description: Download the Windows desktop app or Linux desktop app for Fatboy Financial Planner. Start with free desktop functionality, then unlock Pro features when you need them.
 permalink: /downloads/
 ---
 
@@ -124,7 +124,7 @@ permalink: /downloads/
   <section class="downloads-hero">
     <div class="downloads-eyebrow">Desktop Downloads</div>
     <h1>Download Fatboy Financial Planner for desktop.</h1>
-    <p>Choose the Windows installer or Linux AppImage. The desktop app includes free functionality similar to the web version, with Pro unlocking the deeper desktop features, a local-first workflow, and optional encrypted cloud sync.</p>
+    <p>Choose the Windows installer or Linux desktop app. The desktop app includes free functionality similar to the web version, with Pro unlocking the deeper desktop features, a local-first workflow, and optional encrypted cloud sync.</p>
   </section>
 
   <div class="downloads-grid">
@@ -135,18 +135,19 @@ permalink: /downloads/
         <a href="https://fatboy-license-server-oc13.vercel.app/api/download?platform=windows" class="download-btn" onclick="gtag('event','desktop_download_click',{platform:'windows',source:'downloads_page'})">
           Download Windows (.exe)
         </a>
-        <a href="https://fatboy-license-server-oc13.vercel.app/api/download?platform=linux" class="download-btn secondary" onclick="gtag('event','desktop_download_click',{platform:'linux',source:'downloads_page'})">
-          Download Linux (.AppImage)
+        <a href="https://github.com/sathomas501/FB-Financial-Planner/releases/latest" class="download-btn secondary auto-download-linux" onclick="gtag('event','desktop_download_click',{platform:'linux',source:'downloads_page'})">
+          Download Linux (.tar.gz)
         </a>
       </div>
     </section>
 
     <section class="download-note">
       <h2>Before you install</h2>
+      <p>The Linux Download button selects the portable archive. If automatic download lookup is unavailable, it opens the release page; choose the Linux x64 .tar.gz file. <a href="https://github.com/sathomas501/FB-Financial-Planner/releases/latest">AppImage is also available as an alternative</a>.</p>
       <p>You can use the desktop app without Pro for the core free functionality. If you already bought Pro, use the license key from your email to unlock the full desktop experience.</p>
       <ul>
         <li>Windows 10/11 desktop installer</li>
-        <li>Linux AppImage desktop build</li>
+        <li>Linux portable archive (.tar.gz): extract it, open the FinancialPlanner folder, and run FinancialPlanner. Keep the entire folder together. No FUSE installation required.</li>
         <li>Free desktop functionality similar to the web version</li>
         <li>Offline desktop workflow after install</li>
         <li>Optional encrypted cloud sync when you want cross-device access</li>
@@ -163,3 +164,5 @@ permalink: /downloads/
     </div>
   </section>
 </div>
+
+<script defer src="/assets/js/website_download_updater.js"></script>
