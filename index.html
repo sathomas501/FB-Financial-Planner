@@ -1259,7 +1259,8 @@ permalink: /
   @media (max-width: 900px) {
     nav { padding: 0 20px; }
     .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; padding: 60px 20px; gap: 40px; }
+    .hero { grid-template-columns: minmax(0, 1fr); padding: 60px 20px; gap: 40px; }
+    .hero > * { min-width: 0; }
     section { padding: 60px 20px; }
     .product-grid { grid-template-columns: 1fr; }
     .features-grid { grid-template-columns: 1fr 1fr; }
@@ -1335,15 +1336,14 @@ permalink: /
       <span class="mobile-only">Answer a few questions and get a fast first read on whether your plan still works.</span>
     </p>
     <div class="hero-actions">
-      <a href="https://app.fatboysoftware.com?arrival=snapshot" class="btn-primary" data-analytics-location="hero_primary" data-planner-intent="planner" data-experiment-variant="test_1_hero_focus">
+      <a href="https://app.fatboysoftware.com?arrival=snapshot" class="btn-primary" data-analytics-location="hero_primary" data-planner-intent="planner" data-experiment-variant="desktop_trial_offer_v1">
         See My Quick Retirement Answer
       </a>
-      <a href="https://planner.fatboysoftware.com/?guided=1&guided_source=marketing-site&arrival=assumptions" class="btn-secondary" data-analytics-location="hero_guided_planner" data-planner-intent="full_planner">
-        Or Start In The Full Planner
+      <a href="/downloads/" class="btn-secondary" data-desktop-trial-location="homepage_hero">
+        Try Desktop Pro for 14 Days
       </a>
-      <p class="hero-note desktop-only">No signup. No install. Works on phone or desktop. Many planning tools are built around accounts, subscriptions, and cloud storage first. Fatboy is built around control first: quick answer now, guided planner next, and desktop plus optional encrypted sync when you want more depth.</p>
-      <p class="hero-note mobile-only">No signup | No install | Opens instantly</p>
-      <p class="hero-mobile-desktop-note">Want saved scenarios, exports, or deeper analysis after the quick answer? <a href="/downloads/" onclick="gtag('event','homepage_desktop_pro_hero_click')">See what Desktop Pro adds</a>.</p>
+      <p class="hero-note">Quick Answer opens in your browser with no signup. Desktop trial: Windows or Linux, emailed activation key, no credit card and no automatic charge. Trial limits apply.</p>
+      <p class="hero-note">Prefer detailed planning in your browser? <a href="https://planner.fatboysoftware.com/?guided=1&guided_source=marketing-site&arrival=assumptions" data-analytics-location="hero_guided_planner" data-planner-intent="full_planner">Open the Full Web Planner</a>.</p>
     </div>
     <ul class="hero-bullets">
       <li>Get a quick answer before you spend time filling out everything</li>
@@ -1466,7 +1466,7 @@ permalink: /
   <div class="section-eyebrow">Two Ways to Plan</div>
   <h2>The right tool<br>for where you are.</h2>
   <p class="section-intro">
-    The free trial gives you a real taste. The Pro license unlocks everything  -  on your desktop and in your browser.
+    Start free in your browser, or <a href="/downloads/" data-desktop-trial-location="homepage_pricing">try Desktop Pro for 14 days</a>. One paid Pro license covers desktop and web.
   </p>
 
   <div class="product-grid">
@@ -1485,7 +1485,7 @@ permalink: /
         <li><span class="yes">+</span><span class="text">Works on any device  -  Mac, iPad, Windows, Linux</span></li>
         <li><span class="yes">+</span><span class="text">Data stays in your browser  -  zero server calls</span></li>
         <li><span class="no"> - </span><span class="text sub">Limited to 1 scenario</span></li>
-        <li><span class="no"> - </span><span class="text sub">No save / load between sessions</span></li>
+        <li><span class="yes">+</span><span class="text">Browser autosave and JSON plan files</span></li>
         <li><span class="no"> - </span><span class="text sub">No PDF or Excel export</span></li>
         <li><span class="no"> - </span><span class="text sub">Monte Carlo limited to 500 simulations</span></li>
       </ul>
@@ -1519,9 +1519,10 @@ permalink: /
       <a href="https://buy.stripe.com/00wfZiblS2AmdmDdG34Rq00" class="btn-primary" data-founding-btn data-analytics-location="homepage_buy_now">Buy Now  -  $149</a>
       <p style="font-size:0.78rem;color:var(--mid);margin-top:10px;text-align:center;" data-founding-remaining>Price increases to $249 after 200 Founding Members</p>
       <p style="font-size:0.78rem;text-align:center;margin-top:8px;line-height:2;">
-        <span style="color:var(--mid);">Already purchased? Download: </span>
+        <a href="/downloads/" data-desktop-trial-location="homepage_downloads">14-day trial steps and limits</a><br>
+        <span style="color:var(--mid);">Download desktop to try it: </span>
         <a href="https://fatboy-license-server-oc13.vercel.app/api/download?platform=windows"
-           onclick="gtag('event','desktop_download_click',{platform:'windows'})"
+           onclick="gtag('event','desktop_download_click',{platform:'windows',source:'homepage_downloads'})"
            style="color:var(--mid);text-decoration:none;border-bottom:1px solid var(--rule);transition:color 0.2s;margin:0 6px;"
            onmouseover="this.style.color='var(--ink)'"
            onmouseout="this.style.color='var(--mid)'">
@@ -1529,7 +1530,7 @@ permalink: /
         </a>
         <span style="color:var(--rule);"> | </span>
         <a href="https://github.com/sathomas501/FB-Financial-Planner/releases/latest" class="auto-download-linux"
-           onclick="gtag('event','desktop_download_click',{platform:'linux'})"
+           onclick="gtag('event','desktop_download_click',{platform:'linux',source:'homepage_downloads'})"
            style="color:var(--mid);text-decoration:none;border-bottom:1px solid var(--rule);transition:color 0.2s;margin:0 6px;"
            onmouseover="this.style.color='var(--ink)'"
            onmouseout="this.style.color='var(--mid)'">
@@ -1878,7 +1879,7 @@ permalink: /
           </div>
           <p class="hero-sample-hint">Click the sample to open it in the planner.</p>
         </a>
-        <p class="hero-card-footer">Need saved scenarios, exports, or offline use later? <a href="/downloads/" onclick="gtag('event','homepage_desktop_pro_footer_click')">See Desktop Pro</a>.</p>
+        <p class="hero-card-footer">Need saved scenarios, exports, or offline use later? <a href="/downloads/" onclick="gtag('event','homepage_desktop_pro_footer_click')">Try Desktop Pro for 14 Days</a>.</p>
       `;
 
       const oldMockup = visual.querySelector('.hero-sample-app');

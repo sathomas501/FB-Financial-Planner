@@ -819,6 +819,32 @@
         trackPurchaseComplete: trackPurchaseComplete
     });
 
+    function trackDesktopTrialOffers() {
+        const offers = document.querySelectorAll('[data-desktop-trial-location]');
+        offers.forEach(function (link) {
+            link.addEventListener('click', function () {
+                trackEvent('desktop_trial_offer_click', {
+                    cta_location: link.getAttribute('data-desktop-trial-location'),
+                    source_page: locationPath,
+                    destination_url: link.href
+                });
+            });
+        });
+
+        if (typeof IntersectionObserver !== 'function') return;
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting || entry.intersectionRatio < 0.5) return;
+                trackEvent('desktop_trial_offer_view', {
+                    cta_location: entry.target.getAttribute('data-desktop-trial-location'),
+                    source_page: locationPath
+                });
+                observer.unobserve(entry.target);
+            });
+        }, { threshold: 0.5 });
+        offers.forEach(function (link) { observer.observe(link); });
+    }
+
     function init() {
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', init);
@@ -833,6 +859,7 @@
         trackChecklistEvents();
         trackOutboundClicks();
         trackPlannerCtaLinks();
+        trackDesktopTrialOffers();
         trackPurchaseClicks();
         trackEmailLinks();
         trackComparisonPage();

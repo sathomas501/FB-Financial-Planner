@@ -116,6 +116,8 @@ theme: jekyll-theme-slate
 
 # Exclude backend source from static site output
 exclude:
+  - DESKTOP_TRIAL_ROLLOUT.md
+  - tmp
   - api
   - lib
   - node_modules

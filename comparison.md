@@ -42,10 +42,10 @@ We built Fatboy Financial Planner for people who want serious planning tools wit
 
 <div class="table-wrapper" markdown="block">
 
-| Feature | Fatboy Free | Fatboy Pro | Boldin | MaxiFi | Pralana |
+| Feature | Free Full Web | Paid Pro | Boldin | MaxiFi | Pralana |
 |---------|-------------|------------|---------|---------|---------|
 | **Pricing Model** | Yes - Free | Yes - One-time | No - Annual | No - Annual | Yes - One-time |
-| **Plan Scenarios** | Basic - 3 max | Yes - Unlimited | Yes | Yes | Yes |
+| **Plan Scenarios** | Basic - 1 scenario | Yes - Unlimited | Yes | Yes | Yes |
 | **Core Planning** | Yes | Yes | Yes | Yes | Yes |
 | **Cash Flow Projections** | Yes | Yes | Yes | Yes | Yes |
 | **Roth Conversion Optimizer** | No | Yes - Advanced | Basic | Yes | Yes |
@@ -63,7 +63,7 @@ We built Fatboy Financial Planner for people who want serious planning tools wit
 | **Cloud Sync** | No | Yes - Client-side encrypted | Yes - Unencrypted | Yes - Unencrypted | No |
 | **Data stays on your device** | Yes - By default | Yes - By default | No - Always cloud | No - Always cloud | Yes |
 | **Account Types Supported** | Yes - All major | Yes - All major | Yes - All major | Yes - All major | Yes - All major |
-| **Tax Assumptions** | Yes - Editable | Yes - Editable | Subscription update | Subscription update | Basic - Fixed |
+| **Tax Assumptions** | Basic | Yes - Editable | Subscription update | Subscription update | Basic - Fixed |
 
 </div>
 
@@ -76,7 +76,13 @@ Yes | Basic | No | Subscription update
 
 If you are specifically comparing tools for a federal household, start with the [FERS retirement calculator page](/federal-retirement/).
 
-For packaging clarity: the guided web app is now the default place to start. Fatboy Pro is where the full federal editing, advanced controls, local-first desktop workflow, and optional encrypted sync live.
+### Want to evaluate the desktop app?
+
+[Try Desktop Pro for 14 days](/downloads/). Install on Windows or Linux, request a trial key with your name and email, then activate it. No credit card and no automatic charge.
+
+The desktop trial supports up to 100 planning years and 1,000 Monte Carlo paths, with advanced tax settings, Roth optimization, and breakpoint analysis. Excel export and holdings import require a paid license. Your 14 days begin when the key is issued.
+
+The table above describes free Full Web, which has a 20-year horizon and up to 500 Monte Carlo simulations. New desktop installations use the 14-day trial. After expiry, you can view and copy saved plans; editing and new analyses require Pro. Existing Starter access is preserved when prior installation records are available. A paid Pro license covers both desktop and web.
 
 ## Tax Assumptions: Planning Direction vs Tax-Filing Precision
 

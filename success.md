@@ -513,14 +513,6 @@ window.addEventListener('load', function () {
 
     <div class="sp-faq">
       <button class="sp-faq-q" onclick="spFaq(this)">
-        What is the refund policy?
-        <span class="sp-faq-ico">+</span>
-      </button>
-      <p class="sp-faq-a">If you&rsquo;re not satisfied, email us within 10 days and we&rsquo;ll make it right. We stand behind our software.</p>
-    </div>
-
-    <div class="sp-faq">
-      <button class="sp-faq-q" onclick="spFaq(this)">
         When will macOS be supported?
         <span class="sp-faq-ico">+</span>
       </button>
