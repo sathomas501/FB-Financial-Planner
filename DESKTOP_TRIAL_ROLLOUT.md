@@ -30,7 +30,8 @@ Do not publish claims that Starter has been removed until the replacement deskto
 - [x] Implement database-enforced email/computer trial history, activation checks, fixed-expiry resends, rate limits, and audited support exceptions.
 - [x] Send the desktop computer identifier when requesting a trial; test both HTTP implementations.
 - [ ] Apply the trial-control database migration and deploy the updated server and desktop together, following `Fatboy-License-Server/TRIAL_ROLLOUT.md`.
-- [ ] Add trial-ending reminders and record delivery status to avoid duplicate messages.
+- [x] Implement trial-ending reminders, delivery tracking, opt-outs, and a direct desktop Buy Pro button; 39 server and 56 desktop tests passed.
+- [ ] Apply `add_trial_reminders.sql`, configure reminder secrets, deploy/enable the scheduled job, and rebuild the desktop app. See `Fatboy-License-Server/TRIAL_REMINDERS.md`.
 - [ ] Verify trial-to-paid conversion, including existing trial keys and activation counts.
 - [ ] Keep card collection and automatic billing outside this rollout.
 
