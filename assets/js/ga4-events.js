@@ -424,48 +424,34 @@
         }, eventParams));
     }
 
-    function trackPurchaseComplete(params) {
-        const eventParams = sanitizeObject(params);
-        const transactionId = eventParams.transaction_id || currentUrl.searchParams.get('session_id') || currentUrl.searchParams.get('tx');
-
-        if (!transactionId) {
-            console.warn('Purchase tracking skipped: missing transaction_id');
-            return;
-        }
-
-        if (window.sessionStorage) {
-            const purchases = safeJsonParse(window.sessionStorage.getItem(PURCHASE_DEDUPE_KEY)) || {};
-            if (purchases[transactionId]) {
-                return;
+    const pendingPurchases = new Set();
+    async function trackPurchaseComplete(params) {
+        const payload = sanitizeObject(params);
+        const id = payload.transaction_id;
+        if (typeof id !== 'string' || !/^cs_live_[A-Za-z0-9]{10,240}$/.test(id) ||
+            !Number.isFinite(payload.value) || payload.value < 0 || payload.currency !== 'USD' ||
+            !Array.isArray(payload.items) || !payload.items.length || pendingPurchases.has(id)) return false;
+        pendingPurchases.add(id);
+        try {
+            try {
+                const recorded = safeJsonParse(window.localStorage.getItem(PURCHASE_DEDUPE_KEY)) || {};
+                if (recorded[id]) return false;
+            } catch (_) { /* GA4 transaction IDs also deduplicate when storage is blocked. */ }
+            if (!await ensureGA4Ready()) return false;
+            window.gtag('event', 'purchase', buildEventParams(payload));
+            try {
+                const recorded = safeJsonParse(window.localStorage.getItem(PURCHASE_DEDUPE_KEY)) || {};
+                recorded[id] = Date.now();
+                window.localStorage.setItem(PURCHASE_DEDUPE_KEY, JSON.stringify(recorded));
+            } catch (_) {}
+            if (typeof window.trackMicrosoftUetEvent === 'function') {
+                try { window.trackMicrosoftUetEvent('purchase', payload); } catch (_) {}
             }
-
-            purchases[transactionId] = Date.now();
-            window.sessionStorage.setItem(PURCHASE_DEDUPE_KEY, JSON.stringify(purchases));
+            setUserProperties({ is_customer: 'true', product_owned: 'pro' });
+            return true;
+        } finally {
+            pendingPurchases.delete(id);
         }
-
-        const commerceParams = Object.assign({
-            transaction_id: transactionId,
-            currency: 'USD',
-            value: 149,
-            tax: 0,
-            shipping: 0,
-            affiliation: 'Fatboy Software',
-            items: [{
-                item_id: 'fatboy-pro',
-                item_name: 'Fatboy Financial Planner Pro',
-                item_category: 'Software',
-                price: 149,
-                quantity: 1
-            }]
-        }, eventParams);
-
-        trackEvent('purchase_complete', commerceParams);
-        trackEvent('purchase', commerceParams);
-
-        setUserProperties({
-            is_customer: 'true',
-            product_owned: 'pro'
-        });
     }
 
     function trackScrollDepth() {

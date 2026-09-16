@@ -5,52 +5,8 @@ description: Thank you for your purchase! Here's what happens next.
 permalink: /thank-you/
 ---
 
-<!-- Google Analytics Purchase Conversion Tracking -->
-<script>
-window.addEventListener('load', function () {
-  var params = new URLSearchParams(window.location.search);
-  var sessionId = params.get('session_id');
-  var purchasePayload = {
-    transaction_id: sessionId || 'ffp-' + Date.now(),
-    value: 149.00,
-    currency: 'USD',
-    tax: 0,
-    shipping: 0,
-    items: [{
-      item_id: 'ffp-pro-founding-member',
-      item_name: 'Fatboy Financial Planner Pro - Founding Member',
-      item_brand: 'Fatboy Software',
-      item_category: 'Software',
-      item_category2: 'Financial Planning',
-      item_variant: 'One-time Purchase',
-      price: 149.00,
-      quantity: 1
-    }]
-  };
-
-  if (window.FatboyAnalytics && typeof window.FatboyAnalytics.trackPurchaseComplete === 'function') {
-    window.FatboyAnalytics.trackPurchaseComplete(purchasePayload);
-    console.log('Purchase completion tracked:', sessionId || 'no session_id');
-  }
-});
-</script>
-
-<!-- Optional: Meta Pixel (Facebook) Purchase Tracking — uncomment when ready -->
-<!--
-<script>
-window.addEventListener('load', function () {
-  if (typeof fbq !== 'undefined') {
-    fbq('track', 'Purchase', {
-      value: 149.00,
-      currency: 'USD',
-      content_name: 'Fatboy Financial Planner Pro - Founding Member',
-      content_type: 'product',
-      content_ids: ['ffp-pro-founding-member']
-    });
-  }
-});
-</script>
--->
+<!-- Record purchases only after server-side Stripe verification. -->
+<script defer src="/assets/js/verified-purchase.js"></script>
 
 <style>
 /* ============================================================
